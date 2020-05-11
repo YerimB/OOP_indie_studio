@@ -6,9 +6,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Programmation\C++\OOP_indie_studio_2019\CMakeLists.txt" />
+    <ClInclude Include="D:\Programmation\C++\OOP_indie_studio_2019\Headers\tmp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9211C170-AE6E-3168-A042-BADF0CEC845C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{1DC7E7A2-E4DE-3B9E-9348-FBA5A19266AD}</UniqueIdentifier>
     </Filter>
