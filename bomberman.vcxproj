@@ -264,10 +264,13 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Bindable.cpp" />
     <ClInclude Include="D:\Programmation\C++\OOP_indie_studio_2019\Headers\tmp.h" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
+    <ClInclude Include="Headers\Bindable.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Headers\Bindable.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

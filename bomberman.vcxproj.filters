@@ -4,11 +4,13 @@
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Bindable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Programmation\C++\OOP_indie_studio_2019\Headers\tmp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\Bindable.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -17,5 +19,8 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{1DC7E7A2-E4DE-3B9E-9348-FBA5A19266AD}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Headers\Bindable.inl" />
   </ItemGroup>
 </Project>
