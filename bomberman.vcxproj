@@ -264,7 +264,6 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Bindable.cpp" />
     <ClInclude Include="D:\Programmation\C++\OOP_indie_studio_2019\Headers\tmp.h" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
     <ClInclude Include="Headers\Bindable.hpp" />

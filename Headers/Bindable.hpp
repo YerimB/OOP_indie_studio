@@ -1,18 +1,18 @@
 #pragma once
 
 #include <functional>
-#include <tuple>
+#include <mutex>
 
-template<typename T, typename U, typename ... UArgs>
+template<typename T, typename U>
 class Bindable
 {
-	using Callback = std::function<U(UArgs...)>;
+	using Callback = std::function<void(T)>;
 
 	public:
 		Bindable();
 		Bindable(const T& value);
 
-		Bindable(const T& value, U& callback, UArgs&& ... args);
+		Bindable(const T& value, U& callback);
 		~Bindable() = default;
 
 	public:
@@ -29,6 +29,7 @@ class Bindable
 		Callback m_OnUpdate;
 		T m_Value;
 		T m_CachedValue;
+		std::mutex m_Mutex;
 };
 
 #include "Bindable.inl"

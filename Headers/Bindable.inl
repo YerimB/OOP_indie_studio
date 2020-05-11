@@ -2,60 +2,64 @@
 
 #include "Bindable.hpp"
 
-template<typename T, typename U, typename ... UArgs>
-Bindable<T, U, UArgs ...>::Bindable()
+template<typename T, typename U>
+Bindable<T, U>::Bindable()
 {
 	m_Value = static_cast<T>(0.0);
 	m_CachedValue = static_cast<T>(0.0);
 }
 
-template<typename T, typename U, typename ... UArgs>
-Bindable<T, U, UArgs ...>::Bindable(const T& value)
+template<typename T, typename U>
+Bindable<T, U>::Bindable(const T& value)
 {
 	m_Value = value;
 	m_CachedValue = value;
 }
 
-template<typename T, typename U, typename ... UArgs>
-Bindable<T, U, UArgs ...>::Bindable(const T& value, U& callback, UArgs&& ... args)
+template<typename T, typename U>
+Bindable<T, U>::Bindable(const T& value, U& callback)
 {
 	m_Value = value;
 	m_CachedValue = value;
-	m_OnUpdate = std::bind(callback, this, std::placeholders::_1, std::forward<UArgs>(args)...);
+	m_OnUpdate = std::bind(callback, std::placeholders::_1);
 }
 
-template<typename T, typename U, typename ... UArgs>
-Bindable<T, U, UArgs ...>& Bindable<T, U, UArgs ...>::operator=(const T& value)
+template<typename T, typename U>
+Bindable<T, U>& Bindable<T, U>::operator=(const T& value)
 {
+	std::lock_guard lock(m_Mutex);
+
 	m_Value = value;
-
-	if (m_Value != m_CachedValue)
-		m_OnUpdate();
-
+	if (m_Value != m_CachedValue) {
+		if (m_OnUpdate)
+			m_OnUpdate(m_Value);
+	}
 	m_CachedValue = m_Value;
 
 	return *this;
 }
 
-template<typename T, typename U, typename ... UArgs>
-void Bindable<T, U, UArgs ...>::SetValue(const T& value)
+template<typename T, typename U>
+void Bindable<T, U>::SetValue(const T& value)
 {
+	std::lock_guard lock(m_Mutex);
+
 	m_Value = value;
-
-	if (m_Value != m_CachedValue)
-		m_OnUpdate();
-
+	if (m_Value != m_CachedValue) {
+		if (m_OnUpdate)
+			m_OnUpdate(m_Value);
+	}
 	m_CachedValue = m_Value;
 }
 
-template<typename T, typename U, typename ... UArgs>
-const T& Bindable<T, U, UArgs ...>::GetValue() const
+template<typename T, typename U>
+const T& Bindable<T, U>::GetValue() const
 {
 	return m_Value;
 }
 
-template<typename T, typename U, typename ... UArgs>
-const T& Bindable<T, U, UArgs ...>::GetCachedValue() const
+template<typename T, typename U>
+const T& Bindable<T, U>::GetCachedValue() const
 {
 	return m_CachedValue;
 }
