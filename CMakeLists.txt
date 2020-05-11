@@ -24,10 +24,19 @@ include_directories(
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 
 
-# Find Irrlicht
+if (WIN32)
+
+# Find Irrlicht on Windows
 find_package(IRRLICHT REQUIRED)
 message(STATUS "Irrlicht included at ${IRRLICHT_INCLUDE_DIR}")
-
 set(LIBS opengl32 IRRLICHT)
+
+ELSE()
+
+# Find Irrlicht on Linux
+find_library(IRRLICHT_LIBRARY irrlicht)
+set(LIBS GL GLEW X11 Xxf86vm Xext IRRLICHT_LIBRARY)
+
+ENDIF()
 
 target_link_libraries(${PROJECT_NAME} ${LIBS})
