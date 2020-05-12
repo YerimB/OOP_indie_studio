@@ -24,25 +24,24 @@ bool InputManager::IsKeyDown(EKEY_CODE keyCode) const
     return m_KeyDown[keyCode];
 }
 
-void InputManager::AddBindable(IBindable* bindable)
+UniqueBindable& InputManager::GetBindableByName(const std::string& name)
 {
-    m_Bindables.emplace_back(std::unique_ptr<IBindable>(bindable));
+    for (auto& bindable : m_Bindables)
+    {
+        if (bindable.first == name)
+            return bindable.second;
+    }
 
-    m_Bindables[0]->SetValue(10.0f);
-}
-
-void InputManager::AddBindable(std::unique_ptr<IBindable>& bindable)
-{
-    m_Bindables.emplace_back(std::move(bindable));
-
-    m_Bindables[0]->SetValue(10.0f);
+    throw;
 }
 
 void InputManager::RunKeyboardManager()
 {
 
-    while (this->m_Device->run())
+    while (m_Device->run())
     {
-        // Handle keys
+        if (IsKeyDown(irr::KEY_KEY_Z)) {
+            GetBindableByName("UpKey")->SetValue(core::vector2df(0.53f, 0.53f));
+        }
     }
 }
