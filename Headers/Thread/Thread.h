@@ -25,7 +25,7 @@ class Thread
 
 	public:
 		template<typename T, typename ... TArgs>
-		void Start(const T&& function, TArgs&& ... args);
+		void Start(T&& function, TArgs&& ... args);
 		void Status() const;
 
 	public:
