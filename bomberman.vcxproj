@@ -264,12 +264,17 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Programmation\C++\OOP_indie_studio_2019\Headers\tmp.h" />
+    <ClCompile Include="Sources\InputManager.cpp" />
+    <ClCompile Include="Sources\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
-    <ClInclude Include="Headers\Bindable.hpp" />
+    <ClInclude Include="Headers\Bindable\Bindable.hpp" />
+    <ClInclude Include="Headers\Bindable\IBindable.h" />
+    <ClInclude Include="Headers\InputManager\InputManager.h" />
+    <ClInclude Include="Headers\Thread\Thread.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Headers\Bindable.inl" />
+    <None Include="Headers\Bindable\Bindable.inl" />
+    <None Include="Headers\Thread\Thread.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

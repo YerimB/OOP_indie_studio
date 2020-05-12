@@ -4,12 +4,14 @@
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\InputManager.cpp" />
+    <ClCompile Include="Sources\Thread.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Programmation\C++\OOP_indie_studio_2019\Headers\tmp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\Bindable.hpp" />
+    <ClInclude Include="Headers\InputManager\InputManager.h" />
+    <ClInclude Include="Headers\Bindable\Bindable.hpp" />
+    <ClInclude Include="Headers\Thread\Thread.h" />
+    <ClInclude Include="Headers\Bindable\IBindable.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -20,6 +22,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Headers\Bindable.inl" />
+    <None Include="Headers\Bindable\Bindable.inl" />
+    <None Include="Headers\Thread\Thread.inl" />
   </ItemGroup>
 </Project>
