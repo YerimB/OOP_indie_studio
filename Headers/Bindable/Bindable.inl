@@ -2,30 +2,39 @@
 
 #include "Bindable.hpp"
 
-template<typename T, typename U>
-Bindable<T, U>::Bindable()
+template<typename T>
+Bindable<T>::Bindable()
 {
 	m_Value = static_cast<T>(0.0);
 	m_CachedValue = static_cast<T>(0.0);
 }
 
-template<typename T, typename U>
-Bindable<T, U>::Bindable(const T& value)
+template<typename T>
+Bindable<T>::Bindable(const Bindable<T>& other)
+{
+	m_Value = other.m_Value;
+	m_CachedValue = other.m_CachedValue;
+	m_OnUpdate = other.m_OnUpdate;
+}
+
+template<typename T>
+Bindable<T>::Bindable(const T& value)
 {
 	m_Value = value;
 	m_CachedValue = value;
 }
 
-template<typename T, typename U>
-Bindable<T, U>::Bindable(const T& value, U& callback)
+template<typename T>
+template<typename U>
+Bindable<T>::Bindable(const T& value, U& callback)
 {
 	m_Value = value;
 	m_CachedValue = value;
 	m_OnUpdate = std::bind(callback, std::placeholders::_1);
 }
 
-template<typename T, typename U>
-Bindable<T, U>& Bindable<T, U>::operator=(const T& value)
+template<typename T>
+Bindable<T>& Bindable<T>::operator=(const T& value)
 {
 	std::lock_guard lock(m_Mutex);
 
@@ -39,8 +48,8 @@ Bindable<T, U>& Bindable<T, U>::operator=(const T& value)
 	return *this;
 }
 
-template<typename T, typename U>
-void Bindable<T, U>::SetValue(const T& value)
+template<typename T>
+void Bindable<T>::SetValue(const T& value)
 {
 	std::lock_guard lock(m_Mutex);
 
@@ -52,14 +61,14 @@ void Bindable<T, U>::SetValue(const T& value)
 	m_CachedValue = m_Value;
 }
 
-template<typename T, typename U>
-const T& Bindable<T, U>::GetValue() const
+template<typename T>
+const T& Bindable<T>::GetValue() const
 {
 	return m_Value;
 }
 
-template<typename T, typename U>
-const T& Bindable<T, U>::GetCachedValue() const
+template<typename T>
+const T& Bindable<T>::GetCachedValue() const
 {
 	return m_CachedValue;
 }
