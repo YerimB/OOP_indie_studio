@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Thread.h"
+#include "Thread.hpp"
 
 template<typename T, typename ... TArgs>
 void Thread::Start(T&& function, TArgs&& ... args)

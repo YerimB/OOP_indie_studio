@@ -1,4 +1,4 @@
-#include <InputManager/InputManager.h>
+#include <InputManager/InputManager.hpp>
 
 using namespace irr;
 
@@ -41,7 +41,11 @@ void InputManager::RunKeyboardManager()
     while (m_Device->run())
     {
         if (IsKeyDown(irr::KEY_KEY_Z)) {
-            GetBindableByName("UpKey")->SetValue(core::vector2df(0.53f, 0.53f));
+            auto& bindable = GetBindableByName("PlayerPosition");
+            auto& value = bindable->GetValue<Vector2f>();
+
+            value.Y += 10;
+            bindable->SetValue(value);
         }
     }
 }

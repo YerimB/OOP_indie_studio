@@ -6,12 +6,12 @@
 #include <cstdlib>
 #include <ctime>
 
-#include <Bindable/IBindable.h>
+#include <Bindable/IBindable.hpp>
 
 template<typename T>
 class Bindable : public IBindable
 {
-	using Callback = std::function<void(T)>;
+	using Callback = std::function<void(T&)>;
 
 	public:
 		Bindable();
@@ -38,7 +38,7 @@ class Bindable : public IBindable
 		void SetCallback(U& callback);
 
 	public:
-		const T& GetValue() const;
+		T& GetValue();
 		const T& GetCachedValue() const;
 		const std::string& GetName() const;
 		const unsigned int& GetId() const;

@@ -16,6 +16,12 @@ class IBindable
 
     public:
         template<typename T>
+        T& GetValue()
+        {
+            return dynamic_cast<Bindable<T>&>(*this).GetValue();
+        }
+
+        template<typename T>
         const std::string& GetName() const
         {
             return dynamic_cast<const Bindable<T>&>(*this).GetName();

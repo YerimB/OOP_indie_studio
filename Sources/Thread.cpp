@@ -1,4 +1,4 @@
-#include <Thread/Thread.h>
+#include <Thread/Thread.hpp>
 
 Thread::Thread()
 {

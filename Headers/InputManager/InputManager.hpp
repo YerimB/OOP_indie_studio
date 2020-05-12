@@ -6,6 +6,7 @@
 #include <memory>
 
 #include <Irrlicht/irrlicht.h>
+#include <Core.hpp>
 #include <Bindable/Bindable.hpp>
 
 using namespace irr;

@@ -102,7 +102,7 @@ inline void Bindable<T>::SetCallback(U& callback)
 }
 
 template<typename T>
-const T& Bindable<T>::GetValue() const
+T& Bindable<T>::GetValue()
 {
 	return m_Value;
 }

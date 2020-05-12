@@ -8,10 +8,11 @@
     <ClCompile Include="Sources\Thread.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Headers\InputManager\InputManager.h" />
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
-    <ClInclude Include="Headers\Thread\Thread.h" />
-    <ClInclude Include="Headers\Bindable\IBindable.h" />
+    <ClInclude Include="Headers\Core.hpp" />
+    <ClInclude Include="Headers\InputManager\InputManager.hpp" />
+    <ClInclude Include="Headers\Bindable\IBindable.hpp" />
+    <ClInclude Include="Headers\Thread\Thread.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

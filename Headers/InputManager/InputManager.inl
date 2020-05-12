@@ -1,6 +1,6 @@
 #pragma once
 
-#include <InputManager/InputManager.h>
+#include <InputManager/InputManager.hpp>
 
 template<typename T>
 void InputManager::AddBindable(IBindable* bindable)
