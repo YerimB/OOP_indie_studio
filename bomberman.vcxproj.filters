@@ -24,5 +24,6 @@
   <ItemGroup>
     <None Include="Headers\Bindable\Bindable.inl" />
     <None Include="Headers\Thread\Thread.inl" />
+    <None Include="Headers\InputManager\InputManager.inl" />
   </ItemGroup>
 </Project>
