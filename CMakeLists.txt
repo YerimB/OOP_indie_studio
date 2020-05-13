@@ -35,7 +35,7 @@ ELSE()
 
 # Find Irrlicht on Linux
 find_library(IRRLICHT_LIBRARY irrlicht)
-set(LIBS GL GLEW X11 Xxf86vm Xext IRRLICHT_LIBRARY)
+set(LIBS GL GLEW X11 Xxf86vm Xext Irrlicht)
 
 ENDIF()
 

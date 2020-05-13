@@ -363,3 +363,8 @@ FodyWeavers.xsd
 .vscode
 *.o
 bomberman
+my_assets
+Makefile
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles
