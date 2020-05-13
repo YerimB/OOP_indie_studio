@@ -24,7 +24,7 @@ bool InputManager::IsKeyDown(EKEY_CODE keyCode) const
     return m_KeyDown[keyCode];
 }
 
-Unique<IBindable>& InputManager::GetBindableByName(const std::string& name)
+Unique<IBindable>& InputManager::GetBindable(const std::string& name)
 {
     for (auto& bindable : m_Bindables)
     {
@@ -40,7 +40,7 @@ void InputManager::RunKeyboardManager()
     while (m_Device->run())
     {
         if (IsKeyDown(irr::KEY_KEY_Z)) {
-            auto& bindable = GetBindableByName("PlayerPosition");
+            auto& bindable = GetBindable("PlayerPosition");
             auto& value = bindable->GetValue<Vector2f>();
 
             value.Y += 10;

@@ -18,7 +18,7 @@ bool SafeQueue<T>::TryPop(T& out)
 	if (m_Queue.empty())
 		return false;
 
-	out = m_Queue.front();
+	out = std::move(m_Queue.front());
 	m_Queue.pop();
 
 	return true;
@@ -29,7 +29,7 @@ T SafeQueue<T>::Front()
 {
 	std::lock_guard<std::mutex> lock(m_Mutex);
 
-	return m_Queue.front();;
+	return std::move(m_Queue.front());
 }
 
 template<typename T>
@@ -37,7 +37,7 @@ T SafeQueue<T>::Back()
 {
 	std::lock_guard<std::mutex> lock(m_Mutex);
 
-	return m_Queue.back();
+	return std::move(m_Queue.back());
 }
 
 template<typename T>
@@ -45,7 +45,7 @@ void SafeQueue<T>::Push(const T& value)
 {
 	std::lock_guard<std::mutex> lock(m_Mutex);
 
-	m_Queue.push(value);
+	m_Queue.push(std::move(value));
 }
 
 template<typename T>

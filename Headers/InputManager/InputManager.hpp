@@ -30,7 +30,7 @@ class InputManager : public IEventReceiver
         void RemoveBindable(const unsigned int& id);
 
     public:
-        Unique<IBindable>& GetBindableByName(const std::string& name);
+        Unique<IBindable>& GetBindable(const std::string& name);
 
     private:
         std::unique_ptr<IrrlichtDevice> m_Device;
