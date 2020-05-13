@@ -2,6 +2,9 @@
 
 #include <Bindable/Bindable.hpp>
 
+template<typename T>
+class Bindable;
+
 class IBindable
 {
     public:

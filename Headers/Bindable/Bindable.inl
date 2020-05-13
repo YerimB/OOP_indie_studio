@@ -5,7 +5,7 @@
 template<typename T>
 Bindable<T>::Bindable()
 {
-	Create(0, "Unknown #0", static_cast<T>(0))
+	Create(0, "Unknown #0", static_cast<T>(0));
 }
 
 template<typename T>

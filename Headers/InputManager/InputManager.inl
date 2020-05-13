@@ -5,7 +5,7 @@
 template<typename T>
 void InputManager::AddBindable(IBindable* bindable)
 {
-    m_Bindables.emplace(std::make_pair(bindable->GetName<T>(), CreateBindable(bindable)));
+    m_Bindables.emplace(std::make_pair(bindable->GetName<T>(), Unique<IBindable>(bindable)));
 }
 
 template<typename T>
