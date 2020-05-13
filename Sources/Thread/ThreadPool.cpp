@@ -21,7 +21,6 @@ ThreadPool::~ThreadPool()
 	m_State = State::Dead;
 	m_ConditionVariable.notify_all();
 
-
 	for (auto& thread : m_Threads)
 		thread->Wait();
 }
@@ -50,15 +49,15 @@ void ThreadPool::StartThread()
 			m_ConditionVariable.wait(u_lock, [this]() {
 				return !m_Tasks.Empty() || m_State == State::Dead || m_State == State::Waiting;
 			});
-		}
 
-		if (m_State == State::Dead || m_State == State::Waiting)
-			break;
+			if (m_State == State::Dead || m_State == State::Waiting)
+				break;
 
-		ITask *task = nullptr;
-		if (m_Tasks.TryPop(task)) {
-			if (task != nullptr)
-				task->Run();
+			ITask* task = nullptr;
+			if (m_Tasks.TryPop(task)) {
+				if (task != nullptr)
+					task->Run();
+			}
 		}
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
