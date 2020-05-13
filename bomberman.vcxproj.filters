@@ -16,6 +16,10 @@
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
+    <ClInclude Include="Headers\Thread\ITask.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -29,5 +33,8 @@
     <None Include="Headers\Bindable\Bindable.inl" />
     <None Include="Headers\Thread\Thread.inl" />
     <None Include="Headers\InputManager\InputManager.inl" />
+    <None Include="Headers\SafeContainer\SafeQueue.inl" />
+    <None Include="Headers\SafeContainer\SafeVector.inl" />
+    <None Include="Headers\SafeContainer\SafeDeque.inl" />
   </ItemGroup>
 </Project>

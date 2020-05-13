@@ -37,7 +37,6 @@ Unique<IBindable>& InputManager::GetBindableByName(const std::string& name)
 
 void InputManager::RunKeyboardManager()
 {
-
     while (m_Device->run())
     {
         if (IsKeyDown(irr::KEY_KEY_Z)) {
