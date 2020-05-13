@@ -17,13 +17,15 @@ Thread::Thread(const unsigned int& id, const std::string& name)
 
 Thread::~Thread()
 {
-	if (m_Thread.joinable())
-		m_Thread.join();
+	m_State = State::Dead;
+
+	Wait();
 }
 
-const Thread::State& Thread::GetState() const
+void Thread::Wait()
 {
-	return m_State.load();
+	if (m_Thread.joinable())
+		m_Thread.join();
 }
 
 void Thread::SetState(const Thread::State& state)
@@ -32,6 +34,37 @@ void Thread::SetState(const Thread::State& state)
 		return;
 
 	m_State.store(state);
+}
+
+void Thread::SetName(const std::string& name)
+{
+	if ((m_Name == name) || name.empty())
+		return;
+
+	m_Name = name;
+}
+
+void Thread::SetId(const unsigned int& id)
+{
+	if (m_Id == id)
+		return;
+
+	m_Id = id;
+}
+
+const Thread::State& Thread::GetState() const
+{
+	return m_State.load();
+}
+
+const std::string& Thread::GetName() const
+{
+	return m_Name;
+}
+
+const unsigned int& Thread::GetId() const
+{
+	return m_Id;
 }
 
 void Thread::Status() const

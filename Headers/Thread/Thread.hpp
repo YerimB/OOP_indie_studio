@@ -27,10 +27,17 @@ class Thread
 		template<typename T, typename ... TArgs>
 		void Start(T&& function, TArgs&& ... args);
 		void Status() const;
+		void Wait();
+
+	public:
+		void SetState(const State& state);
+		void SetName(const std::string& name);
+		void SetId(const unsigned int& id);
 
 	public:
 		const State& GetState() const;
-		void SetState(const State& state);
+		const std::string& GetName() const;
+		const unsigned int& GetId() const;
 
 	private:
 		void Init(const unsigned int& id, const std::string& name);
