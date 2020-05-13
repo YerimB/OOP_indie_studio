@@ -5,7 +5,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sources\InputManager.cpp" />
-    <ClCompile Include="Sources\Thread.cpp" />
+    <ClCompile Include="Sources\Thread\Thread.cpp" />
+    <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
@@ -13,6 +14,8 @@
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
     <ClInclude Include="Headers\Bindable\IBindable.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
+    <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
+    <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

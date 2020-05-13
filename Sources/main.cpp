@@ -16,20 +16,23 @@ void BindableTest(Vector2f &a)
 
 int main()
 {
-    IrrlichtDevice* device = createDevice(video::EDT_OPENGL, core::dimension2d<u32>(1280, 720), 16, false, false, false);
+    IrrlichtDevice* device = createDevice(video::EDT_OPENGL, Dimension2u(1280, 720), 16, false, false, false);
     InputManager receiver(device);
     Thread thread(0, "InputManager Thread");
 
     Vector2f a = Vector2f(0.2f, 0.2f);
-    UniqueBindable bindPosition = CreateBindable<Vector2f>(a, BindableTest, 0, "PlayerPosition");
+    Unique<IBindable> bindPosition = CreateUnique<Bindable<Vector2f>>(a, BindableTest, 0, "PlayerPosition");
 
     device->setEventReceiver(&receiver);
     receiver.AddBindable<Vector2f>(bindPosition);
     thread.Start(&InputManager::RunKeyboardManager, &receiver);
+    thread.Status();
 
     while (device->run())
     {
     }
+
+    device->drop();
 
 	return 0;
 }

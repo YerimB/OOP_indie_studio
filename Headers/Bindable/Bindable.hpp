@@ -61,12 +61,4 @@ class Bindable : public IBindable
 		Callback m_OnUpdate;
 };
 
-using UniqueBindable = std::unique_ptr<IBindable>;
-
-template<typename T, typename ... Args>
-constexpr UniqueBindable CreateBindable(Args&& ... args)
-{
-	return std::make_unique<Bindable<T>>(std::forward<Args>(args)...);
-}
-
 #include "Bindable.inl"

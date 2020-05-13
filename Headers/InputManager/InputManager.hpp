@@ -26,15 +26,17 @@ class InputManager : public IEventReceiver
         void AddBindable(IBindable* bindable);
         template<typename T>
         void AddBindable(std::unique_ptr<IBindable>& bindable);
+        void RemoveBindable(const std::string& name);
+        void RemoveBindable(const unsigned int& id);
 
     public:
-        UniqueBindable& GetBindableByName(const std::string& name);
+        Unique<IBindable>& GetBindableByName(const std::string& name);
 
     private:
         std::unique_ptr<IrrlichtDevice> m_Device;
         std::vector<bool> m_KeyDown;
         SEvent::SJoystickEvent m_JoystickState;
-        std::unordered_map<std::string, UniqueBindable> m_Bindables;
+        std::unordered_map<std::string, Unique<IBindable>> m_Bindables;
 };
 
 #include <InputManager/InputManager.inl>

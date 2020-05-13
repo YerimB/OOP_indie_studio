@@ -265,13 +265,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Sources\InputManager.cpp" />
-    <ClCompile Include="Sources\Thread.cpp" />
+    <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
+    <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
     <ClInclude Include="Headers\Bindable\IBindable.hpp" />
     <ClInclude Include="Headers\Core.hpp" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
+    <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
+    <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Headers\Bindable\Bindable.inl" />

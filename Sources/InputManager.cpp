@@ -24,7 +24,7 @@ bool InputManager::IsKeyDown(EKEY_CODE keyCode) const
     return m_KeyDown[keyCode];
 }
 
-UniqueBindable& InputManager::GetBindableByName(const std::string& name)
+Unique<IBindable>& InputManager::GetBindableByName(const std::string& name)
 {
     for (auto& bindable : m_Bindables)
     {
