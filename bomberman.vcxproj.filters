@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\InputManager.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
+    <ClCompile Include="Sources\Generation\Generation.cpp" />
+    <ClCompile Include="Sources\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
@@ -20,6 +19,7 @@
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
+    <ClInclude Include="Sources\Generation\Generation.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
