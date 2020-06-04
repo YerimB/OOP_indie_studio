@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\InputManager.cpp" />
+    <ClCompile Include="Sources\Thread\Thread.cpp" />
+    <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\Bindable\Bindable.hpp" />
+    <ClInclude Include="Headers\Core.hpp" />
+    <ClInclude Include="Headers\InputManager\InputManager.hpp" />
+    <ClInclude Include="Headers\Bindable\IBindable.hpp" />
+    <ClInclude Include="Headers\Thread\Thread.hpp" />
+    <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
+    <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
+    <ClInclude Include="Headers\Thread\ITask.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9211C170-AE6E-3168-A042-BADF0CEC845C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1DC7E7A2-E4DE-3B9E-9348-FBA5A19266AD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Headers\Bindable\Bindable.inl" />
+    <None Include="Headers\Thread\Thread.inl" />
+    <None Include="Headers\InputManager\InputManager.inl" />
+    <None Include="Headers\SafeContainer\SafeQueue.inl" />
+    <None Include="Headers\SafeContainer\SafeVector.inl" />
+    <None Include="Headers\SafeContainer\SafeDeque.inl" />
+  </ItemGroup>
+</Project>
