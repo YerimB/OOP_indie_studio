@@ -12,9 +12,11 @@ InputManager::InputManager(IrrlichtDevice* device)
 
 bool InputManager::OnEvent(const SEvent& event)
 {
-    if (event.EventType == irr::EET_KEY_INPUT_EVENT) {
+    if (event.EventType == irr::EET_KEY_INPUT_EVENT)
         m_KeyDown[event.KeyInput.Key] = event.KeyInput.PressedDown;
-    }
+
+    if (event.EventType == irr::EET_JOYSTICK_INPUT_EVENT)
+        std::cout << "Joystick Event" << std::endl;
 
     return false;
 }
@@ -33,18 +35,4 @@ Unique<IBindable>& InputManager::GetBindable(const std::string& name)
     }
 
     throw;
-}
-
-void InputManager::RunKeyboardManager()
-{
-    while (m_Device->run())
-    {
-        if (IsKeyDown(irr::KEY_KEY_Z)) {
-            auto& bindable = GetBindable("PlayerPosition");
-            auto& value = bindable->GetValue<Vector2f>();
-
-            value.Y += 10;
-            bindable->SetValue(value);
-        }
-    }
 }

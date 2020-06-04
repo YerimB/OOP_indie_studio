@@ -65,7 +65,6 @@ inline Bindable<T>::Bindable(const T& value, U& callback, const unsigned int& id
 	Create(id, name, value, callback);
 }
 
-
 template<typename T>
 Bindable<T>& Bindable<T>::operator=(const T& value)
 {

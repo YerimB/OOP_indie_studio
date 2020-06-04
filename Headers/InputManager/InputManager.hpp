@@ -19,13 +19,13 @@ class InputManager : public IEventReceiver
     public:
         virtual bool OnEvent(const SEvent& event);
         virtual bool IsKeyDown(EKEY_CODE keyCode) const;
-        void RunKeyboardManager();
 
     public:
         template<typename T>
         void AddBindable(IBindable* bindable);
         template<typename T>
         void AddBindable(std::unique_ptr<IBindable>& bindable);
+        template<typename T>
         void RemoveBindable(const std::string& name);
         void RemoveBindable(const unsigned int& id);
 
