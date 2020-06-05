@@ -29,3 +29,8 @@ const EntityId& Entity::GetId() const
 {
 	return m_Id;
 }
+
+const std::unordered_map<ComponentId, Component*>& Entity::GetComponents() const
+{
+	return m_Components;
+}

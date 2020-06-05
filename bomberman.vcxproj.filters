@@ -9,6 +9,8 @@
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClCompile Include="Sources\ECS\Entity.cpp" />
     <ClCompile Include="Sources\ECS\Component.cpp" />
+    <ClCompile Include="Sources\ECS\EntityManager.cpp" />
+    <ClCompile Include="Sources\Components\Position.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
@@ -208,6 +210,7 @@
     <ClInclude Include="Headers\ECS\Entity.h" />
     <ClInclude Include="Headers\ECS\EntityManager.h" />
     <ClInclude Include="Headers\ECS\System.h" />
+    <ClInclude Include="Headers\Components\Position.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

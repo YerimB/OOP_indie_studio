@@ -5,6 +5,8 @@
 #include <InputManager/InputManager.hpp>
 #include <Thread/Thread.hpp>
 #include <ECS/Entity.h>
+#include <ECS/EntityManager.h>
+#include <Components/Position.h>
 
 using namespace irr;
 
@@ -18,6 +20,14 @@ void BindableTest(Vector2f &a)
 int main()
 {
     IrrlichtDevice* device = createDevice(video::EDT_OPENGL, Dimension2u(1280, 720), 16, false, false, false);
+    EntityManager manager;
+    Position position;
+    Entity player(0);
+
+    player.AddComponent(&position);
+    auto result = player.GetComponent<Position>();
+
+    std::cout << "Position (" << result->Id <<"): " << result->GetPosition().X << std::endl;
 
     while (device->run())
     {

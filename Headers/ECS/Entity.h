@@ -17,13 +17,15 @@ class Entity
 
 	public:
 		const EntityId& GetId() const;
+		const std::unordered_map<ComponentId, Component*>& GetComponents() const;
 
 		template<class TComponent>
 		TComponent* GetComponent() const
 		{
 			auto find = m_Components.find(TComponent::Id);
+
 			if (find != m_Components.end())
-				return find->second.get();
+				return dynamic_cast<TComponent*>(find->second);
 			return nullptr;
 		}
 

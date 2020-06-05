@@ -12,7 +12,7 @@ EntityManager::~EntityManager()
 
 bool EntityManager::Initialize()
 {
-
+	return true;
 }
 
 void EntityManager::Update()
