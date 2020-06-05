@@ -19,6 +19,9 @@ using Dimension2u = irr::core::dimension2du;
 using Rectf = irr::core::rectf;
 using Recti = irr::core::recti;
 
+using GuiFont = irr::gui::IGUIFont;
+using GuiText = irr::gui::IGUIStaticText;
+
 // C++
 
 typedef unsigned long EntityId;

@@ -264,6 +264,8 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Components\Drawable.cpp" />
+    <ClCompile Include="Sources\Components\Text.cpp" />
     <ClCompile Include="Sources\Components\Transform.cpp" />
     <ClCompile Include="Sources\ECS\Component.cpp" />
     <ClCompile Include="Sources\ECS\Entity.cpp" />
@@ -274,6 +276,8 @@
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
     <ClInclude Include="Headers\Bindable\IBindable.hpp" />
+    <ClInclude Include="Headers\Components\Drawable.h" />
+    <ClInclude Include="Headers\Components\Text.h" />
     <ClInclude Include="Headers\Components\Transform.h" />
     <ClInclude Include="Headers\Core.hpp" />
     <ClInclude Include="Headers\ECS\Component.h" />

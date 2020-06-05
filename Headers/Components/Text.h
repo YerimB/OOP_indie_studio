@@ -9,7 +9,7 @@ class Text : public Component
 		static constexpr ComponentId Id = __COUNTER__;
 
 	public:
-		Text(const std::string& text);
+		Text();
 
 	public:
 		bool Initialize(void* args) override final;
@@ -17,10 +17,13 @@ class Text : public Component
 
 	public:
 		void SetText(const std::string& text);
+		void SetFont(GuiFont* font);
 
 	public:
-		const std::string GetText() const;
+		const std::string& GetText() const;
+		const GuiFont* GetFont() const;
 
 	private:
+		GuiFont* m_Font;
 		std::string m_Text;
 };

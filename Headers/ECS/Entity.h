@@ -27,7 +27,7 @@ class Entity
 			auto find = m_Components.find(TComponent::Id);
 
 			if (find != m_Components.end())
-				return dynamic_cast<TComponent *>(find->second.get());
+				return static_cast<TComponent*>(find->second.get());
 			return nullptr;
 		}
 
