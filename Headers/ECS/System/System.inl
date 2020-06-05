@@ -1,43 +1,40 @@
-/*
-** EPITECH PROJECT, 2020
-** OOP_indie_studio_2019
-** File description:
-** System
-*/
+#pragma once
 
-#include <System.h>
+#include <Core.hpp>
+#include <ECS/System/System.h>
 
 template <class... Comps>
 template <size_t INDEX, class CompType, class... CompArgs>
 const bool System<Comps...>::ProcessEntityComponent
-(const ComponentId &compId, Component *pComponent, const CompTuple &tupleToFill)
+(const ComponentId& compId, Component* pComponent, const CompTuple& tupleToFill)
 {
     if (CompType::Id == compId) {
-        std::get<INDEX>(tupleToFill) = static_cast<CompType *>(pComponent);
+        std::get<INDEX>(tupleToFill) = static_cast<CompType*>(pComponent);
         return true;
-    } else
+    }
+    else
         return (ProcessEntityComponent<INDEX + 1, CompArgs...>(
             compId, pComponent, tupleToFill
-        ));
+            ));
 }
 
 template <class... Comps>
 template <size_t INDEX>
 const bool System<Comps...>::ProcessEntityComponent
-(const ComponentId &compId, Component *pComponent, const CompTuple &tupleToFill)
+(const ComponentId& compId, Component* pComponent, const CompTuple& tupleToFill)
 {
     return (false);
 }
 
 template <class... Comps>
-void System<Comps...>::OnEntityCreated(const Entity &entity)
+void System<Comps...>::OnEntityCreated(const Entity& entity)
 {
     CompTuple compTuple;
     std::size_t matchingComps = 0;
 
-    for (auto &comPair : entity.GetComponents())
+    for (auto& compPair : entity.GetComponents())
         if (this->ProcessEntityComponent<0, Comps...> \
-        (compPair.first, compPair.second, compTuple)) {
+            (compPair.first, compPair.second, compTuple)) {
             ++matchingComps;
             if (matchingComps == sizeof...(Comps)) {
                 this->_components.emplace_back(std::move(compTuple));
@@ -47,7 +44,7 @@ void System<Comps...>::OnEntityCreated(const Entity &entity)
 }
 
 template <class... Comps>
-void System<Comps...>::OnEntityDestroyed(const Entity &entity)
+void System<Comps...>::OnEntityDestroyed(const Entity& entity)
 {
-    
+
 }

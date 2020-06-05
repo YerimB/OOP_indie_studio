@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <Core.hpp>
 #include <ECS/Entity.h>
-#include <BaseSystem.h>
+#include <ECS/System/BaseSystem.h>
 
 template <class... Comps>
 class System : public BaseSystem
@@ -26,7 +26,7 @@ class System : public BaseSystem
         virtual void OnEntityDestroyed(const Entity &entity) final;
 	
 	protected:
-		using CompTuple = std::tuple<std::shared_ptr<Comps>...>;
+		using CompTuple = std::tuple<Shared<Comps>...>;
 		std::vector<CompTuple> _components;
 	
 	private:
@@ -35,3 +35,5 @@ class System : public BaseSystem
 		template <size_t INDEX>
 		const bool ProcessEntityComponent(const ComponentId &, Component *, const CompTuple &);
 };
+
+#include <ECS/System/System.inl>
