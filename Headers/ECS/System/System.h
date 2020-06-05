@@ -26,6 +26,7 @@ class System : public BaseSystem
         virtual void OnEntityDestroyed(const Entity &entity) final;
 	
 	protected:
+		using 
 		using CompTuple = std::tuple<std::shared_ptr<Comps>...>;
 		std::vector<CompTuple> _components;
 	
