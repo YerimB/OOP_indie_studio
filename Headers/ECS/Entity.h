@@ -10,9 +10,14 @@ class Entity
 		explicit Entity(const EntityId& id);
 
 	public:
-		const EntityId& GetId() const;
+		void AddComponent(Component* component);
+		void AddComponent(Component* component, const ComponentId& componentId);
+		void RemoveComponent(Component* component);
+		void RemoveComponent(ComponentId componentId);
 
 	public:
+		const EntityId& GetId() const;
+
 		template<class TComponent>
 		TComponent* GetComponent() const
 		{
