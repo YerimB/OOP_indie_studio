@@ -14,3 +14,8 @@ const std::size_t& Component::GetIndex() const
 {
 	return m_Index;
 }
+
+void Component::SetEntityId(const EntityId& entityId)
+{
+	m_EntityId = entityId;
+}
