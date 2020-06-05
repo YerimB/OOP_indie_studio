@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Programmation\C++\OOP_indie_studio_2019\Headers;D:\Programmation\C++\OOP_indie_studio_2019\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -116,8 +116,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;IRRLICHT.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/Programmation/C++/OOP_indie_studio_2019/lib;D:/Programmation/C++/OOP_indie_studio_2019/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -131,7 +131,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Programmation\C++\OOP_indie_studio_2019\Headers;D:\Programmation\C++\OOP_indie_studio_2019\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -161,8 +161,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;IRRLICHT.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/Programmation/C++/OOP_indie_studio_2019/lib;D:/Programmation/C++/OOP_indie_studio_2019/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -176,7 +176,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Programmation\C++\OOP_indie_studio_2019\Headers;D:\Programmation\C++\OOP_indie_studio_2019\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -206,8 +206,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;IRRLICHT.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/Programmation/C++/OOP_indie_studio_2019/lib;D:/Programmation/C++/OOP_indie_studio_2019/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -221,7 +221,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Programmation\C++\OOP_indie_studio_2019\Headers;D:\Programmation\C++\OOP_indie_studio_2019\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -250,8 +250,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;IRRLICHT.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/Programmation/C++/OOP_indie_studio_2019/lib;D:/Programmation/C++/OOP_indie_studio_2019/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -264,6 +264,8 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\ECS\Component.cpp" />
+    <ClCompile Include="Sources\ECS\Entity.cpp" />
     <ClCompile Include="Sources\InputManager.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
@@ -271,6 +273,10 @@
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
     <ClInclude Include="Headers\Bindable\IBindable.hpp" />
     <ClInclude Include="Headers\Core.hpp" />
+    <ClInclude Include="Headers\ECS\Component.h" />
+    <ClInclude Include="Headers\ECS\Entity.h" />
+    <ClInclude Include="Headers\ECS\EntityManager.h" />
+    <ClInclude Include="Headers\ECS\System.h" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
@@ -279,6 +285,188 @@
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
+    <ClInclude Include="includes\Irrlicht\aabbox3d.h" />
+    <ClInclude Include="includes\Irrlicht\CDynamicMeshBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\CIndexBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\CMeshBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\coreutil.h" />
+    <ClInclude Include="includes\Irrlicht\CVertexBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\dimension2d.h" />
+    <ClInclude Include="includes\Irrlicht\driverChoice.h" />
+    <ClInclude Include="includes\Irrlicht\EAttributes.h" />
+    <ClInclude Include="includes\Irrlicht\ECullingTypes.h" />
+    <ClInclude Include="includes\Irrlicht\EDebugSceneTypes.h" />
+    <ClInclude Include="includes\Irrlicht\EDeviceTypes.h" />
+    <ClInclude Include="includes\Irrlicht\EDriverFeatures.h" />
+    <ClInclude Include="includes\Irrlicht\EDriverTypes.h" />
+    <ClInclude Include="includes\Irrlicht\EGUIAlignment.h" />
+    <ClInclude Include="includes\Irrlicht\EGUIElementTypes.h" />
+    <ClInclude Include="includes\Irrlicht\EHardwareBufferFlags.h" />
+    <ClInclude Include="includes\Irrlicht\EMaterialFlags.h" />
+    <ClInclude Include="includes\Irrlicht\EMaterialTypes.h" />
+    <ClInclude Include="includes\Irrlicht\EMeshWriterEnums.h" />
+    <ClInclude Include="includes\Irrlicht\EMessageBoxFlags.h" />
+    <ClInclude Include="includes\Irrlicht\EPrimitiveTypes.h" />
+    <ClInclude Include="includes\Irrlicht\ESceneNodeAnimatorTypes.h" />
+    <ClInclude Include="includes\Irrlicht\ESceneNodeTypes.h" />
+    <ClInclude Include="includes\Irrlicht\EShaderTypes.h" />
+    <ClInclude Include="includes\Irrlicht\ETerrainElements.h" />
+    <ClInclude Include="includes\Irrlicht\fast_atof.h" />
+    <ClInclude Include="includes\Irrlicht\heapsort.h" />
+    <ClInclude Include="includes\Irrlicht\IAnimatedMesh.h" />
+    <ClInclude Include="includes\Irrlicht\IAnimatedMeshMD2.h" />
+    <ClInclude Include="includes\Irrlicht\IAnimatedMeshMD3.h" />
+    <ClInclude Include="includes\Irrlicht\IAnimatedMeshSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\IAttributeExchangingObject.h" />
+    <ClInclude Include="includes\Irrlicht\IAttributes.h" />
+    <ClInclude Include="includes\Irrlicht\IBillboardSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\IBillboardTextSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\IBoneSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\ICameraSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\IColladaMeshWriter.h" />
+    <ClInclude Include="includes\Irrlicht\ICursorControl.h" />
+    <ClInclude Include="includes\Irrlicht\IDummyTransformationSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\IDynamicMeshBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\IEventReceiver.h" />
+    <ClInclude Include="includes\Irrlicht\IFileArchive.h" />
+    <ClInclude Include="includes\Irrlicht\IFileList.h" />
+    <ClInclude Include="includes\Irrlicht\IFileSystem.h" />
+    <ClInclude Include="includes\Irrlicht\IGeometryCreator.h" />
+    <ClInclude Include="includes\Irrlicht\IGPUProgrammingServices.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIButton.h" />
+    <ClInclude Include="includes\Irrlicht\IGUICheckBox.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIColorSelectDialog.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIComboBox.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIContextMenu.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIEditBox.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIElement.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIElementFactory.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIEnvironment.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIFileOpenDialog.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIFont.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIFontBitmap.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIImage.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIImageList.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIInOutFader.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIListBox.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIMeshViewer.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIScrollBar.h" />
+    <ClInclude Include="includes\Irrlicht\IGUISkin.h" />
+    <ClInclude Include="includes\Irrlicht\IGUISpinBox.h" />
+    <ClInclude Include="includes\Irrlicht\IGUISpriteBank.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIStaticText.h" />
+    <ClInclude Include="includes\Irrlicht\IGUITabControl.h" />
+    <ClInclude Include="includes\Irrlicht\IGUITable.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIToolbar.h" />
+    <ClInclude Include="includes\Irrlicht\IGUITreeView.h" />
+    <ClInclude Include="includes\Irrlicht\IGUIWindow.h" />
+    <ClInclude Include="includes\Irrlicht\IImage.h" />
+    <ClInclude Include="includes\Irrlicht\IImageLoader.h" />
+    <ClInclude Include="includes\Irrlicht\IImageWriter.h" />
+    <ClInclude Include="includes\Irrlicht\IIndexBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\ILightManager.h" />
+    <ClInclude Include="includes\Irrlicht\ILightSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\ILogger.h" />
+    <ClInclude Include="includes\Irrlicht\IMaterialRenderer.h" />
+    <ClInclude Include="includes\Irrlicht\IMaterialRendererServices.h" />
+    <ClInclude Include="includes\Irrlicht\IMesh.h" />
+    <ClInclude Include="includes\Irrlicht\IMeshBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\IMeshCache.h" />
+    <ClInclude Include="includes\Irrlicht\IMeshLoader.h" />
+    <ClInclude Include="includes\Irrlicht\IMeshManipulator.h" />
+    <ClInclude Include="includes\Irrlicht\IMeshSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\IMeshWriter.h" />
+    <ClInclude Include="includes\Irrlicht\IMetaTriangleSelector.h" />
+    <ClInclude Include="includes\Irrlicht\IOSOperator.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleAffector.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleAnimatedMeshSceneNodeEmitter.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleAttractionAffector.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleBoxEmitter.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleCylinderEmitter.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleEmitter.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleFadeOutAffector.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleGravityAffector.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleMeshEmitter.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleRingEmitter.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleRotationAffector.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleSphereEmitter.h" />
+    <ClInclude Include="includes\Irrlicht\IParticleSystemSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\IQ3LevelMesh.h" />
+    <ClInclude Include="includes\Irrlicht\IQ3Shader.h" />
+    <ClInclude Include="includes\Irrlicht\IRandomizer.h" />
+    <ClInclude Include="includes\Irrlicht\IReadFile.h" />
+    <ClInclude Include="includes\Irrlicht\IReferenceCounted.h" />
+    <ClInclude Include="includes\Irrlicht\irrAllocator.h" />
+    <ClInclude Include="includes\Irrlicht\irrArray.h" />
+    <ClInclude Include="includes\Irrlicht\IrrCompileConfig.h" />
+    <ClInclude Include="includes\Irrlicht\irrlicht.h" />
+    <ClInclude Include="includes\Irrlicht\IrrlichtDevice.h" />
+    <ClInclude Include="includes\Irrlicht\irrList.h" />
+    <ClInclude Include="includes\Irrlicht\irrMap.h" />
+    <ClInclude Include="includes\Irrlicht\irrMath.h" />
+    <ClInclude Include="includes\Irrlicht\irrpack.h" />
+    <ClInclude Include="includes\Irrlicht\irrString.h" />
+    <ClInclude Include="includes\Irrlicht\irrTypes.h" />
+    <ClInclude Include="includes\Irrlicht\irrunpack.h" />
+    <ClInclude Include="includes\Irrlicht\irrXML.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneCollisionManager.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneLoader.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneManager.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneNodeAnimator.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneNodeAnimatorCameraFPS.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneNodeAnimatorCameraMaya.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneNodeAnimatorCollisionResponse.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneNodeAnimatorFactory.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneNodeFactory.h" />
+    <ClInclude Include="includes\Irrlicht\ISceneUserDataSerializer.h" />
+    <ClInclude Include="includes\Irrlicht\IShaderConstantSetCallBack.h" />
+    <ClInclude Include="includes\Irrlicht\IShadowVolumeSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\ISkinnedMesh.h" />
+    <ClInclude Include="includes\Irrlicht\ITerrainSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\ITextSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\ITexture.h" />
+    <ClInclude Include="includes\Irrlicht\ITimer.h" />
+    <ClInclude Include="includes\Irrlicht\ITriangleSelector.h" />
+    <ClInclude Include="includes\Irrlicht\IVertexBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\IVideoDriver.h" />
+    <ClInclude Include="includes\Irrlicht\IVideoModeList.h" />
+    <ClInclude Include="includes\Irrlicht\IVolumeLightSceneNode.h" />
+    <ClInclude Include="includes\Irrlicht\IWriteFile.h" />
+    <ClInclude Include="includes\Irrlicht\IXMLReader.h" />
+    <ClInclude Include="includes\Irrlicht\IXMLWriter.h" />
+    <ClInclude Include="includes\Irrlicht\Keycodes.h" />
+    <ClInclude Include="includes\Irrlicht\line2d.h" />
+    <ClInclude Include="includes\Irrlicht\line3d.h" />
+    <ClInclude Include="includes\Irrlicht\matrix4.h" />
+    <ClInclude Include="includes\Irrlicht\path.h" />
+    <ClInclude Include="includes\Irrlicht\plane3d.h" />
+    <ClInclude Include="includes\Irrlicht\position2d.h" />
+    <ClInclude Include="includes\Irrlicht\quaternion.h" />
+    <ClInclude Include="includes\Irrlicht\rect.h" />
+    <ClInclude Include="includes\Irrlicht\S3DVertex.h" />
+    <ClInclude Include="includes\Irrlicht\SAnimatedMesh.h" />
+    <ClInclude Include="includes\Irrlicht\SceneParameters.h" />
+    <ClInclude Include="includes\Irrlicht\SColor.h" />
+    <ClInclude Include="includes\Irrlicht\SExposedVideoData.h" />
+    <ClInclude Include="includes\Irrlicht\SIrrCreationParameters.h" />
+    <ClInclude Include="includes\Irrlicht\SKeyMap.h" />
+    <ClInclude Include="includes\Irrlicht\SLight.h" />
+    <ClInclude Include="includes\Irrlicht\SMaterial.h" />
+    <ClInclude Include="includes\Irrlicht\SMaterialLayer.h" />
+    <ClInclude Include="includes\Irrlicht\SMesh.h" />
+    <ClInclude Include="includes\Irrlicht\SMeshBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\SMeshBufferLightMap.h" />
+    <ClInclude Include="includes\Irrlicht\SMeshBufferTangents.h" />
+    <ClInclude Include="includes\Irrlicht\SParticle.h" />
+    <ClInclude Include="includes\Irrlicht\SSharedMeshBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\SSkinMeshBuffer.h" />
+    <ClInclude Include="includes\Irrlicht\SVertexIndex.h" />
+    <ClInclude Include="includes\Irrlicht\SVertexManipulator.h" />
+    <ClInclude Include="includes\Irrlicht\SViewFrustum.h" />
+    <ClInclude Include="includes\Irrlicht\triangle3d.h" />
+    <ClInclude Include="includes\Irrlicht\vector2d.h" />
+    <ClInclude Include="includes\Irrlicht\vector3d.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Headers\Bindable\Bindable.inl" />
@@ -287,6 +475,9 @@
     <None Include="Headers\SafeContainer\SafeQueue.inl" />
     <None Include="Headers\SafeContainer\SafeVector.inl" />
     <None Include="Headers\Thread\Thread.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\Irrlicht.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
