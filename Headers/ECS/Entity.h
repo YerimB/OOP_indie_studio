@@ -24,5 +24,5 @@ class Entity
 
 	private:
 		EntityId m_Id;
-		std::unordered_map<ComponentId, Weak<Component>> m_Components;
+		std::unordered_map<ComponentId, Component*> m_Components;
 };
