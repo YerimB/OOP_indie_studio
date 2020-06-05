@@ -15,9 +15,14 @@ public:
 
 public:
 	const ComponentId& GetId() const;
+	const EntityId& GetEntityId() const;
 	const std::size_t& GetIndex() const;
 
+public:
+	void SetEntityId(const EntityId& entityId);
+
 private:
+	EntityId m_EntityId;
 	ComponentId m_Id;
 	std::size_t m_Index;
 };

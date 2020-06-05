@@ -7,11 +7,13 @@ Entity::Entity(const EntityId& id)
 
 void Entity::AddComponent(Component* component)
 {
+	component->SetEntityId(m_Id);
 	m_Components.emplace(std::make_pair(component->GetId(), component));
 }
 
 void Entity::AddComponent(Component* component, const ComponentId& componentId)
 {
+	component->SetEntityId(m_Id);
 	m_Components.emplace(std::make_pair(componentId, component));
 }
 

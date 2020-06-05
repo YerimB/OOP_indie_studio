@@ -25,9 +25,10 @@ int main()
     Entity player(0);
 
     player.AddComponent(&position);
+
     auto result = player.GetComponent<Position>();
 
-    std::cout << "Position (" << result->Id <<"): " << result->GetPosition().X << std::endl;
+    std::cout << result->GetPosition().X << std::endl;
 
     while (device->run())
     {

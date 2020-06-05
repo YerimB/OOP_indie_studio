@@ -12,7 +12,6 @@
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
     <ClCompile Include="Sources\Components\Position.cpp" />
     <ClCompile Include="Sources\ECS\System\System.cpp" />
-    <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
@@ -214,7 +213,6 @@
     <ClInclude Include="Headers\ECS\System.h" />
     <ClInclude Include="Headers\Components\Position.h" />
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
-    <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
   </ItemGroup>
   <ItemGroup>

@@ -27,7 +27,7 @@ class System : public BaseSystem
 	
 	protected:
 		using EntityIdToIndexMap = std::unordered_map<EntityId, std::size_t>;
-		using CompTuple = std::tuple<Shared<Comps>...>;
+		using CompTuple = std::tuple<Comps*...>;
 
 		EntityIdToIndexMap _entityIdToIndexMap;
 		std::vector<CompTuple> _components;
