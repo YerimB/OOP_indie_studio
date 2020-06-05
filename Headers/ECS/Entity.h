@@ -6,8 +6,7 @@
 
 class Entity
 {
-	protected: // Usings...
-		using ComponentMap = std::unordered_map<ComponentId, Component*>;
+	using ComponentMap = std::unordered_map<ComponentId, Component*>;
 
 	public:
 		explicit Entity(const EntityId& id);

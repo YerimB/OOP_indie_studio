@@ -41,7 +41,7 @@ void System<Comps...>::OnEntityCreated(const Entity& entity)
                 this->_entityIdToIndexMap.emplace(
                     entity.GetId(),
                     this->_components.size() - 1
-                ); //NOTSURE
+                );
                 break;
             }
         }
@@ -55,6 +55,7 @@ void System<Comps...>::OnEntityDestroyed(const EntityId &e_id)
     if (findIt != this->_entityIdToIndexMap.end()) { //NOTSURE AT ALL (video timecode : 34:20)
         this->_components[findIt->second] = std::move(this->_components.back());
         this->_components.pop_back();
+
         const auto *pMovedComp = std::get<0>(this->_components[findIt->second]);
         auto movedTupleIt = this->_entityIdToIndexMap.find(pMovedComp->GetEntityId());
         if (movedTupleIt == this->_entityIdToIndexMap.end())
