@@ -14,6 +14,7 @@
 class Component
 {
 	public:
+		Component() : m_EntityId(0), m_Index(std::numeric_limits<std::size_t>::max()) {}
 		virtual ~Component() = default;
 
 	public:
@@ -21,17 +22,14 @@ class Component
 		virtual void Update(const float& deltaTime) = 0;
 
 	public:
-		constexpr ComponentId generateComponentId(void);
-		const ComponentId& GetId() const;
 		const EntityId& GetEntityId() const;
 		const std::size_t& GetIndex() const;
 
 	public:
 		void SetEntityId(const EntityId& entityId);
 
-	private:
+	protected:
 		EntityId m_EntityId;
-		ComponentId m_Id;
 		std::size_t m_Index;
 		ComponentId _lastId;
 };

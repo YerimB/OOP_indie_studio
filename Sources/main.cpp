@@ -22,26 +22,27 @@ int main()
 {
     IrrlichtDevice* device = createDevice(video::EDT_OPENGL, Dimension2u(1280, 720), 16, false, false, false);
     EntityManager manager;
-    Entity *player = new Entity();
+    Entity player;
 
-    manager.AddEntity(*player);
-    player->AddComponent(CreateShared<Transform>());
-    player->AddComponent(CreateShared<Text>());
+    Shared<Transform> transform = CreateShared<Transform>();
+    Shared<Text> text = CreateShared<Text>();
+    std::string t("Ceci est un texte.");
 
-    if (player->GetComponent<Transform>()->Initialize(nullptr))
-        std::cout << player->GetComponent<Transform>()->GetPosition().X << std::endl;
+    player.AddComponent(transform, transform->Id);
+    player.AddComponent(text, text->Id);
+    manager.AddEntity(player);
 
-    if (player->GetComponent<Text>()->Initialize(new std::string("Ceci est un texte")))
-        std::cout << "toto B" << std::endl;
-        std::cout << player->GetComponent<Text>()->GetText() << std::endl;
+    if (player.GetComponent<Transform>()->Initialize(nullptr))
+        std::cout << player.GetComponent<Transform>()->GetPosition().X << std::endl;
 
-    std::cout << "toto C" << std::endl;
+    if (player.GetComponent<Text>()->Initialize(&t))
+        std::cout << player.GetComponent<Text>()->GetText() << std::endl;
+
     while (device->run())
     {
     }
 
     device->drop();
-    delete player;
 
 	return 0;
 }

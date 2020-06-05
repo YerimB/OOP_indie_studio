@@ -10,7 +10,6 @@
 #include <unordered_map>
 #include <Core.hpp>
 #include <ECS/Component.h>
-#include <iostream>
 
 class Entity
 {
@@ -20,9 +19,7 @@ class Entity
 		explicit Entity();
 
 	public:
-		void AddComponent(Shared<Component> component);
 		void AddComponent(Shared<Component> component, const ComponentId& componentId);
-		void RemoveComponent(Shared<Component> component);
 		void RemoveComponent(ComponentId componentId);
 
 	public:
@@ -32,10 +29,10 @@ class Entity
 		template<class TComponent>
 		TComponent* GetComponent() const
 		{
-			auto find = m_Components.find(TComponent::Id);
+			auto findIt = m_Components.find(TComponent::Id);
 
-			if (find != m_Components.end())
-				return static_cast<TComponent*>(find->second.get());
+			if (findIt != m_Components.end())
+				return static_cast<TComponent*>(findIt->second.get());
 			return nullptr;
 		}
 

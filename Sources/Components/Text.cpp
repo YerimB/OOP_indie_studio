@@ -12,9 +12,7 @@ bool Text::Initialize(void *pText)
 {
 	if (pText == nullptr)
 		return false;
-	auto str = *(static_cast<std::string *>(pText));
-
-	this->m_Text = str;
+	this->m_Text = *(static_cast<std::string *>(pText));
 	return true;
 }
 
