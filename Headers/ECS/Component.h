@@ -16,11 +16,12 @@ class Component
 	public:
 		virtual ~Component() = default;
 
-public:
-	virtual bool Initialize(void *args) = 0;
-	virtual void Update(const float& deltaTime) = 0;
+	public:
+		virtual bool Initialize(void *args) = 0;
+		virtual void Update(const float& deltaTime) = 0;
 
 	public:
+		constexpr ComponentId generateComponentId(void);
 		const ComponentId& GetId() const;
 		const EntityId& GetEntityId() const;
 		const std::size_t& GetIndex() const;
@@ -32,4 +33,5 @@ public:
 		EntityId m_EntityId;
 		ComponentId m_Id;
 		std::size_t m_Index;
+		ComponentId _lastId;
 };

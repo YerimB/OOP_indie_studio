@@ -1,12 +1,20 @@
+/*
+** EPITECH PROJECT, 2020
+** OOP_indie_studio_2019
+** File description:
+** Entity
+*/
+
 #pragma once
 
 #include <unordered_map>
 #include <Core.hpp>
 #include <ECS/Component.h>
+#include <iostream>
 
 class Entity
 {
-	using ComponentMap = std::unordered_map<ComponentId, Shared<Component>>;
+	using ComponentMap = std::unordered_map<ComponentId, Shared<Component>, std::hash<ComponentId>, std::equal_to<ComponentId>>;
 
 	public:
 		explicit Entity();

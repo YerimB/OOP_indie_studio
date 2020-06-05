@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2020
+** OOP_indie_studio_2019
+** File description:
+** main
+*/
+
 #include <iostream>
 #include <Irrlicht/irrlicht.h>
 #include <Core.hpp>
@@ -25,8 +32,10 @@ int main()
         std::cout << player->GetComponent<Transform>()->GetPosition().X << std::endl;
 
     if (player->GetComponent<Text>()->Initialize(new std::string("Ceci est un texte")))
+        std::cout << "toto B" << std::endl;
         std::cout << player->GetComponent<Text>()->GetText() << std::endl;
 
+    std::cout << "toto C" << std::endl;
     while (device->run())
     {
     }

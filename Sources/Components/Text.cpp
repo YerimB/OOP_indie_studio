@@ -6,16 +6,15 @@ Text::Text()
 	m_Font = nullptr;
 }
 
-bool Text::Initialize(void* pText)
+#include <iostream>
+
+bool Text::Initialize(void *pText)
 {
 	if (pText == nullptr)
 		return false;
+	auto str = *(static_cast<std::string *>(pText));
 
-	auto pStr = static_cast<std::string*>(pText);
-	std::string str = *pStr;
-
-	m_Text = std::string(str);
-	
+	this->m_Text = str;
 	return true;
 }
 
