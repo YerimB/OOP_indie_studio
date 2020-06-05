@@ -52,7 +52,7 @@ void Thread::SetId(const unsigned int& id)
 	m_Id = id;
 }
 
-const Thread::State& Thread::GetState() const
+const Thread::State Thread::GetState() const
 {
 	return m_State.load();
 }

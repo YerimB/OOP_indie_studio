@@ -10,7 +10,7 @@ public:
 	virtual ~Component() = default;
 
 public:
-	virtual bool Initialize() = 0;
+	virtual bool Initialize(void *args) = 0;
 	virtual void Update() = 0;
 
 public:

@@ -1,8 +1,8 @@
 #include <ECS/Entity.h>
 
-Entity::Entity(const EntityId& id)
+Entity::Entity()
 {
-	m_Id = id;
+	m_Id = __COUNTER__;
 }
 
 void Entity::AddComponent(Component* component)

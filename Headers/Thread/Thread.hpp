@@ -35,7 +35,7 @@ class Thread
 		void SetId(const unsigned int& id);
 
 	public:
-		const State& GetState() const;
+		const State GetState() const;
 		const std::string& GetName() const;
 		const unsigned int& GetId() const;
 

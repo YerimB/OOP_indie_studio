@@ -10,7 +10,7 @@ class Entity
 		using ComponentMap = std::unordered_map<ComponentId, Component*>;
 
 	public:
-		explicit Entity(const EntityId& id);
+		explicit Entity();
 
 	public:
 		void AddComponent(Component* component);

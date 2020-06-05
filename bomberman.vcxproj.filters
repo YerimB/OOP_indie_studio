@@ -10,8 +10,8 @@
     <ClCompile Include="Sources\ECS\Entity.cpp" />
     <ClCompile Include="Sources\ECS\Component.cpp" />
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
-    <ClCompile Include="Sources\Components\Position.cpp" />
     <ClCompile Include="Sources\ECS\System\System.cpp" />
+    <ClCompile Include="Sources\Components\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
@@ -211,9 +211,9 @@
     <ClInclude Include="Headers\ECS\Entity.h" />
     <ClInclude Include="Headers\ECS\EntityManager.h" />
     <ClInclude Include="Headers\ECS\System.h" />
-    <ClInclude Include="Headers\Components\Position.h" />
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
+    <ClInclude Include="Headers\Components\Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
