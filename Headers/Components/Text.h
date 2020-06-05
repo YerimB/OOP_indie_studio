@@ -6,7 +6,7 @@
 class Text : public Component
 {
 	public:
-		static constexpr ComponentId Id = __COUNTER__;
+		static constexpr ComponentId Id = "Text"_hash;
 
 	public:
 		Text();

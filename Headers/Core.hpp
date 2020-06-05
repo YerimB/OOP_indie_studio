@@ -24,8 +24,8 @@ using GuiText = irr::gui::IGUIStaticText;
 
 // C++
 
-typedef unsigned long EntityId;
-typedef unsigned long ComponentId;
+typedef unsigned int EntityId;
+typedef unsigned int ComponentId;
 
 template<typename T>
 using Unique = std::unique_ptr<T>;
@@ -47,3 +47,19 @@ constexpr Shared<T> CreateShared(Args&& ... args)
 
 template<typename T>
 using Weak = std::weak_ptr<T>;
+
+
+// Hash
+namespace detail
+{
+    // FNV-1a 32bit hashing algorithm.
+    constexpr std::uint32_t fnv1a_32(char const* s, std::size_t count)
+    {
+        return ((count ? fnv1a_32(s, count - 1) : 2166136261u) ^ s[count]) * 16777619u;
+    }
+}    // namespace detail
+
+constexpr std::uint32_t operator"" _hash(char const* s, std::size_t count)
+{
+    return detail::fnv1a_32(s, count);
+}

@@ -11,10 +11,7 @@ bool Text::Initialize(void* pText)
 	if (pText == nullptr)
 		return false;
 
-	auto pStr = static_cast<std::string*>(pText);
-	std::string str = *pStr;
-
-	m_Text = std::string(str);
+	m_Text = *static_cast<std::string*>(pText);
 	
 	return true;
 }

@@ -6,7 +6,7 @@
 class Transform : public Component
 {
 	public:
-		static constexpr ComponentId Id = __COUNTER__;
+		static constexpr ComponentId Id = "Transform"_hash;
 
 	public:
 		Transform(const Vector2f& position = { 0, 0 }, const float& rotation = 0, const float& scale = 1);

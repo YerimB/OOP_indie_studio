@@ -6,7 +6,7 @@
 class Drawable : public Component
 {
 	public:
-		static constexpr ComponentId Id = __COUNTER__;
+		static constexpr ComponentId Id = "Drawable"_hash;
 
 	public:
 		Drawable();

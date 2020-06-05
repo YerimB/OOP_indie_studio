@@ -6,15 +6,13 @@
 
 class Entity
 {
-	using ComponentMap = std::unordered_map<ComponentId, Shared<Component>>;
+	using ComponentMap = std::unordered_map<ComponentId, Shared<Component>, std::hash<ComponentId>, std::equal_to<ComponentId>>;
 
 	public:
 		explicit Entity();
 
 	public:
-		void AddComponent(Shared<Component> component);
 		void AddComponent(Shared<Component> component, const ComponentId& componentId);
-		void RemoveComponent(Shared<Component> component);
 		void RemoveComponent(ComponentId componentId);
 
 	public:
@@ -24,7 +22,7 @@ class Entity
 		template<class TComponent>
 		TComponent* GetComponent() const
 		{
-			auto find = m_Components.find(TComponent::Id);
+			auto& find = m_Components.find(TComponent::Id);
 
 			if (find != m_Components.end())
 				return static_cast<TComponent*>(find->second.get());
