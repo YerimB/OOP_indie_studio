@@ -8,7 +8,8 @@
 #ifndef RENDERSYSTEM_H_
 #define RENDERSYSTEM_H_
 
-#include <System.h>
+#include <ECS/System/System.h>
+#include <ECS/EntityManager.h>
 
 class Renderable; //TODO
 class TransformComponent; //TODO

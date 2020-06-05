@@ -5,7 +5,7 @@
 ** RenderSystem
 */
 
-#include <RenderSystem.h>
+#include <ECS/System/RenderSystem.h>
 
 RenderSystem::RenderSystem(EntityManager *pEntityManager) :
 BaseType(pEntityManager) {}

@@ -4,7 +4,7 @@
 #include <Core.hpp>
 #include <ECS/Entity.h>
 #include <ECS/Component.h>
-#include <ECS/System.h>
+#include <ECS/System/System.h>
 
 class EntityManager
 {
@@ -29,5 +29,5 @@ class EntityManager
 	private:
 		std::unordered_map<EntityId, Entity> m_Entities;
 		std::vector<std::vector<Component*>> m_Components;
-		std::vector<System> m_Systems;
+		std::vector<BaseSystem> m_Systems;
 };

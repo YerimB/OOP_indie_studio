@@ -11,6 +11,8 @@
     <ClCompile Include="Sources\ECS\Component.cpp" />
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
     <ClCompile Include="Sources\Components\Position.cpp" />
+    <ClCompile Include="Sources\ECS\System\System.cpp" />
+    <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
@@ -211,6 +213,9 @@
     <ClInclude Include="Headers\ECS\EntityManager.h" />
     <ClInclude Include="Headers\ECS\System.h" />
     <ClInclude Include="Headers\Components\Position.h" />
+    <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
+    <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
+    <ClInclude Include="Headers\ECS\System\System.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -227,6 +232,7 @@
     <None Include="Headers\SafeContainer\SafeQueue.inl" />
     <None Include="Headers\SafeContainer\SafeVector.inl" />
     <None Include="Headers\SafeContainer\SafeDeque.inl" />
+    <None Include="Headers\ECS\System\System.inl" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\Irrlicht.lib" />

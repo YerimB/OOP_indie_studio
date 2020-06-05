@@ -20,7 +20,7 @@ class BaseSystem
 
     public:
         virtual void OnEntityCreated(const Entity &entity) = 0;
-        virtual void OnEntityDestroyed(const Entity &entity) = 0;
+        virtual void OnEntityDestroyed(const EntityId &id) = 0;
         virtual void Update(const double &detlaTime) = 0;
 
     protected:
