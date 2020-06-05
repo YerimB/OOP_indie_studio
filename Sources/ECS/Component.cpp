@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2020
+** OOP_indie_studio_2019
+** File description:
+** Component
+*/
+
 #include <ECS/Component.h>
 
 const ComponentId& Component::GetId() const

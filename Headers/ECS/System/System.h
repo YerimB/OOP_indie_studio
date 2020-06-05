@@ -19,7 +19,7 @@ template <class... Comps>
 class System : public BaseSystem
 {
 	public:
-		System(EntityManager *pEntityManager) : BaseSystem(pEntityManager) {}
+		System(Shared<EntityManager>pEntityManager) : BaseSystem(pEntityManager) {}
 
 	public:
         virtual void OnEntityCreated(const Entity &entity) final;
@@ -27,16 +27,16 @@ class System : public BaseSystem
 	
 	protected:
 		using EntityIdToIndexMap = std::unordered_map<EntityId, std::size_t>;
-		using CompTuple = std::tuple<Comps*...>;
+		using CompTuple = std::tuple<Shared<Comps>...>;
 
 		EntityIdToIndexMap _entityIdToIndexMap;
 		std::vector<CompTuple> _components;
 
 	private:
 		template <size_t INDEX, class CompType, class... CompArgs> \
-		const bool ProcessEntityComponent(const ComponentId &, Component *, const CompTuple &);
+		const bool ProcessEntityComponent(const ComponentId &, Shared<Component>, const CompTuple &);
 		template <size_t INDEX> \
-		const bool ProcessEntityComponent(const ComponentId &, Component *, const CompTuple &);
+		const bool ProcessEntityComponent(const ComponentId &, Shared<Component>, const CompTuple &);
 };
 
 #include <ECS/System/System.inl>

@@ -20,7 +20,7 @@
 
 //     public:
 //         RenderSystem(EntityManager *pEntityManager);
-
+    
 //     public:
 //         virtual void Update(const double &deltaTime) override;
 // };

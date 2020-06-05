@@ -21,10 +21,10 @@ int main()
 {
     IrrlichtDevice* device = createDevice(video::EDT_OPENGL, Dimension2u(1280, 720), 16, false, false, false);
     EntityManager manager;
-    Position position;
+    Shared<Position> position = std::make_shared<Position>();
     Entity player(0);
 
-    player.AddComponent(&position);
+    player.AddComponent(position);
 
     auto result = player.GetComponent<Position>();
 
