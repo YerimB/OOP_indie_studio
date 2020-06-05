@@ -6,6 +6,9 @@
 
 class Entity
 {
+	protected: // Usings...
+		using ComponentMap = std::unordered_map<ComponentId, Component*>;
+
 	public:
 		explicit Entity(const EntityId& id);
 
@@ -17,7 +20,7 @@ class Entity
 
 	public:
 		const EntityId& GetId() const;
-		const std::unordered_map<ComponentId, Component*>& GetComponents() const;
+		const ComponentMap &GetComponents() const;
 
 		template<class TComponent>
 		TComponent* GetComponent() const
