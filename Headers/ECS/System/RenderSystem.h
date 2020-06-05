@@ -20,7 +20,7 @@ class RenderSystem : public System<Renderable, TransformComponent>
 
     public:
         RenderSystem(EntityManager *pEntityManager);
-    
+
     public:
         virtual void Update(const double &deltaTime) override;
 };

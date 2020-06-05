@@ -34,5 +34,5 @@ class Entity
 
 	private:
 		EntityId m_Id;
-		std::unordered_map<ComponentId, Component*> m_Components;
+		ComponentMap m_Components;
 };

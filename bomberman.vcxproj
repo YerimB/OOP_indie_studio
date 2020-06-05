@@ -264,7 +264,6 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\System.cpp" />
     <ClCompile Include="Sources\Components\Position.cpp" />
     <ClCompile Include="Sources\ECS\Component.cpp" />
@@ -283,7 +282,6 @@
     <ClInclude Include="Headers\ECS\EntityManager.h" />
     <ClInclude Include="Headers\ECS\System.h" />
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
-    <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />

@@ -21,9 +21,7 @@ class EntityManager
 		void Update();
 
 	public:
-		void AddEntity(const EntityId& entityId);
 		void AddEntity(const Entity& entity);
-		void RemoveEntity(const EntityId& entityId);
 		void RemoveEntity(const Entity& entity);
 
 	private:
