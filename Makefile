@@ -118,6 +118,33 @@ bomberman/fast:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/build
 .PHONY : bomberman/fast
 
+Sources/Generation/Generation.o: Sources/Generation/Generation.cpp.o
+
+.PHONY : Sources/Generation/Generation.o
+
+# target to build an object file
+Sources/Generation/Generation.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o
+.PHONY : Sources/Generation/Generation.cpp.o
+
+Sources/Generation/Generation.i: Sources/Generation/Generation.cpp.i
+
+.PHONY : Sources/Generation/Generation.i
+
+# target to preprocess a source file
+Sources/Generation/Generation.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.i
+.PHONY : Sources/Generation/Generation.cpp.i
+
+Sources/Generation/Generation.s: Sources/Generation/Generation.cpp.s
+
+.PHONY : Sources/Generation/Generation.s
+
+# target to generate assembly for a file
+Sources/Generation/Generation.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.s
+.PHONY : Sources/Generation/Generation.cpp.s
+
 Sources/InputManager.o: Sources/InputManager.cpp.o
 
 .PHONY : Sources/InputManager.o
@@ -144,6 +171,33 @@ Sources/InputManager.s: Sources/InputManager.cpp.s
 Sources/InputManager.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/InputManager.cpp.s
 .PHONY : Sources/InputManager.cpp.s
+
+Sources/Map.o: Sources/Map.cpp.o
+
+.PHONY : Sources/Map.o
+
+# target to build an object file
+Sources/Map.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map.cpp.o
+.PHONY : Sources/Map.cpp.o
+
+Sources/Map.i: Sources/Map.cpp.i
+
+.PHONY : Sources/Map.i
+
+# target to preprocess a source file
+Sources/Map.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map.cpp.i
+.PHONY : Sources/Map.cpp.i
+
+Sources/Map.s: Sources/Map.cpp.s
+
+.PHONY : Sources/Map.s
+
+# target to generate assembly for a file
+Sources/Map.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map.cpp.s
+.PHONY : Sources/Map.cpp.s
 
 Sources/Thread/Thread.o: Sources/Thread/Thread.cpp.o
 
@@ -234,9 +288,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... bomberman"
 	@echo "... edit_cache"
+	@echo "... Sources/Generation/Generation.o"
+	@echo "... Sources/Generation/Generation.i"
+	@echo "... Sources/Generation/Generation.s"
 	@echo "... Sources/InputManager.o"
 	@echo "... Sources/InputManager.i"
 	@echo "... Sources/InputManager.s"
+	@echo "... Sources/Map.o"
+	@echo "... Sources/Map.i"
+	@echo "... Sources/Map.s"
 	@echo "... Sources/Thread/Thread.o"
 	@echo "... Sources/Thread/Thread.i"
 	@echo "... Sources/Thread/Thread.s"

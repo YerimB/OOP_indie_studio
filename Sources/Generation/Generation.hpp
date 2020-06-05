@@ -14,6 +14,7 @@
 
 class Generation {
 public:
+    Generation();
     Generation(int size);
     void refresh();
     std::string get_map();

@@ -4,12 +4,17 @@
 
 #include "Generation.hpp"
 
+Generation::Generation()
+{
+}
+
 Generation::Generation(int size) : _size(size)
 {
     std::srand(std::time(nullptr));
     init_map();
     generate();
 }
+
 std::string Generation::get_map()
 {
     std::string tmp;

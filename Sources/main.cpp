@@ -21,6 +21,8 @@ using namespace video;
 using namespace io;
 using namespace gui;
 
+#include "Map.hpp"
+
 #ifdef _IRR_WINDOWS_
 #pragma comment(lib, "Irrlicht.lib")
 #pragma comment(linker, "/subsystem:windows /ENTRY:mainCRTStartup")
@@ -56,91 +58,19 @@ int main()
 
     device->setWindowCaption(L"Irrlicht Engine - 2D Graphics Demo");
 
-
-    // START ALEXIS CODE
-
     video::IVideoDriver* driver = device->getVideoDriver();
     ISceneManager* smgr = device->getSceneManager();
     IGUIEnvironment* guienv = device->getGUIEnvironment();
-
-    std::ifstream file("test.txt");
-    std::string STRING; 
-    std::string str;
     int sizeSquare = 0;
-    while (std::getline(file, STRING)) {
-        str += STRING;
-        sizeSquare = STRING.size();
-        str += '\n';
-    }
-
-    std::cout << "SIZE SQUARE  = " << sizeSquare << std::endl;
-
-    std::vector<int> posX;
-    std::vector<int> posY;
-
-    int heightCamera = 0;
-    int x = 0;
-    int xActual = 0;
-    int y = 0;
-    int nb = 0;
-
-    heightCamera = sizeSquare * 10;
-    std::string lenghtX = std::to_string(sizeSquare);
-    x = (int)lenghtX[1] - '0';
-    if (x == 0) x = -40 * ((int)lenghtX[0] - '0');
-    else x = -x * 10;
-    xActual = x - 10;
-    y = x - 10;
-
-    for (int i = 0; str[i] != '\0'; i++)
-    {
-        if (str[i] == '\n')
-        {
-            x = -90;
-            y += 10;
-        }
-
-        if (str[i] == '1')
-        {
-            createNewCube3D(smgr, nb, x, y, driver, "./Assets/block.png");
-            posX.push_back(x);
-            posY.push_back(y);
-            nb += 1;
-        }
-
-        if (str[i] == '2')
-        {
-            createNewCube3D(smgr, nb, x, y, driver, "./Assets/star.jpeg");
-            posX.push_back(x);
-            posY.push_back(y);
-            nb += 1;
-        }
-
-        if (str[i] == '3')
-        {
-            createNewCube3D(smgr, nb, x, y, driver, "./Assets/pow.jpeg");
-            posX.push_back(x);
-            posY.push_back(y);
-            nb += 1;
-        }
-
-        x += 10;
-    }
-
-    core::vector3df pos = smgr->getSceneNodeFromId(sizeSquare / 2)->getAbsolutePosition();
-
-    std::cout << "POS X = " << pos.X << std::endl;
-
-    smgr->addCubeSceneNode(10.F, nullptr, -2, core::vector3df(pos.X, 0, pos.Y), core::vector3df(0, 0, 0), core::vector3df(sizeSquare - 1, 0, sizeSquare - 1));
-    smgr->getSceneNodeFromId(-2)->setMaterialTexture(0, driver->getTexture("./Assets/sand.jpg"));
-    smgr->getSceneNodeFromId(-2)->setMaterialFlag(video::EMF_LIGHTING, false);
-
-    pos = smgr->getSceneNodeFromId(-2)->getAbsolutePosition();
-
-    std::cout << "POS X = " << pos.X << std::endl;
-
-    smgr->addCameraSceneNode(0, vector3df(0, heightCamera, 10), vector3df(0,0,0));
-
+    std::vector<irr::io::path> arr_asset;
+    arr_asset.push_back("./Assets/block.png");
+    arr_asset.push_back("./Assets/star.jpeg");
+    arr_asset.push_back("./Assets/pow.jpeg");
+    arr_asset.push_back("./Assets/sand.jpg");
+        
+    Map map = Map(smgr, driver, arr_asset);
+    
+    map.CreateMap();
     while(device->run())
     {
         driver->beginScene(true, true, SColor(255,100,101,140));
@@ -152,6 +82,4 @@ int main()
 
     device->drop();
     return 0;
-
-    // END OF ALEXIS'S CODE
 }
