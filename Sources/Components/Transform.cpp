@@ -5,13 +5,15 @@ Transform::Transform(const Vector2f& position, const float& rotation, const floa
 	m_Position = position;
 	m_Rotation = rotation;
 	m_Scale = scale;
-
-	Initialize(nullptr);
 }
 
 bool Transform::Initialize(void*)
 {
 	return true;
+}
+
+void Transform::Update(const float&)
+{
 }
 
 void Transform::SetPosition(const Vector2f& position)

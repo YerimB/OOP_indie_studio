@@ -5,13 +5,15 @@
 
 class Transform : public Component
 {
-	static constexpr ComponentId Id = __COUNTER__;
+	public:
+		static constexpr ComponentId Id = __COUNTER__;
 
 	public:
 		Transform(const Vector2f& position = { 0, 0 }, const float& rotation = 0, const float& scale = 1);
 
 	public:
 		bool Initialize(void *args) override final;
+		void Update(const float& deltaTime) override final;
 
 	public:
 		void SetPosition(const Vector2f& position);

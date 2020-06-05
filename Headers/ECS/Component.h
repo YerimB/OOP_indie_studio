@@ -17,7 +17,7 @@ class Component
 
 public:
 	virtual bool Initialize(void *args) = 0;
-	virtual void Update() = 0;
+	virtual void Update(const float& deltaTime) = 0;
 
 	public:
 		const ComponentId& GetId() const;
