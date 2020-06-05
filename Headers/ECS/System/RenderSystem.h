@@ -11,18 +11,18 @@
 #include <ECS/System/System.h>
 #include <ECS/EntityManager.h>
 
-class Renderable; //TODO
-class TransformComponent; //TODO
+// class Renderable; //TODO
+// class TransformComponent; //TODO
 
-class RenderSystem : public System<Renderable, TransformComponent>
-{
-    using BaseType = System<Renderable, TransformComponent>;
+// class RenderSystem : public System<Renderable, TransformComponent>
+// {
+//     using BaseType = System<Renderable, TransformComponent>;
 
-    public:
-        RenderSystem(EntityManager *pEntityManager);
-
-    public:
-        virtual void Update(const double &deltaTime) override;
-};
+//     public:
+//         RenderSystem(EntityManager *pEntityManager);
+    
+//     public:
+//         virtual void Update(const double &deltaTime) override;
+// };
 
 #endif /* !RENDERSYSTEM_H_ */

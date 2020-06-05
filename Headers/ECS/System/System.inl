@@ -6,7 +6,7 @@
 template <class... Comps>
 template <size_t INDEX, class CompType, class... CompArgs>
 const bool System<Comps...>::ProcessEntityComponent
-(const ComponentId& compId, Component* pComponent, const CompTuple& tupleToFill)
+(const ComponentId& compId, Shared<Component>pComponent, const CompTuple& tupleToFill)
 {
     if (CompType::Id == compId) {
         std::get<INDEX>(tupleToFill) = static_cast<CompType*>(pComponent);
@@ -21,7 +21,7 @@ const bool System<Comps...>::ProcessEntityComponent
 template <class... Comps>
 template <size_t INDEX>
 const bool System<Comps...>::ProcessEntityComponent
-(const ComponentId& compId, Component* pComponent, const CompTuple& tupleToFill)
+(const ComponentId& compId, Shared<Component>pComponent, const CompTuple& tupleToFill)
 {
     return (false);
 }
@@ -32,7 +32,7 @@ void System<Comps...>::OnEntityCreated(const Entity& entity)
     CompTuple compTuple;
     std::size_t matchingComps = 0;
 
-    for (auto& compPair : entity.GetComponents())
+    for (auto &compPair : entity.GetComponents())
         if (this->ProcessEntityComponent<0, Comps...> \
             (compPair.first, compPair.second, compTuple)) {
             ++matchingComps;
@@ -41,7 +41,7 @@ void System<Comps...>::OnEntityCreated(const Entity& entity)
                 this->_entityIdToIndexMap.emplace(
                     entity.GetId(),
                     this->_components.size() - 1
-                ); //NOTSURE
+                );
                 break;
             }
         }
@@ -52,9 +52,10 @@ void System<Comps...>::OnEntityDestroyed(const EntityId &e_id)
 {
     const auto findIt = this->_entityIdToIndexMap.find(e_id);
 
-    if (findIt != this->_entityIdToIndexMap.end()) { //NOTSURE AT ALL (video timecode : 34:20)
+    if (findIt != this->_entityIdToIndexMap.end()) {
         this->_components[findIt->second] = std::move(this->_components.back());
         this->_components.pop_back();
+
         const auto *pMovedComp = std::get<0>(this->_components[findIt->second]);
         auto movedTupleIt = this->_entityIdToIndexMap.find(pMovedComp->GetEntityId());
         if (movedTupleIt == this->_entityIdToIndexMap.end())

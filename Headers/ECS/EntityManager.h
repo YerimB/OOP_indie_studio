@@ -26,6 +26,6 @@ class EntityManager
 
 	private:
 		std::unordered_map<EntityId, Entity> m_Entities;
-		std::vector<std::vector<Component*>> m_Components;
+		std::vector<std::vector<Shared<Component>>> m_Components;
 		std::vector<BaseSystem> m_Systems;
 };

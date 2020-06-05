@@ -7,15 +7,15 @@
 
 #include <ECS/System/RenderSystem.h>
 
-RenderSystem::RenderSystem(EntityManager *pEntityManager) :
-BaseType(pEntityManager) {}
+// RenderSystem::RenderSystem(EntityManager *pEntityManager) :
+// BaseType(pEntityManager) {}
 
-void RenderSystem::Update(const double &deltaTime)
-{
-    for (auto &compTuple : this->_components) {
-        TransformComponent *pTransform = std::get<TransformComponent *>(compTuple);
-        Renderable *pRenderable = std::get<Renderable *>(compTuple);
+// void RenderSystem::Update(const double &deltaTime)
+// {
+//     for (auto &compTuple : this->_components) {
+//         TransformComponent *pTransform = std::get<TransformComponent *>(compTuple);
+//         Renderable *pRenderable = std::get<Renderable *>(compTuple);
 
-        // Render code...
-    }
-}
+//         // Render code...
+//     }
+// }

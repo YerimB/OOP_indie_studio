@@ -5,19 +5,19 @@ Entity::Entity()
 	m_Id = __COUNTER__;
 }
 
-void Entity::AddComponent(Component* component)
+void Entity::AddComponent(Shared<Component> component)
 {
 	component->SetEntityId(m_Id);
 	m_Components.emplace(std::make_pair(component->GetId(), component));
 }
 
-void Entity::AddComponent(Component* component, const ComponentId& componentId)
+void Entity::AddComponent(Shared<Component> component, const ComponentId& componentId)
 {
 	component->SetEntityId(m_Id);
 	m_Components.emplace(std::make_pair(componentId, component));
 }
 
-void Entity::RemoveComponent(Component* component)
+void Entity::RemoveComponent(Shared<Component> component)
 {
 	m_Components.erase(component->GetId());
 }
@@ -32,7 +32,7 @@ const EntityId& Entity::GetId() const
 	return m_Id;
 }
 
-const std::unordered_map<ComponentId, Component*>& Entity::GetComponents() const
+const std::unordered_map<ComponentId, Shared<Component>> &Entity::GetComponents() const
 {
 	return m_Components;
 }
