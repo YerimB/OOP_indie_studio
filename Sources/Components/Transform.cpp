@@ -1,6 +1,6 @@
 #include <Components/Transform.h>
 
-Transform::Transform(const Vector3f& position, const float& rotation, const float& scale)
+Transform::Transform(const Vector3f& position, const Vector3f& rotation, const Vector3f& scale)
 {
 	m_Position = position;
 	m_Rotation = rotation;
@@ -21,12 +21,12 @@ void Transform::SetPosition(const Vector3f& position)
 	m_Position = position;
 }
 
-void Transform::SetRotation(const float& rotation)
+void Transform::SetRotation(const Vector3f& rotation)
 {
 	m_Rotation = rotation;
 }
 
-void Transform::SetScale(const float& scale)
+void Transform::SetScale(const Vector3f& scale)
 {
 	m_Scale = scale;
 }
@@ -36,12 +36,12 @@ const Vector3f& Transform::GetPosition() const
 	return m_Position;
 }
 
-const float& Transform::GetRotation() const
+const Vector3f& Transform::GetRotation() const
 {
 	return m_Rotation;
 }
 
-const float& Transform::GetScale() const
+const Vector3f& Transform::GetScale() const
 {
 	return m_Scale;
 }

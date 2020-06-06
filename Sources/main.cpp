@@ -36,35 +36,11 @@ int main()
 
     drawable.Initialize(&mesh);
     player.AddComponent(&drawable, drawable.Id);
-    //player.AddComponent(&transform, transform.Id);
+    player.AddComponent(&transform, transform.Id);
 
     manager->AddEntity(player);
     renderSystem.OnEntityCreated(player);
 
-    //guiEnv->addButton();
-    //irr::scene::ISceneManager* sceneManager = device->getSceneManager();
-
-    ////irr::scene::IMeshLoader* loader = new Meshloader()
-    ////loader->createMesh("blblbl");
-
-    ////driver->drawMeshBuffer(aMesh->getMeshBuffer(aMesh->getMaterial()));
-
-    //irr::scene::IAnimatedMeshSceneNode* mesh = sceneManager->addAnimatedMeshSceneNode(sceneManager->getMesh(""));
-    ////irr::video::ITexture* texture = sceneManager->getTexture
-
-    //irr::video::SMaterial mat;
-    //irr::video::ITexture* texture = driver->getTexture("TEXTURE");
-    //irr::scene::IAnimatedMesh* aMesh;
-    //mat.setTexture(0, texture);
-
-    //mesh->setPosition({ 0, 0, 0 });
-    //mesh->setRotation({ 0, 0, 0 });
-
-    //mesh->setMaterialTexture(0, nullptr);
-
-    //driver->drawMeshBuffer(mesh->getMesh()->getMeshBuffer(mat));
-    //// ==
-    //sceneManager->drawAll();
 
     sceneManager->addCameraSceneNode(0, irr::core::vector3df(0, 5, -10), transform.GetPosition());
 
