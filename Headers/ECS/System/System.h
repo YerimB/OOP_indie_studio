@@ -27,16 +27,16 @@ class System : public BaseSystem
 	
 	protected:
 		using EntityIdToIndexMap = std::unordered_map<EntityId, std::size_t>;
-		using CompTuple = std::tuple<Shared<Comps>...>;
+		using CompTuple = std::tuple<Comps*...>;
 
 		EntityIdToIndexMap _entityIdToIndexMap;
 		std::vector<CompTuple> _components;
 
 	private:
 		template <size_t INDEX, class CompType, class... CompArgs> \
-		const bool ProcessEntityComponent(const ComponentId &, Shared<Component>, const CompTuple &);
+		const bool ProcessEntityComponent(const ComponentId &, Component* pComponent, CompTuple &);
 		template <size_t INDEX> \
-		const bool ProcessEntityComponent(const ComponentId &, Shared<Component>, const CompTuple &);
+		const bool ProcessEntityComponent(const ComponentId &, Component* pComponent, CompTuple &);
 };
 
 #include <ECS/System/System.inl>

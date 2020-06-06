@@ -29,11 +29,14 @@ int main()
     RenderSystem renderSystem(manager);
 
     Entity player;
-    Shared<Drawable> drawable = CreateShared<Drawable>(sceneManager);
-    Shared<Transform> transform = CreateShared<Transform>();
-    player.AddComponent(drawable, drawable->Id);
-    player.AddComponent(transform, transform->Id);
+    Drawable drawable(sceneManager);
+    Transform transform;
 
+    drawable.Initialize("Assets/bomberman_m.obj");
+    player.AddComponent(&drawable, drawable.Id);
+    //player.AddComponent(&transform, transform.Id);
+
+    manager->AddEntity(player);
     renderSystem.OnEntityCreated(player);
 
     //guiEnv->addButton();
@@ -61,9 +64,13 @@ int main()
     //// ==
     //sceneManager->drawAll();
 
+    sceneManager->addCameraSceneNode(0, irr::core::vector3df(0, 5, -10), transform.GetPosition());
 
     while (device->run())
     {
+        driver->beginScene(true, true, irr::video::SColor(255, 0, 100, 255));
+        renderSystem.Update(0);
+        driver->endScene();
     }
 
     device->drop();

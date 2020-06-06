@@ -24,8 +24,8 @@ class EntityManager
 	public:
 		void AddEntity(const Entity& entity);
 		void RemoveEntity(const Entity& entity);
-		void AddSystem(const BaseSystem* system);
-		void RemoveSystem(const BaseSystem* system);
+		void AddSystem(BaseSystem* system);
+		void RemoveSystem(BaseSystem* system);
 		void ClearEntities();
 		void ClearComponents();
 		void ClearSystems();

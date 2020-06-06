@@ -37,12 +37,12 @@ void EntityManager::RemoveEntity(const Entity& entity)
 	m_Entities.erase(entity.GetId());
 }
 
-void EntityManager::AddSystem(const BaseSystem* system)
+void EntityManager::AddSystem(BaseSystem* system)
 {
 	m_Systems.emplace_back(system);
 }
 
-void EntityManager::RemoveSystem(const BaseSystem* system)
+void EntityManager::RemoveSystem(BaseSystem* system)
 {
 	auto findIt = std::find(m_Systems.begin(), m_Systems.end(), system);
 	
