@@ -9,7 +9,7 @@ class Transform : public Component
 		static constexpr ComponentId Id = "Transform"_hash;
 
 	public:
-		Transform(const Vector3f& position = { 0, 0, 0 }, const float& rotation = 0, const float& scale = 1);
+		Transform(const Vector3f& position = { 0, 0, 0 }, const Vector3f& rotation = { 0, 0, 0 }, const Vector3f& scale = { 0, 0, 0 });
 
 	public:
 		bool Initialize(void *args) override final;
@@ -17,16 +17,16 @@ class Transform : public Component
 
 	public:
 		void SetPosition(const Vector3f& position);
-		void SetRotation(const float& rotation);
-		void SetScale(const float& scale);
+		void SetRotation(const Vector3f& rotation);
+		void SetScale(const Vector3f& scale);
 
 	public:
 		const Vector3f& GetPosition() const;
-		const float& GetRotation() const;
-		const float& GetScale() const;
+		const Vector3f& GetRotation() const;
+		const Vector3f& GetScale() const;
 
 	private:
 		Vector3f m_Position;
-		float m_Rotation;
-		float m_Scale;
+		Vector3f m_Rotation;
+		Vector3f m_Scale;
 };

@@ -19,6 +19,8 @@ void RenderSystem::Update(const double &deltaTime)
         // Render code...
         auto obj = pRenderable->GetDrawable();
         obj->setPosition(pTransform->GetPosition());
+        obj->setRotation(pTransform->GetRotation());
+        obj->setScale(pTransform->GetScale());
     }
     _EntityManager->GetSceneManager()->drawAll();
 }
