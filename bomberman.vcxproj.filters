@@ -13,6 +13,7 @@
     <ClCompile Include="Sources\Components\Transform.cpp" />
     <ClCompile Include="Sources\Components\Drawable.cpp" />
     <ClCompile Include="Sources\Components\Text.cpp" />
+    <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bindable\Bindable.hpp" />
@@ -217,6 +218,8 @@
     <ClInclude Include="Headers\Components\Transform.h" />
     <ClInclude Include="Headers\Components\Drawable.h" />
     <ClInclude Include="Headers\Components\Text.h" />
+    <ClInclude Include="Headers\ECS\Hash.h" />
+    <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

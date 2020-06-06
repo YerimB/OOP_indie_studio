@@ -9,7 +9,7 @@ const bool System<Comps...>::ProcessEntityComponent
 (const ComponentId& compId, Shared<Component>pComponent, const CompTuple& tupleToFill)
 {
     if (CompType::Id == compId) {
-        std::get<INDEX>(tupleToFill) = static_cast<CompType*>(pComponent);
+        std::get<INDEX>(tupleToFill) = static_cast<CompType*>(pComponent.get());
         return true;
     }
     else
@@ -56,7 +56,7 @@ void System<Comps...>::OnEntityDestroyed(const EntityId &e_id)
         this->_components[findIt->second] = std::move(this->_components.back());
         this->_components.pop_back();
 
-        const auto *pMovedComp = std::get<0>(this->_components[findIt->second]);
+        const auto *pMovedComp = std::get<0>(this->_components[findIt->second]).get();
         auto movedTupleIt = this->_entityIdToIndexMap.find(pMovedComp->GetEntityId());
         if (movedTupleIt == this->_entityIdToIndexMap.end())
             std::exit(84);
