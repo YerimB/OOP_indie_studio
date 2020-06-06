@@ -21,6 +21,7 @@ using namespace irr;
 int main()
 {
     IrrlichtDevice* device = createDevice(video::EDT_OPENGL, Dimension2u(1280, 720), 16, false, false, false);
+
     EntityManager manager;
     Entity player;
 
@@ -38,11 +39,7 @@ int main()
     if (player.GetComponent<Text>()->Initialize(&t))
         std::cout << player.GetComponent<Text>()->GetText() << std::endl;
 
-    while (device->run())
-    {
-    }
-
+    while (device->run()) {}
     device->drop();
-
 	return 0;
 }
