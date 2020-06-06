@@ -13,13 +13,13 @@
 
 class Entity
 {
-	using ComponentMap = std::unordered_map<ComponentId, Shared<Component>, std::hash<ComponentId>, std::equal_to<ComponentId>>;
+	using ComponentMap = std::unordered_map<ComponentId, Component*, std::hash<ComponentId>, std::equal_to<ComponentId>>;
 
 	public:
 		explicit Entity();
 
 	public:
-		void AddComponent(Shared<Component> component, const ComponentId& componentId);
+		void AddComponent(Component* component, const ComponentId& componentId);
 		void RemoveComponent(ComponentId componentId);
 
 	public:

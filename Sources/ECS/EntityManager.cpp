@@ -7,9 +7,9 @@
 
 #include <ECS/EntityManager.h>
 
-EntityManager::EntityManager()
+EntityManager::EntityManager(irr::scene::ISceneManager* manager)
 {
-
+	m_SceneManager = manager;
 }
 
 EntityManager::~EntityManager()

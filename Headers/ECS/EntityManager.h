@@ -11,7 +11,7 @@
 class EntityManager
 {
 	public:
-		EntityManager();
+		EntityManager(irr::scene::ISceneManager* manager);
 		~EntityManager();
 		EntityManager(const EntityManager&) = delete;
 		EntityManager(EntityManager&&) = delete;
