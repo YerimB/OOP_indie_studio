@@ -34,9 +34,9 @@ class System : public BaseSystem
 
 	private:
 		template <size_t INDEX, class CompType, class... CompArgs> \
-		const bool ProcessEntityComponent(const ComponentId &, Shared<Component>, const CompTuple &);
+		const bool ProcessEntityComponent(const ComponentId &, Shared<Component>, CompTuple &);
 		template <size_t INDEX> \
-		const bool ProcessEntityComponent(const ComponentId &, Shared<Component>, const CompTuple &);
+		const bool ProcessEntityComponent(const ComponentId &, Shared<Component>, CompTuple &);
 };
 
 #include <ECS/System/System.inl>

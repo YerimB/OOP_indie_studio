@@ -6,7 +6,7 @@
 template <class... Comps>
 template <size_t INDEX, class CompType, class... CompArgs>
 const bool System<Comps...>::ProcessEntityComponent
-(const ComponentId& compId, Shared<Component>pComponent, const CompTuple& tupleToFill)
+(const ComponentId& compId, Shared<Component>pComponent, CompTuple& tupleToFill)
 {
     if (CompType::Id == compId) {
         std::get<INDEX>(tupleToFill) = static_cast<CompType*>(pComponent);
@@ -21,7 +21,7 @@ const bool System<Comps...>::ProcessEntityComponent
 template <class... Comps>
 template <size_t INDEX>
 const bool System<Comps...>::ProcessEntityComponent
-(const ComponentId& compId, Shared<Component>pComponent, const CompTuple& tupleToFill)
+(const ComponentId& compId, Shared<Component>pComponent, CompTuple& tupleToFill)
 {
     return (false);
 }
