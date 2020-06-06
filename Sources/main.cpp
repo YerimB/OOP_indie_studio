@@ -25,14 +25,16 @@ int main()
     irr::video::IVideoDriver* driver = device->getVideoDriver();
     irr::gui::IGUIEnvironment* guiEnv = device->getGUIEnvironment();
     irr::scene::ISceneManager* sceneManager = device->getSceneManager();
-    Shared<EntityManager> manager = CreateShared<EntityManager>();
+    Shared<EntityManager> manager = CreateShared<EntityManager>(sceneManager);
     RenderSystem renderSystem(manager);
 
     Entity player;
     Drawable drawable(sceneManager);
     Transform transform;
 
-    drawable.Initialize("Assets/bomberman_m.obj");
+    std::string mesh = "Assets/bomberman_m.obj";
+
+    drawable.Initialize(&mesh);
     player.AddComponent(&drawable, drawable.Id);
     //player.AddComponent(&transform, transform.Id);
 

@@ -14,6 +14,7 @@ bool Drawable::Initialize(void* args)
 
 	if (!m_AnimatedMesh)
 		return false;
+	m_AnimatedMesh->setMaterialFlag(irr::video::EMF_LIGHTING, false);
 	return true;
 }
 
