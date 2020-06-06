@@ -24,8 +24,8 @@ class EntityManager
 	public:
 		void AddEntity(const Entity& entity);
 		void RemoveEntity(const Entity& entity);
-		void AddSystem(const BaseSystem& system);
-		void RemoveSystem(const BaseSystem& system);
+		void AddSystem(const BaseSystem* system);
+		void RemoveSystem(const BaseSystem* system);
 		void ClearEntities();
 		void ClearComponents();
 		void ClearSystems();
@@ -35,6 +35,6 @@ class EntityManager
 	private:
 		std::unordered_map<EntityId, Entity> m_Entities;
 		std::vector<std::vector<Shared<Component>>> m_Components;
-		std::vector<BaseSystem> m_Systems;
+		std::vector<BaseSystem*> m_Systems;
 		irr::scene::ISceneManager* m_SceneManager;
 };

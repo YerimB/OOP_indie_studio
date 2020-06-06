@@ -9,7 +9,7 @@ const bool System<Comps...>::ProcessEntityComponent
 (const ComponentId& compId, Shared<Component>pComponent, const CompTuple& tupleToFill)
 {
     if (CompType::Id == compId) {
-        std::get<INDEX>(tupleToFill) = static_cast<CompType*>(pComponent.get());
+        std::get<INDEX>(tupleToFill) = static_cast<CompType*>(pComponent);
         return true;
     }
     else
