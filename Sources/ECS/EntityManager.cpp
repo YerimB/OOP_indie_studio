@@ -44,7 +44,7 @@ void EntityManager::AddSystem(const BaseSystem& system)
 
 void EntityManager::RemoveSystem(const BaseSystem& system)
 {
-	System<> findIt = std::find(m_Systems.begin(), m_Systems.end(), system);
+	auto findIt = std::find(m_Systems.begin(), m_Systems.end(), system);
 	
 	if (findIt != m_Systems.end())
 		m_Systems.erase(findIt);
