@@ -270,6 +270,7 @@
     <ClCompile Include="Sources\ECS\Component.cpp" />
     <ClCompile Include="Sources\ECS\Entity.cpp" />
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
+    <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
     <ClCompile Include="Sources\InputManager.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
@@ -283,8 +284,10 @@
     <ClInclude Include="Headers\ECS\Component.h" />
     <ClInclude Include="Headers\ECS\Entity.h" />
     <ClInclude Include="Headers\ECS\EntityManager.h" />
+    <ClInclude Include="Headers\ECS\Hash.h" />
     <ClInclude Include="Headers\ECS\System.h" />
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
+    <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />

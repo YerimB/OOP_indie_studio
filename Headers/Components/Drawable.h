@@ -2,6 +2,7 @@
 
 #include <ECS/Component.h>
 #include <Core.hpp>
+#include <Irrlicht/irrlicht.h>
 
 class Drawable : public Component
 {
@@ -9,9 +10,16 @@ class Drawable : public Component
 		static constexpr ComponentId Id = "Drawable"_hash;
 
 	public:
-		Drawable();
+		Drawable(irr::scene::ISceneManager* manager);
 
 	public:
 		bool Initialize(void* args) override final;
 		void Update(const float& deltaTime) override final;
+
+	public:
+		irr::scene::IAnimatedMeshSceneNode* GetDrawable();
+
+	private:
+		irr::scene::ISceneManager* m_SceneManager;
+		irr::scene::IAnimatedMeshSceneNode* m_AnimatedMesh;
 };
