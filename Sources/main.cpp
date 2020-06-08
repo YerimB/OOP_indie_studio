@@ -13,6 +13,7 @@
 #include <ECS/Entity.h>
 #include <ECS/EntityManager.h>
 #include <ECS/System/RenderSystem.h>
+#include <ECS/System/TextSystem.h>
 #include <Components/Transform.h>
 #include <Components/Text.h>
 #include <Components/Image.h>
@@ -23,19 +24,30 @@ int main()
     Unique<GameManager> gameManager = CreateUnique<GameManager>();
     Entity player;
     Entity imgtest;
+    Entity texttest;
     std::string mesh = "Assets/bomberman_m.obj";
+    std::string textStr = "Bon";
 
     gameManager->Initialize();
-    RenderSystem renderSystem(gameManager->GetEntityManager());
-    Drawable drawable(gameManager->GetSceneManager());
+
+    // Add systems first
+    TextSystem textSystem(gameManager->GetEntityManager());
+    gameManager->GetEntityManager()->AddSystem(&textSystem);
+
+    // Components
+    Text text(gameManager->GetGuiEnvironment());
     Transform transform;
 
-    drawable.Initialize(&mesh);
-    player.AddComponent(&drawable, drawable.Id);
-    player.AddComponent(&transform, transform.Id);
-    renderSystem.OnEntityCreated(player);
-    gameManager->GetEntityManager()->AddEntity(player);
-    gameManager->GetEntityManager()->AddSystem(&renderSystem);
+    transform.Initialize(nullptr);
+    text.Initialize(&textStr);
+    text.SetColor();
+    text.SetText("Totorina");
+    transform.SetPosition({ 200, 500, 0 });
+
+    texttest.AddComponent(&transform, transform.Id);
+    texttest.AddComponent(&text, text.Id);
+   
+    gameManager->GetEntityManager()->AddEntity(texttest);
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
 
     while (gameManager->GetDevice()->run()) {
