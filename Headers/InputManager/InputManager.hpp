@@ -7,7 +7,7 @@
 
 #include <Irrlicht/irrlicht.h>
 #include <Core.hpp>
-#include <Bindable/Bindable.hpp>
+#include <ECS/Entity.h>
 
 using namespace irr;
 
@@ -20,23 +20,9 @@ class InputManager : public IEventReceiver
         virtual bool OnEvent(const SEvent& event);
         virtual bool IsKeyDown(EKEY_CODE keyCode) const;
 
-    public:
-        template<typename T>
-        void AddBindable(IBindable* bindable);
-        template<typename T>
-        void AddBindable(std::unique_ptr<IBindable>& bindable);
-        template<typename T>
-        void RemoveBindable(const std::string& name);
-        void RemoveBindable(const unsigned int& id);
-
-    public:
-        Unique<IBindable>& GetBindable(const std::string& name);
-
     private:
-        std::unique_ptr<IrrlichtDevice> m_Device;
+        IrrlichtDevice* m_Device;
         std::vector<bool> m_KeyDown;
         SEvent::SJoystickEvent m_JoystickState;
-        std::unordered_map<std::string, Unique<IBindable>> m_Bindables;
+        std::unordered_map<EntityId, Entity> m_Entities;
 };
-
-#include <InputManager/InputManager.inl>

@@ -9,7 +9,7 @@ class Transform : public Component
 		static constexpr ComponentId Id = "Transform"_hash;
 
 	public:
-		Transform(const Vector3f& position = { 0, 0, 0 }, const Vector3f& rotation = { 0, 0, 0 }, const Vector3f& scale = { 0, 0, 0 });
+		Transform(const Vector3f& position = { 0, 0, 0 }, const Vector3f& rotation = { 0, 0, 0 }, const Vector3f& scale = { 1, 1, 1 });
 
 	public:
 		bool Initialize(void *args) override final;
