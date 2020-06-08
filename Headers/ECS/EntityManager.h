@@ -11,7 +11,7 @@
 class EntityManager
 {
 	public:
-		EntityManager(irr::scene::ISceneManager* manager);
+		EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIEnvironment* env);
 		~EntityManager();
 		EntityManager(const EntityManager&) = delete;
 		EntityManager(EntityManager&&) = delete;
@@ -32,10 +32,12 @@ class EntityManager
 		void ClearSystems();
 		void ClearAll();
 		irr::scene::ISceneManager* GetSceneManager() const { return m_SceneManager; }
+		irr::gui::IGUIEnvironment* GetGuiEnvironment() const { return m_GuiEnvironment; }
 
 	private:
 		std::unordered_map<EntityId, Entity> m_Entities;
 		std::vector<std::vector<Shared<Component>>> m_Components;
 		std::vector<BaseSystem*> m_Systems;
 		irr::scene::ISceneManager* m_SceneManager;
+		irr::gui::IGUIEnvironment* m_GuiEnvironment;
 };

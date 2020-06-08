@@ -21,7 +21,7 @@ void GameManager::Initialize()
     m_VideoDriver = m_Device->getVideoDriver();
     m_GuiEnvironment = m_Device->getGUIEnvironment();
     m_SceneManager = m_Device->getSceneManager();
-    m_EntityManager = CreateShared<EntityManager>(m_SceneManager);
+    m_EntityManager = CreateShared<EntityManager>(m_SceneManager, m_GuiEnvironment);
     m_InputManager = CreateUnique<InputManager>(m_Device);
 
     m_Device->setEventReceiver(m_InputManager.get());

@@ -7,9 +7,10 @@
 
 #include <ECS/EntityManager.h>
 
-EntityManager::EntityManager(irr::scene::ISceneManager* manager)
+EntityManager::EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIEnvironment* env)
 {
 	m_SceneManager = manager;
+	m_GuiEnvironment = env;
 }
 
 EntityManager::~EntityManager()
@@ -28,6 +29,7 @@ void EntityManager::Update()
 	{
 		system->Update(0);
 	}
+	m_GuiEnvironment->drawAll();
 }
 
 void EntityManager::AddEntity(const Entity& entity)

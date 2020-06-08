@@ -20,8 +20,10 @@ bool Text::Initialize(void *pText)
 		this->m_content = *(static_cast<std::string *>(pText));
 	this->m_Text = this->m_GUIEnvironment->addStaticText(
 		(wchar_t *)m_content.data(),
-		{0, 0, 100, 20}
+		Recti{10, 10, 310, 30},
+		true
 	);
+
 	return true;
 }
 

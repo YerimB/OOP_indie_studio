@@ -10,7 +10,6 @@
 
 TextSystem::TextSystem(EntityManager* pEntityManager) : System<Text, Transform>(pEntityManager)
 {
-
 }
 
 void TextSystem::Update(const double& deltaTime)
@@ -20,6 +19,7 @@ void TextSystem::Update(const double& deltaTime)
 		Text* text = std::get<Text*>(compTuple);
 		Transform* transform = std::get<Transform*>(compTuple);
 
-		// Fuck you Irrlicht.
+		auto position = transform->GetPosition();
+		//text->SetPosition(Vector2i(static_cast<int>(position.X), static_cast<int>(position.Y)));
 	}
 }
