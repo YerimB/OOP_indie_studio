@@ -5,7 +5,7 @@
 ** Text
 */
 
-#include <Headers/Components/Text.h>
+#include <Components/Text.h>
 #include <iostream>
 
 Text::Text(GuiEnvironment *GUIEnv)

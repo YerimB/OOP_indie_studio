@@ -5,7 +5,7 @@
 ** SoundManager
 */
 
-#include <Headers/Components/SoundManager.h>
+#include <Components/SoundManager.h>
 
 SoundManager::SoundManager(SceneManager *p_SceneManager)
 {

@@ -11,8 +11,8 @@
 #include <ECS/System/System.h>
 #include <ECS/EntityManager.h>
 
-#include <Headers/Components/Transform.h>
-#include <Headers/Components/Drawable.h>
+#include <Components/Transform.h>
+#include <Components/Drawable.h>
 
 class RenderSystem : public System<Drawable, Transform>
 {

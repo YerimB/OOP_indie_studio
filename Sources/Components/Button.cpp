@@ -5,7 +5,7 @@
 ** Button
 */
 
-#include <Headers/Components/Button.h>
+#include <Components/Button.h>
 
 Button::Button(GuiEnvironment *GUIEnv)
 {
@@ -54,6 +54,11 @@ void Button::SetText(GuiText *p_Text)
     this->m_Text = p_Text;
     this->m_Button->setText(this->m_Text->getText());
     this->m_Button->setOverrideFont(this->m_Text->getActiveFont());
+}
+
+void Button::SetButtonID(const ButtonID &id)
+{
+    this->m_TypeID = id;
 }
 
 const bool Button::IsPushButton(void)
