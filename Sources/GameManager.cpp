@@ -27,6 +27,11 @@ void GameManager::Initialize()
     m_Device->setEventReceiver(m_InputManager.get());
 }
 
+Texture *GameManager::LoadTexture(const std::string &path)
+{
+    return (this->m_VideoDriver->getTexture(path.c_str()));
+}
+
 irr::IrrlichtDevice* GameManager::GetDevice() const
 {
     return m_Device;

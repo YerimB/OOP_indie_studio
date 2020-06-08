@@ -25,6 +25,10 @@ using GuiFont = irr::gui::IGUIFont;
 using GuiText = irr::gui::IGUIStaticText;
 using GuiImage = irr::gui::IGUIImage;
 
+using Color = irr::video::SColor;
+using Colorf = irr::video::SColorf;
+using Texture = irr::video::ITexture;
+
 // C++
 
 typedef unsigned int EntityId;

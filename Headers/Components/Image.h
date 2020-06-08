@@ -23,13 +23,21 @@ class Image : public Component
     public:
         bool Initialize(void *args) override final;
         void Update(const float &deltaTime) override final;
-    
+
     public:
-        GuiImage *GetImage();
+        void SetTexture(Texture *texture);
+        void SetColor(const Color &color = {255, 255, 255, 255});
+
+    public:
+        GuiImage *GetImage(void);
+        Texture *GetTexture(void);
+        const Color &GetColor(void);
     
     private:
         GuiEnvironment *m_GUIEnvironment;
-        GuiImage *m_Image;
+        GuiImage *m_Image = nullptr;
+        Texture *m_Texture = nullptr;
+        Color m_clr;
 };
 
 #endif /* !IMAGE_H_ */

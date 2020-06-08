@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2020
+** OOP_indie_studio_2019
+** File description:
+** GameManager
+*/
+
 #pragma once
 
 #include <Irrlicht/irrlicht.h>
@@ -13,6 +20,9 @@ class GameManager
 
 	public:
 		void Initialize();
+	
+	public:
+		Texture *LoadTexture(const std::string &path);
 
 	public:
 		irr::IrrlichtDevice* GetDevice() const;

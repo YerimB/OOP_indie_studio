@@ -26,6 +26,7 @@ class Text : public Component
 		void SetText(const std::string& text);
 		void SetFont(GuiFont* font);
 		void SetPosition(const Vector2i &v);
+		void SetColor(const Color &newColor = {255, 255, 255, 255});
 
 	public:
 		const std::string& GetContent() const;

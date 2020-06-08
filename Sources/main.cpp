@@ -15,32 +15,34 @@
 #include <ECS/System/RenderSystem.h>
 #include <Components/Transform.h>
 #include <Components/Text.h>
+#include <Components/Image.h>
 #include <GameManager.h>
-
-using namespace irr;
 
 int main()
 {
     Unique<GameManager> gameManager = CreateUnique<GameManager>();
     Entity player;
+    Entity imgtest;
     std::string mesh = "Assets/bomberman_m.obj";
 
     gameManager->Initialize();
     RenderSystem renderSystem(gameManager->GetEntityManager());
+    Image image(gameManager->GetGuiEnvironment());
     Drawable drawable(gameManager->GetSceneManager());
     Transform transform;
 
+    image.Initialize(gameManager->LoadTexture("Assets/tnt.jpg"));
     drawable.Initialize(&mesh);
     player.AddComponent(&drawable, drawable.Id);
     player.AddComponent(&transform, transform.Id);
     renderSystem.OnEntityCreated(player);
     gameManager->GetEntityManager()->AddEntity(player);
     gameManager->GetEntityManager()->AddSystem(&renderSystem);
-    gameManager->GetSceneManager()->addCameraSceneNode(0, irr::core::vector3df(0, 5, -10), transform.GetPosition());
+    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
 
     while (gameManager->GetDevice()->run())
     {
-        gameManager->GetVideoDriver()->beginScene(true, true, irr::video::SColor(255, 0, 100, 255));
+        gameManager->GetVideoDriver()->beginScene(true, true, Color(255, 0, 100, 255));
         gameManager->GetEntityManager()->Update();
         gameManager->GetVideoDriver()->endScene();
     }

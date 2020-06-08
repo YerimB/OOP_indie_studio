@@ -47,6 +47,11 @@ void Text::SetPosition(const Vector2i &v)
 	this->m_Text->setRelativePosition(v);
 }
 
+void Text::SetColor(const Color &newColor)
+{
+	this->m_Text->setOverrideColor(newColor);
+}
+
 const std::string &Text::GetContent() const
 {
 	return m_content;
