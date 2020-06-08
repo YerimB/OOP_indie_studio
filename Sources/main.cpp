@@ -27,11 +27,9 @@ int main()
 
     gameManager->Initialize();
     RenderSystem renderSystem(gameManager->GetEntityManager());
-    Image image(gameManager->GetGuiEnvironment());
     Drawable drawable(gameManager->GetSceneManager());
     Transform transform;
 
-    image.Initialize(gameManager->LoadTexture("Assets/tnt.jpg"));
     drawable.Initialize(&mesh);
     player.AddComponent(&drawable, drawable.Id);
     player.AddComponent(&transform, transform.Id);
@@ -40,8 +38,7 @@ int main()
     gameManager->GetEntityManager()->AddSystem(&renderSystem);
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
 
-    while (gameManager->GetDevice()->run())
-    {
+    while (gameManager->GetDevice()->run()) {
         gameManager->GetVideoDriver()->beginScene(true, true, Color(255, 0, 100, 255));
         gameManager->GetEntityManager()->Update();
         gameManager->GetVideoDriver()->endScene();

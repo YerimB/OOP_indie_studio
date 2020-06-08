@@ -19,7 +19,7 @@ class Text : public Component
 		Text(GuiEnvironment *GUIEnv);
 
 	public:
-		bool Initialize(void* args) override final;
+		bool Initialize(void* args = nullptr) override final;
 		void Update(const float& deltaTime) override final;
 
 	public:
