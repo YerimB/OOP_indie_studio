@@ -7,6 +7,8 @@
 
 // Irrlicht
 
+using SceneManager = irr::scene::ISceneManager;
+
 using Vector2f = irr::core::vector2df;
 using Vector2i = irr::core::vector2di;
 
@@ -24,6 +26,7 @@ using GuiEnvironment = irr::gui::IGUIEnvironment;
 using GuiFont = irr::gui::IGUIFont;
 using GuiText = irr::gui::IGUIStaticText;
 using GuiImage = irr::gui::IGUIImage;
+using GuiButton = irr::gui::IGUIButton;
 
 using Color = irr::video::SColor;
 using Colorf = irr::video::SColorf;

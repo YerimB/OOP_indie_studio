@@ -14,9 +14,9 @@
 #include <ECS/EntityManager.h>
 #include <ECS/System/RenderSystem.h>
 #include <ECS/System/TextSystem.h>
-#include <Components/Transform.h>
-#include <Components/Text.h>
-#include <Components/Image.h>
+#include <Headers/Components/Transform.h>
+#include <Headers/Components/Text.h>
+#include <Headers/Components/Image.h>
 #include <GameManager.h>
 
 int main()
@@ -46,7 +46,7 @@ int main()
 
     texttest.AddComponent(&transform, transform.Id);
     texttest.AddComponent(&text, text.Id);
-   
+
     gameManager->GetEntityManager()->AddEntity(texttest);
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
 

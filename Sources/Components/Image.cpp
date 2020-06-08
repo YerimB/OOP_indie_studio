@@ -5,10 +5,10 @@
 ** Image
 */
 
-#include <Components/Image.h>
+#include <Headers/Components/Image.h>
 #include <iostream>
 
-Image::Image(irr::gui::IGUIEnvironment *GUIEnv)
+Image::Image(GuiEnvironment *GUIEnv)
 {
     this->m_GUIEnvironment = GUIEnv;
 }
