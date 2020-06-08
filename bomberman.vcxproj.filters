@@ -17,6 +17,7 @@
     <ClCompile Include="Sources\GameManager.cpp" />
     <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
     <ClCompile Include="Sources\Components\Image.cpp" />
+    <ClCompile Include="Sources\Components\ImageSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Core.hpp" />
@@ -224,6 +225,7 @@
     <ClInclude Include="Headers\GameManager.h" />
     <ClInclude Include="Headers\ECS\System\TextSystem.h" />
     <ClInclude Include="Headers\Components\Image.h" />
+    <ClInclude Include="Headers\ECS\System\ImageSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

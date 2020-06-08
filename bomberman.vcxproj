@@ -265,6 +265,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Components\Image.cpp" />
+    <ClCompile Include="Sources\Components\ImageSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
     <ClCompile Include="Sources\GameManager.cpp" />
     <ClCompile Include="Sources\Components\Drawable.cpp" />
@@ -289,6 +290,7 @@
     <ClInclude Include="Headers\ECS\Hash.h" />
     <ClInclude Include="Headers\ECS\System.h" />
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
+    <ClInclude Include="Headers\ECS\System\ImageSystem.h" />
     <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
     <ClInclude Include="Headers\ECS\System\TextSystem.h" />

@@ -17,6 +17,8 @@ using Dimension2f = irr::core::dimension2df;
 using Dimension2i = irr::core::dimension2di;
 using Dimension2u = irr::core::dimension2du;
 
+using Position2i = irr::core::position2di;
+
 using Rectf = irr::core::rectf;
 using Recti = irr::core::recti;
 
