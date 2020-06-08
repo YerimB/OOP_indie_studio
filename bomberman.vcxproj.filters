@@ -14,6 +14,8 @@
     <ClCompile Include="Sources\Components\Drawable.cpp" />
     <ClCompile Include="Sources\Components\Text.cpp" />
     <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
+    <ClCompile Include="Sources\GameManager.cpp" />
+    <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Core.hpp" />
@@ -218,6 +220,8 @@
     <ClInclude Include="Headers\Components\Text.h" />
     <ClInclude Include="Headers\ECS\Hash.h" />
     <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
+    <ClInclude Include="Headers\GameManager.h" />
+    <ClInclude Include="Headers\ECS\System\TextSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

@@ -19,7 +19,7 @@ template <class... Comps>
 class System : public BaseSystem
 {
 	public:
-		System(Shared<EntityManager>pEntityManager) : BaseSystem(pEntityManager) {}
+		System(EntityManager* pEntityManager) : BaseSystem(pEntityManager) {}
 
 	public:
         virtual void OnEntityCreated(const Entity &entity) final;

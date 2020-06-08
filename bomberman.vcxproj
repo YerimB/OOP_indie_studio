@@ -264,6 +264,8 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
+    <ClCompile Include="Sources\GameManager.cpp" />
     <ClCompile Include="Sources\Components\Drawable.cpp" />
     <ClCompile Include="Sources\Components\Text.cpp" />
     <ClCompile Include="Sources\Components\Transform.cpp" />
@@ -287,6 +289,8 @@
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
     <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
+    <ClInclude Include="Headers\ECS\System\TextSystem.h" />
+    <ClInclude Include="Headers\GameManager.h" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />

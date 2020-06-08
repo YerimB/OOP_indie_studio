@@ -14,15 +14,12 @@
 #include <Components/Transform.h>
 #include <Components/Drawable.h>
 
-// class Renderable; //TODO
-// class TransformComponent; //TODO
-
  class RenderSystem : public System<Drawable, Transform>
  {
      using BaseType = System<Drawable, Transform>;
 
      public:
-         RenderSystem(Shared<EntityManager> pEntityManager);
+         RenderSystem(EntityManager* pEntityManager);
     
      public:
          virtual void Update(const double &deltaTime) override;
