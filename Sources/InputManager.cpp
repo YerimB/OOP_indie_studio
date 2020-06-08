@@ -4,7 +4,7 @@ using namespace irr;
 
 InputManager::InputManager(IrrlichtDevice* device)
 {
-    m_Device = std::unique_ptr<IrrlichtDevice>(device);
+    m_Device = device;
     m_KeyDown = std::vector<bool>(KEY_KEY_CODES_COUNT);
 
     std::fill(m_KeyDown.begin(), m_KeyDown.end(), false);
@@ -24,15 +24,4 @@ bool InputManager::OnEvent(const SEvent& event)
 bool InputManager::IsKeyDown(EKEY_CODE keyCode) const
 {
     return m_KeyDown[keyCode];
-}
-
-Unique<IBindable>& InputManager::GetBindable(const std::string& name)
-{
-    for (auto& bindable : m_Bindables)
-    {
-        if (bindable.first == name)
-            return bindable.second;
-    }
-
-    throw;
 }

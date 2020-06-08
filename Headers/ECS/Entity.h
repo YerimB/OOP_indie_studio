@@ -32,7 +32,7 @@ class Entity
 			auto findIt = m_Components.find(TComponent::Id);
 
 			if (findIt != m_Components.end())
-				return static_cast<TComponent*>(findIt->second.get());
+				return static_cast<TComponent*>(findIt->second);
 			return nullptr;
 		}
 

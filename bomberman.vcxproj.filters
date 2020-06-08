@@ -16,10 +16,8 @@
     <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Headers\Bindable\Bindable.hpp" />
     <ClInclude Include="Headers\Core.hpp" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
-    <ClInclude Include="Headers\Bindable\IBindable.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
@@ -230,9 +228,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Headers\Bindable\Bindable.inl" />
     <None Include="Headers\Thread\Thread.inl" />
-    <None Include="Headers\InputManager\InputManager.inl" />
     <None Include="Headers\SafeContainer\SafeQueue.inl" />
     <None Include="Headers\SafeContainer\SafeVector.inl" />
     <None Include="Headers\SafeContainer\SafeDeque.inl" />

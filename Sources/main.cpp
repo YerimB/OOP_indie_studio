@@ -8,7 +8,6 @@
 #include <iostream>
 #include <Irrlicht/irrlicht.h>
 #include <Core.hpp>
-#include <Bindable/Bindable.hpp>
 #include <InputManager/InputManager.hpp>
 #include <Thread/Thread.hpp>
 #include <ECS/Entity.h>
@@ -26,7 +25,9 @@ int main()
     irr::gui::IGUIEnvironment* guiEnv = device->getGUIEnvironment();
     irr::scene::ISceneManager* sceneManager = device->getSceneManager();
     Shared<EntityManager> manager = CreateShared<EntityManager>(sceneManager);
+    InputManager inputManager(device);
     RenderSystem renderSystem(manager);
+    device->setEventReceiver(&inputManager);
 
     Entity player;
     Drawable drawable(sceneManager);

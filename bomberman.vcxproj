@@ -275,8 +275,6 @@
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
-    <ClInclude Include="Headers\Bindable\Bindable.hpp" />
-    <ClInclude Include="Headers\Bindable\IBindable.hpp" />
     <ClInclude Include="Headers\Components\Drawable.h" />
     <ClInclude Include="Headers\Components\Text.h" />
     <ClInclude Include="Headers\Components\Transform.h" />
@@ -481,9 +479,7 @@
     <ClInclude Include="includes\Irrlicht\vector3d.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Headers\Bindable\Bindable.inl" />
     <None Include="Headers\ECS\System\System.inl" />
-    <None Include="Headers\InputManager\InputManager.inl" />
     <None Include="Headers\SafeContainer\SafeDeque.inl" />
     <None Include="Headers\SafeContainer\SafeQueue.inl" />
     <None Include="Headers\SafeContainer\SafeVector.inl" />
