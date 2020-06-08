@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2020
+** OOP_indie_studio_2019
+** File description:
+** Text
+*/
+
 #pragma once
 
 #include <ECS/Component.h>
@@ -9,11 +16,12 @@ class Text : public Component
 		static constexpr ComponentId Id = "Text"_hash;
 
 	public:
-		Text();
+		Text(GuiEnvironment *GUIEnv);
 
 	public:
 		bool Initialize(void* args) override final;
 		void Update(const float& deltaTime) override final;
+		void Add();
 
 	public:
 		void SetText(const std::string& text);
@@ -24,6 +32,7 @@ class Text : public Component
 		const GuiFont* GetFont() const;
 
 	private:
-		GuiFont* m_Font;
+		GuiEnvironment *m_GUIEnvironment = nullptr;
+		GuiFont *m_Font = nullptr;
 		std::string m_Text;
 };

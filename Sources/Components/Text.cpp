@@ -1,12 +1,17 @@
+/*
+** EPITECH PROJECT, 2020
+** OOP_indie_studio_2019
+** File description:
+** Text
+*/
+
 #include <Components/Text.h>
-
-Text::Text()
-{
-	m_Text = "";
-	m_Font = nullptr;
-}
-
 #include <iostream>
+
+Text::Text(GuiEnvironment *GUIEnv)
+{
+	this->m_GUIEnvironment = GUIEnv;
+}
 
 bool Text::Initialize(void *pText)
 {
@@ -16,9 +21,7 @@ bool Text::Initialize(void *pText)
 	return true;
 }
 
-void Text::Update(const float&)
-{
-}
+void Text::Update(const float&) {}
 
 void Text::SetText(const std::string& text)
 {
@@ -27,6 +30,8 @@ void Text::SetText(const std::string& text)
 
 void Text::SetFont(GuiFont* font)
 {
+	if (!font)
+		return;
 	m_Font = font;
 }
 
@@ -40,3 +45,4 @@ const GuiFont* Text::GetFont() const
 	return m_Font;
 }
 
+void Text::Add(void) {}

@@ -20,8 +20,10 @@ using Dimension2u = irr::core::dimension2du;
 using Rectf = irr::core::rectf;
 using Recti = irr::core::recti;
 
+using GuiEnvironment = irr::gui::IGUIEnvironment;
 using GuiFont = irr::gui::IGUIFont;
 using GuiText = irr::gui::IGUIStaticText;
+using GuiImage = irr::gui::IGUIImage;
 
 // C++
 

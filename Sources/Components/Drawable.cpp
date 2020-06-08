@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2020
+** OOP_indie_studio_2019
+** File description:
+** Drawable
+*/
+
 #include <Components/Drawable.h>
 
 Drawable::Drawable(irr::scene::ISceneManager* manager)
@@ -18,9 +25,7 @@ bool Drawable::Initialize(void* args)
 	return true;
 }
 
-void Drawable::Update(const float&)
-{
-}
+void Drawable::Update(const float&) {}
 
 irr::scene::IAnimatedMeshSceneNode* Drawable::GetDrawable()
 {
