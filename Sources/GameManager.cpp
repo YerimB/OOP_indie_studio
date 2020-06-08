@@ -12,9 +12,6 @@ GameManager::GameManager()
 
 GameManager::~GameManager()
 {
-    m_SceneManager->drop();
-    m_VideoDriver->drop();
-    m_GuiEnvironment->drop();
     m_Device->drop();
 }
 

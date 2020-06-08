@@ -21,18 +21,20 @@ class Text : public Component
 	public:
 		bool Initialize(void* args) override final;
 		void Update(const float& deltaTime) override final;
-		void Add();
 
 	public:
 		void SetText(const std::string& text);
 		void SetFont(GuiFont* font);
+		void SetPosition(const Vector2i &v);
 
 	public:
-		const std::string& GetText() const;
+		const std::string& GetContent() const;
 		const GuiFont* GetFont() const;
+		const GuiText* GetText() const;
 
 	private:
 		GuiEnvironment *m_GUIEnvironment = nullptr;
 		GuiFont *m_Font = nullptr;
-		std::string m_Text;
+		GuiText *m_Text = nullptr;
+		std::string m_content;
 };

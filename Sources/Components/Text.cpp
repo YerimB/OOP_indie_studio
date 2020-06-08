@@ -11,13 +11,17 @@
 Text::Text(GuiEnvironment *GUIEnv)
 {
 	this->m_GUIEnvironment = GUIEnv;
+	this->m_content = "Use SetText to modify content";
 }
 
 bool Text::Initialize(void *pText)
 {
-	if (pText == nullptr)
-		return false;
-	this->m_Text = *(static_cast<std::string *>(pText));
+	if (pText != nullptr)
+		this->m_content = *(static_cast<std::string *>(pText));
+	this->m_Text = this->m_GUIEnvironment->addStaticText(
+		(wchar_t *)m_content.data(),
+		{0, 0, 100, 20}
+	);
 	return true;
 }
 
@@ -25,7 +29,9 @@ void Text::Update(const float&) {}
 
 void Text::SetText(const std::string& text)
 {
-	m_Text = text;
+	this->m_content = text;
+
+	this->m_Text->setText((wchar_t *)m_content.data());
 }
 
 void Text::SetFont(GuiFont* font)
@@ -33,11 +39,17 @@ void Text::SetFont(GuiFont* font)
 	if (!font)
 		return;
 	m_Font = font;
+	this->m_Text->setOverrideFont(this->m_Font);
 }
 
-const std::string& Text::GetText() const
+void Text::SetPosition(const Vector2i &v)
 {
-	return m_Text;
+	this->m_Text->setRelativePosition(v);
+}
+
+const std::string &Text::GetContent() const
+{
+	return m_content;
 }
 
 const GuiFont* Text::GetFont() const
@@ -45,4 +57,7 @@ const GuiFont* Text::GetFont() const
 	return m_Font;
 }
 
-void Text::Add(void) {}
+const GuiText* Text::GetText() const
+{
+	return m_Text;
+}
