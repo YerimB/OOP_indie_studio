@@ -16,6 +16,10 @@ class Button : public Component
     public:
 		static constexpr ComponentId Id = "Button"_hash;
         typedef void (*callback_function)(void);
+        enum ButtonID { // Add types here
+            QUIT,
+            PLAY,
+        };
     
     public:
         Button(GuiEnvironment *GUIEnv);
@@ -30,11 +34,13 @@ class Button : public Component
         void SetTexture(Texture *p_Texture);
         void SetPressedTexture(Texture *p_Texture);
         void SetText(GuiText *p_Text);
+        void SetButtonID(const ButtonID &id);
 
     public: // Getters
         const bool IsPushButton(void);
         Texture *GetTexture(void);
         GuiText *GetText(void);
+        const ButtonID &GetButtonID(void);
 
     private:
 		GuiEnvironment *m_GUIEnvironment = nullptr;
@@ -42,6 +48,7 @@ class Button : public Component
         Texture *m_Texture = nullptr;
         GuiText *m_Text = nullptr;
         callback_function m_OnPressFunction;
+        ButtonID m_TypeID = static_cast<ButtonID>(-1);
 };
 
 #endif /* !BUTTON_H_ */
