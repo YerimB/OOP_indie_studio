@@ -17,7 +17,7 @@ class Drawable : public Component
 		static constexpr ComponentId Id = "Drawable"_hash;
 
 	public:
-		Drawable(irr::scene::ISceneManager* manager);
+		Drawable(SceneManager* manager);
 
 	public:
 		bool Initialize(void* args) override final;
@@ -27,6 +27,6 @@ class Drawable : public Component
 		irr::scene::IAnimatedMeshSceneNode* GetDrawable();
 
 	private:
-		irr::scene::ISceneManager* m_SceneManager;
+		SceneManager* m_SceneManager;
 		irr::scene::IAnimatedMeshSceneNode* m_AnimatedMesh;
 };

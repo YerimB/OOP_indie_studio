@@ -20,6 +20,6 @@ void TextSystem::Update(const double& deltaTime)
 		Transform* transform = std::get<Transform*>(compTuple);
 
 		auto position = transform->GetPosition();
-		//text->SetPosition(Vector2i(static_cast<int>(position.X), static_cast<int>(position.Y)));
+		text->SetPosition(Vector2i(static_cast<int>(position.X), static_cast<int>(position.Y)));
 	}
 }

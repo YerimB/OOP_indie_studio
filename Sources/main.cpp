@@ -14,9 +14,9 @@
 #include <ECS/EntityManager.h>
 #include <ECS/System/RenderSystem.h>
 #include <ECS/System/TextSystem.h>
-#include <Components/Transform.h>
-#include <Components/Text.h>
-#include <Components/Image.h>
+#include <Headers/Components/Transform.h>
+#include <Headers/Components/Text.h>
+#include <Headers/Components/Image.h>
 #include <GameManager.h>
 
 int main()
@@ -29,22 +29,28 @@ int main()
     std::string textStr = "Bon";
 
     gameManager->Initialize();
+
+    // Add systems first
     TextSystem textSystem(gameManager->GetEntityManager());
-    Transform transform;
+    gameManager->GetEntityManager()->AddSystem(&textSystem);
+
+    // Components
     Text text(gameManager->GetGuiEnvironment());
+    Transform transform;
 
     transform.Initialize(nullptr);
     text.Initialize(&textStr);
-    transform.SetPosition({ 100, 20, 0 });
+    text.SetColor();
+    text.SetText("Totorina");
+    transform.SetPosition({ 200, 500, 0 });
+
     texttest.AddComponent(&transform, transform.Id);
     texttest.AddComponent(&text, text.Id);
-   
+
     gameManager->GetEntityManager()->AddEntity(texttest);
-    gameManager->GetEntityManager()->AddSystem(&textSystem);
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
 
-    while (gameManager->GetDevice()->run())
-    {
+    while (gameManager->GetDevice()->run()) {
         gameManager->GetVideoDriver()->beginScene(true, true, Color(255, 0, 100, 255));
         gameManager->GetEntityManager()->Update();
         gameManager->GetVideoDriver()->endScene();

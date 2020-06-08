@@ -35,6 +35,8 @@ void EntityManager::Update()
 void EntityManager::AddEntity(const Entity& entity)
 {
 	m_Entities.emplace(std::make_pair(entity.GetId(), entity));
+	for (auto &elem : this->m_Systems)
+		elem->OnEntityCreated(entity);
 }
 
 void EntityManager::RemoveEntity(const Entity& entity)

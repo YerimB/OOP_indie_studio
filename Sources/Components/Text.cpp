@@ -5,7 +5,7 @@
 ** Text
 */
 
-#include <Components/Text.h>
+#include <Headers/Components/Text.h>
 #include <iostream>
 
 Text::Text(GuiEnvironment *GUIEnv)
@@ -18,12 +18,11 @@ bool Text::Initialize(void *pText)
 {
 	if (pText != nullptr)
 		this->m_content = *(static_cast<std::string *>(pText));
+	std::wstring wStr(m_content.begin(), m_content.end());
 	this->m_Text = this->m_GUIEnvironment->addStaticText(
-		(wchar_t *)m_content.data(),
-		Recti{10, 10, 310, 30},
-		true
+		wStr.c_str(),
+		Recti{10, 10, 310, 30}
 	);
-
 	return true;
 }
 
@@ -31,9 +30,10 @@ void Text::Update(const float&) {}
 
 void Text::SetText(const std::string& text)
 {
-	this->m_content = text;
+	std::wstring wStr(text.begin(), text.end());
 
-	this->m_Text->setText((wchar_t *)m_content.data());
+	this->m_content = text;
+	this->m_Text->setText(wStr.c_str());
 }
 
 void Text::SetFont(GuiFont* font)

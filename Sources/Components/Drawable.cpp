@@ -5,7 +5,7 @@
 ** Drawable
 */
 
-#include <Components/Drawable.h>
+#include <Headers/Components/Drawable.h>
 
 Drawable::Drawable(irr::scene::ISceneManager* manager)
 {
