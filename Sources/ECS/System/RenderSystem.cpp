@@ -7,7 +7,7 @@
 
 #include <ECS/System/RenderSystem.h>
 
-RenderSystem::RenderSystem(Shared<EntityManager> pEntityManager) :
+RenderSystem::RenderSystem(EntityManager* pEntityManager) :
 BaseType(pEntityManager) {}
 
 void RenderSystem::Update(const double &deltaTime)

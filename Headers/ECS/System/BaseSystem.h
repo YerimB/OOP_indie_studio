@@ -14,7 +14,7 @@ class EntityManager;
 class BaseSystem
 {
     public:
-        explicit BaseSystem(Shared<EntityManager> pEntityManager) :
+        explicit BaseSystem(EntityManager* pEntityManager) :
             _EntityManager(pEntityManager) {};
         virtual ~BaseSystem() = default;
 
@@ -24,7 +24,7 @@ class BaseSystem
         virtual void Update(const double &detlaTime) = 0;
 
     protected:
-        Shared<EntityManager> _EntityManager;
+        EntityManager* _EntityManager;
 };
 
 #endif /* !BASESYSTEM_H_ */
