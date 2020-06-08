@@ -24,7 +24,10 @@ bool EntityManager::Initialize()
 
 void EntityManager::Update()
 {
-
+	for (auto& system : m_Systems)
+	{
+		system->Update(0);
+	}
 }
 
 void EntityManager::AddEntity(const Entity& entity)

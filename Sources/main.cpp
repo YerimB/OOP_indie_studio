@@ -38,16 +38,16 @@ int main()
     player.AddComponent(&drawable, drawable.Id);
     player.AddComponent(&transform, transform.Id);
 
-    manager->AddEntity(player);
     renderSystem.OnEntityCreated(player);
-
+    manager->AddEntity(player);
+    manager->AddSystem(&renderSystem);
 
     sceneManager->addCameraSceneNode(0, irr::core::vector3df(0, 5, -10), transform.GetPosition());
 
     while (device->run())
     {
         driver->beginScene(true, true, irr::video::SColor(255, 0, 100, 255));
-        renderSystem.Update(0);
+        manager->Update();
         driver->endScene();
     }
 
