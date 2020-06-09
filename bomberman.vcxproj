@@ -272,6 +272,7 @@
     <ClCompile Include="Sources\Components\Moveable.cpp" />
     <ClCompile Include="Sources\Components\SoundManager.cpp" />
     <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\SoundSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
     <ClCompile Include="Sources\GameManager.cpp" />
     <ClCompile Include="Sources\Components\Drawable.cpp" />
@@ -282,6 +283,7 @@
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
     <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
     <ClCompile Include="Sources\InputManager.cpp" />
+    <ClCompile Include="Sources\Scene.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
@@ -304,6 +306,7 @@
     <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
     <ClInclude Include="Headers\ECS\System\ImageSystem.h" />
     <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
+    <ClInclude Include="Headers\ECS\System\SoundSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
     <ClInclude Include="Headers\ECS\System\TextSystem.h" />
     <ClInclude Include="Headers\GameManager.h" />
@@ -311,6 +314,7 @@
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
+    <ClInclude Include="Headers\Scene.hpp" />
     <ClInclude Include="Headers\Thread\ITask.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
