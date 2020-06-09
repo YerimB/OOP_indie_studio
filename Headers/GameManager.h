@@ -26,8 +26,6 @@ class GameManager
 	
 	public:
 		void LoadScene(const Scene::SceneID &sceneID);
-		inline void LoadMenu(void) { this->LoadScene(Scene::MENU); };
-		inline void LoadGame(void) { this->LoadScene(Scene::GAME); };
 
 	public:
 		Texture *LoadTexture(const std::string &path);

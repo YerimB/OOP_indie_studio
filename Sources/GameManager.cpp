@@ -63,6 +63,11 @@ void GameManager::ProgramLoop(void)
         this->m_VideoDriver->beginScene(true, true, Color(255, 255, 255, 0));
         this->m_EntityManager->Update();
         this->m_VideoDriver->endScene();
+        if (GLOBALVARS.sceneChanged == true)
+        {
+            this->LoadScene(static_cast<Scene::SceneID>(GLOBALVARS.newScene));
+            GLOBALVARS.sceneChanged = false;
+        }
     }
 }
 

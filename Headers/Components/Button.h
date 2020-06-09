@@ -30,7 +30,7 @@ class Button : public Component
 		void Update(const float& deltaTime) override final;
     
     public: // Setters
-        void SetOnPress(callback_function func);
+        void SetOnPress(void (*callback_function)(void));
         void SetAsPushButton(const bool &);
         void SetTexture(Texture *p_Texture);
         void SetPressedTexture(Texture *p_Texture);

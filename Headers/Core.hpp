@@ -60,3 +60,14 @@ constexpr Shared<T> CreateShared(Args&& ... args)
 
 template<typename T>
 using Weak = std::weak_ptr<T>;
+
+// GLOBAL VARIABLES
+
+typedef struct GameGlobalVariables_s
+{
+	bool sceneChanged = false;
+	uint newScene = (-1);
+	// Add vars if needed.
+} GameVars_t;
+
+static GameVars_t GLOBALVARS;

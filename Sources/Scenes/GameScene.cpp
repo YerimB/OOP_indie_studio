@@ -7,6 +7,12 @@
 // Components
 #include <Components/Transform.h>
 
+void changeSceneToMenu(void)
+{
+	GLOBALVARS.sceneChanged = true;
+	GLOBALVARS.newScene = static_cast<uint>(Scene::MENU);
+}
+
 GameScene::GameScene() : Scene(Scene::GAME)
 {
 }
@@ -36,11 +42,11 @@ void GameScene::Load(GameManager* gameManager)
 
         // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {
-            b1->SetButtonID(Button::ButtonID::PLAY);
-            b1->SetTexture(gameManager->LoadTexture("Assets/block.png"));
+            b1->SetButtonID(Button::ButtonID::QUIT);
+            b1->SetTexture(gameManager->LoadTexture("Assets/sand.png"));
             b1->SetText("Totorina");
             b1->SetPosition({ 500, 200 });
-            b1->SetOnPress(nullptr);
+            b1->SetOnPress(changeSceneToMenu);
             e1.AddComponent(std::move(b1), Button::Id);
         }
         // When done, add entity to the entity manager.

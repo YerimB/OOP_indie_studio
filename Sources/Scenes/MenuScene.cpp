@@ -7,9 +7,11 @@
 // Components
 #include <Components/Transform.h>
 
-void printTotorina(void)
+void changeSceneToGame(void)
 {
-    std::cout << "Totorina" << std::endl;
+    std::cout << "Trying to change scene ?" << std::endl;
+	GLOBALVARS.sceneChanged = true;
+	GLOBALVARS.newScene = static_cast<uint>(Scene::GAME);
 }
 
 MenuScene::MenuScene() : Scene(Scene::MENU)
@@ -45,7 +47,7 @@ void MenuScene::Load(GameManager* gameManager)
             b1->SetTexture(gameManager->LoadTexture("Assets/block.png"));
             b1->SetText("Totorina");
             b1->SetPosition({ 500, 200 });
-            b1->SetOnPress(printTotorina);
+            b1->SetOnPress(changeSceneToGame);
             e1.AddComponent(std::move(b1), Button::Id);
         }
         // When done, add entity to the entity manager.
