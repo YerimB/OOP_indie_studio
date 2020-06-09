@@ -39,7 +39,6 @@ void MenuScene::Load(GameManager* gameManager)
         e1.AddComponent(std::move(b1), Button::Id);
     }
 
-    buttonSys->OnEntityCreated(e1);
     gameManager->GetEntityManager()->AddSystem(std::move(buttonSys));
     gameManager->GetEntityManager()->AddEntity(e1);
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
