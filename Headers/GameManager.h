@@ -8,7 +8,6 @@
 #pragma once
 
 #include <Core.hpp>
-
 #include <ECS/EntityManager.h>
 #include <InputManager/InputManager.hpp>
 #include <Scenes/Scene.hpp>
