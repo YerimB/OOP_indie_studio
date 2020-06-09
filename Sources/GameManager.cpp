@@ -17,7 +17,14 @@ GameManager::~GameManager()
 
 void GameManager::Initialize()
 {
-    m_Device = createDevice(video::EDT_OPENGL, Dimension2u(1280, 720), 16, false, false, false);
+    m_Device = irr::createDevice(
+        irr::video::EDT_OPENGL,
+        Dimension2u(1280, 720),
+        16,
+        false,
+        false,
+        false
+    );
     m_VideoDriver = m_Device->getVideoDriver();
     m_GuiEnvironment = m_Device->getGUIEnvironment();
     m_SceneManager = m_Device->getSceneManager();
@@ -65,4 +72,9 @@ EntityManager* GameManager::GetEntityManager() const
 InputManager* GameManager::GetInputManager() const
 {
     return m_InputManager.get();
+}
+
+const irr::SEvent &GameManager::GetSEvent(void) const
+{
+    return m_sEvent;
 }

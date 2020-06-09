@@ -6,6 +6,7 @@
 */
 
 #include <Components/Button.h>
+#include <iostream>
 
 Button::Button(GuiEnvironment *GUIEnv)
 {
@@ -14,10 +15,11 @@ Button::Button(GuiEnvironment *GUIEnv)
 
 bool Button::Initialize(void *args)
 {
-    if (!args)
-        return (false);
     this->m_Button = m_GUIEnvironment->addButton({0, 0, 100, 100});
-    this->SetButtonID(*static_cast<ButtonID *>(args));
+    if (this->m_Button == nullptr) {
+        return (false);
+    } else if (args)
+        this->SetButtonID(*static_cast<ButtonID *>(args));
     return (true);
 }
 
@@ -62,6 +64,7 @@ void Button::SetText(GuiText *p_Text)
 void Button::SetButtonID(const ButtonID &id)
 {
     this->m_TypeID = id;
+    this->m_Button->setID((irr::s32)id);
 }
 
 void Button::SetTriggered(const bool &state)
@@ -101,7 +104,7 @@ const Button::ButtonID &Button::GetButtonID(void)
     return (this->m_TypeID);
 }
 
-const Vector2i &Button::GetPosition(void)
+const Vector2i Button::GetPosition(void)
 {
     return (this->m_Button->getAbsolutePosition().UpperLeftCorner);
 }

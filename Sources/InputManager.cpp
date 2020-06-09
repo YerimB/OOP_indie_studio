@@ -21,22 +21,24 @@ bool InputManager::OnEvent(const SEvent& event)
     if (event.EventType == irr::EET_JOYSTICK_INPUT_EVENT)
         std::cout << "Joystick Event" << std::endl;
 
-    if (event.EventType == irr::gui::EGET_BUTTON_CLICKED)
+    if (event.EventType == irr::EET_GUI_EVENT)
     {
-        int id = event.GUIEvent.Caller->getID();
-        switch (id)
+        if (event.GUIEvent.EventType == irr::gui::EGET_BUTTON_CLICKED)
         {
-            case Button::PLAY:
-                m_Buttons[Button::PLAY] = true;
-                break;
-            case Button::QUIT:
-                m_Buttons[Button::QUIT] = true;
-                break;
-            default:
-                break;
+            s32 id = event.GUIEvent.Caller->getID();
+            switch (id)
+            {
+                case Button::PLAY:
+                    m_Buttons[Button::PLAY] = true;
+                    break;
+                case Button::QUIT:
+                    m_Buttons[Button::QUIT] = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
-
     return false;
 }
 

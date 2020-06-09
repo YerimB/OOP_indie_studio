@@ -44,7 +44,7 @@ class Button : public Component
         Texture *GetTexture(void);
         GuiText *GetText(void);
         const ButtonID &GetButtonID(void);
-        const Vector2i &GetPosition(void);
+        const Vector2i GetPosition(void);
 
     private:
 		GuiEnvironment *m_GUIEnvironment = nullptr;
