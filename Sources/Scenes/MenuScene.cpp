@@ -1,6 +1,6 @@
 #include <Scenes/MenuScene.hpp>
-#include <ECS\System\ButtonSystem.h>
-#include <Components\Transform.h>
+#include <ECS/System/ButtonSystem.h>
+#include <Components/Transform.h>
 #include <GameManager.h>
 
 void printTotorina(void)
@@ -22,26 +22,24 @@ void MenuScene::Load(GameManager* gameManager)
     gameManager->GetSceneManager()->clear();
 
 	// Load Entities, Components & Systems
-    ButtonSystem *buttonSys = new ButtonSystem(gameManager->GetEntityManager());
-    gameManager->GetEntityManager()->AddSystem(buttonSys);
+    ButtonSystem* buttonSys = new ButtonSystem(gameManager->GetEntityManager());
 
     // Components
-    Transform transform;
-    Button b1(gameManager->GetGuiEnvironment());
+    Button* b1 = new Button(gameManager->GetGuiEnvironment());
 
-    transform.Initialize(nullptr);
-    transform.SetPosition({ 200, 500, 0 });
-
+    // Entities
     Entity e1;
 
-    if (b1.Initialize(nullptr)) {
-        b1.SetButtonID(Button::ButtonID::PLAY);
-        b1.SetTexture(gameManager->LoadTexture("Assets/block.png"));
-        b1.SetText("Totorina");
-        b1.SetPosition({ 500, 200 });
-        b1.SetOnPress(printTotorina);
-        e1.AddComponent(&b1, Button::Id);
+    if (b1->Initialize(nullptr)) {
+        b1->SetButtonID(Button::ButtonID::PLAY);
+        b1->SetTexture(gameManager->LoadTexture("Assets/block.png"));
+        b1->SetText("Totorina");
+        b1->SetPosition({ 500, 200 });
+        b1->SetOnPress(printTotorina);
+        e1.AddComponent(std::move(b1), Button::Id);
     }
 
+    buttonSys->OnEntityCreated(e1);
+    gameManager->GetEntityManager()->AddSystem(buttonSys);
     gameManager->GetEntityManager()->AddEntity(e1);
 }
