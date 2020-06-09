@@ -2,12 +2,12 @@
 #include <GameManager.h>
 
 // Systems
-#include <ECS/System/ButtonSystem.h>
+#include <ECS/ECS.h>
 
 // Components
 #include <Components/Transform.h>
 
-void changeSceneToMenu(GameManager* gameManager)
+static void changeSceneToMenu(GameManager* gameManager)
 {
 	gameManager->m_globalVars.sceneChanged = true;
 	gameManager->m_globalVars.newScene = Scene::MENU;
@@ -29,16 +29,22 @@ void GameScene::Load(GameManager* gameManager)
     { // Create and Add Systems (Always first)
         // Create
         ButtonSystem* buttonSys = new ButtonSystem(gameManager->GetEntityManager());
+        ImageSystem* imageSys = new ImageSystem(gameManager->GetEntityManager());
+        TextSystem* textSys = new TextSystem(gameManager->GetEntityManager());
+        RenderSystem* renderSys = new RenderSystem(gameManager->GetEntityManager());
 
         // Add
         gameManager->GetEntityManager()->AddSystem(std::move(buttonSys));
+        gameManager->GetEntityManager()->AddSystem(std::move(imageSys));
+        gameManager->GetEntityManager()->AddSystem(std::move(textSys));
+        gameManager->GetEntityManager()->AddSystem(std::move(renderSys));
     }
 
     // Load Entities & Components
-	{ // Test button
+	{ // Back to menu button
         // Create components and entity
-        Button* b1 = new Button(gameManager->GetGuiEnvironment());
         Entity e1;
+        Button* b1 = new Button(gameManager->GetGuiEnvironment());
 
         // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {
@@ -53,6 +59,18 @@ void GameScene::Load(GameManager* gameManager)
         }
         // When done, add entity to the entity manager.
         gameManager->GetEntityManager()->AddEntity(e1);
+    }
+    {
+        Entity e2;
+        Drawable* d1 = new Drawable(gameManager->GetSceneManager());
+        Transform* t1 = new Transform();
+        std::string pathToMesh = "Assets/bomberman_m.obj";
+
+        if (t1->Initialize(0) and d1->Initialize(&pathToMesh)) {
+            e2.AddComponent(d1, Drawable::Id);
+            e2.AddComponent(t1, Transform::Id);
+        }
+        gameManager->GetEntityManager()->AddEntity(e2);
     }
     // Add Camera to Scene.
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
