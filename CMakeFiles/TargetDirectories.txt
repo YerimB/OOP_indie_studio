@@ -1,0 +1,3 @@
+/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles/rebuild_cache.dir
+/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles/edit_cache.dir
+/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles/bomberman.dir
