@@ -7,11 +7,12 @@
 #include <ECS/Entity.h>
 #include <ECS/Component.h>
 #include <ECS/System/System.h>
+#include <InputManager/InputManager.hpp>
 
 class EntityManager
 {
 	public:
-		EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIEnvironment* env);
+		EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIEnvironment* env, InputManager* im);
 		~EntityManager();
 		EntityManager(const EntityManager&) = delete;
 		EntityManager(EntityManager&&) = delete;
@@ -33,6 +34,7 @@ class EntityManager
 		void ClearAll();
 		irr::scene::ISceneManager* GetSceneManager() const { return m_SceneManager; }
 		irr::gui::IGUIEnvironment* GetGuiEnvironment() const { return m_GuiEnvironment; }
+		InputManager* GetInputManager() const { return m_InputManager; }
 
 	private:
 		std::unordered_map<EntityId, Entity> m_Entities;
@@ -40,4 +42,5 @@ class EntityManager
 		std::vector<BaseSystem*> m_Systems;
 		irr::scene::ISceneManager* m_SceneManager;
 		irr::gui::IGUIEnvironment* m_GuiEnvironment;
+		InputManager* m_InputManager;
 };

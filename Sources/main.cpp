@@ -12,45 +12,36 @@
 #include <Thread/Thread.hpp>
 #include <ECS/Entity.h>
 #include <ECS/EntityManager.h>
-#include <ECS/System/RenderSystem.h>
-#include <ECS/System/TextSystem.h>
-#include <Components/Transform.h>
-#include <Components/Text.h>
-#include <Components/Image.h>
+#include <ECS/System/ButtonSystem.h>
+#include <Components/Button.h>
 #include <GameManager.h>
 
 int main()
 {
     Unique<GameManager> gameManager = CreateUnique<GameManager>();
-    Entity player;
-    Entity imgtest;
-    Entity texttest;
-    std::string mesh = "Assets/bomberman_m.obj";
-    std::string textStr = "Bon";
 
     gameManager->Initialize();
 
     // Add systems first
-    TextSystem textSystem(gameManager->GetEntityManager());
-    gameManager->GetEntityManager()->AddSystem(&textSystem);
+    ButtonSystem buttonSystem(gameManager->GetEntityManager());
 
     // Components
-    Text text(gameManager->GetGuiEnvironment());
-    Transform transform;
+    Button button(gameManager->GetGuiEnvironment());
+    button.Initialize(0); // Button::PLAY ?
 
-    transform.Initialize(nullptr);
-    text.Initialize(&textStr);
-    text.SetColor();
-    text.SetText("Totorina");
-    transform.SetPosition({ 200, 500, 0 });
+    // Entity
+    Entity buttonEntity;
+    buttonEntity.AddComponent(&button, button.Id);
 
-    texttest.AddComponent(&transform, transform.Id);
-    texttest.AddComponent(&text, text.Id);
+    // Add Entity
+    buttonSystem.OnEntityCreated(buttonEntity);
+    gameManager->GetEntityManager()->AddEntity(buttonEntity);
+    gameManager->GetEntityManager()->AddSystem(&buttonSystem);
 
-    gameManager->GetEntityManager()->AddEntity(texttest);
-    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
+    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
 
     while (gameManager->GetDevice()->run()) {
+        //gameManager->GetInputManager()->OnEvent();
         gameManager->GetVideoDriver()->beginScene(true, true, Color(255, 0, 100, 255));
         gameManager->GetEntityManager()->Update();
         gameManager->GetVideoDriver()->endScene();

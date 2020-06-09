@@ -18,6 +18,12 @@
     <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
     <ClCompile Include="Sources\Components\Image.cpp" />
     <ClCompile Include="Sources\Components\ImageSystem.cpp" />
+    <ClCompile Include="Sources\Components\Animator.cpp" />
+    <ClCompile Include="Sources\Components\Button.cpp" />
+    <ClCompile Include="Sources\Components\Collision.cpp" />
+    <ClCompile Include="Sources\Components\Moveable.cpp" />
+    <ClCompile Include="Sources\Components\SoundManager.cpp" />
+    <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Core.hpp" />
@@ -226,6 +232,12 @@
     <ClInclude Include="Headers\ECS\System\TextSystem.h" />
     <ClInclude Include="Headers\Components\Image.h" />
     <ClInclude Include="Headers\ECS\System\ImageSystem.h" />
+    <ClInclude Include="Headers\Components\Animator.h" />
+    <ClInclude Include="Headers\Components\Button.h" />
+    <ClInclude Include="Headers\Components\Collision.h" />
+    <ClInclude Include="Headers\Components\Moveable.h" />
+    <ClInclude Include="Headers\Components\SoundManager.h" />
+    <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

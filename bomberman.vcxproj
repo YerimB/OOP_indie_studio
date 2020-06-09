@@ -264,8 +264,14 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Components\Animator.cpp" />
+    <ClCompile Include="Sources\Components\Button.cpp" />
+    <ClCompile Include="Sources\Components\Collision.cpp" />
     <ClCompile Include="Sources\Components\Image.cpp" />
     <ClCompile Include="Sources\Components\ImageSystem.cpp" />
+    <ClCompile Include="Sources\Components\Moveable.cpp" />
+    <ClCompile Include="Sources\Components\SoundManager.cpp" />
+    <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
     <ClCompile Include="Sources\GameManager.cpp" />
     <ClCompile Include="Sources\Components\Drawable.cpp" />
@@ -279,8 +285,13 @@
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
+    <ClInclude Include="Headers\Components\Animator.h" />
+    <ClInclude Include="Headers\Components\Button.h" />
+    <ClInclude Include="Headers\Components\Collision.h" />
     <ClInclude Include="Headers\Components\Drawable.h" />
     <ClInclude Include="Headers\Components\Image.h" />
+    <ClInclude Include="Headers\Components\Moveable.h" />
+    <ClInclude Include="Headers\Components\SoundManager.h" />
     <ClInclude Include="Headers\Components\Text.h" />
     <ClInclude Include="Headers\Components\Transform.h" />
     <ClInclude Include="Headers\Core.hpp" />
@@ -290,6 +301,7 @@
     <ClInclude Include="Headers\ECS\Hash.h" />
     <ClInclude Include="Headers\ECS\System.h" />
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
+    <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
     <ClInclude Include="Headers\ECS\System\ImageSystem.h" />
     <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
