@@ -40,6 +40,6 @@ void MenuScene::Load(GameManager* gameManager)
     }
 
     buttonSys->OnEntityCreated(e1);
-    gameManager->GetEntityManager()->AddSystem(buttonSys);
+    gameManager->GetEntityManager()->AddSystem(std::move(buttonSys));
     gameManager->GetEntityManager()->AddEntity(e1);
 }
