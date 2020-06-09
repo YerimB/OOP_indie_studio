@@ -7,10 +7,11 @@
 
 #include <ECS/EntityManager.h>
 
-EntityManager::EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIEnvironment* env)
+EntityManager::EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIEnvironment* env, InputManager* im)
 {
 	m_SceneManager = manager;
 	m_GuiEnvironment = env;
+	m_InputManager = im;
 }
 
 EntityManager::~EntityManager()

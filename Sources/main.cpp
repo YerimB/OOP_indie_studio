@@ -12,12 +12,9 @@
 #include <Thread/Thread.hpp>
 #include <ECS/Entity.h>
 #include <ECS/EntityManager.h>
-#include <ECS/System/RenderSystem.h>
-#include <ECS/System/TextSystem.h>
 #include <ECS/System/ButtonSystem.h>
+#include <Components/Button.h>
 #include <Components/Transform.h>
-#include <Components/Text.h>
-#include <Components/Image.h>
 #include <GameManager.h>
 
 void printTotorina(void)
@@ -43,15 +40,19 @@ int main()
     transform.Initialize(nullptr);
     transform.SetPosition({ 200, 500, 0 });
 
+    b1.Initialize(0); // ButtonID::PLAY ?
     b1.SetPosition({500, 200});
     b1.SetOnPress(printTotorina);
 
     e1.AddComponent(&b1, Button::Id);
 
+    buttonSys.OnEntityCreated(e1);
+
     gameManager->GetEntityManager()->AddEntity(e1);
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
 
     while (gameManager->GetDevice()->run()) {
+        //gameManager->GetInputManager()->OnEvent();
         gameManager->GetVideoDriver()->beginScene(true, true, Color(255, 0, 100, 255));
         gameManager->GetEntityManager()->Update();
         gameManager->GetVideoDriver()->endScene();

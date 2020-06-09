@@ -15,7 +15,10 @@ void ButtonSystem::Update(const double &deltaTime)
     for (auto &compTuple : this->_components) {
         Button *pButton = std::get<Button *>(compTuple);
 
-        if (pButton->IsTriggered())
+        if (_EntityManager->GetInputManager()->IsButtonDown(pButton->GetButtonID()))
+        {
             pButton->Update(deltaTime);
+            _EntityManager->GetInputManager()->ResetButton(pButton->GetButtonID());
+        }
     }
 }
