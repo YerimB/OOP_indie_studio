@@ -5,7 +5,7 @@
 ** Button
 */
 
-#include <Headers/Components/Button.h>
+#include <Components/Button.h>
 
 Button::Button(GuiEnvironment *GUIEnv)
 {
@@ -17,15 +17,14 @@ bool Button::Initialize(void *args)
     if (!args)
         return (false);
     this->m_Button = m_GUIEnvironment->addButton({0, 0, 100, 100});
+    this->SetButtonID(*static_cast<ButtonID *>(args));
     return (true);
 }
 
 void Button::Update(const float &)
 {
-    if (this->m_Button->isPushButton()) {
-        return;
-    }
-    // ??
+    // Use of callback function.
+    this->m_OnPressFunction();
 }
 
 void Button::SetOnPress(callback_function f)
@@ -57,6 +56,11 @@ void Button::SetText(GuiText *p_Text)
     this->m_Button->setOverrideFont(this->m_Text->getActiveFont());
 }
 
+void Button::SetButtonID(const ButtonID &id)
+{
+    this->m_TypeID = id;
+}
+
 const bool Button::IsPushButton(void)
 {
     return (this->m_Button->isPushButton());
@@ -70,4 +74,9 @@ Texture *Button::GetTexture(void)
 GuiText *Button::GetText(void)
 {
     return (this->m_Text);
+}
+
+const Button::ButtonID &Button::GetButtonID(void)
+{
+    return (this->m_TypeID);
 }

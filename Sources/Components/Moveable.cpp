@@ -5,7 +5,7 @@
 ** Moveable
 */
 
-#include <Headers/Components/Moveable.h>
+#include <Components/Moveable.h>
 
 Moveable::Moveable(SceneManager *p_Smgr)
 {

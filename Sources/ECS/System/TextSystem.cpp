@@ -8,9 +8,8 @@
 #include <ECS/System/TextSystem.h>
 #include <string>
 
-TextSystem::TextSystem(EntityManager* pEntityManager) : System<Text, Transform>(pEntityManager)
-{
-}
+TextSystem::TextSystem(EntityManager* pEntityManager) :
+System<Text, Transform>(pEntityManager) {}
 
 void TextSystem::Update(const double& deltaTime)
 {

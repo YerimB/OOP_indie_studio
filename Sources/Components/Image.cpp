@@ -5,7 +5,7 @@
 ** Image
 */
 
-#include <Headers/Components/Image.h>
+#include <Components/Image.h>
 #include <iostream>
 
 Image::Image(GuiEnvironment *GUIEnv)

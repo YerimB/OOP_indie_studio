@@ -5,7 +5,7 @@
 ** Collision
 */
 
-#include <Headers/Components/Collision.h>
+#include <Components/Collision.h>
 
 Collision::Collision(SceneManager *p_Smgr)
 {

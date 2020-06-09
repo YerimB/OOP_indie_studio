@@ -14,9 +14,9 @@
 #include <ECS/EntityManager.h>
 #include <ECS/System/RenderSystem.h>
 #include <ECS/System/TextSystem.h>
-#include <Headers/Components/Transform.h>
-#include <Headers/Components/Text.h>
-#include <Headers/Components/Image.h>
+#include <Components/Transform.h>
+#include <Components/Text.h>
+#include <Components/Image.h>
 #include <GameManager.h>
 
 int main()

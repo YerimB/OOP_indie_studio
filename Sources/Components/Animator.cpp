@@ -5,7 +5,7 @@
 ** Animator
 */
 
-#include <Headers/Components/Animator.h>
+#include <Components/Animator.h>
 
 Animator::Animator(SceneManager *p_Smgr)
 {
