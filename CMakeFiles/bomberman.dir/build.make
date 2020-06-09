@@ -142,22 +142,9 @@ CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Image.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.s
 
-CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
-CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.o: Sources/Components/ImageSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/ImageSystem.cpp
-
-CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/ImageSystem.cpp > CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.i
-
-CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/ImageSystem.cpp -o CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.s
-
 CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o: Sources/Components/Moveable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Moveable.cpp
 
 CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.i: cmake_force
@@ -170,7 +157,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o: Sources/Components/SoundManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/SoundManager.cpp
 
 CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.i: cmake_force
@@ -183,7 +170,7 @@ CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o: Sources/Components/Text.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Text.cpp
 
 CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.i: cmake_force
@@ -196,7 +183,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o: Sources/Components/Transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Transform.cpp
 
 CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.i: cmake_force
@@ -209,7 +196,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o: Sources/ECS/Component.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/Component.cpp
 
 CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.i: cmake_force
@@ -222,7 +209,7 @@ CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o: Sources/ECS/Entity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/Entity.cpp
 
 CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.i: cmake_force
@@ -235,7 +222,7 @@ CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o: Sources/ECS/EntityManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/EntityManager.cpp
 
 CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.i: cmake_force
@@ -248,7 +235,7 @@ CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o: Sources/ECS/System/ButtonSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/ButtonSystem.cpp
 
 CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.i: cmake_force
@@ -258,6 +245,19 @@ CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.i: cmake_force
 CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/ButtonSystem.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o: Sources/ECS/System/ImageSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/ImageSystem.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/ImageSystem.cpp > CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/ImageSystem.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s
 
 CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o: Sources/ECS/System/RenderSystem.cpp
@@ -409,7 +409,6 @@ bomberman_OBJECTS = \
 "CMakeFiles/bomberman.dir/Sources/Components/Collision.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o" \
-"CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o" \
@@ -418,6 +417,7 @@ bomberman_OBJECTS = \
 "CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o" \
@@ -438,7 +438,6 @@ bomberman: CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Components/Collision.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o
-bomberman: CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o
@@ -447,6 +446,7 @@ bomberman: CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o

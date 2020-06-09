@@ -273,33 +273,6 @@ Sources/Components/Image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.s
 .PHONY : Sources/Components/Image.cpp.s
 
-Sources/Components/ImageSystem.o: Sources/Components/ImageSystem.cpp.o
-
-.PHONY : Sources/Components/ImageSystem.o
-
-# target to build an object file
-Sources/Components/ImageSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.o
-.PHONY : Sources/Components/ImageSystem.cpp.o
-
-Sources/Components/ImageSystem.i: Sources/Components/ImageSystem.cpp.i
-
-.PHONY : Sources/Components/ImageSystem.i
-
-# target to preprocess a source file
-Sources/Components/ImageSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.i
-.PHONY : Sources/Components/ImageSystem.cpp.i
-
-Sources/Components/ImageSystem.s: Sources/Components/ImageSystem.cpp.s
-
-.PHONY : Sources/Components/ImageSystem.s
-
-# target to generate assembly for a file
-Sources/Components/ImageSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/ImageSystem.cpp.s
-.PHONY : Sources/Components/ImageSystem.cpp.s
-
 Sources/Components/Moveable.o: Sources/Components/Moveable.cpp.o
 
 .PHONY : Sources/Components/Moveable.o
@@ -515,6 +488,33 @@ Sources/ECS/System/ButtonSystem.s: Sources/ECS/System/ButtonSystem.cpp.s
 Sources/ECS/System/ButtonSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.s
 .PHONY : Sources/ECS/System/ButtonSystem.cpp.s
+
+Sources/ECS/System/ImageSystem.o: Sources/ECS/System/ImageSystem.cpp.o
+
+.PHONY : Sources/ECS/System/ImageSystem.o
+
+# target to build an object file
+Sources/ECS/System/ImageSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o
+.PHONY : Sources/ECS/System/ImageSystem.cpp.o
+
+Sources/ECS/System/ImageSystem.i: Sources/ECS/System/ImageSystem.cpp.i
+
+.PHONY : Sources/ECS/System/ImageSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/ImageSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.i
+.PHONY : Sources/ECS/System/ImageSystem.cpp.i
+
+Sources/ECS/System/ImageSystem.s: Sources/ECS/System/ImageSystem.cpp.s
+
+.PHONY : Sources/ECS/System/ImageSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/ImageSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s
+.PHONY : Sources/ECS/System/ImageSystem.cpp.s
 
 Sources/ECS/System/RenderSystem.o: Sources/ECS/System/RenderSystem.cpp.o
 
@@ -836,9 +836,6 @@ help:
 	@echo "... Sources/Components/Image.o"
 	@echo "... Sources/Components/Image.i"
 	@echo "... Sources/Components/Image.s"
-	@echo "... Sources/Components/ImageSystem.o"
-	@echo "... Sources/Components/ImageSystem.i"
-	@echo "... Sources/Components/ImageSystem.s"
 	@echo "... Sources/Components/Moveable.o"
 	@echo "... Sources/Components/Moveable.i"
 	@echo "... Sources/Components/Moveable.s"
@@ -863,6 +860,9 @@ help:
 	@echo "... Sources/ECS/System/ButtonSystem.o"
 	@echo "... Sources/ECS/System/ButtonSystem.i"
 	@echo "... Sources/ECS/System/ButtonSystem.s"
+	@echo "... Sources/ECS/System/ImageSystem.o"
+	@echo "... Sources/ECS/System/ImageSystem.i"
+	@echo "... Sources/ECS/System/ImageSystem.s"
 	@echo "... Sources/ECS/System/RenderSystem.o"
 	@echo "... Sources/ECS/System/RenderSystem.i"
 	@echo "... Sources/ECS/System/RenderSystem.s"
