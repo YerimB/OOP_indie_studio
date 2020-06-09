@@ -73,8 +73,3 @@ InputManager* GameManager::GetInputManager() const
 {
     return m_InputManager.get();
 }
-
-const irr::SEvent &GameManager::GetSEvent(void) const
-{
-    return m_sEvent;
-}

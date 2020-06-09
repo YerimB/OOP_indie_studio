@@ -17,6 +17,7 @@ class Button : public Component
 		static constexpr ComponentId Id = "Button"_hash;
         typedef void (*callback_function)(void);
         enum ButtonID { // Add types here
+            UNDEFINED,
             QUIT,
             PLAY,
         };
@@ -33,7 +34,8 @@ class Button : public Component
         void SetAsPushButton(const bool &);
         void SetTexture(Texture *p_Texture);
         void SetPressedTexture(Texture *p_Texture);
-        void SetText(GuiText *p_Text);
+        void SetText(const std::string &str);
+        void SetFont(GuiFont *font);
         void SetButtonID(const ButtonID &id);
         void SetTriggered(const bool &state);
         void SetPosition(const Vector2i &newPosition);
@@ -42,7 +44,7 @@ class Button : public Component
         const bool IsPushButton(void);
         const bool &IsTriggered(void) const;
         Texture *GetTexture(void);
-        GuiText *GetText(void);
+        const wchar_t *GetText(void);
         const ButtonID &GetButtonID(void);
         const Vector2i GetPosition(void);
 
@@ -50,10 +52,9 @@ class Button : public Component
 		GuiEnvironment *m_GUIEnvironment = nullptr;
         GuiButton *m_Button = nullptr;
         Texture *m_Texture = nullptr;
-        GuiText *m_Text = nullptr;
         callback_function m_OnPressFunction;
         bool m_triggered = false;
-        ButtonID m_TypeID = static_cast<ButtonID>(-1);
+        ButtonID m_TypeID = UNDEFINED;
 };
 
 #endif /* !BUTTON_H_ */

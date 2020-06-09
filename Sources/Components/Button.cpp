@@ -54,11 +54,16 @@ void Button::SetPressedTexture(Texture *t)
     this->m_Button->setPressedImage(t);
 }
 
-void Button::SetText(GuiText *p_Text)
+void Button::SetText(const std::string &str)
 {
-    this->m_Text = p_Text;
-    this->m_Button->setText(this->m_Text->getText());
-    this->m_Button->setOverrideFont(this->m_Text->getActiveFont());
+    std::wstring wStr(str.begin(), str.end());
+
+    this->m_Button->setText(wStr.c_str());
+}
+
+void Button::SetFont(GuiFont *font)
+{
+    this->m_Button->setOverrideFont(font);
 }
 
 void Button::SetButtonID(const ButtonID &id)
@@ -94,9 +99,9 @@ Texture *Button::GetTexture(void)
     return (this->m_Texture);
 }
 
-GuiText *Button::GetText(void)
+const wchar_t *Button::GetText(void)
 {
-    return (this->m_Text);
+    return (this->m_Button->getText());
 }
 
 const Button::ButtonID &Button::GetButtonID(void)
