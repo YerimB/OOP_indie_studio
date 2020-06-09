@@ -20,18 +20,17 @@ class Scene
 		};
 
     public:
-        Scene();
         Scene(const SceneID &sceneId);
-        void Load(GuiEnvironment *guiEnvironment, SceneManager *sceneManager);
-        ~Scene();
-    
+        virtual void Load(GuiEnvironment *guiEnvironment, SceneManager *sceneManager) = 0;
+        virtual ~Scene() = 0;
+
     public:
         void SetID(const SceneID &newSceneId);
-    
+
     public:
         const SceneID &GetID(void) const;
 
-    private:
+    protected:
         SceneID m_ID = UNDEFINED;
 };
 

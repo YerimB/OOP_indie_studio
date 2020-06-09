@@ -9,7 +9,7 @@
 
 #include <Core.hpp>
 
-#include <Scene.hpp>
+#include <Scenes/Scene.hpp>
 #include <ECS/EntityManager.h>
 #include <InputManager/InputManager.hpp>
 
