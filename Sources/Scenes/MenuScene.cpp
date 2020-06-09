@@ -1,7 +1,11 @@
 #include <Scenes/MenuScene.hpp>
-#include <ECS/System/ButtonSystem.h>
-#include <Components/Transform.h>
 #include <GameManager.h>
+
+// Systems
+#include <ECS/System/ButtonSystem.h>
+
+// Components
+#include <Components/Transform.h>
 
 void printTotorina(void)
 {

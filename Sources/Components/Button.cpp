@@ -27,7 +27,8 @@ void Button::Update(const float &)
 {
     this->SetTriggered(false);
     // Use of callback function.
-    this->m_OnPressFunction();
+    if (this->m_OnPressFunction)
+        this->m_OnPressFunction();
 }
 
 // Setters

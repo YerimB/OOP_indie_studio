@@ -20,10 +20,14 @@ class GameManager
 
 	public:
 		void Initialize();
-		void LoadScene(const Scene::SceneID &sceneID);
 		void AddScene(Scene* scene);
 		void RemoveScene(const Scene::SceneID& sceneId);
 		void ProgramLoop(void);
+	
+	public:
+		void LoadScene(const Scene::SceneID &sceneID);
+		inline void LoadMenu(void) { this->LoadScene(Scene::MENU); };
+		inline void LoadGame(void) { this->LoadScene(Scene::GAME); };
 
 	public:
 		Texture *LoadTexture(const std::string &path);
