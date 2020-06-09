@@ -43,6 +43,7 @@ int main()
     if (b1.Initialize(nullptr)) {
         b1.SetButtonID(Button::ButtonID::PLAY);
         b1.SetTexture(gameManager->LoadTexture("Assets/block.png"));
+        b1.SetText("Totorina");
         b1.SetPosition({500, 200});
         b1.SetOnPress(printTotorina);
         e1.AddComponent(&b1, Button::Id);
@@ -52,7 +53,6 @@ int main()
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
 
     while (gameManager->GetDevice()->run()) {
-        gameManager->GetInputManager()->OnEvent(gameManager->GetSEvent());
         gameManager->GetVideoDriver()->beginScene(true, true, Color(255, 0, 100, 255));
         gameManager->GetEntityManager()->Update();
         gameManager->GetVideoDriver()->endScene();

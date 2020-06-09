@@ -33,7 +33,6 @@ class GameManager
 		irr::scene::ISceneManager* GetSceneManager() const;
 		EntityManager* GetEntityManager() const;
 		InputManager* GetInputManager() const;
-		const irr::SEvent &GetSEvent(void) const;
 
 	private:
 		irr::IrrlichtDevice* m_Device;
@@ -43,5 +42,4 @@ class GameManager
 		Shared<EntityManager> m_EntityManager;
 		Unique<InputManager> m_InputManager;
 		std::vector<Scene> m_Scenes;
-        irr::SEvent m_sEvent;
 };
