@@ -23,6 +23,7 @@ bool Button::Initialize(void *args)
 
 void Button::Update(const float &)
 {
+    this->SetTriggered(false);
     // Use of callback function.
     this->m_OnPressFunction();
 }
@@ -61,9 +62,19 @@ void Button::SetButtonID(const ButtonID &id)
     this->m_TypeID = id;
 }
 
+void Button::SetTriggered(const bool &state)
+{
+    this->m_triggered = state;
+}
+
 const bool Button::IsPushButton(void)
 {
     return (this->m_Button->isPushButton());
+}
+
+const bool &Button::IsTriggered(void) const
+{
+    return (this->m_triggered);
 }
 
 Texture *Button::GetTexture(void)

@@ -35,9 +35,11 @@ class Button : public Component
         void SetPressedTexture(Texture *p_Texture);
         void SetText(GuiText *p_Text);
         void SetButtonID(const ButtonID &id);
+        void SetTriggered(const bool &state);
 
     public: // Getters
         const bool IsPushButton(void);
+        const bool &IsTriggered(void) const;
         Texture *GetTexture(void);
         GuiText *GetText(void);
         const ButtonID &GetButtonID(void);
@@ -48,6 +50,7 @@ class Button : public Component
         Texture *m_Texture = nullptr;
         GuiText *m_Text = nullptr;
         callback_function m_OnPressFunction;
+        bool m_triggered = false;
         ButtonID m_TypeID = static_cast<ButtonID>(-1);
 };
 

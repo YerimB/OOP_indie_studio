@@ -12,5 +12,10 @@ System<Button>(pEntityManager) {}
 
 void ButtonSystem::Update(const double &deltaTime)
 {
-    // ??
+    for (auto &compTuple : this->_components) {
+        Button *pButton = std::get<Button *>(compTuple);
+
+        if (pButton->IsTriggered())
+            pButton->Update(deltaTime);
+    }
 }
