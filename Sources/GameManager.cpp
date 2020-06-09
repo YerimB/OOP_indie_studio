@@ -34,11 +34,43 @@ void GameManager::Initialize()
     m_Device->setEventReceiver(m_InputManager.get());
 }
 
-void GameManager::LoadScene(const Scene::SceneID &sceneID)
+// Adds the scene passed as parameters if its type doesn't already exists.
+const bool GameManager::AddScene(Shared<Scene> nScene)
 {
-    // Stuff to unload previous scene and load the new one
+    for (const auto &elem : this->m_Scenes)
+        if (elem->GetID() == nScene->GetID())
+            return (false);
+    this->m_Scenes.emplace_back(nScene);
+    return (true);
 }
 
+// First step:  Unloads the current scene if there is one.
+// Second step: Loads the scene matching the ID passed as parameter.
+void GameManager::LoadScene(const Scene::SceneID &sceneID)
+{
+    this->m_GuiEnvironment->clear();
+    this->m_SceneManager->clear();
+    this->m_EntityManager->ClearAll();
+    for (auto &elem : this->m_Scenes)
+        if (elem->GetID() == sceneID) {
+            elem->Load(m_GuiEnvironment, m_SceneManager);
+            break;
+        }
+}
+
+// Program main loop.
+void GameManager::ProgramLoop(void)
+{
+    this->LoadScene(Scene::SceneID::MENU);
+    while (this->m_Device->run())
+    {
+        this->m_VideoDriver->beginScene(true, true, Color(255, 0, 0, 0));
+        this->m_EntityManager->Update();
+        this->m_VideoDriver->endScene();
+    }
+}
+
+// Loads the texture linked to the path passed as parameter and return a pointer to it.
 Texture *GameManager::LoadTexture(const std::string &path)
 {
     return (this->m_VideoDriver->getTexture(path.c_str()));

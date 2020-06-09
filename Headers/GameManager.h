@@ -21,7 +21,9 @@ class GameManager
 
 	public:
 		void Initialize();
+		const bool AddScene(Shared<Scene> nScene);
 		void LoadScene(const Scene::SceneID &sceneID);
+		void ProgramLoop(void);
 
 	public:
 		Texture *LoadTexture(const std::string &path);
@@ -41,5 +43,5 @@ class GameManager
 		irr::scene::ISceneManager* m_SceneManager;
 		Shared<EntityManager> m_EntityManager;
 		Unique<InputManager> m_InputManager;
-		std::vector<Scene> m_Scenes;
+		std::vector<Shared<Scene>> m_Scenes;
 };
