@@ -14,31 +14,42 @@
 #include <ECS/EntityManager.h>
 #include <ECS/System/ButtonSystem.h>
 #include <Components/Button.h>
+#include <Components/Transform.h>
 #include <GameManager.h>
+
+void printTotorina(void)
+{
+    std::cout << "Totorina" << std::endl;
+}
 
 int main()
 {
     Unique<GameManager> gameManager = CreateUnique<GameManager>();
+    Entity e1;
 
     gameManager->Initialize();
 
     // Add systems first
-    ButtonSystem buttonSystem(gameManager->GetEntityManager());
+    ButtonSystem buttonSys(gameManager->GetEntityManager());
+    gameManager->GetEntityManager()->AddSystem(&buttonSys);
 
     // Components
-    Button button(gameManager->GetGuiEnvironment());
-    button.Initialize(0); // Button::PLAY ?
+    Transform transform;
+    Button b1(gameManager->GetGuiEnvironment());
 
-    // Entity
-    Entity buttonEntity;
-    buttonEntity.AddComponent(&button, button.Id);
+    transform.Initialize(nullptr);
+    transform.SetPosition({ 200, 500, 0 });
 
-    // Add Entity
-    buttonSystem.OnEntityCreated(buttonEntity);
-    gameManager->GetEntityManager()->AddEntity(buttonEntity);
-    gameManager->GetEntityManager()->AddSystem(&buttonSystem);
+    b1.Initialize(0); // ButtonID::PLAY ?
+    b1.SetPosition({500, 200});
+    b1.SetOnPress(printTotorina);
 
-    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
+    e1.AddComponent(&b1, Button::Id);
+
+    buttonSys.OnEntityCreated(e1);
+
+    gameManager->GetEntityManager()->AddEntity(e1);
+    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), transform.GetPosition());
 
     while (gameManager->GetDevice()->run()) {
         //gameManager->GetInputManager()->OnEvent();

@@ -36,6 +36,7 @@ class Button : public Component
         void SetText(GuiText *p_Text);
         void SetButtonID(const ButtonID &id);
         void SetTriggered(const bool &state);
+        void SetPosition(const Vector2i &newPosition);
 
     public: // Getters
         const bool IsPushButton(void);
@@ -43,6 +44,7 @@ class Button : public Component
         Texture *GetTexture(void);
         GuiText *GetText(void);
         const ButtonID &GetButtonID(void);
+        const Vector2i &GetPosition(void);
 
     private:
 		GuiEnvironment *m_GUIEnvironment = nullptr;
