@@ -24,6 +24,7 @@ class GameManager
 		void LoadScene(const Scene::SceneID &sceneID);
 		void AddScene(Scene* scene);
 		void RemoveScene(const Scene::SceneID& sceneId);
+		void ProgramLoop(void);
 
 	public:
 		Texture *LoadTexture(const std::string &path);

@@ -34,11 +34,15 @@ void GameManager::Initialize()
     m_Device->setEventReceiver(m_InputManager.get());
 }
 
+// First step:  Unloads the current scene if there is one.
+// Second step: Loads the scene matching the ID passed as parameter.
 void GameManager::LoadScene(const Scene::SceneID &sceneID)
 {
+    m_EntityManager->ClearAll();
     m_Scenes[sceneID]->Load(this);
 }
 
+// Adds the scene passed as parameters if its type doesn't already exists.
 void GameManager::AddScene(Scene* scene)
 {
     m_Scenes.emplace(scene->GetID(), scene);
@@ -47,8 +51,10 @@ void GameManager::AddScene(Scene* scene)
 void GameManager::RemoveScene(const Scene::SceneID& sceneId)
 {
     m_Scenes.erase(sceneId);
+    m_EntityManager->ClearAll();
 }
 
+// Loads the texture linked to the path passed as parameter and return a pointer to it.
 Texture *GameManager::LoadTexture(const std::string &path)
 {
     return (this->m_VideoDriver->getTexture(path.c_str()));
