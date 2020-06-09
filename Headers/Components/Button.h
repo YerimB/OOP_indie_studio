@@ -36,11 +36,13 @@ class Button : public Component
         void SetAsPushButton(const bool &);
         void SetTexture(Texture *p_Texture);
         void SetPressedTexture(Texture *p_Texture);
+        void SetTextureToFit(const bool &state);
         void SetText(const std::string &str);
         void SetFont(GuiFont *font);
         void SetButtonID(const ButtonID &id);
         void SetTriggered(const bool &state);
         void SetPosition(const Vector2i &newPosition);
+        void SetSize(const irr::s32 &len, const irr::s32 &hei);
 
     public: // Getters
         const bool IsPushButton(void);

@@ -7,7 +7,7 @@
 // Components
 #include <Components/Transform.h>
 
-void changeSceneToGame(GameManager* gameManager)
+static void changeSceneToGame(GameManager* gameManager)
 {
 	gameManager->m_globalVars.sceneChanged = true;
 	gameManager->m_globalVars.newScene = Scene::GAME;
