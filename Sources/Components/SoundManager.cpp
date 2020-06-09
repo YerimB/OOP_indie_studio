@@ -19,4 +19,4 @@ bool SoundManager::Initialize(void *args)
     return (true);
 }
 
-void SoundManager::Update(const float &dT) {}
+void SoundManager::Update(const float &dT, GameManager *) {}

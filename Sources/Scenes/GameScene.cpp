@@ -43,9 +43,9 @@ void GameScene::Load(GameManager* gameManager)
         // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {
             b1->SetButtonID(Button::ButtonID::QUIT);
-            b1->SetTexture(gameManager->LoadTexture("Assets/sand.png"));
+            b1->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
             b1->SetText("Totorina");
-            b1->SetPosition({ 500, 200 });
+            b1->SetPosition({ 900, 100 });
             b1->SetOnPress(changeSceneToMenu);
             e1.AddComponent(std::move(b1), Button::Id);
         }

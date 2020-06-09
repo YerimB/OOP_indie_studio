@@ -19,4 +19,4 @@ bool Moveable::Initialize(void *args)
     return (true);
 }
 
-void Moveable::Update(const float &dT) {}
+void Moveable::Update(const float &dT, GameManager *) {}
