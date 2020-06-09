@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <string>
+
 #include <Irrlicht/irrlicht.h>
 #include <ECS/Hash.h>
 

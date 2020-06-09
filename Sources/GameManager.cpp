@@ -27,6 +27,11 @@ void GameManager::Initialize()
     m_Device->setEventReceiver(m_InputManager.get());
 }
 
+void GameManager::LoadScene(const Scene::SceneID &sceneID)
+{
+    // Stuff to unload previous scene and load the new one
+}
+
 Texture *GameManager::LoadTexture(const std::string &path)
 {
     return (this->m_VideoDriver->getTexture(path.c_str()));

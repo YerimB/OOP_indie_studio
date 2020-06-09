@@ -7,8 +7,9 @@
 
 #pragma once
 
-#include <Irrlicht/irrlicht.h>
 #include <Core.hpp>
+
+#include <Scene.hpp>
 #include <ECS/EntityManager.h>
 #include <InputManager/InputManager.hpp>
 
@@ -20,7 +21,8 @@ class GameManager
 
 	public:
 		void Initialize();
-	
+		void LoadScene(const Scene::SceneID &sceneID);
+
 	public:
 		Texture *LoadTexture(const std::string &path);
 
@@ -39,4 +41,5 @@ class GameManager
 		irr::scene::ISceneManager* m_SceneManager;
 		Shared<EntityManager> m_EntityManager;
 		Unique<InputManager> m_InputManager;
+		std::vector<Scene> m_Scenes;
 };
