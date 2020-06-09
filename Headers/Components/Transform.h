@@ -9,6 +9,7 @@
 
 #include <ECS/Component.h>
 #include <Core.hpp>
+#include <GameManager.h>
 
 class Transform : public Component
 {
@@ -20,7 +21,7 @@ class Transform : public Component
 
 	public:
 		bool Initialize(void *args) override final;
-		void Update(const float& deltaTime) override final;
+		void Update(const float& deltaTime, GameManager* gameManager) override final;
 
 	public:
 		void SetPosition(const Vector3f& position);

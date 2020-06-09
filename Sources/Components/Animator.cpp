@@ -19,4 +19,4 @@ bool Animator::Initialize(void *args)
     return (true);
 }
 
-void Animator::Update(const float &dT) {}
+void Animator::Update(const float &dT, GameManager* gameManager) {}

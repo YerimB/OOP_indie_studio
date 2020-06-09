@@ -25,7 +25,7 @@ bool Drawable::Initialize(void* args)
 	return true;
 }
 
-void Drawable::Update(const float&) {}
+void Drawable::Update(const float& deltaTime, GameManager* gameManager) {}
 
 irr::scene::IAnimatedMeshSceneNode* Drawable::GetDrawable()
 {

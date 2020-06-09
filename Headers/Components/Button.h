@@ -10,6 +10,7 @@
 
 #include <ECS/Component.h>
 #include <Core.hpp>
+#include <GameManager.h>
 
 class Button : public Component
 {
@@ -27,7 +28,7 @@ class Button : public Component
     
     public:
         bool Initialize(void* args = nullptr) override final;
-		void Update(const float& deltaTime) override final;
+		void Update(const float& deltaTime, GameManager* gameManager) override final;
     
     public: // Setters
         void SetOnPress(void (*callback_function)(void));

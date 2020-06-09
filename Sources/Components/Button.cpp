@@ -23,7 +23,7 @@ bool Button::Initialize(void *args)
     return (true);
 }
 
-void Button::Update(const float &)
+void Button::Update(const float& deltaTime, GameManager* gameManager)
 {
     this->SetTriggered(false);
     // Use of callback function.

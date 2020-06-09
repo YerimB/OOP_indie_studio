@@ -10,7 +10,7 @@
 void changeSceneToMenu(void)
 {
 	GLOBALVARS.sceneChanged = true;
-	GLOBALVARS.newScene = static_cast<uint>(Scene::MENU);
+	GLOBALVARS.sceneId = static_cast<size_t>(Scene::MENU);
 }
 
 GameScene::GameScene() : Scene(Scene::GAME)

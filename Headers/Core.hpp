@@ -63,11 +63,16 @@ using Weak = std::weak_ptr<T>;
 
 // GLOBAL VARIABLES
 
-typedef struct GameGlobalVariables_s
-{
-	bool sceneChanged = false;
-	uint newScene = (-1);
-	// Add vars if needed.
-} GameVars_t;
+//typedef struct GameGlobalVariables_s
+//{
+//	bool sceneChanged = false;
+//	size_t newScene = (0);
+//	// Add vars if needed.
+//} GameVars_t;
 
-static GameVars_t GLOBALVARS;
+struct Settings {
+	bool sceneChanged = false;
+	size_t sceneId = 0;
+};
+
+static Settings GLOBALVARS;

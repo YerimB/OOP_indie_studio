@@ -11,7 +11,7 @@ void changeSceneToGame(void)
 {
     std::cout << "Trying to change scene ?" << std::endl;
 	GLOBALVARS.sceneChanged = true;
-	GLOBALVARS.newScene = static_cast<uint>(Scene::GAME);
+	GLOBALVARS.sceneId = static_cast<size_t>(Scene::GAME);
 }
 
 MenuScene::MenuScene() : Scene(Scene::MENU)

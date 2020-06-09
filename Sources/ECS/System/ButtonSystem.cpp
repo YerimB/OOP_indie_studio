@@ -17,7 +17,7 @@ void ButtonSystem::Update(const double &deltaTime)
 
         if (_EntityManager->GetInputManager()->IsButtonDown(pButton->GetButtonID()))
         {
-            pButton->Update(deltaTime);
+            pButton->Update(deltaTime, _EntityManager->Ge);
             _EntityManager->GetInputManager()->ResetButton(pButton->GetButtonID());
         }
     }
