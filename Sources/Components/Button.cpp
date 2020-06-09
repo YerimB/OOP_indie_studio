@@ -28,6 +28,8 @@ void Button::Update(const float &)
     this->m_OnPressFunction();
 }
 
+// Setters
+
 void Button::SetOnPress(callback_function f)
 {
     this->m_OnPressFunction = f;
@@ -67,6 +69,13 @@ void Button::SetTriggered(const bool &state)
     this->m_triggered = state;
 }
 
+void Button::SetPosition(const Vector2i &np)
+{
+    this->m_Button->setRelativePosition(np);
+}
+
+// Getters
+
 const bool Button::IsPushButton(void)
 {
     return (this->m_Button->isPushButton());
@@ -90,4 +99,9 @@ GuiText *Button::GetText(void)
 const Button::ButtonID &Button::GetButtonID(void)
 {
     return (this->m_TypeID);
+}
+
+const Vector2i &Button::GetPosition(void)
+{
+    return (this->m_Button->getAbsolutePosition().UpperLeftCorner);
 }
