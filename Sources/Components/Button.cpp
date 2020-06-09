@@ -55,6 +55,11 @@ void Button::SetPressedTexture(Texture *t)
     this->m_Button->setPressedImage(t);
 }
 
+void Button::SetTextureToFit(const bool &state)
+{
+    this->m_Button->setScaleImage(state);
+}
+
 void Button::SetText(const std::string &str)
 {
     std::wstring wStr(str.begin(), str.end());
@@ -81,6 +86,17 @@ void Button::SetTriggered(const bool &state)
 void Button::SetPosition(const Vector2i &np)
 {
     this->m_Button->setRelativePosition(np);
+}
+
+void Button::SetSize(const irr::s32 &len, const irr::s32 &hei)
+{
+    Recti dims = {
+        this->m_Button->getRelativePosition().UpperLeftCorner.X,
+        this->m_Button->getRelativePosition().UpperLeftCorner.Y,
+        this->m_Button->getRelativePosition().UpperLeftCorner.X + len,
+        this->m_Button->getRelativePosition().UpperLeftCorner.Y + hei
+    };
+    this->m_Button->setRelativePosition(dims);
 }
 
 // Getters

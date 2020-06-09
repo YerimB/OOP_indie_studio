@@ -44,8 +44,10 @@ void GameScene::Load(GameManager* gameManager)
         if (b1->Initialize(nullptr)) {
             b1->SetButtonID(Button::ButtonID::QUIT);
             b1->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
-            b1->SetText("Totorina");
-            b1->SetPosition({ 900, 100 });
+            b1->SetText("Back to menu");
+            b1->SetPosition({ 50, 50 });
+            b1->SetSize(300, 100);
+            b1->SetTextureToFit(true);
             b1->SetOnPress(changeSceneToMenu);
             e1.AddComponent(std::move(b1), Button::Id);
         }
