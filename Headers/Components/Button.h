@@ -11,11 +11,13 @@
 #include <ECS/Component.h>
 #include <Core.hpp>
 
+class GameManager;
+
 class Button : public Component
 {
     public:
 		static constexpr ComponentId Id = "Button"_hash;
-        typedef void (*callback_function)(void);
+        typedef void (*callback_function)(GameManager *);
         enum ButtonID { // Add types here
             UNDEFINED = (-1),
             QUIT,
@@ -27,10 +29,10 @@ class Button : public Component
     
     public:
         bool Initialize(void* args = nullptr) override final;
-		void Update(const float& deltaTime) override final;
+		void Update(const float& deltaTime, GameManager* gameManager) override final;
     
     public: // Setters
-        void SetOnPress(callback_function func);
+        void SetOnPress(callback_function f);
         void SetAsPushButton(const bool &);
         void SetTexture(Texture *p_Texture);
         void SetPressedTexture(Texture *p_Texture);

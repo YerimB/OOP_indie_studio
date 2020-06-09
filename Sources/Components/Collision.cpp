@@ -19,4 +19,4 @@ bool Collision::Initialize(void *args)
     return (true);
 }
 
-void Collision::Update(const float &dTime) {}
+void Collision::Update(const float &dTime, GameManager *) {}

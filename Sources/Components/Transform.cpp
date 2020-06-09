@@ -12,7 +12,7 @@ bool Transform::Initialize(void*)
 	return true;
 }
 
-void Transform::Update(const float&)
+void Transform::Update(const float& deltaTime, GameManager* gameManager)
 {
 }
 

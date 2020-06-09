@@ -24,7 +24,7 @@ bool Image::Initialize(void *args)
     return (true);
 }
 
-void Image::Update(const float &) {}
+void Image::Update(const float& deltaTime, GameManager* gameManager) {}
 
 void Image::SetTexture(Texture *t)
 {

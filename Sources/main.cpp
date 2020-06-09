@@ -8,15 +8,17 @@
 #include <Core.hpp>
 #include <GameManager.h>
 #include <Scenes/MenuScene.hpp>
-
+#include <Scenes/GameScene.hpp>
 
 int main()
 {
     Unique<GameManager> gameManager = CreateUnique<GameManager>();
-    MenuScene scene;
+    MenuScene menu;
+    GameScene game;
 
     gameManager->Initialize();
-    gameManager->AddScene(&scene);
+    gameManager->AddScene(&menu);
+    gameManager->AddScene(&game);
 
     gameManager->ProgramLoop();
 	return 0;

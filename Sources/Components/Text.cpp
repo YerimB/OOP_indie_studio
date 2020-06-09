@@ -26,7 +26,7 @@ bool Text::Initialize(void *pText)
 	return true;
 }
 
-void Text::Update(const float&) {}
+void Text::Update(const float& deltaTime, GameManager* gameManager) {}
 
 void Text::SetText(const std::string& text)
 {

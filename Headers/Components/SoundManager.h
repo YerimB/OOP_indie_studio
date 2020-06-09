@@ -10,6 +10,7 @@
 
 #include <ECS/Component.h>
 #include <Core.hpp>
+#include <GameManager.h>
 
 class SoundManager : public Component
 {
@@ -21,7 +22,7 @@ class SoundManager : public Component
 
     public:
         bool Initialize(void* args = nullptr) override final;
-		void Update(const float& deltaTime) override final;
+		void Update(const float& deltaTime, GameManager* gameManager) override final;
 
     public: // Setters
 

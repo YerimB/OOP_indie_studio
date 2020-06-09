@@ -29,7 +29,7 @@ void GameManager::Initialize()
     m_GuiEnvironment = m_Device->getGUIEnvironment();
     m_SceneManager = m_Device->getSceneManager();
     m_InputManager = CreateUnique<InputManager>(m_Device);
-    m_EntityManager = CreateShared<EntityManager>(m_SceneManager, m_GuiEnvironment, m_InputManager.get());
+    m_EntityManager = CreateShared<EntityManager>(m_SceneManager, m_GuiEnvironment, m_InputManager.get(), this);
 
     m_Device->setEventReceiver(m_InputManager.get());
 }
@@ -63,6 +63,11 @@ void GameManager::ProgramLoop(void)
         this->m_VideoDriver->beginScene(true, true, Color(255, 255, 255, 0));
         this->m_EntityManager->Update();
         this->m_VideoDriver->endScene();
+        if (m_globalVars.sceneChanged == true)
+        {
+            this->LoadScene(static_cast<Scene::SceneID>(m_globalVars.newScene));
+            m_globalVars.sceneChanged = false;
+        }
     }
 }
 

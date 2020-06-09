@@ -11,6 +11,8 @@
 #include <Core.hpp>
 #include <any>
 
+class GameManager;
+
 class Component
 {
 	public:
@@ -19,7 +21,7 @@ class Component
 
 	public:
 		virtual bool Initialize(void *args) = 0;
-		virtual void Update(const float& deltaTime) = 0;
+		virtual void Update(const float& deltaTime, GameManager* gameManager) = 0;
 
 	public:
 		const EntityId& GetEntityId() const;

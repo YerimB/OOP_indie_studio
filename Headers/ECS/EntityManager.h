@@ -12,7 +12,7 @@
 class EntityManager
 {
 	public:
-		EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIEnvironment* env, InputManager* im);
+		EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIEnvironment* env, InputManager* im, GameManager* gameManager);
 		~EntityManager();
 		EntityManager(const EntityManager&) = delete;
 		EntityManager(EntityManager&&) = delete;
@@ -35,6 +35,7 @@ class EntityManager
 		irr::scene::ISceneManager* GetSceneManager() const { return m_SceneManager; }
 		irr::gui::IGUIEnvironment* GetGuiEnvironment() const { return m_GuiEnvironment; }
 		InputManager* GetInputManager() const { return m_InputManager; }
+		GameManager* GetGameManager() const { return m_GameManager; }
 
 	private:
 		std::unordered_map<EntityId, Entity> m_Entities;
@@ -43,4 +44,5 @@ class EntityManager
 		irr::scene::ISceneManager* m_SceneManager;
 		irr::gui::IGUIEnvironment* m_GuiEnvironment;
 		InputManager* m_InputManager;
+		GameManager* m_GameManager;
 };

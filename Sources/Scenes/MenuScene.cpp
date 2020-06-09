@@ -1,11 +1,16 @@
 #include <Scenes/MenuScene.hpp>
-#include <ECS/System/ButtonSystem.h>
-#include <Components/Transform.h>
 #include <GameManager.h>
 
-void printTotorina(void)
+// Systems
+#include <ECS/System/ButtonSystem.h>
+
+// Components
+#include <Components/Transform.h>
+
+void changeSceneToGame(GameManager* gameManager)
 {
-    std::cout << "Totorina" << std::endl;
+	gameManager->m_globalVars.sceneChanged = true;
+	gameManager->m_globalVars.newScene = Scene::GAME;
 }
 
 MenuScene::MenuScene() : Scene(Scene::MENU)
@@ -41,7 +46,7 @@ void MenuScene::Load(GameManager* gameManager)
             b1->SetTexture(gameManager->LoadTexture("Assets/block.png"));
             b1->SetText("Totorina");
             b1->SetPosition({ 500, 200 });
-            b1->SetOnPress(printTotorina);
+            b1->SetOnPress(changeSceneToGame);
             e1.AddComponent(std::move(b1), Button::Id);
         }
         // When done, add entity to the entity manager.
