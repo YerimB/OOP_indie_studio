@@ -17,7 +17,6 @@ int main()
 
     gameManager->Initialize();
     gameManager->AddScene(&scene);
-    gameManager->LoadScene(Scene::MENU);
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
 
     gameManager->ProgramLoop();
