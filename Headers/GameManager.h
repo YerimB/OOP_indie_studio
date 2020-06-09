@@ -12,11 +12,20 @@
 #include <InputManager/InputManager.hpp>
 #include <Scenes/Scene.hpp>
 
+typedef struct GameGlobalVariables_s
+{
+	bool sceneChanged = false;
+	Scene::SceneID newScene = Scene::UNDEFINED;
+	// Add vars if needed.
+} GameVars_t;
+
 class GameManager
 {
 	public:
 		GameManager();
 		~GameManager();
+
+	public:
 
 	public:
 		void Initialize();
@@ -37,6 +46,7 @@ class GameManager
 		irr::scene::ISceneManager* GetSceneManager() const;
 		EntityManager* GetEntityManager() const;
 		InputManager* GetInputManager() const;
+		GameVars_t m_globalVars;
 
 	private:
 		irr::IrrlichtDevice* m_Device;
