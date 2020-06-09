@@ -9,9 +9,9 @@
 
 #include <Core.hpp>
 
-#include <Scenes/Scene.hpp>
 #include <ECS/EntityManager.h>
 #include <InputManager/InputManager.hpp>
+#include <Scenes/Scene.hpp>
 
 class GameManager
 {
@@ -22,6 +22,8 @@ class GameManager
 	public:
 		void Initialize();
 		void LoadScene(const Scene::SceneID &sceneID);
+		void AddScene(Scene* scene);
+		void RemoveScene(const Scene::SceneID& sceneId);
 
 	public:
 		Texture *LoadTexture(const std::string &path);
@@ -41,5 +43,5 @@ class GameManager
 		irr::scene::ISceneManager* m_SceneManager;
 		Shared<EntityManager> m_EntityManager;
 		Unique<InputManager> m_InputManager;
-		std::vector<Scene> m_Scenes;
+		std::unordered_map<Scene::SceneID, Scene*> m_Scenes;
 };

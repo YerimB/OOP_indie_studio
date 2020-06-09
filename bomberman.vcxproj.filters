@@ -24,8 +24,10 @@
     <ClCompile Include="Sources\Components\Moveable.cpp" />
     <ClCompile Include="Sources\Components\SoundManager.cpp" />
     <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
-    <ClCompile Include="Sources\Scene.cpp" />
     <ClCompile Include="Sources\ECS\System\SoundSystem.cpp" />
+    <ClCompile Include="Sources\Scenes\GameScene.cpp" />
+    <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
+    <ClCompile Include="Sources\Scenes\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Core.hpp" />
@@ -240,8 +242,10 @@
     <ClInclude Include="Headers\Components\Moveable.h" />
     <ClInclude Include="Headers\Components\SoundManager.h" />
     <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
-    <ClInclude Include="Headers\Scene.hpp" />
     <ClInclude Include="Headers\ECS\System\SoundSystem.h" />
+    <ClInclude Include="Headers\Scenes\Scene.hpp" />
+    <ClInclude Include="Headers\Scenes\GameScene.hpp" />
+    <ClInclude Include="Headers\Scenes\MenuScene.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

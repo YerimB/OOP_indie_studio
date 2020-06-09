@@ -10,6 +10,8 @@
 
 #include <Core.hpp>
 
+class GameManager;
+
 class Scene
 {
     public:
@@ -21,8 +23,8 @@ class Scene
 
     public:
         Scene(const SceneID &sceneId);
-        virtual void Load(GuiEnvironment *guiEnvironment, SceneManager *sceneManager) = 0;
-        virtual ~Scene() = 0;
+        virtual void Load(GameManager* gameManager) = 0;
+        virtual ~Scene() = default;
 
     public:
         void SetID(const SceneID &newSceneId);

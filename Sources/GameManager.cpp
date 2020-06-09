@@ -36,7 +36,17 @@ void GameManager::Initialize()
 
 void GameManager::LoadScene(const Scene::SceneID &sceneID)
 {
-    // Stuff to unload previous scene and load the new one
+    m_Scenes[sceneID]->Load(this);
+}
+
+void GameManager::AddScene(Scene* scene)
+{
+    m_Scenes.emplace(scene->GetID(), scene);
+}
+
+void GameManager::RemoveScene(const Scene::SceneID& sceneId)
+{
+    m_Scenes.erase(sceneId);
 }
 
 Texture *GameManager::LoadTexture(const std::string &path)

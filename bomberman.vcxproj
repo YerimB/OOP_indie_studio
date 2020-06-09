@@ -283,7 +283,9 @@
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
     <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
     <ClCompile Include="Sources\InputManager.cpp" />
-    <ClCompile Include="Sources\Scene.cpp" />
+    <ClCompile Include="Sources\Scenes\GameScene.cpp" />
+    <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
+    <ClCompile Include="Sources\Scenes\Scene.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
@@ -314,7 +316,9 @@
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
-    <ClInclude Include="Headers\Scene.hpp" />
+    <ClInclude Include="Headers\Scenes\GameScene.hpp" />
+    <ClInclude Include="Headers\Scenes\MenuScene.hpp" />
+    <ClInclude Include="Headers\Scenes\Scene.hpp" />
     <ClInclude Include="Headers\Thread\ITask.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
