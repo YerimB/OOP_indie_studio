@@ -7,11 +7,10 @@
 // Components
 #include <Components/Transform.h>
 
-void changeSceneToGame(void)
+void changeSceneToGame(GameManager* gameManager)
 {
-    std::cout << "Trying to change scene ?" << std::endl;
-	GLOBALVARS.sceneChanged = true;
-	GLOBALVARS.sceneId = static_cast<size_t>(Scene::GAME);
+	gameManager->m_globalVars.sceneChanged = true;
+	gameManager->m_globalVars.newScene = Scene::GAME;
 }
 
 MenuScene::MenuScene() : Scene(Scene::MENU)
