@@ -1,6 +1,6 @@
 #include <Scenes/MenuScene.hpp>
-#include <ECS\System\ButtonSystem.h>
-#include <Components\Transform.h>
+#include <ECS/System/ButtonSystem.h>
+#include <Components/Transform.h>
 #include <GameManager.h>
 
 void printTotorina(void)
@@ -44,4 +44,5 @@ void MenuScene::Load(GameManager* gameManager)
     }
 
     gameManager->GetEntityManager()->AddEntity(e1);
+    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
 }

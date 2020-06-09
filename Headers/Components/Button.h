@@ -17,7 +17,7 @@ class Button : public Component
 		static constexpr ComponentId Id = "Button"_hash;
         typedef void (*callback_function)(void);
         enum ButtonID { // Add types here
-            UNDEFINED,
+            UNDEFINED = (-1),
             QUIT,
             PLAY,
         };
