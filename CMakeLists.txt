@@ -7,6 +7,7 @@ set(CMAKE_SUPPRESS_REGENERATION true)
 
 # Add .lib files
 link_directories(${CMAKE_SOURCE_DIR}/lib)
+link_directories(${CMAKE_SOURCE_DIR}/lib/fmodCoreLinux)
 
 # Add source files
 file(GLOB_RECURSE SOURCE_FILES 
@@ -39,7 +40,8 @@ set(LIBS GL GLEW X11 Xxf86vm Xext Irrlicht)
 
 # Add pthread flag
 set(THREAD_FLAG "-pthread")
-set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${THREAD_FLAG}")
+set(FMOD_FLAG "-lfmod -lfmodL")
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${THREAD_FLAG} ${FMOD_FLAG}")
 
 ENDIF()
 
