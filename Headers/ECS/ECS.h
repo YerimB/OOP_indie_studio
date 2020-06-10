@@ -22,7 +22,7 @@
 
 #include <Components/Animator.h>
 #include <Components/Button.h>
-#include <Components/Collision.h>
+#include <Components/Collider.h>
 #include <Components/Drawable.h>
 #include <Components/Image.h>
 #include <Components/Moveable.h>
