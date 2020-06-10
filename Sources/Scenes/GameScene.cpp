@@ -9,8 +9,8 @@
 
 static void changeSceneToMenu(GameManager* gameManager)
 {
-	gameManager->m_globalVars.sceneChanged = true;
-	gameManager->m_globalVars.newScene = Scene::MENU;
+	gameManager->SetSceneChange(true);
+	gameManager->SetNextScene(Scene::MENU);
 }
 
 GameScene::GameScene() : Scene(Scene::GAME)

@@ -27,6 +27,7 @@ bool EntityManager::Initialize()
 
 void EntityManager::Update()
 {
+	// Get data from server and modify entities before systems update
 	for (auto& system : m_Systems)
 	{
 		system->Update(0);

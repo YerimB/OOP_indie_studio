@@ -77,6 +77,8 @@ Texture *GameManager::LoadTexture(const std::string &path)
     return (this->m_VideoDriver->getTexture(path.c_str()));
 }
 
+// Getters
+
 irr::IrrlichtDevice* GameManager::GetDevice() const
 {
     return m_Device;
@@ -105,4 +107,21 @@ EntityManager* GameManager::GetEntityManager() const
 InputManager* GameManager::GetInputManager() const
 {
     return m_InputManager.get();
+}
+
+// Setters
+
+void GameManager::SetSceneChange(const bool &state)
+{
+    this->m_globalVars.sceneChanged = state;
+}
+
+void GameManager::SetNextScene(const Scene::SceneID &sID)
+{
+    this->m_globalVars.newScene = sID;
+}
+
+void GameManager::SetSocketMode(const SocketMode &sMod)
+{
+    this->m_globalVars.currentSocketMode = sMod;
 }
