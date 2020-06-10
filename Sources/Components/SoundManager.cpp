@@ -6,10 +6,15 @@
 */
 
 #include <Components/SoundManager.h>
+#include <fmodCoreWindows/fmod.hpp>
 
 SoundManager::SoundManager(SceneManager *p_SceneManager)
 {
     this->m_SceneManager = p_SceneManager;
+
+    FMOD::System* system = nullptr;
+
+    FMOD::System_Create(&system);
 }
 
 bool SoundManager::Initialize(void *args)

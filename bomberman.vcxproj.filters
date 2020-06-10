@@ -28,6 +28,8 @@
     <ClCompile Include="Sources\Scenes\GameScene.cpp" />
     <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
     <ClCompile Include="Sources\Scenes\Scene.cpp" />
+    <ClCompile Include="Sources\Components\Collider.cpp" />
+    <ClCompile Include="Sources\ECS\System\ImageSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Core.hpp" />
@@ -246,6 +248,17 @@
     <ClInclude Include="Headers\Scenes\Scene.hpp" />
     <ClInclude Include="Headers\Scenes\GameScene.hpp" />
     <ClInclude Include="Headers\Scenes\MenuScene.hpp" />
+    <ClInclude Include="Headers\Components\Collider.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod.hpp" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_codec.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_common.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_dsp.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_dsp_effects.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_errors.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_output.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_uwp.h" />
+    <ClInclude Include="Headers\ECS\ECS.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -264,5 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\Irrlicht.lib" />
+    <Library Include="lib\fmodCoreWindows\x64\fmod.lib" />
+    <Library Include="lib\fmodCoreWindows\x64\fmodL.lib" />
   </ItemGroup>
 </Project>

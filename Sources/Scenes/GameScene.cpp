@@ -66,7 +66,7 @@ void GameScene::Load(GameManager* gameManager)
         Transform* t1 = new Transform();
         std::string pathToMesh = "Assets/bomberman_m.obj";
 
-        if (t1->Initialize(0) and d1->Initialize(&pathToMesh)) {
+        if (t1->Initialize(0) && d1->Initialize(&pathToMesh)) {
             e2.AddComponent(d1, Drawable::Id);
             e2.AddComponent(t1, Transform::Id);
         }
