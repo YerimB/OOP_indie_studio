@@ -8,7 +8,7 @@ set(CMAKE_SUPPRESS_REGENERATION true)
 # Add .lib files
 link_directories(${CMAKE_SOURCE_DIR}/lib)
 
-if NOT (WIN32)
+if (NOT WIN32)
 	link_directories(${CMAKE_SOURCE_DIR}/lib/fmodCoreLinux/x86_64)
 ENDIF()
 
@@ -47,4 +47,4 @@ set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${THREAD_FLAG}")
 
 ENDIF()
 
-target_link_libraries(${PROJECT_NAME}, ${LIBS})
+target_link_libraries(${PROJECT_NAME} ${LIBS})
