@@ -7,7 +7,7 @@ set(CMAKE_SUPPRESS_REGENERATION true)
 
 # Add .lib files
 link_directories(${CMAKE_SOURCE_DIR}/lib)
-link_directories(${CMAKE_SOURCE_DIR}/lib/fmodCoreLinux)
+link_directories(${CMAKE_SOURCE_DIR}/lib/fmodCoreLinux/x86_64)
 
 # Add source files
 file(GLOB_RECURSE SOURCE_FILES 
