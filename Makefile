@@ -118,6 +118,519 @@ bomberman/fast:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/build
 .PHONY : bomberman/fast
 
+Sources/Components/Animator.o: Sources/Components/Animator.cpp.o
+
+.PHONY : Sources/Components/Animator.o
+
+# target to build an object file
+Sources/Components/Animator.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o
+.PHONY : Sources/Components/Animator.cpp.o
+
+Sources/Components/Animator.i: Sources/Components/Animator.cpp.i
+
+.PHONY : Sources/Components/Animator.i
+
+# target to preprocess a source file
+Sources/Components/Animator.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.i
+.PHONY : Sources/Components/Animator.cpp.i
+
+Sources/Components/Animator.s: Sources/Components/Animator.cpp.s
+
+.PHONY : Sources/Components/Animator.s
+
+# target to generate assembly for a file
+Sources/Components/Animator.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.s
+.PHONY : Sources/Components/Animator.cpp.s
+
+Sources/Components/Button.o: Sources/Components/Button.cpp.o
+
+.PHONY : Sources/Components/Button.o
+
+# target to build an object file
+Sources/Components/Button.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o
+.PHONY : Sources/Components/Button.cpp.o
+
+Sources/Components/Button.i: Sources/Components/Button.cpp.i
+
+.PHONY : Sources/Components/Button.i
+
+# target to preprocess a source file
+Sources/Components/Button.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.i
+.PHONY : Sources/Components/Button.cpp.i
+
+Sources/Components/Button.s: Sources/Components/Button.cpp.s
+
+.PHONY : Sources/Components/Button.s
+
+# target to generate assembly for a file
+Sources/Components/Button.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.s
+.PHONY : Sources/Components/Button.cpp.s
+
+Sources/Components/Collider.o: Sources/Components/Collider.cpp.o
+
+.PHONY : Sources/Components/Collider.o
+
+# target to build an object file
+Sources/Components/Collider.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o
+.PHONY : Sources/Components/Collider.cpp.o
+
+Sources/Components/Collider.i: Sources/Components/Collider.cpp.i
+
+.PHONY : Sources/Components/Collider.i
+
+# target to preprocess a source file
+Sources/Components/Collider.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.i
+.PHONY : Sources/Components/Collider.cpp.i
+
+Sources/Components/Collider.s: Sources/Components/Collider.cpp.s
+
+.PHONY : Sources/Components/Collider.s
+
+# target to generate assembly for a file
+Sources/Components/Collider.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.s
+.PHONY : Sources/Components/Collider.cpp.s
+
+Sources/Components/Drawable.o: Sources/Components/Drawable.cpp.o
+
+.PHONY : Sources/Components/Drawable.o
+
+# target to build an object file
+Sources/Components/Drawable.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o
+.PHONY : Sources/Components/Drawable.cpp.o
+
+Sources/Components/Drawable.i: Sources/Components/Drawable.cpp.i
+
+.PHONY : Sources/Components/Drawable.i
+
+# target to preprocess a source file
+Sources/Components/Drawable.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.i
+.PHONY : Sources/Components/Drawable.cpp.i
+
+Sources/Components/Drawable.s: Sources/Components/Drawable.cpp.s
+
+.PHONY : Sources/Components/Drawable.s
+
+# target to generate assembly for a file
+Sources/Components/Drawable.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.s
+.PHONY : Sources/Components/Drawable.cpp.s
+
+Sources/Components/Image.o: Sources/Components/Image.cpp.o
+
+.PHONY : Sources/Components/Image.o
+
+# target to build an object file
+Sources/Components/Image.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o
+.PHONY : Sources/Components/Image.cpp.o
+
+Sources/Components/Image.i: Sources/Components/Image.cpp.i
+
+.PHONY : Sources/Components/Image.i
+
+# target to preprocess a source file
+Sources/Components/Image.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.i
+.PHONY : Sources/Components/Image.cpp.i
+
+Sources/Components/Image.s: Sources/Components/Image.cpp.s
+
+.PHONY : Sources/Components/Image.s
+
+# target to generate assembly for a file
+Sources/Components/Image.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.s
+.PHONY : Sources/Components/Image.cpp.s
+
+Sources/Components/Moveable.o: Sources/Components/Moveable.cpp.o
+
+.PHONY : Sources/Components/Moveable.o
+
+# target to build an object file
+Sources/Components/Moveable.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o
+.PHONY : Sources/Components/Moveable.cpp.o
+
+Sources/Components/Moveable.i: Sources/Components/Moveable.cpp.i
+
+.PHONY : Sources/Components/Moveable.i
+
+# target to preprocess a source file
+Sources/Components/Moveable.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.i
+.PHONY : Sources/Components/Moveable.cpp.i
+
+Sources/Components/Moveable.s: Sources/Components/Moveable.cpp.s
+
+.PHONY : Sources/Components/Moveable.s
+
+# target to generate assembly for a file
+Sources/Components/Moveable.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.s
+.PHONY : Sources/Components/Moveable.cpp.s
+
+Sources/Components/SoundManager.o: Sources/Components/SoundManager.cpp.o
+
+.PHONY : Sources/Components/SoundManager.o
+
+# target to build an object file
+Sources/Components/SoundManager.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o
+.PHONY : Sources/Components/SoundManager.cpp.o
+
+Sources/Components/SoundManager.i: Sources/Components/SoundManager.cpp.i
+
+.PHONY : Sources/Components/SoundManager.i
+
+# target to preprocess a source file
+Sources/Components/SoundManager.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.i
+.PHONY : Sources/Components/SoundManager.cpp.i
+
+Sources/Components/SoundManager.s: Sources/Components/SoundManager.cpp.s
+
+.PHONY : Sources/Components/SoundManager.s
+
+# target to generate assembly for a file
+Sources/Components/SoundManager.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.s
+.PHONY : Sources/Components/SoundManager.cpp.s
+
+Sources/Components/Text.o: Sources/Components/Text.cpp.o
+
+.PHONY : Sources/Components/Text.o
+
+# target to build an object file
+Sources/Components/Text.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o
+.PHONY : Sources/Components/Text.cpp.o
+
+Sources/Components/Text.i: Sources/Components/Text.cpp.i
+
+.PHONY : Sources/Components/Text.i
+
+# target to preprocess a source file
+Sources/Components/Text.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.i
+.PHONY : Sources/Components/Text.cpp.i
+
+Sources/Components/Text.s: Sources/Components/Text.cpp.s
+
+.PHONY : Sources/Components/Text.s
+
+# target to generate assembly for a file
+Sources/Components/Text.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.s
+.PHONY : Sources/Components/Text.cpp.s
+
+Sources/Components/Transform.o: Sources/Components/Transform.cpp.o
+
+.PHONY : Sources/Components/Transform.o
+
+# target to build an object file
+Sources/Components/Transform.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o
+.PHONY : Sources/Components/Transform.cpp.o
+
+Sources/Components/Transform.i: Sources/Components/Transform.cpp.i
+
+.PHONY : Sources/Components/Transform.i
+
+# target to preprocess a source file
+Sources/Components/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.i
+.PHONY : Sources/Components/Transform.cpp.i
+
+Sources/Components/Transform.s: Sources/Components/Transform.cpp.s
+
+.PHONY : Sources/Components/Transform.s
+
+# target to generate assembly for a file
+Sources/Components/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.s
+.PHONY : Sources/Components/Transform.cpp.s
+
+Sources/ECS/Component.o: Sources/ECS/Component.cpp.o
+
+.PHONY : Sources/ECS/Component.o
+
+# target to build an object file
+Sources/ECS/Component.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o
+.PHONY : Sources/ECS/Component.cpp.o
+
+Sources/ECS/Component.i: Sources/ECS/Component.cpp.i
+
+.PHONY : Sources/ECS/Component.i
+
+# target to preprocess a source file
+Sources/ECS/Component.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.i
+.PHONY : Sources/ECS/Component.cpp.i
+
+Sources/ECS/Component.s: Sources/ECS/Component.cpp.s
+
+.PHONY : Sources/ECS/Component.s
+
+# target to generate assembly for a file
+Sources/ECS/Component.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.s
+.PHONY : Sources/ECS/Component.cpp.s
+
+Sources/ECS/Entity.o: Sources/ECS/Entity.cpp.o
+
+.PHONY : Sources/ECS/Entity.o
+
+# target to build an object file
+Sources/ECS/Entity.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o
+.PHONY : Sources/ECS/Entity.cpp.o
+
+Sources/ECS/Entity.i: Sources/ECS/Entity.cpp.i
+
+.PHONY : Sources/ECS/Entity.i
+
+# target to preprocess a source file
+Sources/ECS/Entity.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.i
+.PHONY : Sources/ECS/Entity.cpp.i
+
+Sources/ECS/Entity.s: Sources/ECS/Entity.cpp.s
+
+.PHONY : Sources/ECS/Entity.s
+
+# target to generate assembly for a file
+Sources/ECS/Entity.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.s
+.PHONY : Sources/ECS/Entity.cpp.s
+
+Sources/ECS/EntityManager.o: Sources/ECS/EntityManager.cpp.o
+
+.PHONY : Sources/ECS/EntityManager.o
+
+# target to build an object file
+Sources/ECS/EntityManager.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o
+.PHONY : Sources/ECS/EntityManager.cpp.o
+
+Sources/ECS/EntityManager.i: Sources/ECS/EntityManager.cpp.i
+
+.PHONY : Sources/ECS/EntityManager.i
+
+# target to preprocess a source file
+Sources/ECS/EntityManager.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.i
+.PHONY : Sources/ECS/EntityManager.cpp.i
+
+Sources/ECS/EntityManager.s: Sources/ECS/EntityManager.cpp.s
+
+.PHONY : Sources/ECS/EntityManager.s
+
+# target to generate assembly for a file
+Sources/ECS/EntityManager.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.s
+.PHONY : Sources/ECS/EntityManager.cpp.s
+
+Sources/ECS/System/ButtonSystem.o: Sources/ECS/System/ButtonSystem.cpp.o
+
+.PHONY : Sources/ECS/System/ButtonSystem.o
+
+# target to build an object file
+Sources/ECS/System/ButtonSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o
+.PHONY : Sources/ECS/System/ButtonSystem.cpp.o
+
+Sources/ECS/System/ButtonSystem.i: Sources/ECS/System/ButtonSystem.cpp.i
+
+.PHONY : Sources/ECS/System/ButtonSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/ButtonSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.i
+.PHONY : Sources/ECS/System/ButtonSystem.cpp.i
+
+Sources/ECS/System/ButtonSystem.s: Sources/ECS/System/ButtonSystem.cpp.s
+
+.PHONY : Sources/ECS/System/ButtonSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/ButtonSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.s
+.PHONY : Sources/ECS/System/ButtonSystem.cpp.s
+
+Sources/ECS/System/ImageSystem.o: Sources/ECS/System/ImageSystem.cpp.o
+
+.PHONY : Sources/ECS/System/ImageSystem.o
+
+# target to build an object file
+Sources/ECS/System/ImageSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o
+.PHONY : Sources/ECS/System/ImageSystem.cpp.o
+
+Sources/ECS/System/ImageSystem.i: Sources/ECS/System/ImageSystem.cpp.i
+
+.PHONY : Sources/ECS/System/ImageSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/ImageSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.i
+.PHONY : Sources/ECS/System/ImageSystem.cpp.i
+
+Sources/ECS/System/ImageSystem.s: Sources/ECS/System/ImageSystem.cpp.s
+
+.PHONY : Sources/ECS/System/ImageSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/ImageSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s
+.PHONY : Sources/ECS/System/ImageSystem.cpp.s
+
+Sources/ECS/System/RenderSystem.o: Sources/ECS/System/RenderSystem.cpp.o
+
+.PHONY : Sources/ECS/System/RenderSystem.o
+
+# target to build an object file
+Sources/ECS/System/RenderSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o
+.PHONY : Sources/ECS/System/RenderSystem.cpp.o
+
+Sources/ECS/System/RenderSystem.i: Sources/ECS/System/RenderSystem.cpp.i
+
+.PHONY : Sources/ECS/System/RenderSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/RenderSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.i
+.PHONY : Sources/ECS/System/RenderSystem.cpp.i
+
+Sources/ECS/System/RenderSystem.s: Sources/ECS/System/RenderSystem.cpp.s
+
+.PHONY : Sources/ECS/System/RenderSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/RenderSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.s
+.PHONY : Sources/ECS/System/RenderSystem.cpp.s
+
+Sources/ECS/System/SoundSystem.o: Sources/ECS/System/SoundSystem.cpp.o
+
+.PHONY : Sources/ECS/System/SoundSystem.o
+
+# target to build an object file
+Sources/ECS/System/SoundSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o
+.PHONY : Sources/ECS/System/SoundSystem.cpp.o
+
+Sources/ECS/System/SoundSystem.i: Sources/ECS/System/SoundSystem.cpp.i
+
+.PHONY : Sources/ECS/System/SoundSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/SoundSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.i
+.PHONY : Sources/ECS/System/SoundSystem.cpp.i
+
+Sources/ECS/System/SoundSystem.s: Sources/ECS/System/SoundSystem.cpp.s
+
+.PHONY : Sources/ECS/System/SoundSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/SoundSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.s
+.PHONY : Sources/ECS/System/SoundSystem.cpp.s
+
+Sources/ECS/System/TextSystem.o: Sources/ECS/System/TextSystem.cpp.o
+
+.PHONY : Sources/ECS/System/TextSystem.o
+
+# target to build an object file
+Sources/ECS/System/TextSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o
+.PHONY : Sources/ECS/System/TextSystem.cpp.o
+
+Sources/ECS/System/TextSystem.i: Sources/ECS/System/TextSystem.cpp.i
+
+.PHONY : Sources/ECS/System/TextSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/TextSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.i
+.PHONY : Sources/ECS/System/TextSystem.cpp.i
+
+Sources/ECS/System/TextSystem.s: Sources/ECS/System/TextSystem.cpp.s
+
+.PHONY : Sources/ECS/System/TextSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/TextSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.s
+.PHONY : Sources/ECS/System/TextSystem.cpp.s
+
+Sources/GameManager.o: Sources/GameManager.cpp.o
+
+.PHONY : Sources/GameManager.o
+
+# target to build an object file
+Sources/GameManager.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o
+.PHONY : Sources/GameManager.cpp.o
+
+Sources/GameManager.i: Sources/GameManager.cpp.i
+
+.PHONY : Sources/GameManager.i
+
+# target to preprocess a source file
+Sources/GameManager.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/GameManager.cpp.i
+.PHONY : Sources/GameManager.cpp.i
+
+Sources/GameManager.s: Sources/GameManager.cpp.s
+
+.PHONY : Sources/GameManager.s
+
+# target to generate assembly for a file
+Sources/GameManager.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/GameManager.cpp.s
+.PHONY : Sources/GameManager.cpp.s
+
+Sources/GameMenu/GameMenu.o: Sources/GameMenu/GameMenu.cpp.o
+
+.PHONY : Sources/GameMenu/GameMenu.o
+
+# target to build an object file
+Sources/GameMenu/GameMenu.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.o
+.PHONY : Sources/GameMenu/GameMenu.cpp.o
+
+Sources/GameMenu/GameMenu.i: Sources/GameMenu/GameMenu.cpp.i
+
+.PHONY : Sources/GameMenu/GameMenu.i
+
+# target to preprocess a source file
+Sources/GameMenu/GameMenu.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.i
+.PHONY : Sources/GameMenu/GameMenu.cpp.i
+
+Sources/GameMenu/GameMenu.s: Sources/GameMenu/GameMenu.cpp.s
+
+.PHONY : Sources/GameMenu/GameMenu.s
+
+# target to generate assembly for a file
+Sources/GameMenu/GameMenu.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.s
+.PHONY : Sources/GameMenu/GameMenu.cpp.s
+
 Sources/Generation/Generation.o: Sources/Generation/Generation.cpp.o
 
 .PHONY : Sources/Generation/Generation.o
@@ -198,6 +711,114 @@ Sources/Map.s: Sources/Map.cpp.s
 Sources/Map.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map.cpp.s
 .PHONY : Sources/Map.cpp.s
+
+Sources/Scenes/GameScene.o: Sources/Scenes/GameScene.cpp.o
+
+.PHONY : Sources/Scenes/GameScene.o
+
+# target to build an object file
+Sources/Scenes/GameScene.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o
+.PHONY : Sources/Scenes/GameScene.cpp.o
+
+Sources/Scenes/GameScene.i: Sources/Scenes/GameScene.cpp.i
+
+.PHONY : Sources/Scenes/GameScene.i
+
+# target to preprocess a source file
+Sources/Scenes/GameScene.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.i
+.PHONY : Sources/Scenes/GameScene.cpp.i
+
+Sources/Scenes/GameScene.s: Sources/Scenes/GameScene.cpp.s
+
+.PHONY : Sources/Scenes/GameScene.s
+
+# target to generate assembly for a file
+Sources/Scenes/GameScene.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.s
+.PHONY : Sources/Scenes/GameScene.cpp.s
+
+Sources/Scenes/LunchGame.o: Sources/Scenes/LunchGame.cpp.o
+
+.PHONY : Sources/Scenes/LunchGame.o
+
+# target to build an object file
+Sources/Scenes/LunchGame.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o
+.PHONY : Sources/Scenes/LunchGame.cpp.o
+
+Sources/Scenes/LunchGame.i: Sources/Scenes/LunchGame.cpp.i
+
+.PHONY : Sources/Scenes/LunchGame.i
+
+# target to preprocess a source file
+Sources/Scenes/LunchGame.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.i
+.PHONY : Sources/Scenes/LunchGame.cpp.i
+
+Sources/Scenes/LunchGame.s: Sources/Scenes/LunchGame.cpp.s
+
+.PHONY : Sources/Scenes/LunchGame.s
+
+# target to generate assembly for a file
+Sources/Scenes/LunchGame.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.s
+.PHONY : Sources/Scenes/LunchGame.cpp.s
+
+Sources/Scenes/MenuScene.o: Sources/Scenes/MenuScene.cpp.o
+
+.PHONY : Sources/Scenes/MenuScene.o
+
+# target to build an object file
+Sources/Scenes/MenuScene.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o
+.PHONY : Sources/Scenes/MenuScene.cpp.o
+
+Sources/Scenes/MenuScene.i: Sources/Scenes/MenuScene.cpp.i
+
+.PHONY : Sources/Scenes/MenuScene.i
+
+# target to preprocess a source file
+Sources/Scenes/MenuScene.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.i
+.PHONY : Sources/Scenes/MenuScene.cpp.i
+
+Sources/Scenes/MenuScene.s: Sources/Scenes/MenuScene.cpp.s
+
+.PHONY : Sources/Scenes/MenuScene.s
+
+# target to generate assembly for a file
+Sources/Scenes/MenuScene.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.s
+.PHONY : Sources/Scenes/MenuScene.cpp.s
+
+Sources/Scenes/Scene.o: Sources/Scenes/Scene.cpp.o
+
+.PHONY : Sources/Scenes/Scene.o
+
+# target to build an object file
+Sources/Scenes/Scene.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o
+.PHONY : Sources/Scenes/Scene.cpp.o
+
+Sources/Scenes/Scene.i: Sources/Scenes/Scene.cpp.i
+
+.PHONY : Sources/Scenes/Scene.i
+
+# target to preprocess a source file
+Sources/Scenes/Scene.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.i
+.PHONY : Sources/Scenes/Scene.cpp.i
+
+Sources/Scenes/Scene.s: Sources/Scenes/Scene.cpp.s
+
+.PHONY : Sources/Scenes/Scene.s
+
+# target to generate assembly for a file
+Sources/Scenes/Scene.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.s
+.PHONY : Sources/Scenes/Scene.cpp.s
 
 Sources/Thread/Thread.o: Sources/Thread/Thread.cpp.o
 
@@ -288,6 +909,63 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... bomberman"
 	@echo "... edit_cache"
+	@echo "... Sources/Components/Animator.o"
+	@echo "... Sources/Components/Animator.i"
+	@echo "... Sources/Components/Animator.s"
+	@echo "... Sources/Components/Button.o"
+	@echo "... Sources/Components/Button.i"
+	@echo "... Sources/Components/Button.s"
+	@echo "... Sources/Components/Collider.o"
+	@echo "... Sources/Components/Collider.i"
+	@echo "... Sources/Components/Collider.s"
+	@echo "... Sources/Components/Drawable.o"
+	@echo "... Sources/Components/Drawable.i"
+	@echo "... Sources/Components/Drawable.s"
+	@echo "... Sources/Components/Image.o"
+	@echo "... Sources/Components/Image.i"
+	@echo "... Sources/Components/Image.s"
+	@echo "... Sources/Components/Moveable.o"
+	@echo "... Sources/Components/Moveable.i"
+	@echo "... Sources/Components/Moveable.s"
+	@echo "... Sources/Components/SoundManager.o"
+	@echo "... Sources/Components/SoundManager.i"
+	@echo "... Sources/Components/SoundManager.s"
+	@echo "... Sources/Components/Text.o"
+	@echo "... Sources/Components/Text.i"
+	@echo "... Sources/Components/Text.s"
+	@echo "... Sources/Components/Transform.o"
+	@echo "... Sources/Components/Transform.i"
+	@echo "... Sources/Components/Transform.s"
+	@echo "... Sources/ECS/Component.o"
+	@echo "... Sources/ECS/Component.i"
+	@echo "... Sources/ECS/Component.s"
+	@echo "... Sources/ECS/Entity.o"
+	@echo "... Sources/ECS/Entity.i"
+	@echo "... Sources/ECS/Entity.s"
+	@echo "... Sources/ECS/EntityManager.o"
+	@echo "... Sources/ECS/EntityManager.i"
+	@echo "... Sources/ECS/EntityManager.s"
+	@echo "... Sources/ECS/System/ButtonSystem.o"
+	@echo "... Sources/ECS/System/ButtonSystem.i"
+	@echo "... Sources/ECS/System/ButtonSystem.s"
+	@echo "... Sources/ECS/System/ImageSystem.o"
+	@echo "... Sources/ECS/System/ImageSystem.i"
+	@echo "... Sources/ECS/System/ImageSystem.s"
+	@echo "... Sources/ECS/System/RenderSystem.o"
+	@echo "... Sources/ECS/System/RenderSystem.i"
+	@echo "... Sources/ECS/System/RenderSystem.s"
+	@echo "... Sources/ECS/System/SoundSystem.o"
+	@echo "... Sources/ECS/System/SoundSystem.i"
+	@echo "... Sources/ECS/System/SoundSystem.s"
+	@echo "... Sources/ECS/System/TextSystem.o"
+	@echo "... Sources/ECS/System/TextSystem.i"
+	@echo "... Sources/ECS/System/TextSystem.s"
+	@echo "... Sources/GameManager.o"
+	@echo "... Sources/GameManager.i"
+	@echo "... Sources/GameManager.s"
+	@echo "... Sources/GameMenu/GameMenu.o"
+	@echo "... Sources/GameMenu/GameMenu.i"
+	@echo "... Sources/GameMenu/GameMenu.s"
 	@echo "... Sources/Generation/Generation.o"
 	@echo "... Sources/Generation/Generation.i"
 	@echo "... Sources/Generation/Generation.s"
@@ -297,6 +975,18 @@ help:
 	@echo "... Sources/Map.o"
 	@echo "... Sources/Map.i"
 	@echo "... Sources/Map.s"
+	@echo "... Sources/Scenes/GameScene.o"
+	@echo "... Sources/Scenes/GameScene.i"
+	@echo "... Sources/Scenes/GameScene.s"
+	@echo "... Sources/Scenes/LunchGame.o"
+	@echo "... Sources/Scenes/LunchGame.i"
+	@echo "... Sources/Scenes/LunchGame.s"
+	@echo "... Sources/Scenes/MenuScene.o"
+	@echo "... Sources/Scenes/MenuScene.i"
+	@echo "... Sources/Scenes/MenuScene.s"
+	@echo "... Sources/Scenes/Scene.o"
+	@echo "... Sources/Scenes/Scene.i"
+	@echo "... Sources/Scenes/Scene.s"
 	@echo "... Sources/Thread/Thread.o"
 	@echo "... Sources/Thread/Thread.i"
 	@echo "... Sources/Thread/Thread.s"

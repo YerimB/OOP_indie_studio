@@ -12,8 +12,6 @@
 #include <Irrlicht/irrlicht.h>
 #include <Irrlicht/driverChoice.h>
 #include <Core.hpp>
-#include <Bindable/Bindable.hpp>
-#include <InputManager/InputManager.hpp>
 #include <Thread/Thread.hpp>
 #include <iostream>
 #include <fstream>

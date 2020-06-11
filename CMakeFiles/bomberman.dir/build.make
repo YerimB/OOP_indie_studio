@@ -57,9 +57,256 @@ include CMakeFiles/bomberman.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/bomberman.dir/flags.make
 
+CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o: Sources/Components/Animator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Animator.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Animator.cpp > CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Animator.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o: Sources/Components/Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Button.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Button.cpp > CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Button.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o: Sources/Components/Collider.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Collider.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Collider.cpp > CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Collider.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o: Sources/Components/Drawable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Drawable.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Drawable.cpp > CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Drawable.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o: Sources/Components/Image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Image.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Image.cpp > CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Image.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o: Sources/Components/Moveable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Moveable.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Moveable.cpp > CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Moveable.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o: Sources/Components/SoundManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/SoundManager.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/SoundManager.cpp > CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/SoundManager.cpp -o CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o: Sources/Components/Text.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Text.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Text.cpp > CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Text.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o: Sources/Components/Transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Transform.cpp
+
+CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Transform.cpp > CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Transform.cpp -o CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o: Sources/ECS/Component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/Component.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/Component.cpp > CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/Component.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o: Sources/ECS/Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/Entity.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/Entity.cpp > CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/Entity.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o: Sources/ECS/EntityManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/EntityManager.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/EntityManager.cpp > CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/EntityManager.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o: Sources/ECS/System/ButtonSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/ButtonSystem.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/ButtonSystem.cpp > CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/ButtonSystem.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o: Sources/ECS/System/ImageSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/ImageSystem.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/ImageSystem.cpp > CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/ImageSystem.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o: Sources/ECS/System/RenderSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/RenderSystem.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/RenderSystem.cpp > CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/RenderSystem.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o: Sources/ECS/System/SoundSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/SoundSystem.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/SoundSystem.cpp > CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/SoundSystem.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o: Sources/ECS/System/TextSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/TextSystem.cpp
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/TextSystem.cpp > CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/TextSystem.cpp -o CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o: Sources/GameManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/GameManager.cpp
+
+CMakeFiles/bomberman.dir/Sources/GameManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/GameManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/GameManager.cpp > CMakeFiles/bomberman.dir/Sources/GameManager.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/GameManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/GameManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/GameManager.cpp -o CMakeFiles/bomberman.dir/Sources/GameManager.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.o: Sources/GameMenu/GameMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/GameMenu/GameMenu.cpp
+
+CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/GameMenu/GameMenu.cpp > CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/GameMenu/GameMenu.cpp -o CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.s
+
 CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o: Sources/Generation/Generation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Generation/Generation.cpp
 
 CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.i: cmake_force
@@ -72,7 +319,7 @@ CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o: Sources/InputManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/InputManager.cpp
 
 CMakeFiles/bomberman.dir/Sources/InputManager.cpp.i: cmake_force
@@ -85,7 +332,7 @@ CMakeFiles/bomberman.dir/Sources/InputManager.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/Map.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Map.cpp.o: Sources/Map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/bomberman.dir/Sources/Map.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/bomberman.dir/Sources/Map.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Map.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Map.cpp
 
 CMakeFiles/bomberman.dir/Sources/Map.cpp.i: cmake_force
@@ -96,9 +343,61 @@ CMakeFiles/bomberman.dir/Sources/Map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Map.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Map.cpp -o CMakeFiles/bomberman.dir/Sources/Map.cpp.s
 
+CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Sources/Scenes/GameScene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/GameScene.cpp
+
+CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/GameScene.cpp > CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/GameScene.cpp -o CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Sources/Scenes/LunchGame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/LunchGame.cpp
+
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/LunchGame.cpp > CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/LunchGame.cpp -o CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Sources/Scenes/MenuScene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/MenuScene.cpp
+
+CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/MenuScene.cpp > CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/MenuScene.cpp -o CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.s
+
+CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o: Sources/Scenes/Scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/Scene.cpp
+
+CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/Scene.cpp > CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/Scene.cpp -o CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.s
+
 CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o: Sources/Thread/Thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Thread/Thread.cpp
 
 CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.i: cmake_force
@@ -111,7 +410,7 @@ CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o: Sources/Thread/ThreadPool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Thread/ThreadPool.cpp
 
 CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.i: cmake_force
@@ -124,7 +423,7 @@ CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/main.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/main.cpp.o: Sources/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/bomberman.dir/Sources/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/bomberman.dir/Sources/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/main.cpp.o -c /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/main.cpp
 
 CMakeFiles/bomberman.dir/Sources/main.cpp.i: cmake_force
@@ -137,9 +436,32 @@ CMakeFiles/bomberman.dir/Sources/main.cpp.s: cmake_force
 
 # Object files for target bomberman
 bomberman_OBJECTS = \
+"CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Map.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/main.cpp.o"
@@ -147,15 +469,38 @@ bomberman_OBJECTS = \
 # External object files for target bomberman
 bomberman_EXTERNAL_OBJECTS =
 
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/Component.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/Entity.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Map.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/main.cpp.o
 bomberman: CMakeFiles/bomberman.dir/build.make
 bomberman: CMakeFiles/bomberman.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable bomberman"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable bomberman"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bomberman.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -8,6 +8,10 @@ set(CMAKE_SUPPRESS_REGENERATION true)
 # Add .lib files
 link_directories(${CMAKE_SOURCE_DIR}/lib)
 
+if (NOT WIN32)
+	link_directories(${CMAKE_SOURCE_DIR}/lib/fmodCoreLinux/x86_64)
+ENDIF()
+
 # Add source files
 file(GLOB_RECURSE SOURCE_FILES 
 	${CMAKE_SOURCE_DIR}/Sources/*.cpp)
@@ -35,7 +39,7 @@ ELSE()
 
 # Find Irrlicht on Linux
 find_library(IRRLICHT_LIBRARY irrlicht)
-set(LIBS GL GLEW X11 Xxf86vm Xext Irrlicht)
+set(LIBS GL GLEW X11 Xxf86vm Xext Irrlicht fmod fmodL)
 
 # Add pthread flag
 set(THREAD_FLAG "-pthread")
