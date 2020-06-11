@@ -77,4 +77,8 @@ class GameManager
 	private: // Game management
 		GameVars_t m_globalVars;
 		std::unordered_map<Scene::SceneID, Scene*> m_Scenes;
+	
+	private:
+		FMOD::System *m_soundSystem = nullptr;
+		FMOD_RESULT m_fmodDebug;
 };

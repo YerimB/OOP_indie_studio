@@ -8,6 +8,18 @@ GameManager::GameManager()
     m_SceneManager = nullptr;
     m_EntityManager = nullptr;
     m_InputManager = nullptr;
+    {
+        m_fmodDebug = FMOD::System_Create(&(m_soundSystem));
+        if (m_fmodDebug != FMOD_OK) {
+            std::cerr << "FMOD Error : " << m_fmodDebug << std::endl;
+            std::exit(84);
+        }
+        m_fmodDebug = m_soundSystem->init(256, FMOD_INIT_NORMAL, 0);
+        if (m_fmodDebug != FMOD_OK) {
+            std::cerr << "FMOD Error : " << m_fmodDebug << std::endl;
+            std::exit(84);
+        }
+    }
 }
 
 GameManager::~GameManager()
