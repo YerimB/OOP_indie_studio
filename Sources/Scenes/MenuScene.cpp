@@ -26,6 +26,13 @@ void MenuScene::Load(GameManager* gameManager)
     gameManager->GetGuiEnvironment()->clear();
     gameManager->GetSceneManager()->clear();
 
+    { // Sound testing
+        SoundManager *sm = gameManager->GetSoundManager();
+        sm->Clear();
+        sm->AddSound(sm->LoadSound("Assets/sound/testBear.mp3"), "bear");
+        sm->PlaySound("bear");
+    }
+
     { // Create and Add Systems (Always first)
         // Create
         ButtonSystem* buttonSys = new ButtonSystem(gameManager->GetEntityManager());
