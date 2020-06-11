@@ -58,10 +58,8 @@
     <ClCompile Include="Sources\GameManager.cpp" />
     <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
     <ClCompile Include="Sources\Components\Image.cpp" />
-    <ClCompile Include="Sources\Components\ImageSystem.cpp" />
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
-    <ClCompile Include="Sources\Components\Collision.cpp" />
     <ClCompile Include="Sources\Components\Moveable.cpp" />
     <ClCompile Include="Sources\Components\SoundManager.cpp" />
     <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
@@ -71,6 +69,8 @@
     <ClCompile Include="Sources\Scenes\Scene.cpp" />
     <ClCompile Include="Sources\Components\Collider.cpp" />
     <ClCompile Include="Sources\ECS\System\ImageSystem.cpp" />
+    <ClCompile Include="Sources\Components\Timer.cpp" />
+    <ClCompile Include="Sources\ECS\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Core.hpp" />
@@ -300,6 +300,8 @@
     <ClInclude Include="includes\fmodCoreWindows\fmod_output.h" />
     <ClInclude Include="includes\fmodCoreWindows\fmod_uwp.h" />
     <ClInclude Include="Headers\ECS\ECS.h" />
+    <ClInclude Include="Headers\Components\Timer.h" />
+    <ClInclude Include="Headers\ECS\Time.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

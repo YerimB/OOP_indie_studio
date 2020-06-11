@@ -6,7 +6,6 @@
 */
 
 #include <Components/SoundManager.h>
-#include <fmodCoreWindows/fmod.hpp>
 
 SoundManager::SoundManager(SceneManager *p_SceneManager)
 {
