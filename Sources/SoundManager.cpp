@@ -70,6 +70,18 @@ void SoundManager::Clear(void)
     this->m_SoundMap.clear();
 }
 
+void SoundManager::setVolume(const SoundType &type, float volume)
+{
+    this->m_SoundGroupMap.at(type)->setVolume(volume);
+}
+
+float SoundManager::getVolume(const SoundType &type)
+{
+    float volume;
+    this->m_SoundGroupMap.at(type)->getVolume(&volume);
+    return (volume);
+}
+
 SoundManager::~SoundManager()
 {
     for (auto &elem : m_SoundGroupMap)
