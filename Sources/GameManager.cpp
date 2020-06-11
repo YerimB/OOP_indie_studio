@@ -8,13 +8,13 @@ GameManager::GameManager()
     m_SceneManager = nullptr;
     m_EntityManager = nullptr;
     m_InputManager = nullptr;
-    {
-        m_fmodDebug = FMOD::System_Create(&(m_soundSystem));
+    { // Initialize sound system
+        m_fmodDebug = FMOD::System_Create(&(m_soundManager));
         if (m_fmodDebug != FMOD_OK) {
             std::cerr << "FMOD Error : " << m_fmodDebug << std::endl;
             std::exit(84);
         }
-        m_fmodDebug = m_soundSystem->init(256, FMOD_INIT_NORMAL, 0);
+        m_fmodDebug = m_soundManager->init(256, FMOD_INIT_NORMAL, 0);
         if (m_fmodDebug != FMOD_OK) {
             std::cerr << "FMOD Error : " << m_fmodDebug << std::endl;
             std::exit(84);
@@ -89,6 +89,21 @@ Texture *GameManager::LoadTexture(const std::string &path)
     return (this->m_VideoDriver->getTexture(path.c_str()));
 }
 
+FMOD::Sound *GameManager::LoadSound(const std::string &path)
+{
+    FMOD::Sound *tmp = nullptr;
+
+    m_fmodDebug = m_soundManager->createSound(
+        path.c_str(),
+        FMOD_DEFAULT,
+        0, &tmp
+    );
+    if (m_fmodDebug != FMOD_OK)
+        std::cerr << "FMOD Error Loading sound : " << \
+        m_fmodDebug << std::endl;
+    return (tmp);
+}
+
 // Getters
 
 irr::IrrlichtDevice* GameManager::GetDevice() const
@@ -119,6 +134,11 @@ EntityManager* GameManager::GetEntityManager() const
 InputManager* GameManager::GetInputManager() const
 {
     return m_InputManager.get();
+}
+
+FMOD::System* GameManager::GetSoundManager() const
+{
+    return m_soundManager;
 }
 
 // Setters

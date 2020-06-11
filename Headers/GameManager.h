@@ -50,6 +50,7 @@ class GameManager
 
 	public:
 		Texture *LoadTexture(const std::string &path);
+		FMOD::Sound *LoadSound(const std::string &path);
 
 	public: // Getters
 		irr::IrrlichtDevice* GetDevice() const;
@@ -58,6 +59,7 @@ class GameManager
 		irr::scene::ISceneManager* GetSceneManager() const;
 		EntityManager* GetEntityManager() const;
 		InputManager* GetInputManager() const;
+		FMOD::System* GetSoundManager() const;
 	
 	public: // Setters
 		void SetSceneChange(const bool &state);
@@ -79,6 +81,6 @@ class GameManager
 		std::unordered_map<Scene::SceneID, Scene*> m_Scenes;
 	
 	private:
-		FMOD::System *m_soundSystem = nullptr;
+		FMOD::System *m_soundManager = nullptr;
 		FMOD_RESULT m_fmodDebug;
 };
