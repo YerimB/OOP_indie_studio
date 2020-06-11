@@ -6,6 +6,14 @@
 #include <Irrlicht/irrlicht.h>
 #include <ECS/Hash.h>
 
+#if _WIN32 || _WIN64
+	#include <fmodCoreWindows/fmod.hpp>
+#elif __linux__
+	#include <fmodCoreLinux/fmod.hpp>
+#else
+	#error OS not supported !
+#endif
+
 // Irrlicht
 
 using SceneManager = irr::scene::ISceneManager;
