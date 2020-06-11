@@ -26,7 +26,7 @@
 #include <Components/Drawable.h>
 #include <Components/Image.h>
 #include <Components/Moveable.h>
-#include <Components/SoundManager.h>
+#include <Components/Sound.h>
 #include <Components/Text.h>
 #include <Components/Transform.h>
 

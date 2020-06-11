@@ -2,23 +2,23 @@
 ** EPITECH PROJECT, 2020
 ** OOP_indie_studio_2019
 ** File description:
-** SoundManager
+** Sound
 */
 
-#ifndef SOUNDMANAGER_H_
-#define SOUNDMANAGER_H_
+#ifndef SOUND_H_
+#define SOUND_H_
 
 #include <ECS/Component.h>
 #include <Core.hpp>
 #include <GameManager.h>
 
-class SoundManager : public Component
+class Sound : public Component
 {
     public:
-		static constexpr ComponentId Id = "SoundManager"_hash;
+		static constexpr ComponentId Id = "Sound"_hash;
 
     public:
-        SoundManager(SceneManager *p_SceneManager);
+        Sound(SceneManager *p_SceneManager);
 
     public:
         bool Initialize(void* args = nullptr) override final;
@@ -32,4 +32,4 @@ class SoundManager : public Component
 		SceneManager *m_SceneManager = nullptr;
 };
 
-#endif /* !SOUNDMANAGER_H_ */
+#endif /* !SOUND_H_ */

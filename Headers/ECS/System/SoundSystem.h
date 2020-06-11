@@ -10,11 +10,11 @@
 
 #include <ECS/System/System.h>
 #include <ECS/EntityManager.h>
-#include <Components/SoundManager.h>
+#include <Components/Sound.h>
 
-class SoundSystem : public System<SoundManager>
+class SoundSystem : public System<Sound>
 {
-    using BaseType = System<SoundManager>;
+    using BaseType = System<Sound>;
 
     public:
         SoundSystem(EntityManager *pEntityManager);

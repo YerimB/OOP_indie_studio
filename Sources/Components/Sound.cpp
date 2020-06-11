@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2020
 ** OOP_indie_studio_2019
 ** File description:
-** SoundManager
+** Sound
 */
 
-#include <Components/SoundManager.h>
+#include <Components/Sound.h>
 
-SoundManager::SoundManager(SceneManager *p_SceneManager)
+Sound::Sound(SceneManager *p_SceneManager)
 {
     this->m_SceneManager = p_SceneManager;
 
@@ -16,11 +16,11 @@ SoundManager::SoundManager(SceneManager *p_SceneManager)
     FMOD::System_Create(&system);
 }
 
-bool SoundManager::Initialize(void *args)
+bool Sound::Initialize(void *args)
 {
     if (!args)
         return (false);
     return (true);
 }
 
-void SoundManager::Update(const float &dT, GameManager *) {}
+void Sound::Update(const float &dT, GameManager *) {}
