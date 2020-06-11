@@ -29,7 +29,7 @@ void MenuScene::Load(GameManager* gameManager)
     { // Sound testing
         SoundManager *sm = gameManager->GetSoundManager();
         sm->Clear();
-        sm->AddSound(sm->LoadSound("Assets/sound/testBear.mp3"), "bear");
+        sm->AddSound(sm->LoadSound("Assets/sound/testBear.mp3"), "bear", SoundManager::SFX);
         sm->PlaySound("bear");
     }
 

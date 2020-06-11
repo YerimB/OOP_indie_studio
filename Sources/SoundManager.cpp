@@ -9,6 +9,9 @@
 
 SoundManager::SoundManager()
 {
+    FMOD::SoundGroup *musicSG = nullptr;
+    FMOD::SoundGroup *sfxSG = nullptr;
+
     m_fmodDebug = FMOD::System_Create(&(m_System));
     if (m_fmodDebug != FMOD_OK) {
         std::cerr << "FMOD Error : " << m_fmodDebug << std::endl;
@@ -19,6 +22,10 @@ SoundManager::SoundManager()
         std::cerr << "FMOD Error : " << m_fmodDebug << std::endl;
         std::exit(84);
     }
+    m_System->createSoundGroup("SFX", &sfxSG);
+    m_SoundGroupMap.emplace(SoundType::SFX, std::move(sfxSG));
+    m_System->createSoundGroup("Music", &musicSG);
+    m_SoundGroupMap.emplace(SoundType::MUSIC, std::move(musicSG));
 }
 
 FMOD::Sound *SoundManager::LoadSound(const std::string &path)
@@ -36,8 +43,9 @@ FMOD::Sound *SoundManager::LoadSound(const std::string &path)
     return (tmp);
 }
 
-const bool SoundManager::AddSound(FMOD::Sound *sound, const std::string &ID)
+const bool SoundManager::AddSound(FMOD::Sound *sound, const std::string &ID, const SoundType &type)
 {
+    sound->setSoundGroup(m_SoundGroupMap.at(type));
     this->m_SoundMap.emplace(ID, std::move(sound));
 }
 
@@ -57,5 +65,15 @@ void SoundManager::PlaySound(const std::string &soundID) const
 
 void SoundManager::Clear(void)
 {
+    for (auto &elem : m_SoundMap)
+        elem.second->release();
     this->m_SoundMap.clear();
+}
+
+SoundManager::~SoundManager()
+{
+    for (auto &elem : m_SoundGroupMap)
+        elem.second->release();
+    for (auto &elem : m_SoundMap)
+        elem.second->release();
 }
