@@ -44,7 +44,7 @@ void System<Comps...>::OnEntityCreated(const Entity& entity)
                     entity.GetId(),
                     this->_components.size() - 1
                 );
-                std::cout << "Added Entity: " << entity.GetName() << std::endl;
+                std::cout << "Added Entity" << std::endl;
                 break;
             }
         }

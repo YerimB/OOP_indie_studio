@@ -269,7 +269,6 @@
     <ClCompile Include="Sources\Components\Collider.cpp" />
     <ClCompile Include="Sources\Components\Image.cpp" />
     <ClCompile Include="Sources\Components\Moveable.cpp" />
-    <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
     <ClCompile Include="Sources\ECS\Time.cpp" />
     <ClCompile Include="Sources\Components\Timer.cpp" />
@@ -309,7 +308,6 @@
     <ClInclude Include="Headers\ECS\EntityManager.h" />
     <ClInclude Include="Headers\ECS\Hash.h" />
     <ClInclude Include="Headers\ECS\System.h" />
-    <ClInclude Include="Headers\ECS\System\AnimatorSystem.h" />
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
     <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
     <ClInclude Include="Headers\ECS\System\ImageSystem.h" />

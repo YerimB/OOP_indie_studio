@@ -64,5 +64,5 @@ Vector3f Drawable::GetScale()
 
 Box3f Drawable::GetBounds()
 {
-	return m_AnimatedMesh->getTransformedBoundingBox();
+	return m_AnimatedMesh->getBoundingBox();
 }
