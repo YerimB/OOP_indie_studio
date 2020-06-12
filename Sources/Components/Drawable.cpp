@@ -7,7 +7,7 @@
 
 #include <Components/Drawable.h>
 
-Drawable::Drawable(irr::scene::ISceneManager* manager)
+Drawable::Drawable(SceneManager* manager)
 {
 	m_SceneManager = manager;
 	m_AnimatedMesh = nullptr;
