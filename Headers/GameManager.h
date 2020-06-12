@@ -16,8 +16,6 @@
 enum SocketMode {
 	NONE = (-1),
 	LOCAL,
-	CLIENT,
-	SERVER
 };
 
 typedef struct GameGlobalVariables_s

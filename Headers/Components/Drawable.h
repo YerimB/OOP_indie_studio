@@ -10,6 +10,7 @@
 #include <ECS/Component.h>
 #include <Core.hpp>
 #include <GameManager.h>
+
 class Drawable : public Component
 {
 	public:
