@@ -22,14 +22,17 @@ class Animator : public Component
     
     public:
         bool Initialize(void* args = nullptr) override final;
-		void Update(const float& deltaTime, GameManager* gameManager) override final;
+        void Update(const float& deltaTime, GameManager* gameManager) override final;
     
-    public: // Setters
-
-    public: // Getters
+    public:
+        const bool AddAnimation(const std::string &sID, const Vector3i &p);
+        void PlayAnimation(const std::string &sID);
+        void StopAnimation(void);
 
     private:
-		SceneManager *m_SceneManager = nullptr;
+        SceneManager *m_SceneManager = nullptr;
+        AMeshNode *m_AnimatedMesh = nullptr;
+        std::unordered_map<std::string, Vector3i /* start, end, speed */ > m_AnimationMap;
 };
 
 #endif /* !ANIMATOR_H_ */
