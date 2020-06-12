@@ -76,13 +76,13 @@ void GameScene::LoadElements(GameManager *gm)
         Animator* a1 = new Animator(gm->GetSceneManager());
         Collider* c1 = new Collider();
 
-        if (t1->Initialize(0) && c1->Initialize() &&\
-        d1->Initialize(this->GetMesh("Sydney")) && a1->Initialize(d1)) {
+        if (t1->Initialize(0) && d1->Initialize(this->GetMesh("Sydney")) && \
+        c1->Initialize() && a1->Initialize(d1->GetDrawable())) {
             a1->AddAnimation("idle", {0, 13, 15});
             a1->PlayAnimation("idle");
             e2.AddComponent(d1, Drawable::Id);
             e2.AddComponent(t1, Transform::Id);
-            //e2.AddComponent(a1, Animator::Id);
+            e2.AddComponent(a1, Animator::Id);
             e2.AddComponent(c1, Collider::Id);
             gm->GetEntityManager()->AddEntity(e2);
         }
