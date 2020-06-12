@@ -10,13 +10,14 @@ bool Cube::Initialize(void* args)
 {
 	if (!args)
 		return false;
-
-	std::string texture = *static_cast<std::string*>(args);
-	auto mesh = m_SceneManager->getGeometryCreator()->createCubeMesh({ 0, 0, 0 });
-
+	Texture *texture = static_cast<Texture *>(args);
+	Mesh *mesh = m_SceneManager->getGeometryCreator()->createCubeMesh({ 10.0f, 10.0f, 10.0f });
 	if (!mesh)
 		return false;
 	m_MeshNode = m_SceneManager->addMeshSceneNode(mesh);
+	m_MeshNode->setMaterialFlag(irr::video::EMF_LIGHTING, false);
+	m_MeshNode->setMaterialTexture(0, texture);
+	mesh->drop();
 	return true;
 }
 

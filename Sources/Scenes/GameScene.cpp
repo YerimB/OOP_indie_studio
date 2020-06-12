@@ -41,6 +41,9 @@ void GameScene::LoadAssets(GameManager* gm)
 {
     // Load textures
     this->AddTexture(gm->LoadTexture("Assets/sand.jpg"), "Sand");
+    this->AddTexture(gm->LoadTexture("Assets/block.png"), "Block");
+    this->AddTexture(gm->LoadTexture("Assets/star.jpeg"), "Star");
+    this->AddTexture(gm->LoadTexture("Assets/pow.jpeg"), "Pow");
 
     // Load Meshes
     auto sm = gm->GetSceneManager();
@@ -106,7 +109,7 @@ void GameScene::LoadElements(GameManager* gm)
     }
 
     auto map = Map(gm);
-    map.Initialize(20);
+    map.Initialize(20, this);
 }
 
 void GameScene::Load(GameManager* gameManager)
@@ -119,7 +122,7 @@ void GameScene::Load(GameManager* gameManager)
     this->LoadElements(gameManager);
 
     // Add Camera to Scene.
-    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 100, 0), { 0, 0, 0 });
+    gameManager->GetSceneManager()->addCameraSceneNode(0, { 50, 100, 150 }, { 0, 100, -50 });
 }
 
 void GameScene::Update(GameManager* gameManager)

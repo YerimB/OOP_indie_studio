@@ -5,7 +5,7 @@ Map::Map(GameManager* pGameManager)
 	m_GameManager = pGameManager;
 }
 
-void Map::Initialize(const std::size_t& size)
+void Map::Initialize(const std::size_t& size, Scene *sc)
 {
 	auto map = Generation(size);
 	int x = (size < 10 ? -(size * 10) : -40 * (size / 10));
@@ -19,32 +19,30 @@ void Map::Initialize(const std::size_t& size)
 	{
 		for (auto& ch : line)
 		{
-			Entity e0("Block");
+			Entity cubeEntity("Block");
 			Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
 			Transform* t0 = new Transform(position);
 			Collider* cl0 = new Collider();
 			Cube* c0 = new Cube(m_GameManager->GetSceneManager());
-			std::string texture;
+			Texture *texture = nullptr;
 
 			if (ch == '1')
-				texture = "Assets/block.png";
+				texture = sc->GetTexture("Block");
 			else if (ch == '2')
-				texture = "Assets/star.jpeg";
+				texture = sc->GetTexture("Star");
 			else if (ch == '3')
-				texture = "Assets/pow.jpeg";
-
-			c0->Initialize(&texture);
-			t0->SetScale({ 10.0f, 10.0f, 10.0f });
-			c0->SetScale({ 10.0f, 10.0f, 10.0f });
+				texture = sc->GetTexture("Pow");
+			else continue;
+			if (!c0->Initialize(texture))
+				continue;
 			c0->SetPosition(position);
-			e0.AddComponent(t0, Transform::Id);
-			e0.AddComponent(d0, Drawable::Id);
-			e0.AddComponent(c0, Cube::Id);
-			e0.AddComponent(cl0, Collider::Id);
-			m_GameManager->GetEntityManager()->AddEntity(e0);
+			cubeEntity.AddComponent(t0, Transform::Id);
+			cubeEntity.AddComponent(d0, Drawable::Id);
+			cubeEntity.AddComponent(c0, Cube::Id);
+			cubeEntity.AddComponent(cl0, Collider::Id);
+			m_GameManager->GetEntityManager()->AddEntity(cubeEntity);
 			position.X += 10;
 		}
-
 		position.X -= 90;
 		position.Y += 10;
 	}

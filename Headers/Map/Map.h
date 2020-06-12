@@ -14,7 +14,7 @@ class Map
 		~Map() = default;
 
 	public:
-		void Initialize(const std::size_t& size);
+		void Initialize(const std::size_t& size, Scene *sc);
 
 	private:
 		GameManager* m_GameManager;
