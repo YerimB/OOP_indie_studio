@@ -269,7 +269,8 @@
     <ClCompile Include="Sources\Components\Collider.cpp" />
     <ClCompile Include="Sources\Components\Image.cpp" />
     <ClCompile Include="Sources\Components\Moveable.cpp" />
-    <ClCompile Include="Sources\Components\SoundManager.cpp" />
+    <ClCompile Include="Sources\Components\Sound.cpp" />
+    <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
     <ClCompile Include="Sources\ECS\Time.cpp" />
     <ClCompile Include="Sources\Components\Timer.cpp" />
     <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
@@ -288,6 +289,7 @@
     <ClCompile Include="Sources\Scenes\GameScene.cpp" />
     <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
     <ClCompile Include="Sources\Scenes\Scene.cpp" />
+    <ClCompile Include="Sources\SoundManager.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
@@ -298,7 +300,7 @@
     <ClInclude Include="Headers\Components\Drawable.h" />
     <ClInclude Include="Headers\Components\Image.h" />
     <ClInclude Include="Headers\Components\Moveable.h" />
-    <ClInclude Include="Headers\Components\SoundManager.h" />
+    <ClInclude Include="Headers\Components\Sound.h" />
     <ClInclude Include="Headers\Components\Text.h" />
     <ClInclude Include="Headers\Components\Timer.h" />
     <ClInclude Include="Headers\Components\Transform.h" />
@@ -312,6 +314,7 @@
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
     <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
     <ClInclude Include="Headers\ECS\System\ImageSystem.h" />
+    <ClInclude Include="Headers\ECS\System\MoveSystem.h" />
     <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
     <ClInclude Include="Headers\ECS\System\SoundSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
@@ -325,6 +328,7 @@
     <ClInclude Include="Headers\Scenes\GameScene.hpp" />
     <ClInclude Include="Headers\Scenes\MenuScene.hpp" />
     <ClInclude Include="Headers\Scenes\Scene.hpp" />
+    <ClInclude Include="Headers\SoundManager.h" />
     <ClInclude Include="Headers\Thread\ITask.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />

@@ -43,6 +43,8 @@ using Color = irr::video::SColor;
 using Colorf = irr::video::SColorf;
 using Texture = irr::video::ITexture;
 
+using Box3f = irr::core::aabbox3df;
+
 // C++
 
 typedef unsigned int EntityId;

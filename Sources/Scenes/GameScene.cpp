@@ -64,13 +64,33 @@ void GameScene::Load(GameManager* gameManager)
         Entity e2;
         Drawable* d1 = new Drawable(gameManager->GetSceneManager());
         Transform* t1 = new Transform();
+        Collider* c1 = new Collider();
         std::string pathToMesh = "Assets/bomberman_m.obj";
 
-        if (t1->Initialize(0) && d1->Initialize(&pathToMesh)) {
-            e2.AddComponent(d1, Drawable::Id);
-            e2.AddComponent(t1, Transform::Id);
+        if (t1->Initialize(nullptr) && d1->Initialize(&pathToMesh) && c1->Initialize(nullptr)) {
+            e2.AddComponent(d1, d1->Id);
+            e2.AddComponent(t1, t1->Id);
+            e2.AddComponent(c1, c1->Id);
         }
         gameManager->GetEntityManager()->AddEntity(e2);
+    }
+    {
+        Entity e3;
+        Drawable* d2 = new Drawable(gameManager->GetSceneManager());
+        Transform* t2 = new Transform();
+        Collider* c2 = new Collider();
+        std::string pathToMesh = "Assets/wall.md3";
+
+        if (d2->Initialize(&pathToMesh) && t2->Initialize(nullptr) && c2->Initialize(nullptr))
+        {
+            t2->SetPosition({ 10, 10, 0 });
+
+            e3.AddComponent(d2, d2->Id);
+            e3.AddComponent(t2, t2->Id);
+            e3.AddComponent(c2, c2->Id);
+        }
+
+        gameManager->GetEntityManager()->AddEntity(e3);
     }
     // Add Camera to Scene.
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
