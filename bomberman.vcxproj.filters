@@ -30,6 +30,7 @@
     <ClCompile Include="Sources\ECS\Time.cpp" />
     <ClCompile Include="Sources\SoundManager.cpp" />
     <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Core.hpp" />
@@ -261,6 +262,7 @@
     <ClInclude Include="Headers\ECS\Time.h" />
     <ClInclude Include="Headers\SoundManager.h" />
     <ClInclude Include="Headers\ECS\System\MoveSystem.h" />
+    <ClInclude Include="Headers\ECS\System\AnimatorSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -279,7 +281,7 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\Irrlicht.lib" />
-    <Library Include="lib\fmodCoreWindows\x64\fmod.lib" />
-    <Library Include="lib\fmodCoreWindows\x64\fmodL.lib" />
+    <Library Include="lib\fmodCoreWindows\fmod.lib" />
+    <Library Include="lib\fmodCoreWindows\fmodL.lib" />
   </ItemGroup>
 </Project>
