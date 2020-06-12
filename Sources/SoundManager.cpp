@@ -47,6 +47,8 @@ const bool SoundManager::AddSound(FMOD::Sound *sound, const std::string &ID, con
 {
     sound->setSoundGroup(m_SoundGroupMap.at(type));
     this->m_SoundMap.emplace(ID, std::move(sound));
+
+    return true;
 }
 
 FMOD::Sound *SoundManager::GetSound(const std::string &soundID) const

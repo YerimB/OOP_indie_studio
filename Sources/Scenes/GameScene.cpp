@@ -76,6 +76,24 @@ void GameScene::Load(GameManager* gameManager)
         }
         gameManager->GetEntityManager()->AddEntity(e2);
     }
+    {
+        Entity e3;
+        Drawable* d2 = new Drawable(gameManager->GetSceneManager());
+        Transform* t2 = new Transform();
+        Collider* c2 = new Collider();
+        std::string pathToMesh = "Assets/wall.md3";
+
+        if (d2->Initialize(&pathToMesh) && t2->Initialize(nullptr) && c2->Initialize(nullptr))
+        {
+            t2->SetPosition({ 10, 10, 0 });
+
+            e3.AddComponent(d2, d2->Id);
+            e3.AddComponent(t2, t2->Id);
+            e3.AddComponent(c2, c2->Id);
+        }
+
+        gameManager->GetEntityManager()->AddEntity(e3);
+    }
     // Add Camera to Scene.
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
 }
