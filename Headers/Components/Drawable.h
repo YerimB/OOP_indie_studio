@@ -27,6 +27,7 @@ class Drawable : public Component
 		void SetPosition(const Vector3f& position);
 		void SetRotation(const Vector3f& rotation);
 		void SetScale(const Vector3f& scale);
+		void SetTexture(Texture *texture);
 
 	public:
 		Vector3f GetPosition();
