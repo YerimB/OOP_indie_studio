@@ -15,10 +15,11 @@ Drawable::Drawable(SceneManager* manager)
 
 bool Drawable::Initialize(void* args)
 {
-	std::string mesh = *static_cast<std::string*>(args);
+	AMesh *mesh = static_cast<AMesh *>(args);
 
-	m_AnimatedMesh = m_SceneManager->addAnimatedMeshSceneNode(m_SceneManager->getMesh(mesh.c_str()));
-
+	if (!mesh)
+		return false;
+	m_AnimatedMesh = m_SceneManager->addAnimatedMeshSceneNode(mesh);
 	if (!m_AnimatedMesh)
 		return false;
 	m_AnimatedMesh->setMaterialFlag(irr::video::EMF_LIGHTING, false);
