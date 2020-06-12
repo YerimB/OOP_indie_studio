@@ -10,7 +10,7 @@
 static void changeSceneToGame(GameManager* gameManager)
 {
 	gameManager->SetSceneChange(true);
-	gameManager->SetNextScene(Scene::GAME);
+	gameManager->SetNextScene(Scene::LUNCH_GAME);
 }
 
 MenuScene::MenuScene() : Scene(Scene::MENU)

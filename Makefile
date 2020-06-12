@@ -334,6 +334,33 @@ Sources/Components/Text.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.s
 .PHONY : Sources/Components/Text.cpp.s
 
+Sources/Components/Timer.o: Sources/Components/Timer.cpp.o
+
+.PHONY : Sources/Components/Timer.o
+
+# target to build an object file
+Sources/Components/Timer.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Timer.cpp.o
+.PHONY : Sources/Components/Timer.cpp.o
+
+Sources/Components/Timer.i: Sources/Components/Timer.cpp.i
+
+.PHONY : Sources/Components/Timer.i
+
+# target to preprocess a source file
+Sources/Components/Timer.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Timer.cpp.i
+.PHONY : Sources/Components/Timer.cpp.i
+
+Sources/Components/Timer.s: Sources/Components/Timer.cpp.s
+
+.PHONY : Sources/Components/Timer.s
+
+# target to generate assembly for a file
+Sources/Components/Timer.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Timer.cpp.s
+.PHONY : Sources/Components/Timer.cpp.s
+
 Sources/Components/Transform.o: Sources/Components/Transform.cpp.o
 
 .PHONY : Sources/Components/Transform.o
@@ -576,6 +603,33 @@ Sources/ECS/System/TextSystem.s: Sources/ECS/System/TextSystem.cpp.s
 Sources/ECS/System/TextSystem.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.s
 .PHONY : Sources/ECS/System/TextSystem.cpp.s
+
+Sources/ECS/Time.o: Sources/ECS/Time.cpp.o
+
+.PHONY : Sources/ECS/Time.o
+
+# target to build an object file
+Sources/ECS/Time.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Time.cpp.o
+.PHONY : Sources/ECS/Time.cpp.o
+
+Sources/ECS/Time.i: Sources/ECS/Time.cpp.i
+
+.PHONY : Sources/ECS/Time.i
+
+# target to preprocess a source file
+Sources/ECS/Time.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Time.cpp.i
+.PHONY : Sources/ECS/Time.cpp.i
+
+Sources/ECS/Time.s: Sources/ECS/Time.cpp.s
+
+.PHONY : Sources/ECS/Time.s
+
+# target to generate assembly for a file
+Sources/ECS/Time.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/Time.cpp.s
+.PHONY : Sources/ECS/Time.cpp.s
 
 Sources/GameManager.o: Sources/GameManager.cpp.o
 
@@ -933,6 +987,9 @@ help:
 	@echo "... Sources/Components/Text.o"
 	@echo "... Sources/Components/Text.i"
 	@echo "... Sources/Components/Text.s"
+	@echo "... Sources/Components/Timer.o"
+	@echo "... Sources/Components/Timer.i"
+	@echo "... Sources/Components/Timer.s"
 	@echo "... Sources/Components/Transform.o"
 	@echo "... Sources/Components/Transform.i"
 	@echo "... Sources/Components/Transform.s"
@@ -960,6 +1017,9 @@ help:
 	@echo "... Sources/ECS/System/TextSystem.o"
 	@echo "... Sources/ECS/System/TextSystem.i"
 	@echo "... Sources/ECS/System/TextSystem.s"
+	@echo "... Sources/ECS/Time.o"
+	@echo "... Sources/ECS/Time.i"
+	@echo "... Sources/ECS/Time.s"
 	@echo "... Sources/GameManager.o"
 	@echo "... Sources/GameManager.i"
 	@echo "... Sources/GameManager.s"

@@ -18,8 +18,8 @@ class Scene
         enum SceneID { // Add scene IDs here if needed.
             UNDEFINED = (-1), // Id Not Defined
 			MENU, // Menu Id
-            GAME, // Game Id
             LUNCH_GAME, // Lunch Game ID
+            GAME, // Game Id
 		};
 
     public:

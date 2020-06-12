@@ -266,13 +266,13 @@ int main()
 {
     Unique<GameManager> gameManager = CreateUnique<GameManager>();
     MenuScene menu;
+    LunchGame luncher;
     GameScene game;
-    // LunchGame luncher;
 
     gameManager->Initialize();
     gameManager->AddScene(&menu);
+    gameManager->AddScene(&luncher);
     gameManager->AddScene(&game);
-    // gameManager->AddScene(&luncher);
 
     gameManager->ProgramLoop();
 	return 0;
