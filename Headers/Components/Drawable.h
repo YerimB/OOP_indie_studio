@@ -33,8 +33,9 @@ class Drawable : public Component
 		Vector3f GetRotation();
 		Vector3f GetScale();
 		Box3f GetBounds();
+		AMeshNode* GetDrawable();
 
 	private:
 		SceneManager* m_SceneManager;
-		irr::scene::IAnimatedMeshSceneNode* m_AnimatedMesh;
+		AMeshNode* m_AnimatedMesh;
 };
