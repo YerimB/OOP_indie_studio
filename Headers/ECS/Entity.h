@@ -23,6 +23,9 @@ class Entity
 		void RemoveComponent(ComponentId componentId);
 
 	public:
+		void SetName(const std::string& name);
+
+	public:
 		const EntityId &GetId() const;
 		const ComponentMap &GetComponents() const;
 		const std::string& GetName() const;

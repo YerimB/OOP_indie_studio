@@ -25,6 +25,11 @@ void Entity::RemoveComponent(ComponentId componentId)
 	m_Components.erase(componentId);
 }
 
+void Entity::SetName(const std::string& name)
+{
+	m_Name = name;
+}
+
 const EntityId& Entity::GetId() const
 {
 	return m_Id;

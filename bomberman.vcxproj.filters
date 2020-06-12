@@ -31,6 +31,9 @@
     <ClCompile Include="Sources\SoundManager.cpp" />
     <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
+    <ClCompile Include="Sources\Components\Cube.cpp" />
+    <ClCompile Include="Sources\Map\Generation.cpp" />
+    <ClCompile Include="Sources\Map\Map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Core.hpp" />
@@ -263,6 +266,9 @@
     <ClInclude Include="Headers\SoundManager.h" />
     <ClInclude Include="Headers\ECS\System\MoveSystem.h" />
     <ClInclude Include="Headers\ECS\System\AnimatorSystem.h" />
+    <ClInclude Include="Headers\Components\Cube.h" />
+    <ClInclude Include="Headers\Map\Generation.h" />
+    <ClInclude Include="Headers\Map\Map.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

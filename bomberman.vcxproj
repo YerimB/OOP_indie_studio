@@ -267,6 +267,7 @@
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
     <ClCompile Include="Sources\Components\Collider.cpp" />
+    <ClCompile Include="Sources\Components\Cube.cpp" />
     <ClCompile Include="Sources\Components\Image.cpp" />
     <ClCompile Include="Sources\Components\Moveable.cpp" />
     <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
@@ -285,6 +286,8 @@
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
     <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
     <ClCompile Include="Sources\InputManager.cpp" />
+    <ClCompile Include="Sources\Map\Generation.cpp" />
+    <ClCompile Include="Sources\Map\Map.cpp" />
     <ClCompile Include="Sources\Scenes\GameScene.cpp" />
     <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
     <ClCompile Include="Sources\Scenes\Scene.cpp" />
@@ -296,6 +299,7 @@
     <ClInclude Include="Headers\Components\Button.h" />
     <ClInclude Include="Headers\Components\Collider.h" />
     <ClInclude Include="Headers\Components\Collision.h" />
+    <ClInclude Include="Headers\Components\Cube.h" />
     <ClInclude Include="Headers\Components\Drawable.h" />
     <ClInclude Include="Headers\Components\Image.h" />
     <ClInclude Include="Headers\Components\Moveable.h" />
@@ -320,6 +324,8 @@
     <ClInclude Include="Headers\ECS\Time.h" />
     <ClInclude Include="Headers\GameManager.h" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
+    <ClInclude Include="Headers\Map\Generation.h" />
+    <ClInclude Include="Headers\Map\Map.h" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />

@@ -1,6 +1,7 @@
 #include <Scenes/GameScene.hpp>
 #include <GameManager.h>
 #include <ECS/System/MoveSystem.h>
+#include <Map/Map.h>
 // Systems
 #include <ECS/ECS.h>
 
@@ -103,6 +104,9 @@ void GameScene::LoadElements(GameManager* gm)
             gm->GetEntityManager()->AddEntity(e3);
         }
     }
+
+    auto map = Map(gm);
+    map.Initialize(20);
 }
 
 void GameScene::Load(GameManager* gameManager)
