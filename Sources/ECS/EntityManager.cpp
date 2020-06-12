@@ -89,4 +89,6 @@ Entity& EntityManager::GetEntity(const std::string& name)
 		if (entity.second.GetName() == name)
 			return entity.second;
 	}
+
+	throw std::runtime_error("Entity not found.");
 }
