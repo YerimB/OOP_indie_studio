@@ -21,7 +21,6 @@
     <ClCompile Include="Sources\Components\Button.cpp" />
     <ClCompile Include="Sources\Components\Moveable.cpp" />
     <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
-    <ClCompile Include="Sources\ECS\System\SoundSystem.cpp" />
     <ClCompile Include="Sources\Scenes\GameScene.cpp" />
     <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
     <ClCompile Include="Sources\Scenes\Scene.cpp" />
@@ -29,7 +28,6 @@
     <ClCompile Include="Sources\ECS\System\ImageSystem.cpp" />
     <ClCompile Include="Sources\Components\Timer.cpp" />
     <ClCompile Include="Sources\ECS\Time.cpp" />
-    <ClCompile Include="Sources\Components\Sound.cpp" />
     <ClCompile Include="Sources\SoundManager.cpp" />
     <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
   </ItemGroup>
@@ -245,7 +243,6 @@
     <ClInclude Include="Headers\Components\Collision.h" />
     <ClInclude Include="Headers\Components\Moveable.h" />
     <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
-    <ClInclude Include="Headers\ECS\System\SoundSystem.h" />
     <ClInclude Include="Headers\Scenes\Scene.hpp" />
     <ClInclude Include="Headers\Scenes\GameScene.hpp" />
     <ClInclude Include="Headers\Scenes\MenuScene.hpp" />
@@ -262,7 +259,6 @@
     <ClInclude Include="Headers\ECS\ECS.h" />
     <ClInclude Include="Headers\Components\Timer.h" />
     <ClInclude Include="Headers\ECS\Time.h" />
-    <ClInclude Include="Headers\Components\Sound.h" />
     <ClInclude Include="Headers\SoundManager.h" />
     <ClInclude Include="Headers\ECS\System\MoveSystem.h" />
   </ItemGroup>
