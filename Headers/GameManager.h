@@ -10,6 +10,7 @@
 #include <Core.hpp>
 #include <ECS/EntityManager.h>
 #include <InputManager/InputManager.hpp>
+#include <SoundManager.h>
 #include <Scenes/Scene.hpp>
 
 enum SocketMode {
@@ -50,7 +51,6 @@ class GameManager
 
 	public:
 		Texture *LoadTexture(const std::string &path);
-		FMOD::Sound *LoadSound(const std::string &path);
 
 	public: // Getters
 		irr::IrrlichtDevice* GetDevice() const;
@@ -59,7 +59,7 @@ class GameManager
 		irr::scene::ISceneManager* GetSceneManager() const;
 		EntityManager* GetEntityManager() const;
 		InputManager* GetInputManager() const;
-		FMOD::System* GetSoundManager() const;
+		SoundManager* GetSoundManager() const;
 	
 	public: // Setters
 		void SetSceneChange(const bool &state);
@@ -75,12 +75,9 @@ class GameManager
 	private: // ECS
 		Shared<EntityManager> m_EntityManager;
 		Unique<InputManager> m_InputManager;
+		Unique<SoundManager> m_SoundManager;
 	
 	private: // Game management
 		GameVars_t m_globalVars;
 		std::unordered_map<Scene::SceneID, Scene*> m_Scenes;
-	
-	private:
-		FMOD::System *m_soundManager = nullptr;
-		FMOD_RESULT m_fmodDebug;
 };
