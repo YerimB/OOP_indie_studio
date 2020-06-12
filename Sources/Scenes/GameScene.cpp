@@ -64,11 +64,15 @@ void GameScene::Load(GameManager* gameManager)
         Entity e2;
         Drawable* d1 = new Drawable(gameManager->GetSceneManager());
         Transform* t1 = new Transform();
-        std::string pathToMesh = "Assets/bomberman_m.obj";
+        Animator* a1 = new Animator(gameManager->GetSceneManager());
+        std::string pathToMesh = "Assets/sydney.md2";
 
-        if (t1->Initialize(0) && d1->Initialize(&pathToMesh)) {
+        if (t1->Initialize(0) && d1->Initialize(&pathToMesh) && a1->Initialize(d1)) {
+            a1->AddAnimation("idle", {0, 13, 15});
             e2.AddComponent(d1, Drawable::Id);
             e2.AddComponent(t1, Transform::Id);
+            e2.AddComponent(a1, Animator::Id);
+            a1->PlayAnimation("idle");
         }
         gameManager->GetEntityManager()->AddEntity(e2);
     }
