@@ -18,6 +18,13 @@ enum SocketMode {
 	LOCAL,
 };
 
+typedef struct PlayersDataParameters_s
+{
+	size_t 	playerID = 0;
+	bool 	active = false;
+	
+} PlayersData_t;
+
 typedef struct GameGlobalVariables_s
 {
 	// Has scene been changed ?
@@ -27,6 +34,10 @@ typedef struct GameGlobalVariables_s
 
 	// Current connection mode to the game.
 	SocketMode currentSocketMode = SocketMode::NONE;
+
+	// Players parameters
+	std::array<PlayersData_t, 4> playersData;
+
 	// Add vars if needed.
 } GameVars_t;
 
@@ -78,4 +89,5 @@ class GameManager
 	private: // Game management
 		GameVars_t m_globalVars;
 		std::unordered_map<Scene::SceneID, Scene*> m_Scenes;
+		Scene::SceneID m_CurrentSceneID = Scene::SceneID::UNDEFINED;
 };

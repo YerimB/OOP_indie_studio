@@ -21,35 +21,44 @@ GameScene::~GameScene()
 {
 }
 
-void GameScene::Load(GameManager* gameManager)
+void GameScene::LoadSystems(GameManager *gm)
 {
-    gameManager->GetGuiEnvironment()->clear();
-    gameManager->GetSceneManager()->clear();
+    // Create
+    ButtonSystem* buttonSys = new ButtonSystem(gm->GetEntityManager());
+    ImageSystem* imageSys = new ImageSystem(gm->GetEntityManager());
+    TextSystem* textSys = new TextSystem(gm->GetEntityManager());
+    RenderSystem* renderSys = new RenderSystem(gm->GetEntityManager());
 
-    { // Create and Add Systems (Always first)
-        // Create
-        ButtonSystem* buttonSys = new ButtonSystem(gameManager->GetEntityManager());
-        ImageSystem* imageSys = new ImageSystem(gameManager->GetEntityManager());
-        TextSystem* textSys = new TextSystem(gameManager->GetEntityManager());
-        RenderSystem* renderSys = new RenderSystem(gameManager->GetEntityManager());
+    // Add
+    gm->GetEntityManager()->AddSystem(std::move(buttonSys));
+    gm->GetEntityManager()->AddSystem(std::move(imageSys));
+    gm->GetEntityManager()->AddSystem(std::move(textSys));
+    gm->GetEntityManager()->AddSystem(std::move(renderSys));
+}
 
-        // Add
-        gameManager->GetEntityManager()->AddSystem(std::move(buttonSys));
-        gameManager->GetEntityManager()->AddSystem(std::move(imageSys));
-        gameManager->GetEntityManager()->AddSystem(std::move(textSys));
-        gameManager->GetEntityManager()->AddSystem(std::move(renderSys));
-    }
+void GameScene::LoadAssets(GameManager *gm)
+{
+    // Load textures
+    this->AddTexture(gm->LoadTexture("Assets/sand.jpg"), "Sand");
 
-    // Load Entities & Components
+    // Load Meshes
+    auto sm = gm->GetSceneManager();
+    this->AddMesh(sm->getMesh("Assets/sydney.md2"), "Sydney");
+    this->AddMesh(sm->getMesh("Assets/wall.md3"), "Wall");
+}
+
+// Load Entities & Components
+void GameScene::LoadElements(GameManager *gm)
+{
 	{ // Back to menu button
         // Create components and entity
         Entity e1;
-        Button* b1 = new Button(gameManager->GetGuiEnvironment());
+        Button* b1 = new Button(gm->GetGuiEnvironment());
 
         // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {
             b1->SetButtonID(Button::ButtonID::QUIT);
-            b1->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
+            b1->SetTexture(this->GetTexture("Sand"));
             b1->SetText("Back to menu");
             b1->SetPosition({ 50, 50 });
             b1->SetSize(300, 100);
@@ -58,32 +67,32 @@ void GameScene::Load(GameManager* gameManager)
             e1.AddComponent(std::move(b1), Button::Id);
         }
         // When done, add entity to the entity manager.
-        gameManager->GetEntityManager()->AddEntity(e1);
+        gm->GetEntityManager()->AddEntity(e1);
     }
     {
         Entity e2;
-        Drawable* d1 = new Drawable(gameManager->GetSceneManager());
+        Drawable* d1 = new Drawable(gm->GetSceneManager());
         Transform* t1 = new Transform();
-        Animator* a1 = new Animator(gameManager->GetSceneManager());
-        std::string pathToMesh = "Assets/sydney.md2";
+        Animator* a1 = new Animator(gm->GetSceneManager());
 
-        if (t1->Initialize(0) && d1->Initialize(&pathToMesh) && a1->Initialize(d1)) {
+        if (t1->Initialize(0) && \
+        d1->Initialize(this->GetMesh("Sydney")) && a1->Initialize(d1)) {
             a1->AddAnimation("idle", {0, 13, 15});
             e2.AddComponent(d1, Drawable::Id);
             e2.AddComponent(t1, Transform::Id);
             e2.AddComponent(a1, Animator::Id);
             a1->PlayAnimation("idle");
         }
-        gameManager->GetEntityManager()->AddEntity(e2);
+        gm->GetEntityManager()->AddEntity(e2);
     }
     {
         Entity e3;
-        Drawable* d2 = new Drawable(gameManager->GetSceneManager());
+        Drawable* d2 = new Drawable(gm->GetSceneManager());
         Transform* t2 = new Transform();
         Collider* c2 = new Collider();
-        std::string pathToMesh = "Assets/wall.md3";
 
-        if (d2->Initialize(&pathToMesh) && t2->Initialize(nullptr) && c2->Initialize(nullptr))
+        if (d2->Initialize(this->GetMesh("Wall")) && \
+        t2->Initialize(nullptr) && c2->Initialize(nullptr))
         {
             t2->SetPosition({ 10, 10, 0 });
 
@@ -92,8 +101,29 @@ void GameScene::Load(GameManager* gameManager)
             e3.AddComponent(c2, c2->Id);
         }
 
-        gameManager->GetEntityManager()->AddEntity(e3);
+        gm->GetEntityManager()->AddEntity(e3);
     }
+}
+
+void GameScene::Load(GameManager* gameManager)
+{
+    gameManager->GetGuiEnvironment()->clear();
+    gameManager->GetSceneManager()->clear();
+
+    this->LoadSystems(gameManager);
+    this->LoadAssets(gameManager);
+    this->LoadElements(gameManager);
+
     // Add Camera to Scene.
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
+}
+
+void GameScene::Update(GameManager *gameManager)
+{
+
+}
+
+void GameScene::Unload(void)
+{
+
 }
