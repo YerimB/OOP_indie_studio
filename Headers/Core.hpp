@@ -46,6 +46,7 @@ using Texture = irr::video::ITexture;
 using Box3f = irr::core::aabbox3df;
 using AMesh = irr::scene::IAnimatedMesh;
 using AMeshNode = irr::scene::IAnimatedMeshSceneNode;
+using MeshNode = irr::scene::IMeshSceneNode;
 using AnimatorNode = irr::scene::ISceneNodeAnimator;
 
 // C++
