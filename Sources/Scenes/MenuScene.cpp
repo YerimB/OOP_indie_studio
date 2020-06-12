@@ -27,10 +27,10 @@ void MenuScene::Load(GameManager* gameManager)
     gameManager->GetSceneManager()->clear();
 
     { // Sound testing
-        SoundManager *sm = gameManager->GetSoundManager();
-        sm->Clear();
-        sm->AddSound(sm->LoadSound("Assets/sound/testBear.mp3"), "bear", SoundManager::SFX);
-        sm->PlaySound("bear");
+        //SoundManager *sm = gameManager->GetSoundManager();
+        //sm->Clear();
+        //sm->AddSound(sm->LoadSound("Assets/sound/testBear.mp3"), "bear", SoundManager::SFX);
+        //sm->PlaySound("bear");
     }
 
     { // Create and Add Systems (Always first)
@@ -45,7 +45,7 @@ void MenuScene::Load(GameManager* gameManager)
 	{ // Test button
         // Create components and entity
         Button* b1 = new Button(gameManager->GetGuiEnvironment());
-        Entity e1;
+        Entity e1("Block");
 
         // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {

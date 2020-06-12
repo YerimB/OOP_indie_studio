@@ -16,7 +16,7 @@ class Entity
 	using ComponentMap = std::unordered_map<ComponentId, Component*, std::hash<ComponentId>, std::equal_to<ComponentId>>;
 
 	public:
-		explicit Entity();
+		explicit Entity(const std::string& name);
 
 	public:
 		void AddComponent(Component* component, const ComponentId& componentId);
@@ -25,6 +25,7 @@ class Entity
 	public:
 		const EntityId &GetId() const;
 		const ComponentMap &GetComponents() const;
+		const std::string& GetName() const;
 
 		template<class TComponent>
 		TComponent* GetComponent() const
@@ -39,4 +40,5 @@ class Entity
 	private:
 		EntityId m_Id;
 		ComponentMap m_Components;
+		std::string m_Name;
 };

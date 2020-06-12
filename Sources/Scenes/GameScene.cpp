@@ -1,6 +1,6 @@
 #include <Scenes/GameScene.hpp>
 #include <GameManager.h>
-
+#include <ECS/System/MoveSystem.h>
 // Systems
 #include <ECS/ECS.h>
 
@@ -32,18 +32,19 @@ void GameScene::Load(GameManager* gameManager)
         ImageSystem* imageSys = new ImageSystem(gameManager->GetEntityManager());
         TextSystem* textSys = new TextSystem(gameManager->GetEntityManager());
         RenderSystem* renderSys = new RenderSystem(gameManager->GetEntityManager());
-
+        MoveSystem* moveSys = new MoveSystem(gameManager->GetEntityManager());
         // Add
         gameManager->GetEntityManager()->AddSystem(std::move(buttonSys));
         gameManager->GetEntityManager()->AddSystem(std::move(imageSys));
         gameManager->GetEntityManager()->AddSystem(std::move(textSys));
         gameManager->GetEntityManager()->AddSystem(std::move(renderSys));
+        gameManager->GetEntityManager()->AddSystem(std::move(moveSys));
     }
 
     // Load Entities & Components
 	{ // Back to menu button
         // Create components and entity
-        Entity e1;
+        Entity e1("BackButton");
         Button* b1 = new Button(gameManager->GetGuiEnvironment());
 
         // Initialize component and set attributes then add it to entity
@@ -61,23 +62,26 @@ void GameScene::Load(GameManager* gameManager)
         gameManager->GetEntityManager()->AddEntity(e1);
     }
     {
-        Entity e2;
+        Entity e2("AnimatedCharacter");
         Drawable* d1 = new Drawable(gameManager->GetSceneManager());
         Transform* t1 = new Transform();
+        Collider* c1 = new Collider();
         Animator* a1 = new Animator(gameManager->GetSceneManager());
         std::string pathToMesh = "Assets/sydney.md2";
 
+        c1->Initialize(nullptr);
         if (t1->Initialize(0) && d1->Initialize(&pathToMesh) && a1->Initialize(d1)) {
             a1->AddAnimation("idle", {0, 13, 15});
-            e2.AddComponent(d1, Drawable::Id);
-            e2.AddComponent(t1, Transform::Id);
-            e2.AddComponent(a1, Animator::Id);
             a1->PlayAnimation("idle");
         }
+        e2.AddComponent(d1, Drawable::Id);
+        e2.AddComponent(t1, Transform::Id);
+        //e2.AddComponent(a1, Animator::Id);
+        e2.AddComponent(c1, Collider::Id);
         gameManager->GetEntityManager()->AddEntity(e2);
     }
     {
-        Entity e3;
+        Entity e3("Wall");
         Drawable* d2 = new Drawable(gameManager->GetSceneManager());
         Transform* t2 = new Transform();
         Collider* c2 = new Collider();
@@ -85,15 +89,15 @@ void GameScene::Load(GameManager* gameManager)
 
         if (d2->Initialize(&pathToMesh) && t2->Initialize(nullptr) && c2->Initialize(nullptr))
         {
-            t2->SetPosition({ 10, 10, 0 });
 
-            e3.AddComponent(d2, d2->Id);
-            e3.AddComponent(t2, t2->Id);
-            e3.AddComponent(c2, c2->Id);
         }
 
+        t2->SetPosition({ 20, 0, 0 });
+        e3.AddComponent(d2, d2->Id);
+        e3.AddComponent(t2, t2->Id);
+        e3.AddComponent(c2, c2->Id);
         gameManager->GetEntityManager()->AddEntity(e3);
     }
     // Add Camera to Scene.
-    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
+    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -50), { 0, 0, 0 });
 }
