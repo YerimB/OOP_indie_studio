@@ -41,7 +41,7 @@ void MenuScene::LoadElements(GameManager *gm)
 	{ // Test button
         // Create components and entity
         Button* b1 = new Button(gm->GetGuiEnvironment());
-        Entity e1;
+        Entity e1("Block");
 
         // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {

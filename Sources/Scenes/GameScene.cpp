@@ -1,6 +1,6 @@
 #include <Scenes/GameScene.hpp>
 #include <GameManager.h>
-
+#include <ECS/System/MoveSystem.h>
 // Systems
 #include <ECS/ECS.h>
 
@@ -52,7 +52,7 @@ void GameScene::LoadElements(GameManager *gm)
 {
 	{ // Back to menu button
         // Create components and entity
-        Entity e1;
+        Entity e1("BackButton");
         Button* b1 = new Button(gm->GetGuiEnvironment());
 
         // Initialize component and set attributes then add it to entity
@@ -65,28 +65,30 @@ void GameScene::LoadElements(GameManager *gm)
             b1->SetTextureToFit(true);
             b1->SetOnPress(changeSceneToMenu);
             e1.AddComponent(std::move(b1), Button::Id);
+            // When done, add entity to the entity manager.
+            gm->GetEntityManager()->AddEntity(e1);
         }
-        // When done, add entity to the entity manager.
-        gm->GetEntityManager()->AddEntity(e1);
     }
     {
-        Entity e2;
+        Entity e2("AnimatedCharacter");
         Drawable* d1 = new Drawable(gm->GetSceneManager());
         Transform* t1 = new Transform();
         Animator* a1 = new Animator(gm->GetSceneManager());
+        Collider* c1 = new Collider();
 
-        if (t1->Initialize(0) && \
+        if (t1->Initialize(0) && c1->Initialize() &&\
         d1->Initialize(this->GetMesh("Sydney")) && a1->Initialize(d1)) {
             a1->AddAnimation("idle", {0, 13, 15});
+            a1->PlayAnimation("idle");
             e2.AddComponent(d1, Drawable::Id);
             e2.AddComponent(t1, Transform::Id);
-            e2.AddComponent(a1, Animator::Id);
-            a1->PlayAnimation("idle");
+            //e2.AddComponent(a1, Animator::Id);
+            e2.AddComponent(c1, Collider::Id);
+            gm->GetEntityManager()->AddEntity(e2);
         }
-        gm->GetEntityManager()->AddEntity(e2);
     }
     {
-        Entity e3;
+        Entity e3("Wall");
         Drawable* d2 = new Drawable(gm->GetSceneManager());
         Transform* t2 = new Transform();
         Collider* c2 = new Collider();
@@ -94,14 +96,12 @@ void GameScene::LoadElements(GameManager *gm)
         if (d2->Initialize(this->GetMesh("Wall")) && \
         t2->Initialize(nullptr) && c2->Initialize(nullptr))
         {
-            t2->SetPosition({ 10, 10, 0 });
-
+            t2->SetPosition({ 20, 0, 0 });
             e3.AddComponent(d2, d2->Id);
             e3.AddComponent(t2, t2->Id);
             e3.AddComponent(c2, c2->Id);
+            gm->GetEntityManager()->AddEntity(e3);
         }
-
-        gm->GetEntityManager()->AddEntity(e3);
     }
 }
 
