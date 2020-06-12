@@ -7,6 +7,7 @@ bool Timer::Initialize(void* countdown)
 
 	m_Duration = *static_cast<float*>(countdown);
 	m_InitialValue = m_Duration;
+	return true;
 }
 
 void Timer::Reset()
