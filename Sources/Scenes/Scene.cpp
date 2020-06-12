@@ -13,7 +13,7 @@ const bool Scene::AddMesh(AMesh *mesh, const std::string &id)
 {
 	if (m_LoadedMeshes.find(id) != m_LoadedMeshes.end() || !mesh)
 		return (false);
-	m_LoadedMeshes.emplace(std::move(mesh), id);
+	m_LoadedMeshes.emplace(id, std::move(mesh));
 	return (true);
 }
 
@@ -21,7 +21,7 @@ const bool Scene::AddTexture(Texture *texture, const std::string &id)
 {
 	if (m_LoadedTextures.find(id) != m_LoadedTextures.end() || !texture)
 		return (false);
-	m_LoadedTextures.emplace(std::move(texture), id);
+	m_LoadedTextures.emplace(id, std::move(texture));
 	return (true);
 }
 

@@ -42,9 +42,9 @@ class Scene
         Texture *GetTexture(const std::string &id);
     
     protected:
-        // virtual void LoadSystems(GameManager *) = 0;
-        // virtual void LoadAssets(GameManager *) = 0;
-        // virtual void LoadElements(GameManager *) = 0;
+        virtual void LoadSystems(GameManager *) = 0;
+        virtual void LoadAssets(GameManager *) = 0;
+        virtual void LoadElements(GameManager *) = 0;
 
     protected:
         SceneID m_ID = UNDEFINED;
