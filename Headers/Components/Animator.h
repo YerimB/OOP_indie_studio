@@ -22,7 +22,7 @@ class Animator : public Component
     
     public:
         bool Initialize(void* args = nullptr) override final;
-		void Update(const float& deltaTime, GameManager* gameManager) override final;
+        void Update(const float& deltaTime, GameManager* gameManager) override final;
     
     public: // Setters
 
@@ -30,6 +30,7 @@ class Animator : public Component
 
     private:
 		SceneManager *m_SceneManager = nullptr;
+        AMeshNode *m_AnimatedMesh = nullptr;
 };
 
 #endif /* !ANIMATOR_H_ */

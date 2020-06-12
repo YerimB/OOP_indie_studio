@@ -43,6 +43,9 @@ using Color = irr::video::SColor;
 using Colorf = irr::video::SColorf;
 using Texture = irr::video::ITexture;
 
+using AMeshNode = irr::scene::IAnimatedMeshSceneNode;
+using AnimatorNode = irr::scene::ISceneNodeAnimator;
+
 // C++
 
 typedef unsigned int EntityId;
