@@ -24,7 +24,6 @@ template <size_t INDEX>
 const bool System<Comps...>::ProcessEntityComponent
 (const ComponentId& compId, Component* pComponent, CompTuple& tupleToFill)
 {
-    std::cout << "No match" << std::endl;
     return (false);
 }
 

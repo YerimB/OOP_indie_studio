@@ -44,9 +44,11 @@ using Colorf = irr::video::SColorf;
 using Texture = irr::video::ITexture;
 
 using Box3f = irr::core::aabbox3df;
+using Mesh = irr::scene::IMesh;
 using AMesh = irr::scene::IAnimatedMesh;
 using AMeshNode = irr::scene::IAnimatedMeshSceneNode;
 using AnimatorNode = irr::scene::ISceneNodeAnimator;
+using GeometryCreator = irr::scene::IGeometryCreator;
 
 // C++
 

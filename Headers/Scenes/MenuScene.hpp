@@ -15,5 +15,4 @@ class MenuScene : public Scene
 		void Load(GameManager* gameManager) override final;
 		void Update(GameManager* gameManager) override final;
 		void Unload(void) override final;
-
 };

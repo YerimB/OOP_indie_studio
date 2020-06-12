@@ -42,6 +42,13 @@ void Drawable::SetScale(const Vector3f& scale)
 	m_AnimatedMesh->setScale(scale);
 }
 
+void Drawable::SetTexture(Texture *texture)
+{
+	if (!texture)
+		return;
+	m_AnimatedMesh->setMaterialTexture(0, texture);
+}
+
 irr::scene::IAnimatedMeshSceneNode* Drawable::GetDrawable()
 {
 	return m_AnimatedMesh;
