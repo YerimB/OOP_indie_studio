@@ -28,7 +28,6 @@ class Drawable : public Component
 		void SetScale(const Vector3f& scale);
 
 	public:
-		irr::scene::IAnimatedMeshSceneNode* GetDrawable();
 		Vector3f GetPosition();
 		Vector3f GetRotation();
 		Vector3f GetScale();
