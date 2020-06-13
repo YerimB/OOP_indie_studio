@@ -1,6 +1,7 @@
 #include <Scenes/GameScene.hpp>
 #include <GameManager.h>
-
+#include <ECS/System/MoveSystem.h>
+#include <Map/Map.h>
 // Systems
 #include <ECS/ECS.h>
 
@@ -9,8 +10,8 @@
 
 static void changeSceneToMenu(GameManager* gameManager)
 {
-	gameManager->m_globalVars.sceneChanged = true;
-	gameManager->m_globalVars.newScene = Scene::MENU;
+	gameManager->SetSceneChange(true);
+	gameManager->SetNextScene(Scene::MENU);
 }
 
 GameScene::GameScene() : Scene(Scene::GAME)
@@ -21,57 +22,116 @@ GameScene::~GameScene()
 {
 }
 
+void GameScene::LoadSystems(GameManager* gm)
+{
+    // Create
+    ButtonSystem* buttonSys = new ButtonSystem(gm->GetEntityManager());
+    ImageSystem* imageSys = new ImageSystem(gm->GetEntityManager());
+    TextSystem* textSys = new TextSystem(gm->GetEntityManager());
+    RenderSystem* renderSys = new RenderSystem(gm->GetEntityManager());
+    MoveSystem* moveSys = new MoveSystem(gm->GetEntityManager());
+
+    // Add
+    gm->GetEntityManager()->AddSystem(std::move(buttonSys));
+    gm->GetEntityManager()->AddSystem(std::move(imageSys));
+    gm->GetEntityManager()->AddSystem(std::move(textSys));
+    gm->GetEntityManager()->AddSystem(std::move(renderSys));
+    gm->GetEntityManager()->AddSystem(std::move(moveSys));
+}
+
+void GameScene::LoadAssets(GameManager* gm)
+{
+    // Load textures
+    this->AddTexture(gm->LoadTexture("Assets/sand.jpg"), "Sand");
+    this->AddTexture(gm->LoadTexture("Assets/block.png"), "Block");
+    this->AddTexture(gm->LoadTexture("Assets/star.jpeg"), "Star");
+    this->AddTexture(gm->LoadTexture("Assets/pow.jpeg"), "Pow");
+    this->AddTexture(gm->LoadTexture("Assets/wall.png"), "Wall");
+    this->AddTexture(gm->LoadTexture("Assets/btnHome.png"), "iconHome");
+
+    // Load Meshes
+    auto sm = gm->GetSceneManager();
+    this->AddMesh(sm->getMesh("Assets/sydney.md2"), "Sydney");
+    this->AddMesh(sm->getMesh("Assets/wall.md3"), "Wall");
+    this->AddMesh(sm->getMesh("Assets/bomberman_m.obj"), "Bomber");
+}
+
+// Load Entities & Components
+void GameScene::LoadElements(GameManager* gm)
+{
+    { // Back to menu button
+        // Create components and entity
+        Entity e1("BackButton");
+        Button* b1 = new Button(gm->GetGuiEnvironment());
+
+        // Initialize component and set attributes then add it to entity
+        if (b1->Initialize(nullptr)) {
+            b1->SetButtonID(Button::ButtonID::QUIT);
+            b1->SetTexture(this->GetTexture("iconHome"));
+            b1->SetPosition({ 20, 20 });
+            b1->SetSize(80, 80);
+            b1->SetTextureToFit(true);
+            b1->SetOnPress(changeSceneToMenu);
+            e1.AddComponent(std::move(b1), Button::Id);
+            // When done, add entity to the entity manager.
+            gm->GetEntityManager()->AddEntity(e1);
+        }
+    }
+
+    auto map = Map(gm);
+    map.Initialize(20, this);
+}
+
 void GameScene::Load(GameManager* gameManager)
 {
     gameManager->GetGuiEnvironment()->clear();
     gameManager->GetSceneManager()->clear();
 
-    { // Create and Add Systems (Always first)
-        // Create
-        ButtonSystem* buttonSys = new ButtonSystem(gameManager->GetEntityManager());
-        ImageSystem* imageSys = new ImageSystem(gameManager->GetEntityManager());
-        TextSystem* textSys = new TextSystem(gameManager->GetEntityManager());
-        RenderSystem* renderSys = new RenderSystem(gameManager->GetEntityManager());
+    this->LoadSystems(gameManager);
+    this->LoadAssets(gameManager);
+    this->LoadElements(gameManager);
+}
 
-        // Add
-        gameManager->GetEntityManager()->AddSystem(std::move(buttonSys));
-        gameManager->GetEntityManager()->AddSystem(std::move(imageSys));
-        gameManager->GetEntityManager()->AddSystem(std::move(textSys));
-        gameManager->GetEntityManager()->AddSystem(std::move(renderSys));
-    }
+void GameScene::Update(GameManager* gameManager)
+{
+    // auto inputManager = gameManager->GetInputManager();
+    // auto player1 = gameManager->GetEntityManager()->GetEntity("Player01");
 
-    // Load Entities & Components
-	{ // Back to menu button
-        // Create components and entity
-        Entity e1;
-        Button* b1 = new Button(gameManager->GetGuiEnvironment());
+    // if (inputManager->IsKeyDown(irr::KEY_KEY_Z))
+    // {
+    //     auto transform = player1.GetComponent<Transform>();
+    //     auto position = transform->GetPosition();
 
-        // Initialize component and set attributes then add it to entity
-        if (b1->Initialize(nullptr)) {
-            b1->SetButtonID(Button::ButtonID::QUIT);
-            b1->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
-            b1->SetText("Back to menu");
-            b1->SetPosition({ 50, 50 });
-            b1->SetSize(300, 100);
-            b1->SetTextureToFit(true);
-            b1->SetOnPress(changeSceneToMenu);
-            e1.AddComponent(std::move(b1), Button::Id);
-        }
-        // When done, add entity to the entity manager.
-        gameManager->GetEntityManager()->AddEntity(e1);
-    }
-    {
-        Entity e2;
-        Drawable* d1 = new Drawable(gameManager->GetSceneManager());
-        Transform* t1 = new Transform();
-        std::string pathToMesh = "Assets/bomberman_m.obj";
+    //     transform->SetPosition({ position.X, position.Y, position.Z + 0.1f });
+    // }
+    // else if (inputManager->IsKeyDown(irr::KEY_KEY_Q))
+    // {
+    //     auto transform = player1.GetComponent<Transform>();
+    //     auto position = transform->GetPosition();
 
-        if (t1->Initialize(0) and d1->Initialize(&pathToMesh)) {
-            e2.AddComponent(d1, Drawable::Id);
-            e2.AddComponent(t1, Transform::Id);
-        }
-        gameManager->GetEntityManager()->AddEntity(e2);
-    }
-    // Add Camera to Scene.
-    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
+    //     transform->SetPosition({ position.X - 0.1f , position.Y, position.Z });
+    // }
+    // else if (inputManager->IsKeyDown(irr::KEY_KEY_S))
+    // {
+    //     auto transform = player1.GetComponent<Transform>();
+    //     auto position = transform->GetPosition();
+
+    //     transform->SetPosition({ position.X, position.Y, position.Z - 0.1f });
+    // }
+    // else if (inputManager->IsKeyDown(irr::KEY_KEY_D))
+    // {
+    //     auto transform = player1.GetComponent<Transform>();
+    //     auto position = transform->GetPosition();
+
+    //     transform->SetPosition({ position.X + 0.1f, position.Y, position.Z });
+    // }
+    // else if (inputManager->IsKeyDown(irr::KEY_KEY_B))
+    // {
+    //     // Bomb
+    // }
+}
+
+void GameScene::Unload(void)
+{
+
 }

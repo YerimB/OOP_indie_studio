@@ -32,6 +32,7 @@ class EntityManager
 		void ClearComponents();
 		void ClearSystems();
 		void ClearAll();
+		Entity& GetEntity(const std::string& name);
 		irr::scene::ISceneManager* GetSceneManager() const { return m_SceneManager; }
 		irr::gui::IGUIEnvironment* GetGuiEnvironment() const { return m_GuiEnvironment; }
 		InputManager* GetInputManager() const { return m_InputManager; }

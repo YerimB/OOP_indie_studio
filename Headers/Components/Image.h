@@ -27,6 +27,7 @@ class Image : public Component
     public:
         void SetTexture(Texture *texture);
         void SetColor(const Color &color = {255, 255, 255, 255});
+        void SetSize(const irr::s32 &len, const irr::s32 &hei);
 
     public:
         GuiImage *GetImage(void);

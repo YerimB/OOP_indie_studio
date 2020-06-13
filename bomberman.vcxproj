@@ -116,8 +116,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;fmod.lib;fmodL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\fmodCoreWindows\;$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -161,8 +161,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;fmod.lib;fmodL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\fmodCoreWindows\x64\;$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -206,8 +206,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;fmod.lib;fmodL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\fmodCoreWindows\x64\;$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -250,8 +250,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;fmod.lib;fmodL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\fmodCoreWindows\x64\;$(SolutionDir)lib;$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -266,13 +266,16 @@
   <ItemGroup>
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
-    <ClCompile Include="Sources\Components\Collision.cpp" />
+    <ClCompile Include="Sources\Components\Collider.cpp" />
+    <ClCompile Include="Sources\Components\Cube.cpp" />
     <ClCompile Include="Sources\Components\Image.cpp" />
-    <ClCompile Include="Sources\Components\ImageSystem.cpp" />
     <ClCompile Include="Sources\Components\Moveable.cpp" />
-    <ClCompile Include="Sources\Components\SoundManager.cpp" />
+    <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
+    <ClCompile Include="Sources\ECS\Time.cpp" />
+    <ClCompile Include="Sources\Components\Timer.cpp" />
     <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
-    <ClCompile Include="Sources\ECS\System\SoundSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\ImageSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
     <ClCompile Include="Sources\GameManager.cpp" />
     <ClCompile Include="Sources\Components\Drawable.cpp" />
@@ -283,46 +286,66 @@
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
     <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
     <ClCompile Include="Sources\InputManager.cpp" />
+    <ClCompile Include="Sources\Map\Generation.cpp" />
+    <ClCompile Include="Sources\Map\Map.cpp" />
     <ClCompile Include="Sources\Scenes\GameScene.cpp" />
     <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
     <ClCompile Include="Sources\Scenes\Scene.cpp" />
+    <ClCompile Include="Sources\SoundManager.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClInclude Include="Headers\Components\Animator.h" />
     <ClInclude Include="Headers\Components\Button.h" />
+    <ClInclude Include="Headers\Components\Collider.h" />
     <ClInclude Include="Headers\Components\Collision.h" />
+    <ClInclude Include="Headers\Components\Cube.h" />
     <ClInclude Include="Headers\Components\Drawable.h" />
     <ClInclude Include="Headers\Components\Image.h" />
     <ClInclude Include="Headers\Components\Moveable.h" />
-    <ClInclude Include="Headers\Components\SoundManager.h" />
     <ClInclude Include="Headers\Components\Text.h" />
+    <ClInclude Include="Headers\Components\Timer.h" />
     <ClInclude Include="Headers\Components\Transform.h" />
     <ClInclude Include="Headers\Core.hpp" />
     <ClInclude Include="Headers\ECS\Component.h" />
+    <ClInclude Include="Headers\ECS\ECS.h" />
     <ClInclude Include="Headers\ECS\Entity.h" />
     <ClInclude Include="Headers\ECS\EntityManager.h" />
     <ClInclude Include="Headers\ECS\Hash.h" />
     <ClInclude Include="Headers\ECS\System.h" />
+    <ClInclude Include="Headers\ECS\System\AnimatorSystem.h" />
     <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
     <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
     <ClInclude Include="Headers\ECS\System\ImageSystem.h" />
+    <ClInclude Include="Headers\ECS\System\MoveSystem.h" />
     <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
-    <ClInclude Include="Headers\ECS\System\SoundSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
     <ClInclude Include="Headers\ECS\System\TextSystem.h" />
+    <ClInclude Include="Headers\ECS\Time.h" />
     <ClInclude Include="Headers\GameManager.h" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
+    <ClInclude Include="Headers\Map\Generation.h" />
+    <ClInclude Include="Headers\Map\Map.h" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
     <ClInclude Include="Headers\Scenes\GameScene.hpp" />
     <ClInclude Include="Headers\Scenes\MenuScene.hpp" />
     <ClInclude Include="Headers\Scenes\Scene.hpp" />
+    <ClInclude Include="Headers\SoundManager.h" />
     <ClInclude Include="Headers\Thread\ITask.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod.hpp" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_codec.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_common.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_dsp.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_dsp_effects.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_errors.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_output.h" />
+    <ClInclude Include="includes\fmodCoreWindows\fmod_uwp.h" />
     <ClInclude Include="includes\Irrlicht\aabbox3d.h" />
     <ClInclude Include="includes\Irrlicht\CDynamicMeshBuffer.h" />
     <ClInclude Include="includes\Irrlicht\CIndexBuffer.h" />
@@ -514,6 +537,8 @@
     <None Include="Headers\Thread\Thread.inl" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="lib\fmodCoreWindows\fmod.lib" />
+    <Library Include="lib\fmodCoreWindows\fmodL.lib" />
     <Library Include="lib\Irrlicht.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -2,28 +2,28 @@
 ** EPITECH PROJECT, 2020
 ** OOP_indie_studio_2019
 ** File description:
-** SoundManager
+** Collider
 */
 
-#ifndef SOUNDMANAGER_H_
-#define SOUNDMANAGER_H_
+#ifndef COLLIDER_H_
+#define COLLIDER_H_
 
 #include <ECS/Component.h>
 #include <Core.hpp>
 #include <GameManager.h>
 
-class SoundManager : public Component
+class Collider : public Component
 {
     public:
-		static constexpr ComponentId Id = "SoundManager"_hash;
-
+		static constexpr ComponentId Id = "Collider"_hash;
+    
     public:
-        SoundManager(SceneManager *p_SceneManager);
-
+        Collider() = default;
+    
     public:
         bool Initialize(void* args = nullptr) override final;
 		void Update(const float& deltaTime, GameManager* gameManager) override final;
-
+    
     public: // Setters
 
     public: // Getters
@@ -32,4 +32,4 @@ class SoundManager : public Component
 		SceneManager *m_SceneManager = nullptr;
 };
 
-#endif /* !SOUNDMANAGER_H_ */
+#endif /* !COLLIDER_H_ */

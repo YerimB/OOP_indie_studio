@@ -6,10 +6,12 @@
 */
 
 #include <ECS/Entity.h>
+#include <ECS/Hash.h>
 
-Entity::Entity()
+Entity::Entity(const std::string& name)
 {
-	m_Id = __COUNTER__;
+	m_Id = Hash::HashString(name, name.length());
+	m_Name = name;
 }
 
 void Entity::AddComponent(Component* component, const ComponentId& componentId)
@@ -23,6 +25,11 @@ void Entity::RemoveComponent(ComponentId componentId)
 	m_Components.erase(componentId);
 }
 
+void Entity::SetName(const std::string& name)
+{
+	m_Name = name;
+}
+
 const EntityId& Entity::GetId() const
 {
 	return m_Id;
@@ -31,4 +38,9 @@ const EntityId& Entity::GetId() const
 const Entity::ComponentMap &Entity::GetComponents() const
 {
 	return m_Components;
+}
+
+const std::string& Entity::GetName() const
+{
+	return m_Name;
 }

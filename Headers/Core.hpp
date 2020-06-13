@@ -6,6 +6,14 @@
 #include <Irrlicht/irrlicht.h>
 #include <ECS/Hash.h>
 
+#if _WIN32 || _WIN64
+	#include <fmodCoreWindows/fmod.hpp>
+#elif __linux__
+	#include <fmodCoreLinux/fmod.hpp>
+#else
+	#error OS not supported !
+#endif
+
 // Irrlicht
 
 using SceneManager = irr::scene::ISceneManager;
@@ -35,6 +43,14 @@ using Color = irr::video::SColor;
 using Colorf = irr::video::SColorf;
 using Texture = irr::video::ITexture;
 
+using Box3f = irr::core::aabbox3df;
+using Mesh = irr::scene::IMesh;
+using AMesh = irr::scene::IAnimatedMesh;
+using AMeshNode = irr::scene::IAnimatedMeshSceneNode;
+using MeshNode = irr::scene::IMeshSceneNode;
+using AnimatorNode = irr::scene::ISceneNodeAnimator;
+using GeometryCreator = irr::scene::IGeometryCreator;
+
 // C++
 
 typedef unsigned int EntityId;
@@ -60,4 +76,3 @@ constexpr Shared<T> CreateShared(Args&& ... args)
 
 template<typename T>
 using Weak = std::weak_ptr<T>;
-

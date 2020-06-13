@@ -27,6 +27,7 @@ bool EntityManager::Initialize()
 
 void EntityManager::Update()
 {
+	// Get data from server and modify entities before systems update
 	for (auto& system : m_Systems)
 	{
 		system->Update(0);
@@ -36,7 +37,7 @@ void EntityManager::Update()
 
 void EntityManager::AddEntity(const Entity& entity)
 {
-	m_Entities.emplace(std::make_pair(entity.GetId(), entity));
+	m_Entities.insert(std::make_pair(entity.GetId(), entity));
 	for (auto &elem : this->m_Systems)
 		elem->OnEntityCreated(entity);
 }
@@ -79,4 +80,15 @@ void EntityManager::ClearAll()
 	m_Entities.clear();
 	m_Components.clear();
 	m_Systems.clear();
+}
+
+Entity& EntityManager::GetEntity(const std::string& name)
+{
+	for (auto& entity : m_Entities)
+	{
+		if (entity.second.GetName() == name)
+			return entity.second;
+	}
+
+	throw std::runtime_error("Entity not found.");
 }
