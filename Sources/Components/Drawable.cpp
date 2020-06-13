@@ -71,5 +71,6 @@ Vector3f Drawable::GetScale()
 
 Box3f Drawable::GetBounds()
 {
+	m_Mesh->updateAbsolutePosition();
 	return m_Mesh->getTransformedBoundingBox();
 }
