@@ -23,9 +23,9 @@ class Drawable : public Component
 		void Update(const float& deltaTime, GameManager* gameManager) override final;
 
 	public:
-		irr::scene::IAnimatedMeshSceneNode* GetDrawable();
+		AMeshNode* GetDrawable();
 
 	private:
 		SceneManager* m_SceneManager;
-		irr::scene::IAnimatedMeshSceneNode* m_AnimatedMesh;
+		AMeshNode* m_AnimatedMesh;
 };
