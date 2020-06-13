@@ -46,7 +46,6 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddTexture(gm->LoadTexture("Assets/block.png"), "Block");
     this->AddTexture(gm->LoadTexture("Assets/star.jpeg"), "Star");
     this->AddTexture(gm->LoadTexture("Assets/pow.jpeg"), "Pow");
-    this->AddTexture(gm->LoadTexture("Assets/wall.png"), "Wall");
     this->AddTexture(gm->LoadTexture("Assets/btnHome.png"), "iconHome");
 
     // Load Meshes
@@ -54,6 +53,8 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddMesh(sm->getMesh("Assets/sydney.md2"), "Sydney");
     this->AddMesh(sm->getMesh("Assets/wall.md3"), "Wall");
     this->AddMesh(sm->getMesh("Assets/bomberman_m.obj"), "Bomber");
+
+    gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/game.ogg"), "sndGame", SoundManager::SoundType::MUSIC);
 }
 
 // Load Entities & Components
@@ -104,6 +105,8 @@ void GameScene::Load(GameManager* gameManager)
     this->LoadSystems(gameManager);
     this->LoadAssets(gameManager);
     this->LoadElements(gameManager);
+
+    gameManager->GetSoundManager()->PlaySound("sndGame");
 }
 
 void GameScene::Update(GameManager* gameManager)
@@ -147,5 +150,5 @@ void GameScene::Update(GameManager* gameManager)
 
 void GameScene::Unload(void)
 {
-
+    
 }

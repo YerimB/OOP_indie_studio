@@ -48,6 +48,7 @@ void GameManager::LoadScene(const Scene::SceneID &sceneID)
     if (sceneID != Scene::SceneID::UNDEFINED)
         m_Scenes[sceneID]->Unload();
     m_EntityManager->ClearAll();
+    m_SoundManager->Clear();
     m_Scenes[sceneID]->Load(this);
     m_CurrentSceneID = sceneID;
 }
