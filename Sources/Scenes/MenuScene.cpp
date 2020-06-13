@@ -14,6 +14,11 @@ static void changeSceneToGame(GameManager* gameManager)
 	gameManager->SetNextScene(Scene::GAME);
 }
 
+static void quitGame(GameManager* gameManager)
+{
+    gameManager->GetDevice()->drop();
+}
+
 MenuScene::MenuScene() : Scene(Scene::MENU)
 {
 }
@@ -69,7 +74,7 @@ void MenuScene::LoadElements(GameManager* gm)
             btnQuit->SetTexture(gm->LoadTexture("Assets/btnQuit.png"));
             btnQuit->SetSize(250, 82);
             btnQuit->SetPosition({ 250, 720 / 2 + 200 });
-            btnQuit->SetOnPress(cbQuitGame);
+            btnQuit->SetOnPress(quitGame);
             quitBtnEntity.AddComponent(std::move(btnQuit), Button::Id);
         }
 

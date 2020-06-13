@@ -41,6 +41,17 @@ void Image::SetColor(const Color &c)
     this->m_Image->setColor(this->m_clr);
 }
 
+void Image::SetSize(const irr::s32 &len, const irr::s32 &hei)
+{
+    Recti dims = {
+        this->m_Image->getRelativePosition().UpperLeftCorner.X,
+        this->m_Image->getRelativePosition().UpperLeftCorner.Y,
+        this->m_Image->getRelativePosition().UpperLeftCorner.X + len,
+        this->m_Image->getRelativePosition().UpperLeftCorner.Y + hei
+    };
+    this->m_Image->setRelativePosition(dims);
+}
+
 GuiImage *Image::GetImage(void)
 {
     return (this->m_Image);
