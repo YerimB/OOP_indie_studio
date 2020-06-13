@@ -77,22 +77,9 @@ void GameScene::LoadElements(GameManager* gm)
             gm->GetEntityManager()->AddEntity(e1);
         }
     }
-    {
-        Entity e("Test");
-        Drawable *d = new Drawable(gm->GetSceneManager());
-        Transform *t = new Transform({0, 0, 0});
-        Collider *c = new Collider();
 
-        if (d->Initialize(this->GetMesh("Bomber"))) {
-            e.AddComponent(std::move(d), Drawable::Id);
-            e.AddComponent(std::move(t), Transform::Id);
-            e.AddComponent(std::move(c), Collider::Id);
-            gm->GetEntityManager()->AddEntity(e);
-        }
-    }
-
-    // auto map = Map(gm);
-    // map.Initialize(20, this);
+    auto map = Map(gm);
+    map.Initialize(20, this);
 }
 
 void GameScene::Load(GameManager* gameManager)
