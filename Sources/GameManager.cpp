@@ -19,7 +19,7 @@ void GameManager::Initialize()
 {
     m_Device = irr::createDevice(
         irr::video::EDT_OPENGL,
-        Dimension2u(1280, 720),
+        Dimension2u(1920, 1080),
         16,
         false,
         false,

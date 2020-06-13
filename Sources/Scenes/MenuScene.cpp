@@ -50,9 +50,9 @@ void MenuScene::LoadElements(GameManager* gm)
 
         Texture* texBg = gm->LoadTexture("Assets/background_mario.png");
         Image* background = new Image(gm->GetGuiEnvironment());
-        if (background->Initialize(texBg) && background)
+        if (background && background->Initialize(texBg))
         {
-            background->SetSize(1280, 815);
+            background->SetSize(1920, 1080);
             backgroundEntity.AddComponent(std::move(background), Image::Id);
         }
 
