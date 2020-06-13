@@ -8,11 +8,10 @@ Map::Map(GameManager* pGameManager)
 void Map::Initialize(const std::size_t& size, Scene *sc)
 {
 	Generation map(size);
-	int x = (size < 10 ? (size * 10) / 2 : -40 * (size / 10));
 	Vector3f position = {
         -(size * 10.0f) / 2,
         0,
-        (size * 10.0f) / 2
+        -(size * 10.0f) / 2
     };
 
 	if (size % 4 != 0 || size < 12)
@@ -53,12 +52,12 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			position.X += 10;
 		}
 		position.X = -((size * 10) / 2.0f);
-		position.Z -= 10;
+		position.Z += 10;
 	}
-    m_GameManager->GetSceneManager()->addCameraSceneNode(
+    auto camera = m_GameManager->GetSceneManager()->addCameraSceneNode(
 		0,
-		//{ 0, -(size * 7.5f), -50 },
-		{ 50, -(size * 7.5f), 0 },
+		{ -75, (size * 7.5f), 0 },
 		{ 0, 0, 0 }
 	);
+	//75 90, 0
 }
