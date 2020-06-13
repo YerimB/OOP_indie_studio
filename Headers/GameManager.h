@@ -20,6 +20,8 @@ typedef struct GameGlobalVariables_s
 	// If scene has been changed, which one is to load ?
 	Scene::SceneID newScene = Scene::UNDEFINED;
 
+	bool gameActive = true;
+
 	// Add vars if needed.
 } GameVars_t;
 
@@ -52,6 +54,7 @@ class GameManager
 		InputManager* GetInputManager() const;
 		SoundManager* GetSoundManager() const;
 		Scene* GetCurrentScene() const;
+		GameVars_t m_globalVars;
 	
 	public: // Setters
 		void SetSceneChange(const bool &state);
@@ -69,7 +72,6 @@ class GameManager
 		Unique<SoundManager> m_SoundManager;
 	
 	private: // Game management
-		GameVars_t m_globalVars;
 		std::unordered_map<Scene::SceneID, Scene*> m_Scenes;
 		Scene::SceneID m_CurrentSceneID = Scene::SceneID::UNDEFINED;
 };

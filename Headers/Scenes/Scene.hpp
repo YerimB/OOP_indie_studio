@@ -15,12 +15,12 @@ class GameManager;
 
 class Scene
 {
-    public:
+        public:
         enum SceneID { // Add scene IDs here if needed.
             UNDEFINED = (-1), // Id Not Defined
-			MENU, // Menu Id
+            MENU, // Menu Id
             GAME, // Game Id
-		};
+        };
 
         public:
             Scene(const SceneID& sceneId);

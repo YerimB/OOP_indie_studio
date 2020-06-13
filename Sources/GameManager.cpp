@@ -19,7 +19,7 @@ void GameManager::Initialize()
 {
     m_Device = irr::createDevice(
         irr::video::EDT_OPENGL,
-        Dimension2u(1280, 720),
+        Dimension2u(1920, 1080),
         16,
         false,
         false,
@@ -62,10 +62,9 @@ void GameManager::RemoveScene(const Scene::SceneID& sceneId)
 void GameManager::ProgramLoop(void)
 {
     this->LoadScene(Scene::SceneID::MENU);
-    while (this->m_Device->run())
+    while (this->m_globalVars.gameActive == true && m_Device->run())
     {
-        this->m_VideoDriver->beginScene(true, true, Color(255, 255, 150, 0));
-        this->m_Scenes[m_CurrentSceneID]->Update(this);
+        this->m_VideoDriver->beginScene(true, true, Color(255, 135, 206, 250));
         this->m_EntityManager->Update();
         this->m_VideoDriver->endScene();
         if (m_globalVars.sceneChanged == true)
@@ -74,6 +73,8 @@ void GameManager::ProgramLoop(void)
             m_globalVars.sceneChanged = false;
         }
     }
+    if (m_Device->run())
+        m_Device->closeDevice();
 }
 
 // Loads the texture linked to the path passed as parameter and return a pointer to it.

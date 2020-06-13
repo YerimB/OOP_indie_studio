@@ -29,12 +29,14 @@ void GameScene::LoadSystems(GameManager* gm)
     ImageSystem* imageSys = new ImageSystem(gm->GetEntityManager());
     TextSystem* textSys = new TextSystem(gm->GetEntityManager());
     RenderSystem* renderSys = new RenderSystem(gm->GetEntityManager());
+    MoveSystem* moveSys = new MoveSystem(gm->GetEntityManager());
 
     // Add
     gm->GetEntityManager()->AddSystem(std::move(buttonSys));
     gm->GetEntityManager()->AddSystem(std::move(imageSys));
     gm->GetEntityManager()->AddSystem(std::move(textSys));
     gm->GetEntityManager()->AddSystem(std::move(renderSys));
+    gm->GetEntityManager()->AddSystem(std::move(moveSys));
 }
 
 void GameScene::LoadAssets(GameManager* gm)
@@ -44,6 +46,8 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddTexture(gm->LoadTexture("Assets/block.png"), "Block");
     this->AddTexture(gm->LoadTexture("Assets/star.jpeg"), "Star");
     this->AddTexture(gm->LoadTexture("Assets/pow.jpeg"), "Pow");
+    this->AddTexture(gm->LoadTexture("Assets/wall.png"), "Wall");
+    this->AddTexture(gm->LoadTexture("Assets/btnHome.png"), "iconHome");
 
     // Load Meshes
     auto sm = gm->GetSceneManager();
@@ -63,18 +67,32 @@ void GameScene::LoadElements(GameManager* gm)
         // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {
             b1->SetButtonID(Button::ButtonID::QUIT);
-            b1->SetText("Back to menu");
-            b1->SetPosition({ 50, 50 });
-            b1->SetSize(300, 100);
+            b1->SetTexture(this->GetTexture("iconHome"));
+            b1->SetPosition({ 20, 20 });
+            b1->SetSize(80, 80);
+            b1->SetTextureToFit(true);
             b1->SetOnPress(changeSceneToMenu);
             e1.AddComponent(std::move(b1), Button::Id);
             // When done, add entity to the entity manager.
             gm->GetEntityManager()->AddEntity(e1);
         }
     }
+    {
+        Entity e("Test");
+        Drawable *d = new Drawable(gm->GetSceneManager());
+        Transform *t = new Transform({0, 0, 0});
+        Collider *c = new Collider();
 
-    auto map = Map(gm);
-    map.Initialize(20, this);
+        if (d->Initialize(this->GetMesh("Bomber"))) {
+            e.AddComponent(std::move(d), Drawable::Id);
+            e.AddComponent(std::move(t), Transform::Id);
+            e.AddComponent(std::move(c), Collider::Id);
+            gm->GetEntityManager()->AddEntity(e);
+        }
+    }
+
+    // auto map = Map(gm);
+    // map.Initialize(20, this);
 }
 
 void GameScene::Load(GameManager* gameManager)
