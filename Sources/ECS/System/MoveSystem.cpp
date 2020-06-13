@@ -31,6 +31,10 @@ void MoveSystem::Update(const double& deltaTime)
 			if (!drawable2->GetDrawable())
 				continue;
 
+			drawable->SetPosition(transform->GetPosition());
+			drawable->SetRotation(transform->GetRotation());
+			drawable->SetScale(transform->GetScale());
+
 			if (MoveSystem::Collide(drawable, drawable2))
 			{
 				transform->SetPosition(drawable->GetPosition());
