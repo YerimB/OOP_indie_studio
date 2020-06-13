@@ -47,7 +47,7 @@ void MenuScene::LoadElements(GameManager* gm)
         Image* background = new Image(gm->GetGuiEnvironment());
         if (background->Initialize(texBg) && background)
         {
-            //background->SetSize(1280, 815);
+            background->SetSize(1280, 815);
             backgroundEntity.AddComponent(std::move(background), Image::Id);
         }
 
