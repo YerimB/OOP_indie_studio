@@ -3,6 +3,7 @@
 #include <memory>
 #include <string>
 #include <chrono>
+#include <array>
 
 #include <Irrlicht/irrlicht.h>
 #include <ECS/Hash.h>
