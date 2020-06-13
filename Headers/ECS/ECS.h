@@ -14,7 +14,6 @@
 #include <ECS/System/ImageSystem.h>
 #include <ECS/System/TextSystem.h>
 
-#include <ECS/System/SoundSystem.h>
 
 #include <ECS/System/RenderSystem.h>
 
@@ -26,7 +25,6 @@
 #include <Components/Drawable.h>
 #include <Components/Image.h>
 #include <Components/Moveable.h>
-#include <Components/SoundManager.h>
 #include <Components/Text.h>
 #include <Components/Transform.h>
 

@@ -30,6 +30,7 @@ void GameManager::Initialize()
     m_SceneManager = m_Device->getSceneManager();
     m_InputManager = CreateUnique<InputManager>(m_Device);
     m_EntityManager = CreateShared<EntityManager>(m_SceneManager, m_GuiEnvironment, m_InputManager.get(), this);
+    m_SoundManager = CreateUnique<SoundManager>();
 
     m_Device->setEventReceiver(m_InputManager.get());
 }
@@ -107,6 +108,11 @@ EntityManager* GameManager::GetEntityManager() const
 InputManager* GameManager::GetInputManager() const
 {
     return m_InputManager.get();
+}
+
+SoundManager* GameManager::GetSoundManager() const
+{
+    return m_SoundManager.get();
 }
 
 // Setters

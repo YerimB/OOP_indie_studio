@@ -10,6 +10,7 @@
 #include <Core.hpp>
 #include <ECS/EntityManager.h>
 #include <InputManager/InputManager.hpp>
+#include <SoundManager.h>
 #include <Scenes/Scene.hpp>
 
 enum SocketMode {
@@ -58,6 +59,7 @@ class GameManager
 		irr::scene::ISceneManager* GetSceneManager() const;
 		EntityManager* GetEntityManager() const;
 		InputManager* GetInputManager() const;
+		SoundManager* GetSoundManager() const;
 	
 	public: // Setters
 		void SetSceneChange(const bool &state);
@@ -73,6 +75,7 @@ class GameManager
 	private: // ECS
 		Shared<EntityManager> m_EntityManager;
 		Unique<InputManager> m_InputManager;
+		Unique<SoundManager> m_SoundManager;
 	
 	private: // Game management
 		GameVars_t m_globalVars;
