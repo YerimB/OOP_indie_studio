@@ -62,11 +62,8 @@ void GameManager::RemoveScene(const Scene::SceneID& sceneId)
 void GameManager::ProgramLoop(void)
 {
     this->LoadScene(Scene::SceneID::MENU);
-    while (this->m_Device->run())
+    while (this->m_globalVars.gameActive == true && m_Device->run())
     {
-        std::cout << m_SceneManager->getActiveCamera()->getRotation().X << " " <<
-                    m_SceneManager->getActiveCamera()->getRotation().Y << " " <<
-                    m_SceneManager->getActiveCamera()->getRotation().Z << std::endl;
         this->m_VideoDriver->beginScene(true, true, Color(255, 135, 206, 250));
         this->m_EntityManager->Update();
         this->m_VideoDriver->endScene();
@@ -76,6 +73,8 @@ void GameManager::ProgramLoop(void)
             m_globalVars.sceneChanged = false;
         }
     }
+    if (m_Device->run())
+        m_Device->closeDevice();
 }
 
 // Loads the texture linked to the path passed as parameter and return a pointer to it.
