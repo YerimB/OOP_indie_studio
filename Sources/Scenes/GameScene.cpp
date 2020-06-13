@@ -77,6 +77,20 @@ void GameScene::LoadElements(GameManager* gm)
             gm->GetEntityManager()->AddEntity(e1);
         }
     }
+    {
+        Entity enti("Player01");
+        Transform* t0 = new Transform({0, 70, 0}, {0, 0, 0}, {5, 5, 5});
+        Collider* cl0 = new Collider();
+        Drawable* d0 = new Drawable(gm->GetSceneManager());
+
+        if (d0->Initialize(this->GetMesh("Bomber"))) {
+            d0->SetPosition(t0->GetPosition());
+            enti.AddComponent(t0, Transform::Id);
+            enti.AddComponent(cl0, Collider::Id);
+            enti.AddComponent(d0, Drawable::Id);
+            gm->GetEntityManager()->AddEntity(enti);
+        }
+    }
 
     auto map = Map(gm);
     map.Initialize(20, this);

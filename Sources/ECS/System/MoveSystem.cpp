@@ -13,14 +13,16 @@ void MoveSystem::Update(const double& deltaTime)
 		Collider* collider = std::get<Collider*>(_components[i]);
 		Transform* transform = std::get<Transform*>(_components[i]);
 
-		// if (dynamic_cast<Cube*>(drawable))
-		// {
-		// }
 		if (!drawable->GetDrawable())
 			continue;
-		std::cout << drawable->GetEntityId() << " Drawable not null." << std::endl;
 
-		for (size_t j = 1; j < _components.size(); j += 1)
+		std::array<Vector3f, 3> ts = {
+			drawable->GetPosition(),
+			drawable->GetRotation(),
+			drawable->GetScale()
+		};
+
+		for (size_t j = 0; j < _components.size(); j += 1)
 		{
 			if (i == j)
 				continue;
@@ -37,16 +39,20 @@ void MoveSystem::Update(const double& deltaTime)
 
 			if (MoveSystem::Collide(drawable, drawable2))
 			{
-				transform->SetPosition(drawable->GetPosition());
-				transform->SetRotation(drawable->GetRotation());
-				transform->SetScale(drawable->GetScale());
+				transform->SetPosition(ts[0]);
+				transform->SetRotation(ts[1]);
+				transform->SetScale(ts[2]);
+				break;
 			}
-			else
-			{
-				drawable->SetPosition(transform->GetPosition());
-				drawable->SetRotation(transform->GetRotation());
-				drawable->SetScale(transform->GetScale());
-			}
+		}
+		drawable->SetPosition(transform->GetPosition());
+		drawable->SetRotation(transform->GetRotation());
+		drawable->SetScale(transform->GetScale());
+		if (drawable->GetEntityId() == 2974060393) {
+			auto t = transform->GetPosition();
+			auto r = transform->GetRotation();
+			transform->SetPosition({t.X, t.Y - 0.5f, t.Z});
+			transform->SetRotation({r.X, r.Y - 10, r.Z});
 		}
 	}
 }

@@ -16,12 +16,14 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 
 	{ // Create plane
 		Entity plane("Ground");
-		Transform* tp = new Transform({0, 0, 0});
+		Transform* tp = new Transform({0, -10, 0});
 		Collider* clp = new Collider();
 		Cube* cp = new Cube(m_GameManager->GetSceneManager());
 
 		if (cp->Initialize(sc->GetTexture("Star"))) {
 			cp->SetScale({ size * 1.0f, 0, size * 1.0f });
+			tp->SetScale({ size * 1.0f, 0, size * 1.0f });
+			cp->SetPosition({0, -10, 0});
 			plane.AddComponent(tp, Transform::Id);
 			plane.AddComponent(cp, Cube::Id);
 			plane.AddComponent(clp, Collider::Id);
@@ -56,7 +58,7 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 
 			if (!c0->Initialize(texture))
 				continue;
-			// c0->SetPosition(position);
+			c0->SetPosition(position);
 			cubeEntity.AddComponent(t0, Transform::Id);
 			cubeEntity.AddComponent(c0, Cube::Id);
 			cubeEntity.AddComponent(cl0, Collider::Id);
