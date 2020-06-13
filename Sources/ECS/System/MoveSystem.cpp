@@ -13,12 +13,12 @@ void MoveSystem::Update(const double& deltaTime)
 		Collider* collider = std::get<Collider*>(_components[i]);
 		Transform* transform = std::get<Transform*>(_components[i]);
 
-		if (dynamic_cast<Cube*>(drawable))
-		{
-		}
-
+		// if (dynamic_cast<Cube*>(drawable))
+		// {
+		// }
 		if (!drawable->GetDrawable())
 			continue;
+		std::cout << drawable->GetEntityId() << " Drawable not null." << std::endl;
 
 		for (size_t j = 1; j < _components.size(); j += 1)
 		{

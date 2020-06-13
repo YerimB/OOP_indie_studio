@@ -8,7 +8,7 @@
 class Cube : public Drawable
 {
 	public:
-		static constexpr ComponentId Id = "Cube"_hash;
+		static constexpr ComponentId Id = "Drawable"_hash;
 
 	public:
 		Cube(SceneManager* pSceneManager);
