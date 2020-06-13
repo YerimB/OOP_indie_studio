@@ -81,7 +81,7 @@ void GameScene::LoadElements(GameManager* gm)
     }
     {
         Entity enti("Player01");
-        Transform* t0 = new Transform({0, 70, 0}, {0, 0, 0}, {5, 5, 5});
+        Transform* t0 = new Transform({0, 20, 0}, {0, 0, 0}, {5, 5, 5});
         Collider* cl0 = new Collider();
         Drawable* d0 = new Drawable(gm->GetSceneManager());
 
@@ -121,7 +121,7 @@ void GameScene::Update(GameManager* gameManager)
         auto transform = player1.GetComponent<Transform>();
         auto position = transform->GetPosition();
 
-        transform->SetPosition({ position.X + 0.1f, position.Y, position.Z });
+        transform->SetPosition({ position.X, position.Y + 1.0f, position.Z });
     }
     else if (inputManager->IsKeyDown(irr::KEY_KEY_Q))
     {

@@ -68,6 +68,26 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 		position.X = -((size * 10) / 2.0f);
 		position.Z += 10;
 	}
+	// float corner = -(size * 10.0f) / 2;
+	// std::array<Vector3f, 4> corners = {
+	// 	Vector3f(corner + 10.0f, 0, corner + 10.0f),
+	// 	Vector3f(corner + 10.0f, 0, -(corner + 25.0f)),
+	// 	Vector3f(-(corner + 25.0f), 0, corner + 10.0f),
+	// 	Vector3f(-(corner + 25.0f), 0, -(corner + 25.0f)),
+	// };
+	// for (auto &pos : corners) {
+	// 	Entity player("player");
+	// 	Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
+	// 	Transform* t0 = new Transform(pos, {0, 0, 0}, {5, 5, 5});
+	// 	Collider* cl0 = new Collider();
+	// 	if (d0->Initialize(sc->GetMesh("Bomber"))) {
+	// 		d0->SetPosition(pos);
+	// 		player.AddComponent(d0, Drawable::Id);
+	// 		player.AddComponent(t0, Transform::Id);
+	// 		player.AddComponent(cl0, Collider::Id);
+	// 		m_GameManager->GetEntityManager()->AddEntity(player);
+	// 	}
+	// }
     auto camera = m_GameManager->GetSceneManager()->addCameraSceneNode(
 		0,
 		{ -70, size * 7.5f, 0 },

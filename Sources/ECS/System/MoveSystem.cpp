@@ -21,7 +21,12 @@ void MoveSystem::Update(const double& deltaTime)
 			drawable->GetRotation(),
 			drawable->GetScale()
 		};
-
+		drawable->SetPosition(transform->GetPosition());
+		drawable->SetRotation(transform->GetRotation());
+		drawable->SetScale(transform->GetScale());
+		if (drawable->GetEntityId() == 2974060393)
+			std::cout << "transform : " << drawable->GetPosition().Y << std::endl;
+		drawable->GetDrawable()->render();
 		for (size_t j = 0; j < _components.size(); j += 1)
 		{
 			if (i == j)
@@ -32,13 +37,11 @@ void MoveSystem::Update(const double& deltaTime)
 
 			if (!drawable2->GetDrawable())
 				continue;
-
-			drawable->SetPosition(transform->GetPosition());
-			drawable->SetRotation(transform->GetRotation());
-			drawable->SetScale(transform->GetScale());
-
 			if (MoveSystem::Collide(drawable, drawable2))
 			{
+				if (drawable->GetEntityId() == 2974060393) {
+					std::cout << "collided" << std::endl;
+				}
 				transform->SetPosition(ts[0]);
 				transform->SetRotation(ts[1]);
 				transform->SetScale(ts[2]);
@@ -51,7 +54,7 @@ void MoveSystem::Update(const double& deltaTime)
 		if (drawable->GetEntityId() == 2974060393) {
 			auto t = transform->GetPosition();
 			auto r = transform->GetRotation();
-			transform->SetPosition({t.X, t.Y - 0.5f, t.Z});
+			transform->SetPosition({t.X, t.Y - 0.1f, t.Z});
 			transform->SetRotation({r.X, r.Y - 10, r.Z});
 		}
 	}
