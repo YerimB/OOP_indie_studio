@@ -8,13 +8,29 @@ Map::Map(GameManager* pGameManager)
 void Map::Initialize(const std::size_t& size, Scene *sc)
 {
 	Generation map(size);
-	int x = (size < 10 ? (size * 10) / 2 : -40 * (size / 10));
 	Vector3f position = {
         -(size * 10.0f) / 2,
         0,
-        (size * 10.0f) / 2
+        -(size * 10.0f) / 2
     };
 
+	{ // Create plane
+		Entity plane("Ground");
+		Drawable* dp = new Drawable(m_GameManager->GetSceneManager());
+		Transform* tp = new Transform({0, 0, 0});
+		Collider* clp = new Collider();
+		Cube* cp = new Cube(m_GameManager->GetSceneManager());
+
+		if (cp->Initialize(sc->GetTexture("Star"))) {
+			cp->SetPosition({ -10, 0, -10 });
+			cp->SetScale({size * 0.90f, 0, size * 0.98f});
+			plane.AddComponent(tp, Transform::Id);
+			plane.AddComponent(dp, Drawable::Id);
+			plane.AddComponent(cp, Cube::Id);
+			plane.AddComponent(clp, Collider::Id);
+			m_GameManager->GetEntityManager()->AddEntity(plane);
+		}
+	}
 	if (size % 4 != 0 || size < 12)
 		return;
 	auto strMap = map.GetMap();
@@ -53,16 +69,11 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			position.X += 10;
 		}
 		position.X = -((size * 10) / 2.0f);
-		position.Z -= 10;
+		position.Z += 10;
 	}
-    m_GameManager->GetSceneManager()->addCameraSceneNode(
+    auto camera = m_GameManager->GetSceneManager()->addCameraSceneNode(
 		0,
-		//{ 0, -(size * 7.5f), -50 },
 		{ -70, size * 7.5f, 0 },
 		{ 0, -50, 0 }
 	);
-
-	// m_GameManager->GetSceneManager()->getActiveCamera()->setPosition({0, -(size * 7.5f), 50});
-	// m_GameManager->GetSceneManager()->addCameraSceneNodeFPS();
-	// m_GameManager->GetSceneManager()->getActiveCamera()->setPosition({0, (size * 7.5f), 0});
 }
