@@ -58,7 +58,11 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
     m_GameManager->GetSceneManager()->addCameraSceneNode(
 		0,
 		//{ 0, -(size * 7.5f), -50 },
-		{ 50, -(size * 7.5f), 0 },
-		{ 0, 0, 0 }
+		{ -70, size * 7.5f, 0 },
+		{ 0, -50, 0 }
 	);
+
+	// m_GameManager->GetSceneManager()->getActiveCamera()->setPosition({0, -(size * 7.5f), 50});
+	// m_GameManager->GetSceneManager()->addCameraSceneNodeFPS();
+	// m_GameManager->GetSceneManager()->getActiveCamera()->setPosition({0, (size * 7.5f), 0});
 }
