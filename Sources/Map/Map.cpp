@@ -56,8 +56,7 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 	}
     auto camera = m_GameManager->GetSceneManager()->addCameraSceneNode(
 		0,
-		{ -75, (size * 7.5f), 0 },
-		{ 0, 0, 0 }
+		{ -70, size * 7.5f, 0 },
+		{ 0, -50, 0 }
 	);
-	//75 90, 0
 }
