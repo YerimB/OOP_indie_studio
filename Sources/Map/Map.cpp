@@ -49,7 +49,6 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			}
 
 			Entity cubeEntity(eType);
-			Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
 			Transform* t0 = new Transform(position);
 			Collider* cl0 = new Collider();
 			Cube* c0 = new Cube(m_GameManager->GetSceneManager());
@@ -57,9 +56,8 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 
 			if (!c0->Initialize(texture))
 				continue;
-			c0->SetPosition(position);
+			// c0->SetPosition(position);
 			cubeEntity.AddComponent(t0, Transform::Id);
-			cubeEntity.AddComponent(d0, Drawable::Id);
 			cubeEntity.AddComponent(c0, Cube::Id);
 			cubeEntity.AddComponent(cl0, Collider::Id);
 			m_GameManager->GetEntityManager()->AddEntity(cubeEntity);
