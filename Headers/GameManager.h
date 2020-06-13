@@ -13,13 +13,6 @@
 #include <SoundManager.h>
 #include <Scenes/Scene.hpp>
 
-enum SocketMode {
-	NONE = (-1),
-	LOCAL,
-	CLIENT,
-	SERVER
-};
-
 typedef struct GameGlobalVariables_s
 {
 	// Has scene been changed ?
@@ -27,8 +20,6 @@ typedef struct GameGlobalVariables_s
 	// If scene has been changed, which one is to load ?
 	Scene::SceneID newScene = Scene::UNDEFINED;
 
-	// Current connection mode to the game.
-	SocketMode currentSocketMode = SocketMode::NONE;
 	// Add vars if needed.
 } GameVars_t;
 
@@ -60,11 +51,11 @@ class GameManager
 		EntityManager* GetEntityManager() const;
 		InputManager* GetInputManager() const;
 		SoundManager* GetSoundManager() const;
+		Scene* GetCurrentScene() const;
 	
 	public: // Setters
 		void SetSceneChange(const bool &state);
 		void SetNextScene(const Scene::SceneID &sceneID);
-		void SetSocketMode(const SocketMode &);
 
 	private: // Irrlicht mandatory
 		irr::IrrlichtDevice* m_Device;
@@ -80,4 +71,5 @@ class GameManager
 	private: // Game management
 		GameVars_t m_globalVars;
 		std::unordered_map<Scene::SceneID, Scene*> m_Scenes;
+		Scene::SceneID m_CurrentSceneID = Scene::SceneID::UNDEFINED;
 };

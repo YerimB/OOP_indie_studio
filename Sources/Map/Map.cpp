@@ -7,32 +7,41 @@ Map::Map(GameManager* pGameManager)
 
 void Map::Initialize(const std::size_t& size, Scene *sc)
 {
-	auto map = Generation(size);
-	int x = (size < 10 ? -(size * 10) : -40 * (size / 10));
+	Generation map(size);
+	int x = (size < 10 ? (size * 10) / 2 : -40 * (size / 10));
 	Vector3f position = {
-        static_cast<float>(x),
+        -(size * 10.0f) / 2,
         0,
-		static_cast<float>(x - 10)
+        -(size * 10.0f) / 2
     };
 
-	for (auto& line : map.GetMap())
+	if (size % 4 != 0 || size < 12)
+		return;
+	auto strMap = map.GetMap();
+	for (int idx = 0; idx < strMap.size(); ++idx)
 	{
-		for (auto& ch : line)
+		for (auto& ch : strMap[idx])
 		{
-			Entity cubeEntity("Block");
+			std::string eType;
+
+			if (ch == '1')
+				eType = "Block";
+			else if (ch == '2')
+				eType = "Star";
+			else if (ch == '3')
+				eType = "Pow";
+			else {
+				position.X += 10;
+				continue;
+			}
+
+			Entity cubeEntity(eType);
 			Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
 			Transform* t0 = new Transform(position);
 			Collider* cl0 = new Collider();
 			Cube* c0 = new Cube(m_GameManager->GetSceneManager());
-			Texture *texture = nullptr;
+			Texture *texture = sc->GetTexture(eType);
 
-			if (ch == '1')
-				texture = sc->GetTexture("Block");
-			else if (ch == '2')
-				texture = sc->GetTexture("Star");
-			else if (ch == '3')
-				texture = sc->GetTexture("Pow");
-			else continue;
 			if (!c0->Initialize(texture))
 				continue;
 			c0->SetPosition(position);
@@ -43,7 +52,12 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			m_GameManager->GetEntityManager()->AddEntity(cubeEntity);
 			position.X += 10;
 		}
-		position.X -= 90;
-		position.Y += 10;
+		position.X = -((size * 10) / 2.0f);
+		position.Z += 10;
 	}
+    m_GameManager->GetSceneManager()->addCameraSceneNode(
+		0,
+		{ 0, -(size * 7.5f), 0 },
+		{ 0, 0, -3 }
+	);
 }

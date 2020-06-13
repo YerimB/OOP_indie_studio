@@ -11,6 +11,7 @@ InputManager::InputManager(IrrlichtDevice* device)
 
     m_Buttons.emplace(Button::PLAY, false);
     m_Buttons.emplace(Button::QUIT, false);
+    m_Buttons.emplace(Button::CHANGECLR, false);
 }
 
 bool InputManager::OnEvent(const SEvent& event)
@@ -33,6 +34,9 @@ bool InputManager::OnEvent(const SEvent& event)
                     break;
                 case Button::QUIT:
                     m_Buttons[Button::QUIT] = true;
+                    break;
+                case Button::CHANGECLR:
+                    m_Buttons[Button::CHANGECLR] = true;
                     break;
                 default:
                     break;
