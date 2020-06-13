@@ -34,7 +34,11 @@ void MenuScene::LoadSystems(GameManager* gm)
 
 void MenuScene::LoadAssets(GameManager* gm)
 {
-    gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/menu.ogg"), "sndMenu", SoundManager::SoundType::MUSIC);
+    gm->GetSoundManager()->AddSound(
+        gm->GetSoundManager()->LoadSound("Assets/sound/menu.ogg"),
+        "sndMenu",
+        SoundManager::SoundType::MUSIC
+    );
 }
 
 // Load Entities & Components
@@ -88,6 +92,7 @@ void MenuScene::Load(GameManager* gameManager)
     this->LoadAssets(gameManager);
     this->LoadElements(gameManager);
 
+    gameManager->GetSoundManager()->setLoop("sndMenu", (-1));
     gameManager->GetSoundManager()->PlaySound("sndMenu");
     // Add Camera to Scene.
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
