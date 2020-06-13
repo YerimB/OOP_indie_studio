@@ -16,16 +16,15 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 
 	{ // Create plane
 		Entity plane("Ground");
-		Drawable* dp = new Drawable(m_GameManager->GetSceneManager());
-		Transform* tp = new Transform({0, 0, 0});
+		Transform* tp = new Transform({0, -10, 0});
 		Collider* clp = new Collider();
 		Cube* cp = new Cube(m_GameManager->GetSceneManager());
 
 		if (cp->Initialize(sc->GetTexture("Star"))) {
-			cp->SetPosition({ -10, 0, -10 });
-			cp->SetScale({size * 1.0f, 0, size * 1.0f});
+			cp->SetScale({ size * 1.0f, 0, size * 1.0f });
+			tp->SetScale({ size * 1.0f, 0, size * 1.0f });
+			cp->SetPosition({0, -10, 0});
 			plane.AddComponent(tp, Transform::Id);
-			plane.AddComponent(dp, Drawable::Id);
 			plane.AddComponent(cp, Cube::Id);
 			plane.AddComponent(clp, Collider::Id);
 			m_GameManager->GetEntityManager()->AddEntity(plane);
@@ -52,7 +51,6 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			}
 
 			Entity cubeEntity(eType);
-			Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
 			Transform* t0 = new Transform(position);
 			Collider* cl0 = new Collider();
 			Cube* c0 = new Cube(m_GameManager->GetSceneManager());
@@ -62,7 +60,6 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 				continue;
 			c0->SetPosition(position);
 			cubeEntity.AddComponent(t0, Transform::Id);
-			cubeEntity.AddComponent(d0, Drawable::Id);
 			cubeEntity.AddComponent(c0, Cube::Id);
 			cubeEntity.AddComponent(cl0, Collider::Id);
 			m_GameManager->GetEntityManager()->AddEntity(cubeEntity);

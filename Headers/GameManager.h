@@ -13,14 +13,26 @@
 #include <SoundManager.h>
 #include <Scenes/Scene.hpp>
 
+typedef struct PlayersData_s
+{
+	bool isActive = false;
+	int playerID = 0;
+	int characterID = 0;
+} PlayerData_t;
+
 typedef struct GameGlobalVariables_s
 {
+	bool gameActive = true;
+
 	// Has scene been changed ?
 	bool sceneChanged = false;
 	// If scene has been changed, which one is to load ?
 	Scene::SceneID newScene = Scene::UNDEFINED;
 
-	bool gameActive = true;
+	// Players
+	const int maxPlayerNumber = 4;
+	int playerNumber = 0;
+	std::array<PlayerData_t, 4> playersData;
 
 	// Add vars if needed.
 } GameVars_t;
@@ -41,9 +53,10 @@ class GameManager
 	
 	public:
 		void LoadScene(const Scene::SceneID &sceneID);
+		Texture *LoadTexture(const std::string &path);
 
 	public:
-		Texture *LoadTexture(const std::string &path);
+		void waitBeforeNextFrame(const size_t &fps);
 
 	public: // Getters
 		irr::IrrlichtDevice* GetDevice() const;
@@ -74,4 +87,5 @@ class GameManager
 	private: // Game management
 		std::unordered_map<Scene::SceneID, Scene*> m_Scenes;
 		Scene::SceneID m_CurrentSceneID = Scene::SceneID::UNDEFINED;
+		std::chrono::milliseconds m_lastFrameTime;
 };

@@ -8,6 +8,12 @@ GameManager::GameManager()
     m_SceneManager = nullptr;
     m_EntityManager = nullptr;
     m_InputManager = nullptr;
+    for (int idx = 0; idx < m_globalVars.playersData.size(); ++idx) {
+        m_globalVars.playersData[idx].playerID = idx + 1;
+        m_globalVars.playersData[idx].characterID = idx + 1;
+    }
+    this->m_lastFrameTime = std::chrono::duration_cast<std::chrono::milliseconds>\
+    (std::chrono::_V2::system_clock::now().time_since_epoch());
 }
 
 GameManager::~GameManager()
@@ -65,6 +71,7 @@ void GameManager::ProgramLoop(void)
     while (this->m_globalVars.gameActive == true && m_Device->run())
     {
         this->m_VideoDriver->beginScene(true, true, Color(255, 135, 206, 250));
+        this->m_Scenes[this->m_CurrentSceneID]->Update(this);
         this->m_EntityManager->Update();
         this->m_VideoDriver->endScene();
         if (m_globalVars.sceneChanged == true)
@@ -72,6 +79,7 @@ void GameManager::ProgramLoop(void)
             this->LoadScene(static_cast<Scene::SceneID>(m_globalVars.newScene));
             m_globalVars.sceneChanged = false;
         }
+        this->waitBeforeNextFrame(60);
     }
     if (m_Device->run())
         m_Device->closeDevice();
@@ -81,6 +89,18 @@ void GameManager::ProgramLoop(void)
 Texture *GameManager::LoadTexture(const std::string &path)
 {
     return (this->m_VideoDriver->getTexture(path.c_str()));
+}
+
+// Wait for a certain time before launching next frame
+void GameManager::waitBeforeNextFrame(const size_t &fps)
+{
+    auto nowTime = std::chrono::duration_cast<std::chrono::milliseconds>\
+        (std::chrono::_V2::system_clock::now().time_since_epoch());
+    while (nowTime.count() - m_lastFrameTime.count() < 1000 / fps)
+        nowTime = std::chrono::duration_cast<std::chrono::milliseconds>\
+        (std::chrono::_V2::system_clock::now().time_since_epoch());
+    this->m_lastFrameTime = std::chrono::duration_cast<std::chrono::milliseconds>\
+    (std::chrono::_V2::system_clock::now().time_since_epoch());
 }
 
 // Getters

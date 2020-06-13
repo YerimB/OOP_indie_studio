@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <string>
+#include <chrono>
 
 #include <Irrlicht/irrlicht.h>
 #include <ECS/Hash.h>
@@ -45,6 +46,7 @@ using Texture = irr::video::ITexture;
 
 using Box3f = irr::core::aabbox3df;
 using Mesh = irr::scene::IMesh;
+using SceneNode = irr::scene::ISceneNode;
 using AMesh = irr::scene::IAnimatedMesh;
 using AMeshNode = irr::scene::IAnimatedMeshSceneNode;
 using MeshNode = irr::scene::IMeshSceneNode;

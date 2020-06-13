@@ -77,6 +77,20 @@ void GameScene::LoadElements(GameManager* gm)
             gm->GetEntityManager()->AddEntity(e1);
         }
     }
+    {
+        Entity enti("Player01");
+        Transform* t0 = new Transform({0, 70, 0}, {0, 0, 0}, {5, 5, 5});
+        Collider* cl0 = new Collider();
+        Drawable* d0 = new Drawable(gm->GetSceneManager());
+
+        if (d0->Initialize(this->GetMesh("Bomber"))) {
+            d0->SetPosition(t0->GetPosition());
+            enti.AddComponent(t0, Transform::Id);
+            enti.AddComponent(cl0, Collider::Id);
+            enti.AddComponent(d0, Drawable::Id);
+            gm->GetEntityManager()->AddEntity(enti);
+        }
+    }
 
     auto map = Map(gm);
     map.Initialize(20, this);
@@ -94,7 +108,41 @@ void GameScene::Load(GameManager* gameManager)
 
 void GameScene::Update(GameManager* gameManager)
 {
+    auto inputManager = gameManager->GetInputManager();
+    auto player1 = gameManager->GetEntityManager()->GetEntity("Player01");
 
+    if (inputManager->IsKeyDown(irr::KEY_KEY_Z))
+    {
+        auto transform = player1.GetComponent<Transform>();
+        auto position = transform->GetPosition();
+
+        transform->SetPosition({ position.X + 0.1f, position.Y, position.Z });
+    }
+    else if (inputManager->IsKeyDown(irr::KEY_KEY_Q))
+    {
+        auto transform = player1.GetComponent<Transform>();
+        auto position = transform->GetPosition();
+
+        transform->SetPosition({ position.X, position.Y, position.Z - 0.1f });
+    }
+    else if (inputManager->IsKeyDown(irr::KEY_KEY_S))
+    {
+        auto transform = player1.GetComponent<Transform>();
+        auto position = transform->GetPosition();
+
+        transform->SetPosition({ position.X - 0.1f, position.Y, position.Z });
+    }
+    else if (inputManager->IsKeyDown(irr::KEY_KEY_D))
+    {
+        auto transform = player1.GetComponent<Transform>();
+        auto position = transform->GetPosition();
+
+        transform->SetPosition({ position.X, position.Y, position.Z + 0.1f });
+    }
+    else if (inputManager->IsKeyDown(irr::KEY_KEY_B))
+    {
+        // Bomb
+    }
 }
 
 void GameScene::Unload(void)

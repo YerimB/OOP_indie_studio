@@ -1,4 +1,5 @@
 #include <ECS/System/MoveSystem.h>
+#include <Components/Cube.h>
 
 MoveSystem::MoveSystem(EntityManager* pEntityManager) : BaseType(pEntityManager)
 {
@@ -15,7 +16,13 @@ void MoveSystem::Update(const double& deltaTime)
 		if (!drawable->GetDrawable())
 			continue;
 
-		for (size_t j = 1; j < _components.size(); j += 1)
+		std::array<Vector3f, 3> ts = {
+			drawable->GetPosition(),
+			drawable->GetRotation(),
+			drawable->GetScale()
+		};
+
+		for (size_t j = 0; j < _components.size(); j += 1)
 		{
 			if (i == j)
 				continue;
@@ -26,18 +33,26 @@ void MoveSystem::Update(const double& deltaTime)
 			if (!drawable2->GetDrawable())
 				continue;
 
+			drawable->SetPosition(transform->GetPosition());
+			drawable->SetRotation(transform->GetRotation());
+			drawable->SetScale(transform->GetScale());
+
 			if (MoveSystem::Collide(drawable, drawable2))
 			{
-				transform->SetPosition(drawable->GetPosition());
-				transform->SetRotation(drawable->GetRotation());
-				transform->SetScale(drawable->GetScale());
+				transform->SetPosition(ts[0]);
+				transform->SetRotation(ts[1]);
+				transform->SetScale(ts[2]);
+				break;
 			}
-			else
-			{
-				drawable->SetPosition(transform->GetPosition());
-				drawable->SetRotation(transform->GetRotation());
-				drawable->SetScale(transform->GetScale());
-			}
+		}
+		drawable->SetPosition(transform->GetPosition());
+		drawable->SetRotation(transform->GetRotation());
+		drawable->SetScale(transform->GetScale());
+		if (drawable->GetEntityId() == 2974060393) {
+			auto t = transform->GetPosition();
+			auto r = transform->GetRotation();
+			transform->SetPosition({t.X, t.Y - 0.5f, t.Z});
+			transform->SetRotation({r.X, r.Y - 10, r.Z});
 		}
 	}
 }
