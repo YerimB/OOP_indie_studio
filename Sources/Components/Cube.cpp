@@ -15,6 +15,6 @@ bool Cube::Initialize(void* args)
 	m_Mesh = m_SceneManager->addMeshSceneNode(std::move(mesh));
 	m_Mesh->setMaterialFlag(irr::video::EMF_LIGHTING, false);
 	m_Mesh->setMaterialTexture(0, texture);
-	//mesh->drop();
+	mesh->drop();
 	return true;
 }
