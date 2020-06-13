@@ -34,7 +34,7 @@ void MenuScene::LoadSystems(GameManager* gm)
 
 void MenuScene::LoadAssets(GameManager* gm)
 {
-    this->AddMesh(gm->GetSceneManager()->getMesh("bomberman_m.obj"), "Bomber");
+
 }
 
 // Load Entities & Components
@@ -72,10 +72,6 @@ void MenuScene::LoadElements(GameManager* gm)
         btnQuit->SetPosition({ 250, 720 / 2 + 200 });
         btnQuit->SetOnPress(quitGame);
         quitBtnEntity.AddComponent(std::move(btnQuit), Button::Id);
-    }
-
-    {
-        Entity mesh("lemesh");
     }
 
     gm->GetEntityManager()->AddEntity(backgroundEntity);
