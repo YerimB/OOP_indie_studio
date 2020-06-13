@@ -16,9 +16,7 @@ static void changeSceneToGame(GameManager* gameManager)
 
 static void quitGame(GameManager* gameManager)
 {
-    gameManager->GetEntityManager()->ClearAll();
-    gameManager->GetVideoDriver()->drop();
-    gameManager->GetDevice()->drop();
+    gameManager->m_globalVars.gameActive = false;
 }
 
 MenuScene::MenuScene() : Scene(Scene::MENU)
@@ -50,7 +48,7 @@ void MenuScene::LoadElements(GameManager* gm)
         Entity playBtnEntity("playBtn");
         Entity quitBtnEntity("quitBtn");
 
-        Texture* texBg = gm->LoadTexture("Assets/menubg.png");
+        Texture* texBg = gm->LoadTexture("Assets/background_mario.png");
         Image* background = new Image(gm->GetGuiEnvironment());
         if (background->Initialize(texBg) && background)
         {
