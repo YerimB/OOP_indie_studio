@@ -39,8 +39,11 @@ void GameManager::Initialize()
 // Second step: Loads the scene matching the ID passed as parameter.
 void GameManager::LoadScene(const Scene::SceneID &sceneID)
 {
+    if (sceneID != Scene::SceneID::UNDEFINED)
+        m_Scenes[sceneID]->Unload();
     m_EntityManager->ClearAll();
     m_Scenes[sceneID]->Load(this);
+    m_CurrentSceneID = sceneID;
 }
 
 // Adds the scene passed as parameters if its type doesn't already exists.
@@ -115,6 +118,11 @@ SoundManager* GameManager::GetSoundManager() const
     return m_SoundManager.get();
 }
 
+Scene *GameManager::GetCurrentScene() const
+{
+    return m_Scenes.at(m_CurrentSceneID);
+}
+
 // Setters
 
 void GameManager::SetSceneChange(const bool &state)
@@ -125,9 +133,4 @@ void GameManager::SetSceneChange(const bool &state)
 void GameManager::SetNextScene(const Scene::SceneID &sID)
 {
     this->m_globalVars.newScene = sID;
-}
-
-void GameManager::SetSocketMode(const SocketMode &sMod)
-{
-    this->m_globalVars.currentSocketMode = sMod;
 }

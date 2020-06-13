@@ -22,6 +22,7 @@ class Button : public Component
             UNDEFINED = (-1),
             QUIT,
             PLAY,
+            CHANGECLR
         };
     
     public:
