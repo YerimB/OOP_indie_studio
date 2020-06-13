@@ -56,7 +56,7 @@ GameManager::GameManager()
         }
     }
     this->m_lastFrameTime = std::chrono::duration_cast<std::chrono::milliseconds>\
-    (std::chrono::_V2::system_clock::now().time_since_epoch());
+    (std::chrono::system_clock::now().time_since_epoch());
 }
 
 GameManager::~GameManager()
@@ -82,6 +82,9 @@ void GameManager::Initialize()
     m_SoundManager = CreateUnique<SoundManager>();
 
     m_Device->setEventReceiver(m_InputManager.get());
+
+    irr::core::array<irr::SJoystickInfo> info;
+    m_Device->activateJoysticks(info);
 }
 
 // First step:  Unloads the current scene if there is one.
@@ -139,12 +142,12 @@ Texture *GameManager::LoadTexture(const std::string &path)
 void GameManager::waitBeforeNextFrame(const size_t &fps)
 {
     auto nowTime = std::chrono::duration_cast<std::chrono::milliseconds>\
-        (std::chrono::_V2::system_clock::now().time_since_epoch());
+        (std::chrono::system_clock::now().time_since_epoch());
     while (nowTime.count() - m_lastFrameTime.count() < 1000 / fps)
         nowTime = std::chrono::duration_cast<std::chrono::milliseconds>\
-        (std::chrono::_V2::system_clock::now().time_since_epoch());
+        (std::chrono::system_clock::now().time_since_epoch());
     this->m_lastFrameTime = std::chrono::duration_cast<std::chrono::milliseconds>\
-    (std::chrono::_V2::system_clock::now().time_since_epoch());
+    (std::chrono::system_clock::now().time_since_epoch());
 }
 
 // Getters

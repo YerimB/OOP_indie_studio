@@ -20,7 +20,7 @@ bool InputManager::OnEvent(const SEvent& event)
         m_KeyDown[event.KeyInput.Key] = event.KeyInput.PressedDown;
 
     if (event.EventType == irr::EET_JOYSTICK_INPUT_EVENT)
-        std::cout << "Joystick Event" << std::endl;
+        this->m_JoystickState = event.JoystickEvent;
 
     if (event.EventType == irr::EET_GUI_EVENT)
     {
@@ -59,4 +59,9 @@ bool InputManager::IsButtonDown(const Button::ButtonID& id)
 void InputManager::ResetButton(const Button::ButtonID& id)
 {
     m_Buttons[id] = false;
+}
+
+JoystickEvent& InputManager::GetJoystickEvent()
+{
+    return m_JoystickState;
 }

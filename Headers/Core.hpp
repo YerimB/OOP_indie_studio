@@ -4,6 +4,7 @@
 #include <string>
 #include <chrono>
 #include <unordered_map>
+#include <array>
 
 #include <Irrlicht/irrlicht.h>
 #include <ECS/Hash.h>
@@ -36,6 +37,7 @@ using Rectf = irr::core::rectf;
 using Recti = irr::core::recti;
 
 using Binding = irr::EKEY_CODE;
+using JoystickEvent = irr::SEvent::SJoystickEvent;
 
 using GuiEnvironment = irr::gui::IGUIEnvironment;
 using GuiFont = irr::gui::IGUIFont;
