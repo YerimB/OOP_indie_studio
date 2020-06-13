@@ -8,7 +8,6 @@ Map::Map(GameManager* pGameManager)
 void Map::Initialize(const std::size_t& size, Scene *sc)
 {
 	Generation map(size);
-	int x = (size < 10 ? (size * 10) / 2 : -40 * (size / 10));
 	Vector3f position = {
         -(size * 10.0f) / 2,
         0,

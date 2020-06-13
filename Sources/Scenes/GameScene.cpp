@@ -89,6 +89,41 @@ void GameScene::Load(GameManager* gameManager)
 
 void GameScene::Update(GameManager* gameManager)
 {
+    auto inputManager = gameManager->GetInputManager();
+    auto player1 = gameManager->GetEntityManager()->GetEntity("Player01");
+
+    if (inputManager->IsKeyDown(irr::KEY_KEY_Z))
+    {
+        auto transform = player1.GetComponent<Transform>();
+        auto position = transform->GetPosition();
+
+        transform->SetPosition({ position.X, position.Y, position.Z + 0.1f });
+    }
+    else if (inputManager->IsKeyDown(irr::KEY_KEY_Q))
+    {
+        auto transform = player1.GetComponent<Transform>();
+        auto position = transform->GetPosition();
+
+        transform->SetPosition({ position.X - 0.1f , position.Y, position.Z });
+    }
+    else if (inputManager->IsKeyDown(irr::KEY_KEY_S))
+    {
+        auto transform = player1.GetComponent<Transform>();
+        auto position = transform->GetPosition();
+
+        transform->SetPosition({ position.X, position.Y, position.Z - 0.1f });
+    }
+    else if (inputManager->IsKeyDown(irr::KEY_KEY_D))
+    {
+        auto transform = player1.GetComponent<Transform>();
+        auto position = transform->GetPosition();
+
+        transform->SetPosition({ position.X + 0.1f, position.Y, position.Z });
+    }
+    else if (inputManager->IsKeyDown(irr::KEY_KEY_B))
+    {
+        // Bomb
+    }
 
 }
 
