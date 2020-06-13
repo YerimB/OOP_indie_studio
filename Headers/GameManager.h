@@ -18,6 +18,7 @@ typedef struct PlayersData_s
 	bool isActive = false;
 	int playerID = 0;
 	int characterID = 0;
+	std::unordered_map<std::string, Binding> bindingsMap;
 } PlayerData_t;
 
 typedef struct GameGlobalVariables_s

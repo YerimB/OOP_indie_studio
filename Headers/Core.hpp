@@ -3,6 +3,7 @@
 #include <memory>
 #include <string>
 #include <chrono>
+#include <unordered_map>
 
 #include <Irrlicht/irrlicht.h>
 #include <ECS/Hash.h>
@@ -33,6 +34,8 @@ using Position2i = irr::core::position2di;
 
 using Rectf = irr::core::rectf;
 using Recti = irr::core::recti;
+
+using Binding = irr::EKEY_CODE;
 
 using GuiEnvironment = irr::gui::IGUIEnvironment;
 using GuiFont = irr::gui::IGUIFont;
