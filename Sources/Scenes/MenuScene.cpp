@@ -2,11 +2,7 @@
 #include <GameManager.h>
 
 // Systems
-#include <ECS/System/ButtonSystem.h>
-#include <ECS/System/ImageSystem.h>
-
-// Components
-#include <Components/Transform.h>
+#include <ECS/ECS.h>
 
 static void changeSceneToGame(GameManager* gameManager)
 {
@@ -38,49 +34,53 @@ void MenuScene::LoadSystems(GameManager* gm)
 
 void MenuScene::LoadAssets(GameManager* gm)
 {
-
+    this->AddMesh(gm->GetSceneManager()->getMesh("bomberman_m.obj"), "Bomber");
 }
 
 // Load Entities & Components
 void MenuScene::LoadElements(GameManager* gm)
 {
-        Entity backgroundEntity("background");
-        Entity playBtnEntity("playBtn");
-        Entity quitBtnEntity("quitBtn");
+    Entity backgroundEntity("background");
+    Entity playBtnEntity("playBtn");
+    Entity quitBtnEntity("quitBtn");
 
-        Texture* texBg = gm->LoadTexture("Assets/background_mario.png");
-        Image* background = new Image(gm->GetGuiEnvironment());
-        if (background && background->Initialize(texBg))
-        {
-            background->SetSize(1920, 1080);
-            backgroundEntity.AddComponent(std::move(background), Image::Id);
-        }
+    Texture* texBg = gm->LoadTexture("Assets/background_mario.png");
+    Image* background = new Image(gm->GetGuiEnvironment());
+    if (background && background->Initialize(texBg))
+    {
+        background->SetSize(1920, 1080);
+        backgroundEntity.AddComponent(std::move(background), Image::Id);
+    }
 
-        Button* btnPlay = new Button(gm->GetGuiEnvironment());
-        if (btnPlay->Initialize(nullptr))
-        {
-            btnPlay->SetButtonID(Button::ButtonID::PLAY);
-            btnPlay->SetTexture(gm->LoadTexture("Assets/btnPlay.png"));
-            btnPlay->SetSize(398, 131);
-            btnPlay->SetPosition({ 100, 720 / 2 });
-            btnPlay->SetOnPress(changeSceneToGame);
-            playBtnEntity.AddComponent(std::move(btnPlay), Button::Id);
-        }
+    Button* btnPlay = new Button(gm->GetGuiEnvironment());
+    if (btnPlay->Initialize(nullptr))
+    {
+        btnPlay->SetButtonID(Button::ButtonID::PLAY);
+        btnPlay->SetTexture(gm->LoadTexture("Assets/btnPlay.png"));
+        btnPlay->SetSize(398, 131);
+        btnPlay->SetPosition({ 100, 720 / 2 });
+        btnPlay->SetOnPress(changeSceneToGame);
+        playBtnEntity.AddComponent(std::move(btnPlay), Button::Id);
+    }
 
-        Button* btnQuit = new Button(gm->GetGuiEnvironment());
-        if (btnQuit->Initialize(nullptr))
-        {
-            btnQuit->SetButtonID(Button::ButtonID::QUIT);
-            btnQuit->SetTexture(gm->LoadTexture("Assets/btnQuit.png"));
-            btnQuit->SetSize(250, 82);
-            btnQuit->SetPosition({ 250, 720 / 2 + 200 });
-            btnQuit->SetOnPress(quitGame);
-            quitBtnEntity.AddComponent(std::move(btnQuit), Button::Id);
-        }
+    Button* btnQuit = new Button(gm->GetGuiEnvironment());
+    if (btnQuit->Initialize(nullptr))
+    {
+        btnQuit->SetButtonID(Button::ButtonID::QUIT);
+        btnQuit->SetTexture(gm->LoadTexture("Assets/btnQuit.png"));
+        btnQuit->SetSize(250, 82);
+        btnQuit->SetPosition({ 250, 720 / 2 + 200 });
+        btnQuit->SetOnPress(quitGame);
+        quitBtnEntity.AddComponent(std::move(btnQuit), Button::Id);
+    }
 
-        gm->GetEntityManager()->AddEntity(backgroundEntity);
-        gm->GetEntityManager()->AddEntity(playBtnEntity);
-        gm->GetEntityManager()->AddEntity(quitBtnEntity);
+    {
+        Entity mesh("lemesh");
+    }
+
+    gm->GetEntityManager()->AddEntity(backgroundEntity);
+    gm->GetEntityManager()->AddEntity(playBtnEntity);
+    gm->GetEntityManager()->AddEntity(quitBtnEntity);
 }
 
 void MenuScene::Load(GameManager* gameManager)
