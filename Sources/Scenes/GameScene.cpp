@@ -44,6 +44,7 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddTexture(gm->LoadTexture("Assets/block.png"), "Block");
     this->AddTexture(gm->LoadTexture("Assets/star.jpeg"), "Star");
     this->AddTexture(gm->LoadTexture("Assets/pow.jpeg"), "Pow");
+    this->AddTexture(gm->LoadTexture("Assets/btnHome.png"), "iconHome");
 
     // Load Meshes
     auto sm = gm->GetSceneManager();
@@ -62,10 +63,9 @@ void GameScene::LoadElements(GameManager* gm)
         // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {
             b1->SetButtonID(Button::ButtonID::QUIT);
-            b1->SetTexture(this->GetTexture("Sand"));
-            b1->SetText("Back to menu");
-            b1->SetPosition({ 50, 50 });
-            b1->SetSize(300, 100);
+            b1->SetTexture(this->GetTexture("iconHome"));
+            b1->SetPosition({ 20, 20 });
+            b1->SetSize(80, 80);
             b1->SetTextureToFit(true);
             b1->SetOnPress(changeSceneToMenu);
             e1.AddComponent(std::move(b1), Button::Id);

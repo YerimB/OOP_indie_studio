@@ -16,6 +16,8 @@ static void changeSceneToGame(GameManager* gameManager)
 
 static void quitGame(GameManager* gameManager)
 {
+    gameManager->GetEntityManager()->ClearAll();
+    gameManager->GetVideoDriver()->drop();
     gameManager->GetDevice()->drop();
 }
 

@@ -61,7 +61,7 @@ void GameManager::ProgramLoop(void)
     this->LoadScene(Scene::SceneID::MENU);
     while (this->m_Device->run())
     {
-        this->m_VideoDriver->beginScene(true, true, Color(255, 255, 255, 0));
+        this->m_VideoDriver->beginScene(true, true, Color(255, 135, 206, 250));
         this->m_EntityManager->Update();
         this->m_VideoDriver->endScene();
         if (m_globalVars.sceneChanged == true)
