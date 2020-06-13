@@ -42,16 +42,13 @@ void GameScene::LoadSystems(GameManager* gm)
 void GameScene::LoadAssets(GameManager* gm)
 {
     // Load textures
-    this->AddTexture(gm->LoadTexture("Assets/sand.jpg"), "Sand");
-    this->AddTexture(gm->LoadTexture("Assets/block.png"), "Block");
-    this->AddTexture(gm->LoadTexture("Assets/star.jpeg"), "Star");
-    this->AddTexture(gm->LoadTexture("Assets/pow.jpeg"), "Pow");
-    this->AddTexture(gm->LoadTexture("Assets/btnHome.png"), "iconHome");
+    this->AddTexture(gm->LoadTexture("Assets/textures/block.png"), "Block");
+    this->AddTexture(gm->LoadTexture("Assets/textures/star.jpeg"), "Star");
+    this->AddTexture(gm->LoadTexture("Assets/textures/pow.jpeg"), "Pow");
+    this->AddTexture(gm->LoadTexture("Assets/textures/btnHome.png"), "iconHome");
 
     // Load Meshes
     auto sm = gm->GetSceneManager();
-    this->AddMesh(sm->getMesh("Assets/sydney.md2"), "Sydney");
-    this->AddMesh(sm->getMesh("Assets/wall.md3"), "Wall");
     this->AddMesh(sm->getMesh("Assets/bomberman_m.obj"), "Bomber");
 
     gm->GetSoundManager()->AddSound(

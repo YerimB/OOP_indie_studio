@@ -31,7 +31,7 @@ typedef struct GameGlobalVariables_s
 
 	// Players
 	const int maxPlayerNumber = 4;
-	int playerNumber = 0;
+	int currentPlayerNumber = 0;
 	std::array<PlayerData_t, 4> playersData;
 
 	// Add vars if needed.

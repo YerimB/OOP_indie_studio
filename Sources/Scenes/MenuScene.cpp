@@ -48,7 +48,7 @@ void MenuScene::LoadElements(GameManager* gm)
     Entity playBtnEntity("playBtn");
     Entity quitBtnEntity("quitBtn");
 
-    Texture* texBg = gm->LoadTexture("Assets/background_mario.png");
+    Texture* texBg = gm->LoadTexture("Assets/textures/background_mario.png");
     Image* background = new Image(gm->GetGuiEnvironment());
     if (background && background->Initialize(texBg))
     {
@@ -60,7 +60,7 @@ void MenuScene::LoadElements(GameManager* gm)
     if (btnPlay->Initialize(nullptr))
     {
         btnPlay->SetButtonID(Button::ButtonID::PLAY);
-        btnPlay->SetTexture(gm->LoadTexture("Assets/btnPlay.png"));
+        btnPlay->SetTexture(gm->LoadTexture("Assets/textures/btnPlay.png"));
         btnPlay->SetSize(398, 131);
         btnPlay->SetPosition({ 410, 720 / 2 + 100 });
         btnPlay->SetOnPress(changeSceneToGame);
@@ -71,7 +71,7 @@ void MenuScene::LoadElements(GameManager* gm)
     if (btnQuit->Initialize(nullptr))
     {
         btnQuit->SetButtonID(Button::ButtonID::QUIT);
-        btnQuit->SetTexture(gm->LoadTexture("Assets/btnQuit.png"));
+        btnQuit->SetTexture(gm->LoadTexture("Assets/textures/btnQuit.png"));
         btnQuit->SetSize(250, 82);
         btnQuit->SetPosition({ 500, 720 / 2 + 300 });
         btnQuit->SetOnPress(quitGame);
