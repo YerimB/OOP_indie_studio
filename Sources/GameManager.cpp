@@ -39,6 +39,9 @@ void GameManager::Initialize()
     m_SoundManager = CreateUnique<SoundManager>();
 
     m_Device->setEventReceiver(m_InputManager.get());
+
+    irr::core::array<irr::SJoystickInfo> info;
+    m_Device->activateJoysticks(info);
 }
 
 // First step:  Unloads the current scene if there is one.

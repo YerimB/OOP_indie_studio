@@ -20,11 +20,12 @@ class InputManager : public irr::IEventReceiver
         virtual bool IsKeyDown(irr::EKEY_CODE keyCode) const;
         virtual bool IsButtonDown(const Button::ButtonID& id);
         virtual void ResetButton(const Button::ButtonID& id);
+        virtual JoystickEvent& GetJoystickEvent();
 
     private:
         irr::IrrlichtDevice* m_Device;
         std::vector<bool> m_KeyDown;
         std::unordered_map<Button::ButtonID, bool> m_Buttons;
-        irr::SEvent::SJoystickEvent m_JoystickState;
+        JoystickEvent m_JoystickState;
         std::unordered_map<EntityId, Entity> m_Entities;
 };
