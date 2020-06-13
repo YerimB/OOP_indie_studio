@@ -1,4 +1,5 @@
 #include <ECS/System/MoveSystem.h>
+#include <Components/Cube.h>
 
 MoveSystem::MoveSystem(EntityManager* pEntityManager) : BaseType(pEntityManager)
 {
@@ -11,6 +12,10 @@ void MoveSystem::Update(const double& deltaTime)
 		Drawable* drawable = std::get<Drawable*>(_components[i]);
 		Collider* collider = std::get<Collider*>(_components[i]);
 		Transform* transform = std::get<Transform*>(_components[i]);
+
+		if (dynamic_cast<Cube*>(drawable))
+		{
+		}
 
 		if (!drawable->GetDrawable())
 			continue;
