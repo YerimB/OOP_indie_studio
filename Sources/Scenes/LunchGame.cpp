@@ -178,6 +178,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
             b2->SetOnPress(changeCharacterP2);
             e2.AddComponent(std::move(b2), Button::Id);
         }
+
         if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Luigi")) && \
         a->Initialize(d2->GetDrawable())) {
             a->AddAnimation("Idle", {0, 300, 30});
