@@ -51,17 +51,13 @@ bool InputManager::OnEvent(const SEvent& event)
                 case Button::BUTTON_CHANGE_1:
                     m_Buttons[Button::BUTTON_CHANGE_1] = true; break;
                 case Button::LOWERMUSIC:
-                    m_Buttons[Button::LOWERMUSIC] = true;
-                    break;
+                    m_Buttons[Button::LOWERMUSIC] = true; break;
                 case Button::UPPERMUSIC:
-                    m_Buttons[Button::UPPERMUSIC] = true;
-                    break;
+                    m_Buttons[Button::UPPERMUSIC] = true; break;
                 case Button::LOWERFX:
-                    m_Buttons[Button::LOWERFX] = true;
-                    break;
+                    m_Buttons[Button::LOWERFX] = true; break;
                 case Button::UPPERFX:
-                    m_Buttons[Button::UPPERFX] = true;
-                    break;
+                    m_Buttons[Button::UPPERFX] = true; break;
                 default:
                     break;
             }

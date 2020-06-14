@@ -110,6 +110,8 @@ void LunchGame::LoadAssets(GameManager* gm)
     this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
     this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
+
+    this->AddTexture(gm->LoadTexture("Assets/textures/game-controller.png"), "texGameController");
 }
 
 void LunchGame::LoadElements(GameManager* gameManager)
@@ -276,6 +278,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         }
         gameManager->GetEntityManager()->AddEntity(e7);
     }
+
 }
 
 void LunchGame::Load(GameManager* gameManager)
