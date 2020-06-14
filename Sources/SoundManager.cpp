@@ -84,6 +84,15 @@ float SoundManager::getVolume(const SoundType &type)
     return (volume);
 }
 
+void SoundManager::setLoop(const std::string &soundID, int loopcount) const
+{
+    if (this->m_SoundMap.find(soundID) == m_SoundMap.end())
+        std::cerr << "FMOD Error setting loop to sound : " << \
+        m_fmodDebug << std::endl;
+    this->m_SoundMap.at(soundID)->setMode(FMOD_LOOP_NORMAL);
+    this->m_SoundMap.at(soundID)->setLoopCount(loopcount);
+}
+
 SoundManager::~SoundManager()
 {
     for (auto &elem : m_SoundGroupMap)

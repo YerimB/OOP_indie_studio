@@ -14,7 +14,7 @@
 #include <ECS/System/ImageSystem.h>
 #include <ECS/System/TextSystem.h>
 
-
+#include <ECS/System/PlayerSystem.h>
 #include <ECS/System/RenderSystem.h>
 
 // Components
@@ -27,5 +27,6 @@
 #include <Components/Moveable.h>
 #include <Components/Text.h>
 #include <Components/Transform.h>
+#include <Components/Player.h>
 
 #endif /* !ECS_H_ */
