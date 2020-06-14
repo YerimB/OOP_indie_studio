@@ -45,9 +45,9 @@ void EntityManager::AddEntity(const Entity& entity)
 
 void EntityManager::RemoveEntity(const Entity& entity)
 {
-	m_Entities.erase(entity.GetId());
 	for (auto& elem : this->m_Systems)
 		elem->OnEntityDestroyed(entity.GetId());
+	m_Entities.erase(entity.GetId());
 }
 
 void EntityManager::AddSystem(BaseSystem* system)
