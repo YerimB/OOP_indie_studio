@@ -27,9 +27,9 @@ class InputManager : public irr::IEventReceiver
         enum class ControllerButton
         {
             // Xbox                 // PS4
-            X = 0,                  // Carré
-            A = 1,                  // Croix
-            B = 2,                  // Rond
+            X = 0,                  // Square
+            A = 1,                  // Cross
+            B = 2,                  // Circle
             Y = 3,                  // Triangle
             LB = 4,                 // L1
             RB = 5,                 // R1
