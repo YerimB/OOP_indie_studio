@@ -22,7 +22,6 @@ class Button : public Component
             UNDEFINED = (-1),
             QUIT,
             PLAY,
-            CHANGECLR,
             CHANGEPLAYER1,
             CHANGEPLAYER2,
             CHANGEPLAYER3,
@@ -31,6 +30,10 @@ class Button : public Component
             BUTTON_CHANGE_2,
             BUTTON_CHANGE_3,
             BUTTON_CHANGE_4,
+            LOWERMUSIC,
+            UPPERMUSIC,
+            LOWERFX,
+            UPPERFX,
         };
     
     public:
