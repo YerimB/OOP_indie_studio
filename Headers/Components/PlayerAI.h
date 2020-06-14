@@ -8,6 +8,7 @@
 #ifndef PLAYERAI_H_
 #define PLAYERAI_H_
 
+#include <AI/AI.h>
 #include <Components/Player.h>
 
 class PlayerAI : public Player
@@ -20,6 +21,10 @@ class PlayerAI : public Player
     
     protected:
         void GetMovements(GameManager *gm, Entity &self) override final;
+	private:
+		std::array<int, 2> _previousPos;
+        std::array<int, 2> _dir;
+        bool isMoving;
 };
 
 #endif /* !PLAYERAI_H_ */

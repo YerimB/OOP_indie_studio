@@ -12,7 +12,29 @@ Generation::Generation(const int &size) : _size(size)
 
 std::vector<std::string> Generation::GetMap() const
 {
-	return this->_map;
+    std::vector<std::string> tmp;
+    tmp.push_back("11111111111111111111");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("10000000000000000001");
+    tmp.push_back("11111111111111111111");
+    return tmp;
+    return this->_map;
 }
 
 void Generation::refresh()

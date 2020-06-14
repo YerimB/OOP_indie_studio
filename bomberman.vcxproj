@@ -264,6 +264,9 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\AI\AI.cpp" />
+    <ClCompile Include="Sources\AI\Astar.cpp" />
+    <ClCompile Include="Sources\AI\Node.cpp" />
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
     <ClCompile Include="Sources\Components\Collider.cpp" />
@@ -271,6 +274,7 @@
     <ClCompile Include="Sources\Components\Image.cpp" />
     <ClCompile Include="Sources\Components\Moveable.cpp" />
     <ClCompile Include="Sources\Components\Player.cpp" />
+    <ClCompile Include="Sources\Components\PlayerAI.cpp" />
     <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\PlayerSystem.cpp" />
@@ -298,6 +302,9 @@
     <ClCompile Include="Sources\SoundManager.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
+    <ClInclude Include="Headers\AI\AI.h" />
+    <ClInclude Include="Headers\AI\Astar.h" />
+    <ClInclude Include="Headers\AI\Node.h" />
     <ClInclude Include="Headers\Components\Animator.h" />
     <ClInclude Include="Headers\Components\Button.h" />
     <ClInclude Include="Headers\Components\Collider.h" />
@@ -307,6 +314,7 @@
     <ClInclude Include="Headers\Components\Image.h" />
     <ClInclude Include="Headers\Components\Moveable.h" />
     <ClInclude Include="Headers\Components\Player.h" />
+    <ClInclude Include="Headers\Components\PlayerAI.h" />
     <ClInclude Include="Headers\Components\Text.h" />
     <ClInclude Include="Headers\Components\Timer.h" />
     <ClInclude Include="Headers\Components\Transform.h" />

@@ -97,7 +97,7 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
 	{
         if (this->_previousPos[0] != -1)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
-        gVars->map[tmp[1]][tmp[0]] = 'E';
+        gVars->map[tmp[1]][tmp[0]] = 'O';
         _previousPos = tmp;
 	}
 }
