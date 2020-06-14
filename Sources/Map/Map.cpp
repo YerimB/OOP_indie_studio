@@ -71,13 +71,7 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 		position.Z += 10;
 	}
 	float corner = -(size * 10.0f) / 2;
-	// std::array<Vector3f, 4> corners = {
-	// 	Vector3f(corner + 10.0f, 0, corner + 10.0f),
-	// 	Vector3f(corner + 10.0f, 0, -(corner + 25.0f)),
-	// 	Vector3f(-(corner + 25.0f), 0, corner + 10.0f),
-	// 	Vector3f(-(corner + 25.0f), 0, -(corner + 25.0f)),
-	// };
-	// for (auto &pos : corners) {
+
 	Entity player("Player01");
 	Player* p0 = new Player(m_GameManager->GetSceneManager());
 	Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
@@ -91,7 +85,6 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 		player.AddComponent(cl0, Collider::Id);
 		m_GameManager->GetEntityManager()->AddEntity(player);
 	}
-	// }
     auto camera = m_GameManager->GetSceneManager()->addCameraSceneNode(
 		0,
 		{ -70, size * 7.5f, 0 },
