@@ -34,6 +34,7 @@ class Button : public Component
             UPPERMUSIC,
             LOWERFX,
             UPPERFX,
+            CONTROLLER,
         };
     
     public:
