@@ -21,6 +21,11 @@ static void changeSceneToGame(GameManager* gameManager)
 	gameManager->SetNextScene(Scene::GAME);
 }
 
+static void test(GameManager* gameManager)
+{
+	std::cout << "TEST\n";
+}
+
 static void changeCharacter(GameManager* gameManager)
 {
 	// gameManager->GetEntityManager()->get
@@ -50,42 +55,61 @@ void LunchGame::LoadSystems(GameManager* gm)
 void LunchGame::LoadAssets(GameManager* gm)
 {
     this->AddTexture(gm->LoadTexture("Assets/textures/block.png"), "Block");
+    this->AddTexture(gm->LoadTexture("Assets/textures/pow.jpeg"), "Pow");
+    this->AddTexture(gm->LoadTexture("Assets/textures/mario_bg.jpeg"), "Bg");
 
     auto sm = gm->GetSceneManager();
     this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
     this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
+    this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
-    // this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
 }
 
 void LunchGame::LoadElements(GameManager* gameManager)
 {
-    { // Back to menu button
-        // Create components and entity
-        Entity e1("e1");
-        Button* b1 = new Button(gameManager->GetGuiEnvironment());
+    // Entity backgroundEntity("background");
 
-        // Initialize component and set attributes then add it to entity
-        if (b1->Initialize(nullptr)) {
-            b1->SetButtonID(Button::ButtonID::QUIT);
-            // b1->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
-            b1->SetTexture(this->GetTexture("Block"));
-            b1->SetText("Go!");
-            b1->SetPosition({ 800, 800 });
-            b1->SetSize(300, 100);
-            b1->SetTextureToFit(true);
-            b1->SetOnPress(changeSceneToGame);
-            e1.AddComponent(std::move(b1), Button::Id);
-        }
-        // When done, add entity to the entity manager.
-        gameManager->GetEntityManager()->AddEntity(e1);
+    // Image* background = new Image(gameManager->GetGuiEnvironment());
+    // if (background && background->Initialize(this->GetTexture("Bg")))
+    // {
+    //     background->SetSize(1000, 100);
+    //     backgroundEntity.AddComponent(std::move(background), Image::Id);
+    // }
+
+    // gameManager->GetEntityManager()->AddEntity(backgroundEntity);
+
+    Entity playBtnEntity("playBtn");
+    Button* btnPlay = new Button(gameManager->GetGuiEnvironment());
+    if (btnPlay->Initialize(nullptr))
+    {
+        btnPlay->SetButtonID(Button::ButtonID::PLAY);
+        btnPlay->SetTexture(gameManager->LoadTexture("Assets/textures/btnPlay.png"));
+        btnPlay->SetSize(398, 131);
+        btnPlay->SetPosition({ 800, 850 });
+        btnPlay->SetOnPress(changeSceneToGame);
+        playBtnEntity.AddComponent(std::move(btnPlay), Button::Id);
     }
 
+    gameManager->GetEntityManager()->AddEntity(playBtnEntity);
     {
         Entity e2("e2");
         Drawable* d1 = new Drawable(gameManager->GetSceneManager());
         Transform* t1 = new Transform();
         Collider *newCollider = new Collider();
+        Button* b2 = new Button(gameManager->GetGuiEnvironment());
+
+        // Initialize component and set attributes then add it to entity
+        if (b2->Initialize(nullptr)) {
+            b2->SetButtonID(Button::ButtonID::CHANGEPLAY);
+            b2->SetTexture(this->GetTexture("Pow"));
+            // b2->SetText("Go!");
+            b2->SetPosition({ 1575, 700 });
+            b2->SetSize(100, 100);
+            b2->SetTextureToFit(true);
+            b2->SetOnPress(test);
+            e2.AddComponent(std::move(b2), Button::Id);
+        }
+
 
         if (t1->Initialize(0) && d1->Initialize(this->GetMesh("Mario"))) {
             e2.AddComponent(d1, Drawable::Id);
@@ -103,6 +127,20 @@ void LunchGame::LoadElements(GameManager* gameManager)
         Drawable* d2 = new Drawable(gameManager->GetSceneManager());
         Transform* t2 = new Transform();
         Collider *newCollider = new Collider();
+        Button* b3 = new Button(gameManager->GetGuiEnvironment());
+
+        // Initialize component and set attributes then add it to entity
+        if (b3->Initialize(nullptr)) {
+            b3->SetButtonID(Button::ButtonID::CHANGEPLAY2);
+            // b3->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
+            b3->SetTexture(this->GetTexture("Pow"));
+            // b3->SetText("Go!");
+            b3->SetPosition({ 1075, 700 });
+            b3->SetSize(100, 100);
+            b3->SetTextureToFit(true);
+            b3->SetOnPress(test);
+            e3.AddComponent(std::move(b3), Button::Id);
+        }
 
         if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Luigi"))) {
             e3.AddComponent(d2, Drawable::Id);
@@ -120,8 +158,22 @@ void LunchGame::LoadElements(GameManager* gameManager)
         Drawable* d3 = new Drawable(gameManager->GetSceneManager());
         Transform* t3 = new Transform();
         Collider *newCollider = new Collider();
+        Button* b4 = new Button(gameManager->GetGuiEnvironment());
 
-        if (t3->Initialize(0) && d3->Initialize(this->GetMesh("Star"))) {
+        // Initialize component and set attributes then add it to entity
+        if (b4->Initialize(nullptr)) {
+            b4->SetButtonID(Button::ButtonID::CHANGEPLAY3);
+            // b4->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
+            b4->SetTexture(this->GetTexture("Pow"));
+            // b4->SetText("Go!");
+            b4->SetPosition({ 675, 700 });
+            b4->SetSize(100, 100);
+            b4->SetTextureToFit(true);
+            b4->SetOnPress(test);
+            e4.AddComponent(std::move(b4), Button::Id);
+        }
+
+        if (t3->Initialize(0) && d3->Initialize(this->GetMesh("Koopa"))) {
             e4.AddComponent(d3, Drawable::Id);
             e4.AddComponent(t3, Transform::Id);
             e4.AddComponent(newCollider, Drawable::Id);
@@ -137,6 +189,20 @@ void LunchGame::LoadElements(GameManager* gameManager)
         Drawable* d4 = new Drawable(gameManager->GetSceneManager());
         Transform* t4 = new Transform();
         Collider *newCollider = new Collider();
+        Button* b5 = new Button(gameManager->GetGuiEnvironment());
+
+        // Initialize component and set attributes then add it to entity
+        if (b5->Initialize(nullptr)) {
+            b5->SetButtonID(Button::ButtonID::CHANGEPLAY4);
+            // b5->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
+            b5->SetTexture(this->GetTexture("Pow"));
+            // b5->SetText("Go!");
+            b5->SetPosition({ 175, 700 });
+            b5->SetSize(100, 100);
+            b5->SetTextureToFit(true);
+            b5->SetOnPress(test);
+            e5.AddComponent(std::move(b5), Button::Id);
+        }
 
         if (t4->Initialize(0) && d4->Initialize(this->GetMesh("Star"))) {
             e5.AddComponent(d4, Drawable::Id);

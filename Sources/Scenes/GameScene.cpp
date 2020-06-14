@@ -55,10 +55,12 @@ void GameScene::LoadAssets(GameManager* gm)
     auto sm = gm->GetSceneManager();
     this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
     this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
+    this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
+    this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
 
-    gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/sound/game.ogg"), "sndGame", SoundManager::SoundType::MUSIC);
+    gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/sound/game2.ogg"), "sndGame", SoundManager::SoundType::MUSIC);
     gm->GetSoundManager()->AddSound(
-        gm->GetSoundManager()->LoadSound("Assets/sound/game.ogg"),
+        gm->GetSoundManager()->LoadSound("Assets/sound/game2.ogg"),
         "sndGame",
         SoundManager::SoundType::MUSIC
     );
