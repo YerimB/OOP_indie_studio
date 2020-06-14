@@ -21,8 +21,8 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 		Cube* cp = new Cube(m_GameManager->GetSceneManager());
 
 		if (cp->Initialize(sc->GetTexture("Star"))) {
-			cp->SetScale({size * 0.90f, 0, size * 0.98f});
-			tp->SetScale({size * 0.90f, 0, size * 0.98f});
+			cp->SetScale({size * 1.0f, 1, size * 1.0f});
+			tp->SetScale({size * 1.0f, 1, size * 1.0f});
 			cp->SetPosition({0, -10, 0});
 			plane.AddComponent(tp, Transform::Id);
 			plane.AddComponent(cp, Cube::Id);
