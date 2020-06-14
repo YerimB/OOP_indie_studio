@@ -38,6 +38,12 @@ iostream
 Components/Moveable.h
 -
 
+/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Player.cpp
+Components/Player.h
+-
+Components/Transform.h
+-
+
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Text.cpp
 Components/Text.h
 -
@@ -81,6 +87,12 @@ ECS/System/ImageSystem.h
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/MoveSystem.cpp
 ECS/System/MoveSystem.h
 -
+Components/Cube.h
+-
+
+/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/PlayerSystem.cpp
+ECS/System/PlayerSystem.h
+-
 
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/RenderSystem.cpp
 ECS/System/RenderSystem.h
@@ -102,10 +114,6 @@ GameManager.h
 
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/InputManager.cpp
 InputManager/InputManager.hpp
--
-
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Map/Generation.cpp
-Map/Generation.h
 -
 
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Map/Map.cpp
@@ -181,6 +189,8 @@ GameManager.h
 Headers/Components/Cube.h
 ECS/Component.h
 -
+Components/Drawable.h
+-
 Core.hpp
 -
 GameManager.h
@@ -203,6 +213,14 @@ GameManager.h
 -
 
 Headers/Components/Moveable.h
+ECS/Component.h
+-
+Core.hpp
+-
+GameManager.h
+-
+
+Headers/Components/Player.h
 ECS/Component.h
 -
 Core.hpp
@@ -237,6 +255,12 @@ memory
 -
 string
 -
+chrono
+-
+unordered_map
+-
+array
+-
 Irrlicht/irrlicht.h
 -
 ECS/Hash.h
@@ -261,6 +285,8 @@ ECS/System/ImageSystem.h
 -
 ECS/System/TextSystem.h
 -
+ECS/System/PlayerSystem.h
+-
 ECS/System/RenderSystem.h
 -
 Components/Animator.h
@@ -278,6 +304,8 @@ Components/Moveable.h
 Components/Text.h
 -
 Components/Transform.h
+-
+Components/Player.h
 -
 
 Headers/ECS/Entity.h
@@ -352,6 +380,16 @@ Components/Drawable.h
 Components/Transform.h
 -
 Components/Collider.h
+-
+
+Headers/ECS/System/PlayerSystem.h
+ECS/System/System.h
+-
+ECS/EntityManager.h
+-
+Components/Player.h
+-
+Components/Transform.h
 -
 
 Headers/ECS/System/RenderSystem.h
@@ -462,6 +500,8 @@ Components/Drawable.h
 Components/Transform.h
 -
 Components/Collider.h
+-
+Components/Player.h
 -
 
 Headers/SafeContainer/SafeQueue.hpp
