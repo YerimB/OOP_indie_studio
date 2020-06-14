@@ -16,8 +16,10 @@
 typedef struct PlayersData_s
 {
 	bool isActive = false;
+	bool hasStatusChanged = false;
 	int playerID = 0;
 	int characterID = 0;
+	bool changedCharacterID = false;
 	std::unordered_map<std::string, Binding> bindingsMap;
 } PlayerData_t;
 
@@ -34,6 +36,12 @@ typedef struct GameGlobalVariables_s
 	const int maxPlayerNumber = 4;
 	int currentPlayerNumber = 0;
 	std::array<PlayerData_t, 4> playersData;
+	const std::unordered_map<size_t, std::string> meshIDMap = {
+		std::pair<size_t, std::string>(1, "Mario"),
+		std::pair<size_t, std::string>(2, "Luigi"),
+		std::pair<size_t, std::string>(3, "Koopa"),
+		std::pair<size_t, std::string>(4, "Star")
+	};
 
 	// Map
 	size_t mapSize = 0;

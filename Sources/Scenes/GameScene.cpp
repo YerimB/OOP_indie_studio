@@ -58,7 +58,6 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
 
-    gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/sound/game2.ogg"), "sndGame", SoundManager::SoundType::MUSIC);
     gm->GetSoundManager()->AddSound(
         gm->GetSoundManager()->LoadSound("Assets/sound/game2.ogg"),
         "sndGame",
@@ -70,11 +69,9 @@ void GameScene::LoadAssets(GameManager* gm)
 void GameScene::LoadElements(GameManager* gm)
 {
     { // Back to menu button
-        // Create components and entity
         Entity e1("BackButton");
         Button* b1 = new Button(gm->GetGuiEnvironment());
 
-        // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {
             b1->SetButtonID(Button::ButtonID::QUIT);
             b1->SetTexture(this->GetTexture("iconHome"));
@@ -83,10 +80,8 @@ void GameScene::LoadElements(GameManager* gm)
             b1->SetTextureToFit(true);
             b1->SetOnPress(changeSceneToMenu);
             e1.AddComponent(std::move(b1), Button::Id);
-            // When done, add entity to the entity manager.
             gm->GetEntityManager()->AddEntity(e1);
         }
-
     }
 
     auto map = Map(gm);

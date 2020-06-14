@@ -23,10 +23,14 @@ class Button : public Component
             QUIT,
             PLAY,
             CHANGECLR,
-            CHANGEPLAY,
-            CHANGEPLAY2,
-            CHANGEPLAY3,
-            CHANGEPLAY4,
+            CHANGEPLAYER1,
+            CHANGEPLAYER2,
+            CHANGEPLAYER3,
+            CHANGEPLAYER4,
+            BUTTON_CHANGE_1,
+            BUTTON_CHANGE_2,
+            BUTTON_CHANGE_3,
+            BUTTON_CHANGE_4,
         };
     
     public:
