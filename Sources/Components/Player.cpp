@@ -80,11 +80,6 @@ void Player::GetMovements(InputManager *im, Entity &self)
     }
 }
 
-void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
-{
-    this->m_Data->bindingsMap[a] = code;
-}
-
 void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
 {
     int x = pPos->GetPosition().X;
@@ -103,7 +98,4 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
 		}
         std::cout << std::endl;
 	}
-    if (this->m_oldMoveState != isMoving)
-        animator->PlayAnimation((isMoving) ? "Run" : "Idle");
-    this->m_oldMoveState = isMoving;
 }
