@@ -35,6 +35,7 @@ class Player : public Component
 
     protected:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
+        int get_round(float nb);
         virtual void GetMovements(GameManager *gm, Entity &self);
 
     protected:

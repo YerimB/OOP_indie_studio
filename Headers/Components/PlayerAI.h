@@ -20,6 +20,7 @@ class PlayerAI : public Player
         void Update(const float& deltaTime, GameManager* gameManager) final;
     
     protected:
+        void UpdateMap(Transform* pPos, GameVars_t* gVars);
         void GetMovements(GameManager *gm, Entity &self) override final;
 	private:
 		std::array<int, 2> _previousPos;

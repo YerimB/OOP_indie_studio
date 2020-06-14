@@ -4,7 +4,6 @@
     <ClCompile Include="Sources\InputManager.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
-    <ClCompile Include="Sources\Generation\Generation.cpp" />
     <ClCompile Include="Sources\main.cpp" />
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
@@ -40,12 +39,11 @@
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClCompile Include="Sources\Scenes\LunchGame.cpp" />
-    <ClCompile Include="Headers\ECS\System\TimeSystem.h" />
-    <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
     <ClCompile Include="Sources\Components\PlayerAI.cpp" />
     <ClCompile Include="Sources\AI\AI.cpp" />
     <ClCompile Include="Sources\AI\Astar.cpp" />
     <ClCompile Include="Sources\AI\Node.cpp" />
+    <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Components\Animator.h" />
@@ -62,7 +60,6 @@
     <ClInclude Include="Headers\Components\Transform.h" />
     <ClInclude Include="Headers\Core.hpp" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
-    <ClInclude Include="Headers\Bindable\IBindable.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
@@ -71,6 +68,7 @@
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
     <ClInclude Include="Sources\Generation\Generation.hpp" />
+    <ClInclude Include="Headers\ECS\System\TimeSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -81,9 +79,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Headers\Bindable\Bindable.inl" />
     <None Include="Headers\Thread\Thread.inl" />
-    <None Include="Headers\InputManager\InputManager.inl" />
     <None Include="Headers\SafeContainer\SafeQueue.inl" />
     <None Include="Headers\SafeContainer\SafeVector.inl" />
     <None Include="Headers\SafeContainer\SafeDeque.inl" />
