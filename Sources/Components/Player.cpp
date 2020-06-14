@@ -65,13 +65,20 @@ void Player::DestroyBlocks(GameManager* gm)
     auto t = m_Bomb->GetComponent<Transform>();
     int x = t->GetPosition().X;
     int y = t->GetPosition().Z;
-    auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2;
+    auto s_pos = -(gm->m_globalVars.mapSize * 20.0f) / 2;
+
     std::array<int, 2> tmp = {
-        static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 10) - 1.0f),
-        static_cast<int>(round(gm->m_globalVars.mapSize - (x - s_pos) / 10) - 1.0f)
+        static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 20) - 1.0f),
+        static_cast<int>(round(gm->m_globalVars.mapSize - (x - s_pos) / 20) - 1.0f)
     };
 
-    //m_Bomb->GetComponent<Drawable>()->SetPosition({ static_cast<float>(tmp[0]), t->GetPosition().Y, static_cast<float>(tmp[1]) });
+    std::cout << "Star_" + std::to_string(tmp[1]) + "_" + std::to_string(tmp[0] - 1) << std::endl;
+
+    auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(tmp[1]) + "_" + std::to_string(tmp[0] - 1));
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
+    }
 }
 
 void Player::GetMovements(InputManager *im, Entity &self, GameManager* gm)
