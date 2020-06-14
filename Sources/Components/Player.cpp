@@ -27,10 +27,10 @@ bool Player::Initialize(void *args)
 void Player::Update(const float &dT, GameManager* gm)
 {
     Entity &e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
-    auto transform = e.GetComponent<Transform>();
+    Transform *transform = e.GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
-    this->GetMovements(gm->GetInputManager(), e, gm);
+    this->GetMovements(gm, e);
 }
 
 void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
@@ -58,10 +58,10 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     m_Bomb->AddComponent(std::move(drawable), Drawable::Id);
     gm->GetEntityManager()->AddEntity(*m_Bomb);
 }
-
-void Player::GetMovements(InputManager *im, Entity &self, GameManager* gm)
+void Player::GetMovements(GameManager *gm, Entity &self)
 {
     bool isMoving = false;
+    InputManager *im = gm->GetInputManager();
     Transform *transform = self.GetComponent<Transform>();
     Animator *animator = self.GetComponent<Animator>();
 
@@ -99,7 +99,6 @@ void Player::GetMovements(InputManager *im, Entity &self, GameManager* gm)
     }
     if (im->IsKeyDown(m_Data->bindingsMap["DROP"]))
     {
-        std::cout << "Dropping the bomb." << std::endl;
         if (m_Bomb == nullptr)
             DropBomb(self, gm);
     }
@@ -112,20 +111,30 @@ void Player::GetMovements(InputManager *im, Entity &self, GameManager* gm)
     this->m_oldMoveState = isMoving;
 }
 
+int get_round(float nb)
+{
+    float whole, fractional;
+
+    fractional = std::modf(nb, &whole);
+    if (fractional > 0.1)
+        return static_cast<int>(whole + 1);
+    return static_cast<int>(whole);
+}
+
 void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
 {
     int x = pPos->GetPosition().X;
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2;
     std::array<int, 2> tmp = {
-        static_cast<int>(round(gVars->mapSize - (y - s_pos) / 10) - 1.0f),
-        static_cast<int>(round(gVars->mapSize - (x - s_pos) / 10) - 1.0f)
+        get_round(gVars->mapSize - (y - s_pos) / 10 ),
+        get_round(gVars->mapSize - (x - s_pos) / 10 )
     };
 	if (tmp != this->_previousPos)
 	{
         if (this->_previousPos[0] != -1)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
-        gVars->map[tmp[1]][tmp[0]] = 'E';
+        gVars->map[tmp[1]][tmp[0]] = 'O';
         _previousPos = tmp;
 	}
 }

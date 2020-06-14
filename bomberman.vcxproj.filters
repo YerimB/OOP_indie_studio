@@ -42,6 +42,10 @@
     <ClCompile Include="Sources\Scenes\LunchGame.cpp" />
     <ClCompile Include="Headers\ECS\System\TimeSystem.h" />
     <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
+    <ClCompile Include="Sources\Components\PlayerAI.cpp" />
+    <ClCompile Include="Sources\AI\AI.cpp" />
+    <ClCompile Include="Sources\AI\Astar.cpp" />
+    <ClCompile Include="Sources\AI\Node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Components\Animator.h" />
@@ -116,6 +120,10 @@
     <ClInclude Include="Headers\Scenes\Scene.hpp" />
     <ClInclude Include="Headers\Map\Generation.h" />
     <ClInclude Include="Headers\Map\Map.h" />
+    <ClInclude Include="Headers\Components\PlayerAI.h" />
+    <ClInclude Include="Headers\AI\AI.h" />
+    <ClInclude Include="Headers\AI\Astar.h" />
+    <ClInclude Include="Headers\AI\Node.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLs\fmod.dll" />

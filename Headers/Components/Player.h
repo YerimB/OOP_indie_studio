@@ -27,17 +27,17 @@ class Player : public Component
 
     public:
         bool Initialize(void* args) override final;
-        void Update(const float& deltaTime, GameManager* gameManager) override final;
+        void Update(const float& deltaTime, GameManager* gameManager) override;
 
     public:
         void bindKey(const std::string &action, const irr::EKEY_CODE &);
         void DropBomb(Entity& self, GameManager* gm);
 
-    private:
+    protected:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
-        void GetMovements(InputManager *im, Entity &self, GameManager* gm);
+        virtual void GetMovements(GameManager *gm, Entity &self);
 
-    private:
+    protected:
         std::array<int, 2> _previousPos;
         SceneManager* m_SceneManager;
         PlayerData_t* m_Data;
