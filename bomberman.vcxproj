@@ -116,8 +116,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;IRRLICHT.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(solutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Irrlicht.lib;fmod.lib;fmodL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/fmodCoreWindows/;$(solutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -264,7 +264,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
+    <ClCompile Include="Headers\ECS\System\TimeSystem.h" />
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
     <ClCompile Include="Sources\Components\Collider.cpp" />
@@ -275,6 +275,7 @@
     <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\PlayerSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
     <ClCompile Include="Sources\ECS\Time.cpp" />
     <ClCompile Include="Sources\Components\Timer.cpp" />
     <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
@@ -293,6 +294,7 @@
     <ClCompile Include="Sources\Map\Generation.cpp" />
     <ClCompile Include="Sources\Map\Map.cpp" />
     <ClCompile Include="Sources\Scenes\GameScene.cpp" />
+    <ClCompile Include="Sources\Scenes\LunchGame.cpp" />
     <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
     <ClCompile Include="Sources\Scenes\Scene.cpp" />
     <ClCompile Include="Sources\SoundManager.cpp" />
@@ -328,20 +330,17 @@
     <ClInclude Include="Headers\ECS\System\TextSystem.h" />
     <ClInclude Include="Headers\ECS\Time.h" />
     <ClInclude Include="Headers\GameManager.h" />
-=======
-    <ClCompile Include="Sources\Generation\Generation.cpp" />
-    <ClCompile Include="Sources\InputManager.cpp" />
-    <ClCompile Include="Sources\main.cpp" />
-    <ClCompile Include="Sources\Thread\Thread.cpp" />
-    <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
-    <ClInclude Include="Headers\Bindable\Bindable.hpp" />
-    <ClInclude Include="Headers\Bindable\IBindable.hpp" />
-    <ClInclude Include="Headers\Core.hpp" />
->>>>>>> mergeall
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
+    <ClInclude Include="Headers\Map\Generation.h" />
+    <ClInclude Include="Headers\Map\Map.h" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
+    <ClInclude Include="Headers\Scenes\GameScene.hpp" />
+    <ClInclude Include="Headers\Scenes\LunchGame.hpp" />
+    <ClInclude Include="Headers\Scenes\MenuScene.hpp" />
+    <ClInclude Include="Headers\Scenes\Scene.hpp" />
+    <ClInclude Include="Headers\SoundManager.h" />
     <ClInclude Include="Headers\Thread\ITask.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
@@ -349,15 +348,10 @@
     <ClInclude Include="Sources\Generation\Generation.hpp" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <None Include="DLLs\fmod.dll" />
     <None Include="DLLs\fmodL.dll" />
     <None Include="DLLs\Irrlicht.dll" />
     <None Include="Headers\ECS\System\System.inl" />
-=======
-    <None Include="Headers\Bindable\Bindable.inl" />
-    <None Include="Headers\InputManager\InputManager.inl" />
->>>>>>> mergeall
     <None Include="Headers\SafeContainer\SafeDeque.inl" />
     <None Include="Headers\SafeContainer\SafeQueue.inl" />
     <None Include="Headers\SafeContainer\SafeVector.inl" />

@@ -6,6 +6,9 @@
 class Timer : public Component
 {
 	public:
+		static constexpr ComponentId Id = "Timer"_hash;
+
+	public:
 		Timer() = default;
 		~Timer() = default;
 
