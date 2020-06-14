@@ -48,9 +48,19 @@ void Player::DropBomb(Entity& self, GameManager* gm)
 
     timer->Initialize(&duration);
     transform->Initialize(nullptr);
-    drawable->Initialize(gm->GetSceneManager()->getMesh("Assets/bob-omb.b3d"));
+    drawable->Initialize(gm->GetCurrentScene()->GetMesh("Bomb"));
 
-    transform->SetPosition(self.GetComponent<Transform>()->GetPosition());
+    auto gVars = gm->m_globalVars;
+    auto s_pos = -(gVars.mapSize * 10.0f) / 2.0f;
+    Vector3f dpPos = self.GetComponent<Transform>()->GetPosition();
+    Vector2f tmp = {
+        round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
+        round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
+    };
+    tmp.X = -(s_pos + tmp.X * 10.0f);
+    tmp.Y = -(s_pos + tmp.Y * 10.0f);
+
+    transform->SetPosition({tmp.X, 0, tmp.Y});
     drawable->SetPosition(transform->GetPosition());
 
     m_Bomb->AddComponent(std::move(timer), Timer::Id);
@@ -140,8 +150,8 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2;
     std::array<int, 2> tmp = {
-        round(gVars->mapSize - (y - s_pos) / 10),
-        round(gVars->mapSize - (x - s_pos) / 10)
+        round(gVars->mapSize - (y - s_pos) / 10.0f),
+        round(gVars->mapSize - (x - s_pos) / 10.0f)
     };
     if (tmp != this->_previousPos)
     {

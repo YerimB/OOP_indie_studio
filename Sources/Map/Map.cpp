@@ -9,9 +9,9 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 {
 	Generation map(size);
 	Vector3f position = {
-        -(size * 10.0f) / 2,
+        -(size * 10.0f) / 2.0f,
         0,
-		-(size * 10.0f) / 2
+		-(size * 10.0f) / 2.0f
     };
 
 	{ // Create plane
@@ -82,10 +82,10 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 {
 	std::string pstr("Player0");
 	std::array<Vector3f, 4> corners = {
-		Vector3f((-(size * 10.0f) / 2) + 10.0f, 0, (-(size * 10.0f) / 2) + 10.0f),
+		Vector3f(((size * 10.0f) / 2) - 20.0f, 0, ((size * 10.0f) / 2) - 20.0f),
 		Vector3f(((size * 10.0f) / 2) - 20.0f, 0, (-(size * 10.0f) / 2) + 10.0f),
 		Vector3f((-(size * 10.0f) / 2) + 10.0f, 0, ((size * 10.0f) / 2) - 20.0f),
-		Vector3f(((size * 10.0f) / 2) - 20.0f, 0, ((size * 10.0f) / 2) - 20.0f),
+		Vector3f((-(size * 10.0f) / 2) + 10.0f, 0, (-(size * 10.0f) / 2) + 10.0f),
 	};
 	{ // Create player
 		for (size_t idx = 0; idx < 4; ++idx)
