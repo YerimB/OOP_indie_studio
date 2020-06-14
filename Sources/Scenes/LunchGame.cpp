@@ -52,7 +52,7 @@ void LunchGame::LoadAssets(GameManager* gm)
     this->AddTexture(gm->LoadTexture("Assets/textures/block.png"), "Block");
 
     auto sm = gm->GetSceneManager();
-    this->AddMesh(sm->getMesh("Assets/bomberman_m.obj"), "Bomber");
+    this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
 }
 
 void LunchGame::LoadElements(GameManager* gameManager)
@@ -77,61 +77,63 @@ void LunchGame::LoadElements(GameManager* gameManager)
         // When done, add entity to the entity manager.
         gameManager->GetEntityManager()->AddEntity(e1);
     }
+
     {
         Entity e2("e2");
         Drawable* d1 = new Drawable(gameManager->GetSceneManager());
         Transform* t1 = new Transform();
         Collider *newCollider = new Collider();
 
-        if (t1->Initialize(0) && d1->Initialize(this->GetMesh("Bomber"))) {
+        if (t1->Initialize(0) && d1->Initialize(this->GetMesh("Mario"))) {
             e2.AddComponent(d1, Drawable::Id);
             e2.AddComponent(newCollider, Drawable::Id);
             e2.AddComponent(t1, Transform::Id);
             t1->SetRotation(Vector3f(10, 30, 0));
-            t1->SetScale(Vector3f(2, 2, 2));
+            // t1->SetScale(Vector3f(10, 10, 10));
+            // d1->SetScale()
             d1->SetPosition({-10, -2, 0});
             d1->SetRotation(Vector3f(0, 30, 0));
         }
         gameManager->GetEntityManager()->AddEntity(e2);
     }
 
-    {
-        Entity e3("e3");
-        Drawable* d2 = new Drawable(gameManager->GetSceneManager());
-        Transform* t2 = new Transform();
-        Collider *newCollider = new Collider();
+    // {
+    //     Entity e3("e3");
+    //     Drawable* d2 = new Drawable(gameManager->GetSceneManager());
+    //     Transform* t2 = new Transform();
+    //     Collider *newCollider = new Collider();
 
-        if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Bomber"))) {
-            e3.AddComponent(d2, Drawable::Id);
-            e3.AddComponent(t2, Transform::Id);
-            e3.AddComponent(newCollider, Drawable::Id);
-            d2->SetPosition({-3, -2, 0});
-            t2->SetRotation(Vector3f(0, 10, 0));
-            d2->SetRotation(Vector3f(0, 30, 0));
-            t2->SetScale(Vector3f(2, 2, 2));
-            // t2->SetPosition(Vector3f(-50,-2, 0));
-        }
-        gameManager->GetEntityManager()->AddEntity(e3);
-    }
+    //     if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Mario"))) {
+    //         e3.AddComponent(d2, Drawable::Id);
+    //         e3.AddComponent(t2, Transform::Id);
+    //         e3.AddComponent(newCollider, Drawable::Id);
+    //         d2->SetPosition({-3, -2, 0});
+    //         t2->SetRotation(Vector3f(0, 10, 0));
+    //         d2->SetRotation(Vector3f(0, 30, 0));
+    //         t2->SetScale(Vector3f(2, 2, 2));
+    //         // t2->SetPosition(Vector3f(-50,-2, 0));
+    //     }
+    //     gameManager->GetEntityManager()->AddEntity(e3);
+    // }
 
-    {
-        Entity e4("e4");
-        Drawable* d2 = new Drawable(gameManager->GetSceneManager());
-        Transform* t2 = new Transform();
-        Collider *newCollider = new Collider();
+    // {
+    //     Entity e4("e4");
+    //     Drawable* d2 = new Drawable(gameManager->GetSceneManager());
+    //     Transform* t2 = new Transform();
+    //     Collider *newCollider = new Collider();
 
-        if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Bomber"))) {
-            e4.AddComponent(d2, Drawable::Id);
-            e4.AddComponent(t2, Transform::Id);
-            e4.AddComponent(newCollider, Drawable::Id);
-            d2->SetPosition({-3, -2, 0});
-            t2->SetRotation(Vector3f(0, 10, 0));
-            d2->SetRotation(Vector3f(0, 30, 0));
-            t2->SetScale(Vector3f(2, 2, 2));
-            // t2->SetPosition(Vector3f(-50,-2, 0));
-        }
-        gameManager->GetEntityManager()->AddEntity(e4);
-    }
+    //     if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Mario"))) {
+    //         e4.AddComponent(d2, Drawable::Id);
+    //         e4.AddComponent(t2, Transform::Id);
+    //         e4.AddComponent(newCollider, Drawable::Id);
+    //         d2->SetPosition({-3, -2, 0});
+    //         t2->SetRotation(Vector3f(0, 10, 0));
+    //         d2->SetRotation(Vector3f(0, 30, 0));
+    //         t2->SetScale(Vector3f(2, 2, 2));
+    //         // t2->SetPosition(Vector3f(-50,-2, 0));
+    //     }
+    //     gameManager->GetEntityManager()->AddEntity(e4);
+    // }
 
     // {
     //     Entity e5("e5");
