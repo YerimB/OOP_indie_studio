@@ -33,7 +33,7 @@ class Player : public Component
 
     protected:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
-        virtual void GetMovements(InputManager *im, Entity &self);
+        virtual void GetMovements(GameManager *gm, Entity &self);
 
     protected:
         std::array<int, 2> _previousPos;

@@ -28,7 +28,7 @@ void Player::Update(const float &dT, GameManager* gm)
     Transform *transform = e.GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
-    this->GetMovements(gm->GetInputManager(), e);
+    this->GetMovements(gm, e);
 }
 
 void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
@@ -36,9 +36,10 @@ void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
     this->m_Data->bindingsMap[a] = code;
 }
 
-void Player::GetMovements(InputManager *im, Entity &self)
+void Player::GetMovements(GameManager *gm, Entity &self)
 {
     bool isMoving = false;
+    InputManager *im = gm->GetInputManager();
     Transform *transform = self.GetComponent<Transform>();
     Animator *animator = self.GetComponent<Animator>();
 

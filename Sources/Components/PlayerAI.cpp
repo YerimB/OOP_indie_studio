@@ -15,10 +15,13 @@ void PlayerAI::Update(const float& dT, GameManager* gm)
     Transform *transform = e.GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
-    this->GetMovements(gm->GetInputManager(), e);
+    this->GetMovements(gm, e);
 }
 
-void PlayerAI::GetMovements(InputManager *im, Entity &self)
+void PlayerAI::GetMovements(GameManager *gm, Entity &self)
 {
-
+    auto &map = gm->m_globalVars.map;
+    Transform *t = self.GetComponent<Transform>();
+    Vector3f p = t->GetPosition();
+    Vector3f r = t->GetRotation();
 }

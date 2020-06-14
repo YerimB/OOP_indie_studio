@@ -79,7 +79,7 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 		Collider* cl0 = new Collider();
 		Animator* a0 = new Animator(m_GameManager->GetSceneManager());
 		if (d0->Initialize(sc->GetMesh("Luigi")) && a0->Initialize(d0->GetDrawable()) && \
-		p0->Initialize(&m_GameManager->m_globalVars.playersData[1])) {
+		p0->Initialize(&m_GameManager->m_globalVars.playersData[0])) {
 			d0->SetPosition({corner + 10.0f, 0, corner + 10.0f});
 			a0->AddAnimation("Idle", {0, 300, 30});
 			a0->AddAnimation("Run", {301, 320, 30});

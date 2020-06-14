@@ -19,7 +19,7 @@ class PlayerAI : public Player
         void Update(const float& deltaTime, GameManager* gameManager) final;
     
     protected:
-        void GetMovements(InputManager *im, Entity &self) override final;
+        void GetMovements(GameManager *gm, Entity &self) override final;
 };
 
 #endif /* !PLAYERAI_H_ */
