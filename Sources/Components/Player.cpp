@@ -10,6 +10,7 @@
 
 Player::Player(SceneManager* manager)
 {
+    this->_previousPos.fill(-1);
     this->m_SceneManager = manager;
 }
 
@@ -69,5 +70,20 @@ void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
 
 void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
 {
-    // YUNO
+    int x = pPos->GetPosition().X;
+    int y = pPos->GetPosition().Z;
+    auto s_pos = -(gVars->mapSize * 10.0f) / 2;
+    std::array<int, 2> tmp = {round(gVars->mapSize - (y - s_pos)/10) - 1, round(gVars->mapSize - (x - s_pos)/10) - 1 };
+	if (tmp != this->_previousPos)
+	{
+        if (this->_previousPos[0] != -1)
+            gVars->map[_previousPos[1]][_previousPos[0]] = '0';
+        gVars->map[tmp[1]][tmp[0]] = 'E';
+        _previousPos = tmp;
+		for(int i = 0; i < gVars->map.size(); i++)
+		{
+            std::cout << gVars->map[i] << std::endl;
+		}
+        std::cout << std::endl;
+	}
 }

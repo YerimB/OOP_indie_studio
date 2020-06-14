@@ -8,10 +8,12 @@
 #ifndef PLAYER_H_
 #define PLAYER_H_
 
+#include <array>
 #include <ECS/Component.h>
 #include <Components/Transform.h>
 #include <Core.hpp>
 #include <GameManager.h>
+#include <cmath>
 
 class Player : public Component
 {
@@ -32,6 +34,7 @@ class Player : public Component
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
 
     private:
+        std::array<int, 2> _previousPos;
         SceneManager* m_SceneManager;
         PlayerData_t* m_Data;
 };
