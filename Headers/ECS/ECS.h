@@ -30,5 +30,6 @@
 #include <Components/Text.h>
 #include <Components/Transform.h>
 #include <Components/Player.h>
+#include <Components/PlayerAI.h>
 
 #endif /* !ECS_H_ */

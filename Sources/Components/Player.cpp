@@ -25,7 +25,7 @@ bool Player::Initialize(void *args)
 void Player::Update(const float &dT, GameManager* gm)
 {
     Entity &e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
-    auto transform = e.GetComponent<Transform>();
+    Transform *transform = e.GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
     this->GetMovements(gm->GetInputManager(), e);

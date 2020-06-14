@@ -73,9 +73,9 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 	float corner = -(size * 10.0f) / 2;
 	{ // Create player
 		Entity player("Player01");
-		Player* p0 = new Player(m_GameManager->GetSceneManager());
+		PlayerAI* p0 = new PlayerAI(m_GameManager->GetSceneManager());
 		Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
-		Transform* t0 = new Transform({corner + 10.0f, 0, corner + 10.0f});
+		Transform* t0 = new Transform({ corner + 10.0f, 0, corner + 10.0f });
 		Collider* cl0 = new Collider();
 		Animator* a0 = new Animator(m_GameManager->GetSceneManager());
 		if (d0->Initialize(sc->GetMesh("Luigi")) && a0->Initialize(d0->GetDrawable()) && \
