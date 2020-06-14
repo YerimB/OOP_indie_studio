@@ -52,6 +52,11 @@ void Image::SetSize(const irr::s32 &len, const irr::s32 &hei)
     this->m_Image->setRelativePosition(dims);
 }
 
+void Image::SetPosition(const Vector2i &np)
+{
+    this->m_Image->setRelativePosition(np);
+}
+
 GuiImage *Image::GetImage(void)
 {
     return (this->m_Image);
