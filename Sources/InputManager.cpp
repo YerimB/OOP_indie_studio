@@ -12,6 +12,7 @@ InputManager::InputManager(IrrlichtDevice* device)
     m_Buttons.emplace(Button::PLAY, false);
     m_Buttons.emplace(Button::QUIT, false);
     m_Buttons.emplace(Button::CHANGECLR, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_1, false);
 }
 
 bool InputManager::OnEvent(const SEvent& event)
@@ -30,16 +31,22 @@ bool InputManager::OnEvent(const SEvent& event)
             switch (id)
             {
                 case Button::PLAY:
-                    m_Buttons[Button::PLAY] = true;
-                    break;
+                    m_Buttons[Button::PLAY] = true; break;
                 case Button::QUIT:
-                    m_Buttons[Button::QUIT] = true;
-                    break;
+                    m_Buttons[Button::QUIT] = true; break;
                 case Button::CHANGECLR:
-                    m_Buttons[Button::CHANGECLR] = true;
-                    break;
-                default:
-                    break;
+                    m_Buttons[Button::CHANGECLR] = true; break;
+                case Button::CHANGEPLAYER1:
+                    m_Buttons[Button::CHANGEPLAYER1] = true; break;
+                case Button::CHANGEPLAYER2:
+                    m_Buttons[Button::CHANGEPLAYER2] = true; break;
+                case Button::CHANGEPLAYER3:
+                    m_Buttons[Button::CHANGEPLAYER3] = true; break;
+                case Button::CHANGEPLAYER4:
+                    m_Buttons[Button::CHANGEPLAYER4] = true; break;
+                case Button::BUTTON_CHANGE_1:
+                    m_Buttons[Button::BUTTON_CHANGE_1] = true; break;
+                default: break;
             }
         }
     }
