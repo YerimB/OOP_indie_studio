@@ -140,7 +140,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b1->Initialize(nullptr)) {
             b1->SetButtonID(Button::ButtonID::CHANGEPLAYER1);
             b1->SetTexture(this->GetTexture("btnChange"));
-            b1->SetPosition({ 1575, 700 });
+            b1->SetPosition({ 1500, 700 });
             b1->SetSize(240, 80);
             b1->SetTextureToFit(true);
             b1->SetOnPress(changeCharacterP1);
@@ -172,7 +172,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b2->Initialize(nullptr)) {
             b2->SetButtonID(Button::ButtonID::CHANGEPLAYER2);
             b2->SetTexture(this->GetTexture("btnChange"));
-            b2->SetPosition({ 1075, 700 });
+            b2->SetPosition({ 1020, 700 });
             b2->SetSize(240, 80);
             b2->SetTextureToFit(true);
             b2->SetOnPress(changeCharacterP2);
@@ -204,7 +204,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b3->Initialize(nullptr)) {
             b3->SetButtonID(Button::ButtonID::CHANGEPLAYER3);
             b3->SetTexture(this->GetTexture("btnChange"));
-            b3->SetPosition({ 675, 700 });
+            b3->SetPosition({ 600, 700 });
             b3->SetSize(240, 80);
             b3->SetTextureToFit(true);
             b3->SetOnPress(changeCharacterP3);
@@ -237,7 +237,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b4->Initialize(nullptr)) {
             b4->SetButtonID(Button::ButtonID::CHANGEPLAYER4);
             b4->SetTexture(this->GetTexture("btnChange"));
-            b4->SetPosition({ 175, 700 });
+            b4->SetPosition({ 100, 700 });
             b4->SetSize(240, 80);
             b4->SetTextureToFit(true);
             b4->SetOnPress(changeCharacterP4);
