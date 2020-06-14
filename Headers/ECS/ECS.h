@@ -16,12 +16,14 @@
 
 #include <ECS/System/PlayerSystem.h>
 #include <ECS/System/RenderSystem.h>
+#include <ECS/System/AnimatorSystem.h>
 
 // Components
 
 #include <Components/Animator.h>
 #include <Components/Button.h>
 #include <Components/Collider.h>
+#include <Components/Cube.h>
 #include <Components/Drawable.h>
 #include <Components/Image.h>
 #include <Components/Moveable.h>

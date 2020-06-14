@@ -25,6 +25,7 @@ GameScene::~GameScene()
 void GameScene::LoadSystems(GameManager* gm)
 {
     // Create
+    AnimatorSystem* animSys = new AnimatorSystem(gm->GetEntityManager());
     ButtonSystem* buttonSys = new ButtonSystem(gm->GetEntityManager());
     ImageSystem* imageSys = new ImageSystem(gm->GetEntityManager());
     TextSystem* textSys = new TextSystem(gm->GetEntityManager());
@@ -33,6 +34,7 @@ void GameScene::LoadSystems(GameManager* gm)
     PlayerSystem* playerSys = new PlayerSystem(gm->GetEntityManager());
 
     // Add
+    gm->GetEntityManager()->AddSystem(std::move(animSys));
     gm->GetEntityManager()->AddSystem(std::move(buttonSys));
     gm->GetEntityManager()->AddSystem(std::move(imageSys));
     gm->GetEntityManager()->AddSystem(std::move(textSys));
@@ -51,7 +53,8 @@ void GameScene::LoadAssets(GameManager* gm)
 
     // Load Meshes
     auto sm = gm->GetSceneManager();
-    this->AddMesh(sm->getMesh("Assets/bomberman_m.obj"), "Bomber");
+    this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
+    this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
 
     gm->GetSoundManager()->AddSound(
         gm->GetSoundManager()->LoadSound("Assets/sound/game.ogg"),
@@ -101,45 +104,7 @@ void GameScene::Load(GameManager* gameManager)
 
 void GameScene::Update(GameManager* gameManager)
 {
-    // auto inputManager = gameManager->GetInputManager();
-    // auto player1 = gameManager->GetEntityManager()->GetEntity("Player01");
 
-    // if (inputManager->IsKeyDown(irr::KEY_KEY_Z))
-    // {
-    //     auto transform = player1.GetComponent<Transform>();
-    //     auto position = transform->GetPosition();
-
-    //     transform->SetPosition({ position.X + 0.5f, position.Y, position.Z });
-    //     transform->SetRotation({ 0, 90, 0});
-    // }
-    // if (inputManager->IsKeyDown(irr::KEY_KEY_Q))
-    // {
-    //     auto transform = player1.GetComponent<Transform>();
-    //     auto position = transform->GetPosition();
-
-    //     transform->SetPosition({ position.X, position.Y, position.Z + 0.5f });
-    //     transform->SetRotation({ 0, 0, 0});
-    // }
-    // if (inputManager->IsKeyDown(irr::KEY_KEY_S))
-    // {
-    //     auto transform = player1.GetComponent<Transform>();
-    //     auto position = transform->GetPosition();
-
-    //     transform->SetPosition({ position.X - 0.5f, position.Y, position.Z });
-    //     transform->SetRotation({ 0, 270, 0});
-    // }
-    // if (inputManager->IsKeyDown(irr::KEY_KEY_D))
-    // {
-    //     auto transform = player1.GetComponent<Transform>();
-    //     auto position = transform->GetPosition();
-
-    //     transform->SetPosition({ position.X, position.Y, position.Z - 0.5f });
-    //     transform->SetRotation({ 0, 180, 0});
-    // }
-    // if (inputManager->IsKeyDown(irr::KEY_KEY_B))
-    // {
-    //     // Bomb
-    // }
 }
 
 void GameScene::Unload(void)
