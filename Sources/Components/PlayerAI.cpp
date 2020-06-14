@@ -33,7 +33,7 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
 	{
         _backupMap = map;
         std::vector<std::string> tmp_map = map;
-        tmp_map[1][1] = 'E';
+        tmp_map[8][8] = 'E';
         for (int i = 0; i < map.size(); i++)
         {
             std::cout << map[i] << std::endl;
