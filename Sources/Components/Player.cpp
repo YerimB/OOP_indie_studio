@@ -7,6 +7,8 @@
 
 #include <Components/Player.h>
 #include <Components/Transform.h>
+#include <Components/Drawable.h>
+#include <Components/Collider.h>
 
 Player::Player(SceneManager* manager)
 {
@@ -28,7 +30,7 @@ void Player::Update(const float &dT, GameManager* gm)
     auto transform = e.GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
-    this->GetMovements(gm->GetInputManager(), e);
+    this->GetMovements(gm->GetInputManager(), e, gm);
 }
 
 void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
@@ -36,7 +38,28 @@ void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
     this->m_Data->bindingsMap[a] = code;
 }
 
-void Player::GetMovements(InputManager *im, Entity &self)
+void Player::DropBomb(Entity& self, GameManager* gm)
+{
+    m_Bomb = new Entity("Bomb" + std::to_string(Id));
+    Timer *timer = new Timer();
+    Transform* transform = new Transform();
+    Drawable* drawable = new Drawable(gm->GetSceneManager());
+    float duration = 0.01f;
+
+    timer->Initialize(&duration);
+    transform->Initialize(nullptr);
+    drawable->Initialize(gm->GetSceneManager()->getMesh("Assets/bob-omb.b3d"));
+
+    transform->SetPosition(self.GetComponent<Transform>()->GetPosition());
+    drawable->SetPosition(transform->GetPosition());
+
+    m_Bomb->AddComponent(std::move(timer), Timer::Id);
+    m_Bomb->AddComponent(std::move(transform), Transform::Id);
+    m_Bomb->AddComponent(std::move(drawable), Drawable::Id);
+    gm->GetEntityManager()->AddEntity(*m_Bomb);
+}
+
+void Player::GetMovements(InputManager *im, Entity &self, GameManager* gm)
 {
     bool isMoving = false;
     Transform *transform = self.GetComponent<Transform>();
@@ -77,6 +100,12 @@ void Player::GetMovements(InputManager *im, Entity &self)
     if (im->IsKeyDown(m_Data->bindingsMap["DROP"]))
     {
         std::cout << "Dropping the bomb." << std::endl;
+        if (m_Bomb == nullptr)
+            DropBomb(self, gm);
+    }
+    if (m_Bomb != nullptr && m_Bomb->GetComponent<Timer>()->GetDuration() <= 0) {
+        m_Bomb->GetComponent<Drawable>()->GetDrawable()->remove();
+        m_Bomb = nullptr;
     }
     if (this->m_oldMoveState != isMoving)
         animator->PlayAnimation((isMoving) ? "Run" : "Idle");

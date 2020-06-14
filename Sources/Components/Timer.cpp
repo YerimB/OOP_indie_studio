@@ -1,4 +1,5 @@
 #include <Components/Timer.h>
+#include <iostream>
 
 bool Timer::Initialize(void* countdown)
 {
@@ -18,6 +19,8 @@ void Timer::Reset()
 void Timer::Update(const float& deltaTime, GameManager*)
 {
 	m_Duration -= deltaTime;
+
+	std::cout << m_Duration << std::endl;
 
 	if (m_Duration <= 0)
 	{

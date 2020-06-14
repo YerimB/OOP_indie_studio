@@ -264,6 +264,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Headers\ECS\System\TimeSystem.h" />
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
     <ClCompile Include="Sources\Components\Collider.cpp" />
@@ -274,6 +275,7 @@
     <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
     <ClCompile Include="Sources\ECS\System\PlayerSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
     <ClCompile Include="Sources\ECS\Time.cpp" />
     <ClCompile Include="Sources\Components\Timer.cpp" />
     <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />

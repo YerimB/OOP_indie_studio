@@ -35,6 +35,8 @@
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClCompile Include="Sources\Scenes\LunchGame.cpp" />
+    <ClCompile Include="Headers\ECS\System\TimeSystem.h" />
+    <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Components\Animator.h" />
