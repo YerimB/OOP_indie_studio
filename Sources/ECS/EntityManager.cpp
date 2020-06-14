@@ -46,6 +46,8 @@ void EntityManager::AddEntity(const Entity& entity)
 void EntityManager::RemoveEntity(const Entity& entity)
 {
 	m_Entities.erase(entity.GetId());
+	for (auto& elem : this->m_Systems)
+		elem->OnEntityDestroyed(entity.GetId());
 }
 
 void EntityManager::AddSystem(BaseSystem* system)
@@ -83,24 +85,24 @@ void EntityManager::ClearAll()
 	m_Systems.clear();
 }
 
-Entity& EntityManager::GetEntity(const std::string& name)
+Entity* EntityManager::GetEntity(const std::string& name)
 {
 	for (auto& entity : m_Entities)
 	{
 		if (entity.second.GetName() == name)
-			return entity.second;
+			return &entity.second;
 	}
 
-	throw std::runtime_error("Entity not found.");
+	return nullptr;
 }
 
-Entity& EntityManager::GetEntity(const size_t& id)
+Entity* EntityManager::GetEntity(const size_t& id)
 {
 	for (auto& entity : m_Entities)
 	{
 		if (entity.second.GetId() == id)
-			return entity.second;
+			return &entity.second;
 	}
 
-	throw std::runtime_error("Entity not found.");
+	return nullptr;
 }

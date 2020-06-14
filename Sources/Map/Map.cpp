@@ -35,6 +35,7 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 	auto strMap = map.GetMap();
 	m_GameManager->m_globalVars.mapSize = size;
 	m_GameManager->m_globalVars.map = strMap;
+	int idx2 = 0;
 	for (int idx = 0; idx < strMap.size(); ++idx)
 	{
 		for (auto& ch : strMap[idx])
@@ -52,7 +53,7 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 				continue;
 			}
 
-			Entity cubeEntity(eType);
+			Entity cubeEntity(eType + "_" + std::to_string(idx) + "_" + std::to_string(idx2));
 			Transform* t0 = new Transform(position);
 			Collider* cl0 = new Collider();
 			Cube* c0 = new Cube(m_GameManager->GetSceneManager());
@@ -66,7 +67,9 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 			cubeEntity.AddComponent(cl0, Collider::Id);
 			m_GameManager->GetEntityManager()->AddEntity(cubeEntity);
 			position.Z += 10.0f;
+			idx2 += 1;
 		}
+		idx2 = 0;
 		position.Z = -(size * 10.0f) / 2.0f;
 		position.X += 10.0f;
 	}

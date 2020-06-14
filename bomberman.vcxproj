@@ -264,7 +264,6 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Headers\ECS\System\TimeSystem.h" />
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
     <ClCompile Include="Sources\Components\Collider.cpp" />
@@ -328,6 +327,7 @@
     <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
     <ClInclude Include="Headers\ECS\System\System.h" />
     <ClInclude Include="Headers\ECS\System\TextSystem.h" />
+    <ClInclude Include="Headers\ECS\System\TimeSystem.h" />
     <ClInclude Include="Headers\ECS\Time.h" />
     <ClInclude Include="Headers\GameManager.h" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />

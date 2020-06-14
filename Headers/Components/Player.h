@@ -32,6 +32,7 @@ class Player : public Component
     public:
         void bindKey(const std::string &action, const irr::EKEY_CODE &);
         void DropBomb(Entity& self, GameManager* gm);
+        void DestroyBlocks(GameManager* gm);
 
     private:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);

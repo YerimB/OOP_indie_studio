@@ -26,11 +26,11 @@ bool Player::Initialize(void *args)
 
 void Player::Update(const float &dT, GameManager* gm)
 {
-    Entity &e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
-    auto transform = e.GetComponent<Transform>();
+    Entity* e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
+    auto transform = e->GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
-    this->GetMovements(gm->GetInputManager(), e, gm);
+    this->GetMovements(gm->GetInputManager(), *e, gm);
 }
 
 void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
@@ -57,6 +57,21 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     m_Bomb->AddComponent(std::move(transform), Transform::Id);
     m_Bomb->AddComponent(std::move(drawable), Drawable::Id);
     gm->GetEntityManager()->AddEntity(*m_Bomb);
+
+}
+
+void Player::DestroyBlocks(GameManager* gm)
+{
+    auto t = m_Bomb->GetComponent<Transform>();
+    int x = t->GetPosition().X;
+    int y = t->GetPosition().Z;
+    auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2;
+    std::array<int, 2> tmp = {
+        static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 10) - 1.0f),
+        static_cast<int>(round(gm->m_globalVars.mapSize - (x - s_pos) / 10) - 1.0f)
+    };
+
+    //m_Bomb->GetComponent<Drawable>()->SetPosition({ static_cast<float>(tmp[0]), t->GetPosition().Y, static_cast<float>(tmp[1]) });
 }
 
 void Player::GetMovements(InputManager *im, Entity &self, GameManager* gm)
@@ -99,11 +114,11 @@ void Player::GetMovements(InputManager *im, Entity &self, GameManager* gm)
     }
     if (im->IsKeyDown(m_Data->bindingsMap["DROP"]))
     {
-        std::cout << "Dropping the bomb." << std::endl;
         if (m_Bomb == nullptr)
             DropBomb(self, gm);
     }
     if (m_Bomb != nullptr && m_Bomb->GetComponent<Timer>()->GetDuration() <= 0) {
+        DestroyBlocks(gm);
         m_Bomb->GetComponent<Drawable>()->GetDrawable()->remove();
         m_Bomb = nullptr;
     }
@@ -118,14 +133,14 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2;
     std::array<int, 2> tmp = {
-        static_cast<int>(round(gVars->mapSize - (y - s_pos) / 10) - 1.0f),
-        static_cast<int>(round(gVars->mapSize - (x - s_pos) / 10) - 1.0f)
+        round(gVars->mapSize - (y - s_pos) / 10),
+        round(gVars->mapSize - (x - s_pos) / 10)
     };
-	if (tmp != this->_previousPos)
-	{
+    if (tmp != this->_previousPos)
+    {
         if (this->_previousPos[0] != -1)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
-        gVars->map[tmp[1]][tmp[0]] = 'E';
+        gVars->map[tmp[1]][tmp[0]] = 'O';
         _previousPos = tmp;
-	}
+    }
 }

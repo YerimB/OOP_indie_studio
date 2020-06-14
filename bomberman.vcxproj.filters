@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Sources\InputManager.cpp" />
-    <ClCompile Include="Sources\Thread\Thread.cpp" />
-    <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
-    <ClCompile Include="Sources\Generation\Generation.cpp" />
-    <ClCompile Include="Sources\main.cpp" />
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
     <ClCompile Include="Sources\Components\Collider.cpp" />
@@ -40,7 +35,6 @@
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClCompile Include="Sources\Scenes\LunchGame.cpp" />
-    <ClCompile Include="Headers\ECS\System\TimeSystem.h" />
     <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -57,32 +51,6 @@
     <ClInclude Include="Headers\Components\Timer.h" />
     <ClInclude Include="Headers\Components\Transform.h" />
     <ClInclude Include="Headers\Core.hpp" />
-    <ClInclude Include="Headers\InputManager\InputManager.hpp" />
-    <ClInclude Include="Headers\Bindable\IBindable.hpp" />
-    <ClInclude Include="Headers\Thread\Thread.hpp" />
-    <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
-    <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
-    <ClInclude Include="Headers\Thread\ITask.hpp" />
-    <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
-    <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
-    <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
-    <ClInclude Include="Sources\Generation\Generation.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{9211C170-AE6E-3168-A042-BADF0CEC845C}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{1DC7E7A2-E4DE-3B9E-9348-FBA5A19266AD}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Headers\Bindable\Bindable.inl" />
-    <None Include="Headers\Thread\Thread.inl" />
-    <None Include="Headers\InputManager\InputManager.inl" />
-    <None Include="Headers\SafeContainer\SafeQueue.inl" />
-    <None Include="Headers\SafeContainer\SafeVector.inl" />
-    <None Include="Headers\SafeContainer\SafeDeque.inl" />
     <ClInclude Include="Headers\ECS\Component.h" />
     <ClInclude Include="Headers\ECS\ECS.h" />
     <ClInclude Include="Headers\ECS\Entity.h" />
@@ -116,6 +84,7 @@
     <ClInclude Include="Headers\Scenes\Scene.hpp" />
     <ClInclude Include="Headers\Map\Generation.h" />
     <ClInclude Include="Headers\Map\Map.h" />
+    <ClInclude Include="Headers\ECS\System\TimeSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLs\fmod.dll" />
