@@ -25,6 +25,7 @@ GameScene::~GameScene()
 void GameScene::LoadSystems(GameManager* gm)
 {
     // Create
+    AnimatorSystem* animSys = new AnimatorSystem(gm->GetEntityManager());
     ButtonSystem* buttonSys = new ButtonSystem(gm->GetEntityManager());
     ImageSystem* imageSys = new ImageSystem(gm->GetEntityManager());
     TextSystem* textSys = new TextSystem(gm->GetEntityManager());
@@ -33,6 +34,7 @@ void GameScene::LoadSystems(GameManager* gm)
     PlayerSystem* playerSys = new PlayerSystem(gm->GetEntityManager());
 
     // Add
+    gm->GetEntityManager()->AddSystem(std::move(animSys));
     gm->GetEntityManager()->AddSystem(std::move(buttonSys));
     gm->GetEntityManager()->AddSystem(std::move(imageSys));
     gm->GetEntityManager()->AddSystem(std::move(textSys));
@@ -51,7 +53,8 @@ void GameScene::LoadAssets(GameManager* gm)
 
     // Load Meshes
     auto sm = gm->GetSceneManager();
-    this->AddMesh(sm->getMesh("Assets/bomberman_m.obj"), "Bomber");
+    this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
+    this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
 
     gm->GetSoundManager()->AddSound(
         gm->GetSoundManager()->LoadSound("Assets/sound/game.ogg"),

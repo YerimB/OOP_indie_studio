@@ -10,6 +10,7 @@
 
 #include <ECS/Component.h>
 #include <Components/Transform.h>
+#include <Components/Animator.h>
 #include <Core.hpp>
 #include <GameManager.h>
 
@@ -30,10 +31,12 @@ class Player : public Component
 
     private:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
+        void GetMovements(InputManager *im, Entity &self);
 
     private:
         SceneManager* m_SceneManager;
         PlayerData_t* m_Data;
+        bool m_oldMoveState = false;
 };
 
 #endif /* !PLAYER_H_ */
