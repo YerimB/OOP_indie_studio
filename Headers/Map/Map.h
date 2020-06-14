@@ -2,10 +2,7 @@
 
 #include <Map/Generation.h>
 #include <ECS/EntityManager.h>
-#include <Components/Cube.h>
-#include <Components/Drawable.h>
-#include <Components/Transform.h>
-#include <Components/Collider.h>
+#include <ECS/ECS.h>
 
 class Map
 {

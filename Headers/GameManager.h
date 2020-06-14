@@ -18,6 +18,7 @@ typedef struct PlayersData_s
 	bool isActive = false;
 	int playerID = 0;
 	int characterID = 0;
+	std::unordered_map<std::string, Binding> bindingsMap;
 } PlayerData_t;
 
 typedef struct GameGlobalVariables_s
@@ -33,6 +34,10 @@ typedef struct GameGlobalVariables_s
 	const int maxPlayerNumber = 4;
 	int currentPlayerNumber = 0;
 	std::array<PlayerData_t, 4> playersData;
+
+	// Map
+	size_t mapSize = 0;
+	std::vector<std::string> map;
 
 	// Add vars if needed.
 } GameVars_t;

@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Programmation\C++\OOP_indie_studio_2019\Sources\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\InputManager.cpp" />
     <ClCompile Include="Sources\Thread\Thread.cpp" />
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="Sources\ECS\Entity.cpp" />
     <ClCompile Include="Sources\ECS\Component.cpp" />
     <ClCompile Include="Sources\ECS\EntityManager.cpp" />
@@ -34,10 +32,19 @@
     <ClCompile Include="Sources\Components\Cube.cpp" />
     <ClCompile Include="Sources\Map\Generation.cpp" />
     <ClCompile Include="Sources\Map\Map.cpp" />
+    <ClCompile Include="Sources\main.cpp" />
+    <ClCompile Include="Sources\Components\Player.cpp" />
+    <ClCompile Include="Sources\ECS\System\PlayerSystem.cpp" />
+=======
+    <ClCompile Include="Sources\Generation\Generation.cpp" />
+    <ClCompile Include="Sources\main.cpp" />
+>>>>>>> mergeall
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\Bindable\Bindable.hpp" />
     <ClInclude Include="Headers\Core.hpp" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
+    <ClInclude Include="Headers\Bindable\IBindable.hpp" />
     <ClInclude Include="Headers\Thread\Thread.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
     <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
@@ -45,6 +52,7 @@
     <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
+<<<<<<< HEAD
     <ClInclude Include="includes\Irrlicht\aabbox3d.h" />
     <ClInclude Include="includes\Irrlicht\CDynamicMeshBuffer.h" />
     <ClInclude Include="includes\Irrlicht\CIndexBuffer.h" />
@@ -269,6 +277,11 @@
     <ClInclude Include="Headers\Components\Cube.h" />
     <ClInclude Include="Headers\Map\Generation.h" />
     <ClInclude Include="Headers\Map\Map.h" />
+    <ClInclude Include="Headers\Components\Player.h" />
+    <ClInclude Include="Headers\ECS\System\PlayerSystem.h" />
+=======
+    <ClInclude Include="Sources\Generation\Generation.hpp" />
+>>>>>>> mergeall
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -279,15 +292,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Headers\Bindable\Bindable.inl" />
     <None Include="Headers\Thread\Thread.inl" />
+    <None Include="Headers\InputManager\InputManager.inl" />
     <None Include="Headers\SafeContainer\SafeQueue.inl" />
     <None Include="Headers\SafeContainer\SafeVector.inl" />
     <None Include="Headers\SafeContainer\SafeDeque.inl" />
+<<<<<<< HEAD
     <None Include="Headers\ECS\System\System.inl" />
+    <None Include="DLLs\fmod.dll" />
+    <None Include="DLLs\fmodL.dll" />
+    <None Include="DLLs\Irrlicht.dll" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\Irrlicht.lib" />
     <Library Include="lib\fmodCoreWindows\fmod.lib" />
     <Library Include="lib\fmodCoreWindows\fmodL.lib" />
+=======
+>>>>>>> mergeall
   </ItemGroup>
 </Project>

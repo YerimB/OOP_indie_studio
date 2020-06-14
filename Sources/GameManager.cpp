@@ -8,9 +8,52 @@ GameManager::GameManager()
     m_SceneManager = nullptr;
     m_EntityManager = nullptr;
     m_InputManager = nullptr;
-    for (int idx = 0; idx < m_globalVars.playersData.size(); ++idx) {
-        m_globalVars.playersData[idx].playerID = idx + 1;
-        m_globalVars.playersData[idx].characterID = idx + 1;
+
+    { // Players data
+        { // Player 1
+            m_globalVars.playersData[0].playerID = 1;
+            m_globalVars.playersData[0].characterID = 1;
+            m_globalVars.playersData[0].bindingsMap = {
+                std::pair<std::string, Binding>("UP", irr::KEY_KEY_Z),
+                std::pair<std::string, Binding>("DOWN", irr::KEY_KEY_S),
+                std::pair<std::string, Binding>("RIGHT", irr::KEY_KEY_D),
+                std::pair<std::string, Binding>("LEFT", irr::KEY_KEY_Q),
+                std::pair<std::string, Binding>("DROP", irr::KEY_KEY_E)
+            };
+        }
+        { // Player 2
+            m_globalVars.playersData[1].playerID = 2;
+            m_globalVars.playersData[1].characterID = 2;
+            m_globalVars.playersData[1].bindingsMap = {
+                std::pair<std::string, Binding>("UP", irr::KEY_UP),
+                std::pair<std::string, Binding>("DOWN", irr::KEY_DOWN),
+                std::pair<std::string, Binding>("RIGHT", irr::KEY_RIGHT),
+                std::pair<std::string, Binding>("LEFT", irr::KEY_LEFT),
+                std::pair<std::string, Binding>("DROP", irr::KEY_KEY_M)
+            };
+        }
+        { // Player 3
+            m_globalVars.playersData[2].playerID = 3;
+            m_globalVars.playersData[2].characterID = 3;
+            m_globalVars.playersData[2].bindingsMap = {
+                std::pair<std::string, Binding>("UP", irr::KEY_RETURN),
+                std::pair<std::string, Binding>("DOWN", irr::KEY_RETURN),
+                std::pair<std::string, Binding>("RIGHT", irr::KEY_RETURN),
+                std::pair<std::string, Binding>("LEFT", irr::KEY_RETURN),
+                std::pair<std::string, Binding>("DROP", irr::KEY_RETURN)
+            };
+        }
+        { // Player 4
+            m_globalVars.playersData[3].playerID = 3;
+            m_globalVars.playersData[3].characterID = 3;
+            m_globalVars.playersData[3].bindingsMap = {
+                std::pair<std::string, Binding>("UP", irr::KEY_RETURN),
+                std::pair<std::string, Binding>("DOWN", irr::KEY_RETURN),
+                std::pair<std::string, Binding>("RIGHT", irr::KEY_RETURN),
+                std::pair<std::string, Binding>("LEFT", irr::KEY_RETURN),
+                std::pair<std::string, Binding>("DROP", irr::KEY_RETURN)
+            };
+        }
     }
     this->m_lastFrameTime = std::chrono::duration_cast<std::chrono::milliseconds>\
     (std::chrono::system_clock::now().time_since_epoch());
