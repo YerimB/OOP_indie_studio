@@ -65,3 +65,17 @@ JoystickEvent& InputManager::GetJoystickEvent()
 {
     return m_JoystickState;
 }
+
+bool InputManager::IsControllerButtonDown(const ControllerButton& button)
+{
+    return m_JoystickState.IsButtonPressed(static_cast<irr::u32>(button));
+}
+
+int InputManager::GetAxisValue(const JoystickAxis& axis)
+{
+    if (m_JoystickState.Axis[static_cast<irr::s16>(axis)] < -m_DeadZone)
+        return -1;
+    else if (m_JoystickState.Axis[static_cast<irr::s16>(axis)] > m_DeadZone)
+        return 1;
+    return 0;
+}
