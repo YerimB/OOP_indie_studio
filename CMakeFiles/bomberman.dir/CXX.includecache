@@ -18,18 +18,6 @@ ECS/ECS.h
 Components/Transform.h
 -
 
-/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/main.cpp
-Core.hpp
--
-GameManager.h
--
-Scenes/MenuScene.hpp
--
-Scenes/GameScene.hpp
--
-Scenes/LunchGame.hpp
--
-
 Headers/Components/Animator.h
 ECS/Component.h
 -
@@ -76,6 +64,14 @@ Core.hpp
 GameManager.h
 -
 
+Headers/Components/Player.h
+ECS/Component.h
+-
+Core.hpp
+-
+GameManager.h
+-
+
 Headers/Components/Text.h
 ECS/Component.h
 -
@@ -96,6 +92,12 @@ Headers/Core.hpp
 memory
 -
 string
+-
+chrono
+-
+unordered_map
+-
+array
 -
 Irrlicht/irrlicht.h
 -
@@ -121,6 +123,8 @@ ECS/System/ImageSystem.h
 -
 ECS/System/TextSystem.h
 -
+ECS/System/PlayerSystem.h
+-
 ECS/System/RenderSystem.h
 -
 Components/Animator.h
@@ -138,6 +142,8 @@ Components/Moveable.h
 Components/Text.h
 -
 Components/Transform.h
+-
+Components/Player.h
 -
 
 Headers/ECS/Entity.h
@@ -186,6 +192,16 @@ Headers/ECS/System/ImageSystem.h
 ECS/System/System.h
 -
 Components/Image.h
+-
+Components/Transform.h
+-
+
+Headers/ECS/System/PlayerSystem.h
+ECS/System/System.h
+-
+ECS/EntityManager.h
+-
+Components/Player.h
 -
 Components/Transform.h
 -
@@ -264,15 +280,7 @@ ECS/Entity.h
 Components/Button.h
 -
 
-Headers/Scenes/GameScene.hpp
-Scenes/Scene.hpp
--
-
 Headers/Scenes/LunchGame.hpp
-Scenes/Scene.hpp
--
-
-Headers/Scenes/MenuScene.hpp
 Scenes/Scene.hpp
 -
 

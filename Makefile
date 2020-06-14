@@ -307,6 +307,33 @@ Sources/Components/Moveable.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.s
 .PHONY : Sources/Components/Moveable.cpp.s
 
+Sources/Components/Player.o: Sources/Components/Player.cpp.o
+
+.PHONY : Sources/Components/Player.o
+
+# target to build an object file
+Sources/Components/Player.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.o
+.PHONY : Sources/Components/Player.cpp.o
+
+Sources/Components/Player.i: Sources/Components/Player.cpp.i
+
+.PHONY : Sources/Components/Player.i
+
+# target to preprocess a source file
+Sources/Components/Player.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.i
+.PHONY : Sources/Components/Player.cpp.i
+
+Sources/Components/Player.s: Sources/Components/Player.cpp.s
+
+.PHONY : Sources/Components/Player.s
+
+# target to generate assembly for a file
+Sources/Components/Player.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.s
+.PHONY : Sources/Components/Player.cpp.s
+
 Sources/Components/Text.o: Sources/Components/Text.cpp.o
 
 .PHONY : Sources/Components/Text.o
@@ -576,6 +603,33 @@ Sources/ECS/System/MoveSystem.s: Sources/ECS/System/MoveSystem.cpp.s
 Sources/ECS/System/MoveSystem.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/MoveSystem.cpp.s
 .PHONY : Sources/ECS/System/MoveSystem.cpp.s
+
+Sources/ECS/System/PlayerSystem.o: Sources/ECS/System/PlayerSystem.cpp.o
+
+.PHONY : Sources/ECS/System/PlayerSystem.o
+
+# target to build an object file
+Sources/ECS/System/PlayerSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.o
+.PHONY : Sources/ECS/System/PlayerSystem.cpp.o
+
+Sources/ECS/System/PlayerSystem.i: Sources/ECS/System/PlayerSystem.cpp.i
+
+.PHONY : Sources/ECS/System/PlayerSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/PlayerSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.i
+.PHONY : Sources/ECS/System/PlayerSystem.cpp.i
+
+Sources/ECS/System/PlayerSystem.s: Sources/ECS/System/PlayerSystem.cpp.s
+
+.PHONY : Sources/ECS/System/PlayerSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/PlayerSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.s
+.PHONY : Sources/ECS/System/PlayerSystem.cpp.s
 
 Sources/ECS/System/RenderSystem.o: Sources/ECS/System/RenderSystem.cpp.o
 
@@ -1038,6 +1092,9 @@ help:
 	@echo "... Sources/Components/Moveable.o"
 	@echo "... Sources/Components/Moveable.i"
 	@echo "... Sources/Components/Moveable.s"
+	@echo "... Sources/Components/Player.o"
+	@echo "... Sources/Components/Player.i"
+	@echo "... Sources/Components/Player.s"
 	@echo "... Sources/Components/Text.o"
 	@echo "... Sources/Components/Text.i"
 	@echo "... Sources/Components/Text.s"
@@ -1068,6 +1125,9 @@ help:
 	@echo "... Sources/ECS/System/MoveSystem.o"
 	@echo "... Sources/ECS/System/MoveSystem.i"
 	@echo "... Sources/ECS/System/MoveSystem.s"
+	@echo "... Sources/ECS/System/PlayerSystem.o"
+	@echo "... Sources/ECS/System/PlayerSystem.i"
+	@echo "... Sources/ECS/System/PlayerSystem.s"
 	@echo "... Sources/ECS/System/RenderSystem.o"
 	@echo "... Sources/ECS/System/RenderSystem.i"
 	@echo "... Sources/ECS/System/RenderSystem.s"
