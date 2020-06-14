@@ -29,28 +29,35 @@ void GameScene::LoadSystems(GameManager* gm)
     ImageSystem* imageSys = new ImageSystem(gm->GetEntityManager());
     TextSystem* textSys = new TextSystem(gm->GetEntityManager());
     RenderSystem* renderSys = new RenderSystem(gm->GetEntityManager());
+    MoveSystem* moveSys = new MoveSystem(gm->GetEntityManager());
+    PlayerSystem* playerSys = new PlayerSystem(gm->GetEntityManager());
 
     // Add
     gm->GetEntityManager()->AddSystem(std::move(buttonSys));
     gm->GetEntityManager()->AddSystem(std::move(imageSys));
     gm->GetEntityManager()->AddSystem(std::move(textSys));
     gm->GetEntityManager()->AddSystem(std::move(renderSys));
+    gm->GetEntityManager()->AddSystem(std::move(moveSys));
+    gm->GetEntityManager()->AddSystem(std::move(playerSys));
 }
 
 void GameScene::LoadAssets(GameManager* gm)
 {
     // Load textures
-    this->AddTexture(gm->LoadTexture("Assets/sand.jpg"), "Sand");
-    this->AddTexture(gm->LoadTexture("Assets/block.png"), "Block");
-    this->AddTexture(gm->LoadTexture("Assets/star.jpeg"), "Star");
-    this->AddTexture(gm->LoadTexture("Assets/pow.jpeg"), "Pow");
-    this->AddTexture(gm->LoadTexture("Assets/btnHome.png"), "iconHome");
+    this->AddTexture(gm->LoadTexture("Assets/textures/block.png"), "Block");
+    this->AddTexture(gm->LoadTexture("Assets/textures/star.jpeg"), "Star");
+    this->AddTexture(gm->LoadTexture("Assets/textures/pow.jpeg"), "Pow");
+    this->AddTexture(gm->LoadTexture("Assets/textures/btnHome.png"), "iconHome");
 
     // Load Meshes
     auto sm = gm->GetSceneManager();
-    this->AddMesh(sm->getMesh("Assets/sydney.md2"), "Sydney");
-    this->AddMesh(sm->getMesh("Assets/wall.md3"), "Wall");
     this->AddMesh(sm->getMesh("Assets/bomberman_m.obj"), "Bomber");
+
+    gm->GetSoundManager()->AddSound(
+        gm->GetSoundManager()->LoadSound("Assets/sound/game.ogg"),
+        "sndGame",
+        SoundManager::SoundType::MUSIC
+    );
 }
 
 // Load Entities & Components
@@ -87,14 +94,55 @@ void GameScene::Load(GameManager* gameManager)
     this->LoadSystems(gameManager);
     this->LoadAssets(gameManager);
     this->LoadElements(gameManager);
+
+    gameManager->GetSoundManager()->setLoop("sndGame", (-1));
+    gameManager->GetSoundManager()->PlaySound("sndGame");
 }
 
 void GameScene::Update(GameManager* gameManager)
 {
+    // auto inputManager = gameManager->GetInputManager();
+    // auto player1 = gameManager->GetEntityManager()->GetEntity("Player01");
 
+    // if (inputManager->IsKeyDown(irr::KEY_KEY_Z))
+    // {
+    //     auto transform = player1.GetComponent<Transform>();
+    //     auto position = transform->GetPosition();
+
+    //     transform->SetPosition({ position.X + 0.5f, position.Y, position.Z });
+    //     transform->SetRotation({ 0, 90, 0});
+    // }
+    // if (inputManager->IsKeyDown(irr::KEY_KEY_Q))
+    // {
+    //     auto transform = player1.GetComponent<Transform>();
+    //     auto position = transform->GetPosition();
+
+    //     transform->SetPosition({ position.X, position.Y, position.Z + 0.5f });
+    //     transform->SetRotation({ 0, 0, 0});
+    // }
+    // if (inputManager->IsKeyDown(irr::KEY_KEY_S))
+    // {
+    //     auto transform = player1.GetComponent<Transform>();
+    //     auto position = transform->GetPosition();
+
+    //     transform->SetPosition({ position.X - 0.5f, position.Y, position.Z });
+    //     transform->SetRotation({ 0, 270, 0});
+    // }
+    // if (inputManager->IsKeyDown(irr::KEY_KEY_D))
+    // {
+    //     auto transform = player1.GetComponent<Transform>();
+    //     auto position = transform->GetPosition();
+
+    //     transform->SetPosition({ position.X, position.Y, position.Z - 0.5f });
+    //     transform->SetRotation({ 0, 180, 0});
+    // }
+    // if (inputManager->IsKeyDown(irr::KEY_KEY_B))
+    // {
+    //     // Bomb
+    // }
 }
 
 void GameScene::Unload(void)
 {
-
+    
 }

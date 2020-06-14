@@ -6,6 +6,7 @@
 #include <Components/Drawable.h>
 #include <Components/Transform.h>
 #include <Components/Collider.h>
+#include <Components/Player.h>
 
 class Map
 {
