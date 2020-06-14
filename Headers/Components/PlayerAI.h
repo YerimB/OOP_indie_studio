@@ -25,6 +25,7 @@ class PlayerAI : public Player
 		std::array<int, 2> _previousPos;
         std::array<int, 2> _dir;
         bool isMoving;
+        std::vector<std::string> _backupMap;
 };
 
 #endif /* !PLAYERAI_H_ */

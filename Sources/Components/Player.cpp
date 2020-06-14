@@ -84,15 +84,28 @@ void Player::GetMovements(GameManager *gm, Entity &self)
     this->m_oldMoveState = isMoving;
 }
 
+int get_round(float nb)
+{
+    float whole, fractional;
+
+    fractional = std::modf(nb, &whole);
+    if (fractional > 0.1)
+        return static_cast<int>(whole + 1);
+    return static_cast<int>(whole);
+}
+
 void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
 {
     int x = pPos->GetPosition().X;
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2;
+    std::cout << gVars->mapSize - (y - s_pos) / 10.0 << std::endl;
+    std::cout << gVars->mapSize - (x - s_pos) / 10.0 << std::endl;
     std::array<int, 2> tmp = {
-        static_cast<int>(round(gVars->mapSize - (y - s_pos) / 10) - 1.0f),
-        static_cast<int>(round(gVars->mapSize - (x - s_pos) / 10) - 1.0f)
+        get_round(gVars->mapSize - (y - s_pos) / 10 ),
+        get_round(gVars->mapSize - (x - s_pos) / 10 )
     };
+    std::cout << tmp[0] << " " << tmp[1] << std::endl;
 	if (tmp != this->_previousPos)
 	{
         if (this->_previousPos[0] != -1)
