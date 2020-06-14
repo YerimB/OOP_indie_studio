@@ -1,4 +1,4 @@
-# Install script for directory: /home/alexis/Tek2/INDIE/OOP_indie_studio_2019
+# Install script for directory: /home/leo/Project/OOP_indie_studio_2019
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/leo/Project/OOP_indie_studio_2019/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
