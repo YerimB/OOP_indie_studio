@@ -16,6 +16,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -415,6 +416,212 @@ CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
+ includes/Irrlicht/CDynamicMeshBuffer.h
+ includes/Irrlicht/CIndexBuffer.h
+ includes/Irrlicht/CMeshBuffer.h
+ includes/Irrlicht/CVertexBuffer.h
+ includes/Irrlicht/EAttributes.h
+ includes/Irrlicht/ECullingTypes.h
+ includes/Irrlicht/EDebugSceneTypes.h
+ includes/Irrlicht/EDeviceTypes.h
+ includes/Irrlicht/EDriverFeatures.h
+ includes/Irrlicht/EDriverTypes.h
+ includes/Irrlicht/EGUIAlignment.h
+ includes/Irrlicht/EGUIElementTypes.h
+ includes/Irrlicht/EHardwareBufferFlags.h
+ includes/Irrlicht/EMaterialFlags.h
+ includes/Irrlicht/EMaterialTypes.h
+ includes/Irrlicht/EMeshWriterEnums.h
+ includes/Irrlicht/EMessageBoxFlags.h
+ includes/Irrlicht/EPrimitiveTypes.h
+ includes/Irrlicht/ESceneNodeAnimatorTypes.h
+ includes/Irrlicht/ESceneNodeTypes.h
+ includes/Irrlicht/EShaderTypes.h
+ includes/Irrlicht/ETerrainElements.h
+ includes/Irrlicht/IAnimatedMesh.h
+ includes/Irrlicht/IAnimatedMeshMD2.h
+ includes/Irrlicht/IAnimatedMeshMD3.h
+ includes/Irrlicht/IAnimatedMeshSceneNode.h
+ includes/Irrlicht/IAttributeExchangingObject.h
+ includes/Irrlicht/IAttributes.h
+ includes/Irrlicht/IBillboardSceneNode.h
+ includes/Irrlicht/IBillboardTextSceneNode.h
+ includes/Irrlicht/IBoneSceneNode.h
+ includes/Irrlicht/ICameraSceneNode.h
+ includes/Irrlicht/IColladaMeshWriter.h
+ includes/Irrlicht/ICursorControl.h
+ includes/Irrlicht/IDummyTransformationSceneNode.h
+ includes/Irrlicht/IDynamicMeshBuffer.h
+ includes/Irrlicht/IEventReceiver.h
+ includes/Irrlicht/IFileArchive.h
+ includes/Irrlicht/IFileList.h
+ includes/Irrlicht/IFileSystem.h
+ includes/Irrlicht/IGPUProgrammingServices.h
+ includes/Irrlicht/IGUIButton.h
+ includes/Irrlicht/IGUICheckBox.h
+ includes/Irrlicht/IGUIColorSelectDialog.h
+ includes/Irrlicht/IGUIComboBox.h
+ includes/Irrlicht/IGUIContextMenu.h
+ includes/Irrlicht/IGUIEditBox.h
+ includes/Irrlicht/IGUIElement.h
+ includes/Irrlicht/IGUIElementFactory.h
+ includes/Irrlicht/IGUIEnvironment.h
+ includes/Irrlicht/IGUIFileOpenDialog.h
+ includes/Irrlicht/IGUIFont.h
+ includes/Irrlicht/IGUIFontBitmap.h
+ includes/Irrlicht/IGUIImage.h
+ includes/Irrlicht/IGUIImageList.h
+ includes/Irrlicht/IGUIInOutFader.h
+ includes/Irrlicht/IGUIListBox.h
+ includes/Irrlicht/IGUIMeshViewer.h
+ includes/Irrlicht/IGUIScrollBar.h
+ includes/Irrlicht/IGUISkin.h
+ includes/Irrlicht/IGUISpinBox.h
+ includes/Irrlicht/IGUISpriteBank.h
+ includes/Irrlicht/IGUIStaticText.h
+ includes/Irrlicht/IGUITabControl.h
+ includes/Irrlicht/IGUITable.h
+ includes/Irrlicht/IGUIToolbar.h
+ includes/Irrlicht/IGUITreeView.h
+ includes/Irrlicht/IGUIWindow.h
+ includes/Irrlicht/IGeometryCreator.h
+ includes/Irrlicht/IImage.h
+ includes/Irrlicht/IImageLoader.h
+ includes/Irrlicht/IImageWriter.h
+ includes/Irrlicht/IIndexBuffer.h
+ includes/Irrlicht/ILightManager.h
+ includes/Irrlicht/ILightSceneNode.h
+ includes/Irrlicht/ILogger.h
+ includes/Irrlicht/IMaterialRenderer.h
+ includes/Irrlicht/IMaterialRendererServices.h
+ includes/Irrlicht/IMesh.h
+ includes/Irrlicht/IMeshBuffer.h
+ includes/Irrlicht/IMeshCache.h
+ includes/Irrlicht/IMeshLoader.h
+ includes/Irrlicht/IMeshManipulator.h
+ includes/Irrlicht/IMeshSceneNode.h
+ includes/Irrlicht/IMeshWriter.h
+ includes/Irrlicht/IMetaTriangleSelector.h
+ includes/Irrlicht/IOSOperator.h
+ includes/Irrlicht/IParticleAffector.h
+ includes/Irrlicht/IParticleAnimatedMeshSceneNodeEmitter.h
+ includes/Irrlicht/IParticleAttractionAffector.h
+ includes/Irrlicht/IParticleBoxEmitter.h
+ includes/Irrlicht/IParticleCylinderEmitter.h
+ includes/Irrlicht/IParticleEmitter.h
+ includes/Irrlicht/IParticleFadeOutAffector.h
+ includes/Irrlicht/IParticleGravityAffector.h
+ includes/Irrlicht/IParticleMeshEmitter.h
+ includes/Irrlicht/IParticleRingEmitter.h
+ includes/Irrlicht/IParticleRotationAffector.h
+ includes/Irrlicht/IParticleSphereEmitter.h
+ includes/Irrlicht/IParticleSystemSceneNode.h
+ includes/Irrlicht/IQ3LevelMesh.h
+ includes/Irrlicht/IQ3Shader.h
+ includes/Irrlicht/IRandomizer.h
+ includes/Irrlicht/IReadFile.h
+ includes/Irrlicht/IReferenceCounted.h
+ includes/Irrlicht/ISceneCollisionManager.h
+ includes/Irrlicht/ISceneLoader.h
+ includes/Irrlicht/ISceneManager.h
+ includes/Irrlicht/ISceneNode.h
+ includes/Irrlicht/ISceneNodeAnimator.h
+ includes/Irrlicht/ISceneNodeAnimatorCameraFPS.h
+ includes/Irrlicht/ISceneNodeAnimatorCameraMaya.h
+ includes/Irrlicht/ISceneNodeAnimatorCollisionResponse.h
+ includes/Irrlicht/ISceneNodeAnimatorFactory.h
+ includes/Irrlicht/ISceneNodeFactory.h
+ includes/Irrlicht/ISceneUserDataSerializer.h
+ includes/Irrlicht/IShaderConstantSetCallBack.h
+ includes/Irrlicht/IShadowVolumeSceneNode.h
+ includes/Irrlicht/ISkinnedMesh.h
+ includes/Irrlicht/ITerrainSceneNode.h
+ includes/Irrlicht/ITextSceneNode.h
+ includes/Irrlicht/ITexture.h
+ includes/Irrlicht/ITimer.h
+ includes/Irrlicht/ITriangleSelector.h
+ includes/Irrlicht/IVertexBuffer.h
+ includes/Irrlicht/IVideoDriver.h
+ includes/Irrlicht/IVideoModeList.h
+ includes/Irrlicht/IVolumeLightSceneNode.h
+ includes/Irrlicht/IWriteFile.h
+ includes/Irrlicht/IXMLReader.h
+ includes/Irrlicht/IXMLWriter.h
+ includes/Irrlicht/IrrCompileConfig.h
+ includes/Irrlicht/IrrlichtDevice.h
+ includes/Irrlicht/Keycodes.h
+ includes/Irrlicht/S3DVertex.h
+ includes/Irrlicht/SAnimatedMesh.h
+ includes/Irrlicht/SColor.h
+ includes/Irrlicht/SExposedVideoData.h
+ includes/Irrlicht/SIrrCreationParameters.h
+ includes/Irrlicht/SKeyMap.h
+ includes/Irrlicht/SLight.h
+ includes/Irrlicht/SMaterial.h
+ includes/Irrlicht/SMaterialLayer.h
+ includes/Irrlicht/SMesh.h
+ includes/Irrlicht/SMeshBuffer.h
+ includes/Irrlicht/SMeshBufferLightMap.h
+ includes/Irrlicht/SMeshBufferTangents.h
+ includes/Irrlicht/SParticle.h
+ includes/Irrlicht/SSharedMeshBuffer.h
+ includes/Irrlicht/SSkinMeshBuffer.h
+ includes/Irrlicht/SVertexIndex.h
+ includes/Irrlicht/SVertexManipulator.h
+ includes/Irrlicht/SViewFrustum.h
+ includes/Irrlicht/SceneParameters.h
+ includes/Irrlicht/aabbox3d.h
+ includes/Irrlicht/coreutil.h
+ includes/Irrlicht/dimension2d.h
+ includes/Irrlicht/fast_atof.h
+ includes/Irrlicht/heapsort.h
+ includes/Irrlicht/irrAllocator.h
+ includes/Irrlicht/irrArray.h
+ includes/Irrlicht/irrList.h
+ includes/Irrlicht/irrMap.h
+ includes/Irrlicht/irrMath.h
+ includes/Irrlicht/irrString.h
+ includes/Irrlicht/irrTypes.h
+ includes/Irrlicht/irrXML.h
+ includes/Irrlicht/irrlicht.h
+ includes/Irrlicht/irrpack.h
+ includes/Irrlicht/irrunpack.h
+ includes/Irrlicht/line2d.h
+ includes/Irrlicht/line3d.h
+ includes/Irrlicht/matrix4.h
+ includes/Irrlicht/path.h
+ includes/Irrlicht/plane3d.h
+ includes/Irrlicht/position2d.h
+ includes/Irrlicht/quaternion.h
+ includes/Irrlicht/rect.h
+ includes/Irrlicht/triangle3d.h
+ includes/Irrlicht/vector2d.h
+ includes/Irrlicht/vector3d.h
+ includes/fmodCoreLinux/fmod.hpp
+ includes/fmodCoreWindows/fmod.h
+ includes/fmodCoreWindows/fmod.hpp
+ includes/fmodCoreWindows/fmod_codec.h
+ includes/fmodCoreWindows/fmod_common.h
+ includes/fmodCoreWindows/fmod_dsp.h
+ includes/fmodCoreWindows/fmod_dsp_effects.h
+ includes/fmodCoreWindows/fmod_output.h
+CMakeFiles/bomberman.dir/Sources/Components/Cube.cpp.o
+ /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/Cube.cpp
+ Headers/Components/Button.h
+ Headers/Components/Cube.h
+ Headers/Core.hpp
+ Headers/ECS/Component.h
+ Headers/ECS/Entity.h
+ Headers/ECS/EntityManager.h
+ Headers/ECS/Hash.h
+ Headers/ECS/System/BaseSystem.h
+ Headers/ECS/System/System.h
+ Headers/ECS/System/System.inl
+ Headers/GameManager.h
+ Headers/InputManager/InputManager.hpp
+ Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -619,6 +826,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Drawable.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -823,6 +1031,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -1027,210 +1236,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
- includes/Irrlicht/CDynamicMeshBuffer.h
- includes/Irrlicht/CIndexBuffer.h
- includes/Irrlicht/CMeshBuffer.h
- includes/Irrlicht/CVertexBuffer.h
- includes/Irrlicht/EAttributes.h
- includes/Irrlicht/ECullingTypes.h
- includes/Irrlicht/EDebugSceneTypes.h
- includes/Irrlicht/EDeviceTypes.h
- includes/Irrlicht/EDriverFeatures.h
- includes/Irrlicht/EDriverTypes.h
- includes/Irrlicht/EGUIAlignment.h
- includes/Irrlicht/EGUIElementTypes.h
- includes/Irrlicht/EHardwareBufferFlags.h
- includes/Irrlicht/EMaterialFlags.h
- includes/Irrlicht/EMaterialTypes.h
- includes/Irrlicht/EMeshWriterEnums.h
- includes/Irrlicht/EMessageBoxFlags.h
- includes/Irrlicht/EPrimitiveTypes.h
- includes/Irrlicht/ESceneNodeAnimatorTypes.h
- includes/Irrlicht/ESceneNodeTypes.h
- includes/Irrlicht/EShaderTypes.h
- includes/Irrlicht/ETerrainElements.h
- includes/Irrlicht/IAnimatedMesh.h
- includes/Irrlicht/IAnimatedMeshMD2.h
- includes/Irrlicht/IAnimatedMeshMD3.h
- includes/Irrlicht/IAnimatedMeshSceneNode.h
- includes/Irrlicht/IAttributeExchangingObject.h
- includes/Irrlicht/IAttributes.h
- includes/Irrlicht/IBillboardSceneNode.h
- includes/Irrlicht/IBillboardTextSceneNode.h
- includes/Irrlicht/IBoneSceneNode.h
- includes/Irrlicht/ICameraSceneNode.h
- includes/Irrlicht/IColladaMeshWriter.h
- includes/Irrlicht/ICursorControl.h
- includes/Irrlicht/IDummyTransformationSceneNode.h
- includes/Irrlicht/IDynamicMeshBuffer.h
- includes/Irrlicht/IEventReceiver.h
- includes/Irrlicht/IFileArchive.h
- includes/Irrlicht/IFileList.h
- includes/Irrlicht/IFileSystem.h
- includes/Irrlicht/IGPUProgrammingServices.h
- includes/Irrlicht/IGUIButton.h
- includes/Irrlicht/IGUICheckBox.h
- includes/Irrlicht/IGUIColorSelectDialog.h
- includes/Irrlicht/IGUIComboBox.h
- includes/Irrlicht/IGUIContextMenu.h
- includes/Irrlicht/IGUIEditBox.h
- includes/Irrlicht/IGUIElement.h
- includes/Irrlicht/IGUIElementFactory.h
- includes/Irrlicht/IGUIEnvironment.h
- includes/Irrlicht/IGUIFileOpenDialog.h
- includes/Irrlicht/IGUIFont.h
- includes/Irrlicht/IGUIFontBitmap.h
- includes/Irrlicht/IGUIImage.h
- includes/Irrlicht/IGUIImageList.h
- includes/Irrlicht/IGUIInOutFader.h
- includes/Irrlicht/IGUIListBox.h
- includes/Irrlicht/IGUIMeshViewer.h
- includes/Irrlicht/IGUIScrollBar.h
- includes/Irrlicht/IGUISkin.h
- includes/Irrlicht/IGUISpinBox.h
- includes/Irrlicht/IGUISpriteBank.h
- includes/Irrlicht/IGUIStaticText.h
- includes/Irrlicht/IGUITabControl.h
- includes/Irrlicht/IGUITable.h
- includes/Irrlicht/IGUIToolbar.h
- includes/Irrlicht/IGUITreeView.h
- includes/Irrlicht/IGUIWindow.h
- includes/Irrlicht/IGeometryCreator.h
- includes/Irrlicht/IImage.h
- includes/Irrlicht/IImageLoader.h
- includes/Irrlicht/IImageWriter.h
- includes/Irrlicht/IIndexBuffer.h
- includes/Irrlicht/ILightManager.h
- includes/Irrlicht/ILightSceneNode.h
- includes/Irrlicht/ILogger.h
- includes/Irrlicht/IMaterialRenderer.h
- includes/Irrlicht/IMaterialRendererServices.h
- includes/Irrlicht/IMesh.h
- includes/Irrlicht/IMeshBuffer.h
- includes/Irrlicht/IMeshCache.h
- includes/Irrlicht/IMeshLoader.h
- includes/Irrlicht/IMeshManipulator.h
- includes/Irrlicht/IMeshSceneNode.h
- includes/Irrlicht/IMeshWriter.h
- includes/Irrlicht/IMetaTriangleSelector.h
- includes/Irrlicht/IOSOperator.h
- includes/Irrlicht/IParticleAffector.h
- includes/Irrlicht/IParticleAnimatedMeshSceneNodeEmitter.h
- includes/Irrlicht/IParticleAttractionAffector.h
- includes/Irrlicht/IParticleBoxEmitter.h
- includes/Irrlicht/IParticleCylinderEmitter.h
- includes/Irrlicht/IParticleEmitter.h
- includes/Irrlicht/IParticleFadeOutAffector.h
- includes/Irrlicht/IParticleGravityAffector.h
- includes/Irrlicht/IParticleMeshEmitter.h
- includes/Irrlicht/IParticleRingEmitter.h
- includes/Irrlicht/IParticleRotationAffector.h
- includes/Irrlicht/IParticleSphereEmitter.h
- includes/Irrlicht/IParticleSystemSceneNode.h
- includes/Irrlicht/IQ3LevelMesh.h
- includes/Irrlicht/IQ3Shader.h
- includes/Irrlicht/IRandomizer.h
- includes/Irrlicht/IReadFile.h
- includes/Irrlicht/IReferenceCounted.h
- includes/Irrlicht/ISceneCollisionManager.h
- includes/Irrlicht/ISceneLoader.h
- includes/Irrlicht/ISceneManager.h
- includes/Irrlicht/ISceneNode.h
- includes/Irrlicht/ISceneNodeAnimator.h
- includes/Irrlicht/ISceneNodeAnimatorCameraFPS.h
- includes/Irrlicht/ISceneNodeAnimatorCameraMaya.h
- includes/Irrlicht/ISceneNodeAnimatorCollisionResponse.h
- includes/Irrlicht/ISceneNodeAnimatorFactory.h
- includes/Irrlicht/ISceneNodeFactory.h
- includes/Irrlicht/ISceneUserDataSerializer.h
- includes/Irrlicht/IShaderConstantSetCallBack.h
- includes/Irrlicht/IShadowVolumeSceneNode.h
- includes/Irrlicht/ISkinnedMesh.h
- includes/Irrlicht/ITerrainSceneNode.h
- includes/Irrlicht/ITextSceneNode.h
- includes/Irrlicht/ITexture.h
- includes/Irrlicht/ITimer.h
- includes/Irrlicht/ITriangleSelector.h
- includes/Irrlicht/IVertexBuffer.h
- includes/Irrlicht/IVideoDriver.h
- includes/Irrlicht/IVideoModeList.h
- includes/Irrlicht/IVolumeLightSceneNode.h
- includes/Irrlicht/IWriteFile.h
- includes/Irrlicht/IXMLReader.h
- includes/Irrlicht/IXMLWriter.h
- includes/Irrlicht/IrrCompileConfig.h
- includes/Irrlicht/IrrlichtDevice.h
- includes/Irrlicht/Keycodes.h
- includes/Irrlicht/S3DVertex.h
- includes/Irrlicht/SAnimatedMesh.h
- includes/Irrlicht/SColor.h
- includes/Irrlicht/SExposedVideoData.h
- includes/Irrlicht/SIrrCreationParameters.h
- includes/Irrlicht/SKeyMap.h
- includes/Irrlicht/SLight.h
- includes/Irrlicht/SMaterial.h
- includes/Irrlicht/SMaterialLayer.h
- includes/Irrlicht/SMesh.h
- includes/Irrlicht/SMeshBuffer.h
- includes/Irrlicht/SMeshBufferLightMap.h
- includes/Irrlicht/SMeshBufferTangents.h
- includes/Irrlicht/SParticle.h
- includes/Irrlicht/SSharedMeshBuffer.h
- includes/Irrlicht/SSkinMeshBuffer.h
- includes/Irrlicht/SVertexIndex.h
- includes/Irrlicht/SVertexManipulator.h
- includes/Irrlicht/SViewFrustum.h
- includes/Irrlicht/SceneParameters.h
- includes/Irrlicht/aabbox3d.h
- includes/Irrlicht/coreutil.h
- includes/Irrlicht/dimension2d.h
- includes/Irrlicht/fast_atof.h
- includes/Irrlicht/heapsort.h
- includes/Irrlicht/irrAllocator.h
- includes/Irrlicht/irrArray.h
- includes/Irrlicht/irrList.h
- includes/Irrlicht/irrMap.h
- includes/Irrlicht/irrMath.h
- includes/Irrlicht/irrString.h
- includes/Irrlicht/irrTypes.h
- includes/Irrlicht/irrXML.h
- includes/Irrlicht/irrlicht.h
- includes/Irrlicht/irrpack.h
- includes/Irrlicht/irrunpack.h
- includes/Irrlicht/line2d.h
- includes/Irrlicht/line3d.h
- includes/Irrlicht/matrix4.h
- includes/Irrlicht/path.h
- includes/Irrlicht/plane3d.h
- includes/Irrlicht/position2d.h
- includes/Irrlicht/quaternion.h
- includes/Irrlicht/rect.h
- includes/Irrlicht/triangle3d.h
- includes/Irrlicht/vector2d.h
- includes/Irrlicht/vector3d.h
- includes/fmodCoreLinux/fmod.hpp
- includes/fmodCoreWindows/fmod.h
- includes/fmodCoreWindows/fmod.hpp
- includes/fmodCoreWindows/fmod_codec.h
- includes/fmodCoreWindows/fmod_common.h
- includes/fmodCoreWindows/fmod_dsp.h
- includes/fmodCoreWindows/fmod_dsp_effects.h
- includes/fmodCoreWindows/fmod_output.h
-CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o
- /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Components/SoundManager.cpp
- Headers/Components/Button.h
- Headers/Components/SoundManager.h
- Headers/Core.hpp
- Headers/ECS/Component.h
- Headers/ECS/Entity.h
- Headers/ECS/EntityManager.h
- Headers/ECS/Hash.h
- Headers/ECS/System/BaseSystem.h
- Headers/ECS/System/System.h
- Headers/ECS/System/System.inl
- Headers/GameManager.h
- Headers/InputManager/InputManager.hpp
- Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -1435,6 +1441,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -1834,6 +1841,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -2613,6 +2621,213 @@ CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.o
  includes/fmodCoreWindows/fmod_dsp.h
  includes/fmodCoreWindows/fmod_dsp_effects.h
  includes/fmodCoreWindows/fmod_output.h
+CMakeFiles/bomberman.dir/Sources/ECS/System/AnimatorSystem.cpp.o
+ /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/AnimatorSystem.cpp
+ Headers/Components/Animator.h
+ Headers/Components/Button.h
+ Headers/Components/Drawable.h
+ Headers/Core.hpp
+ Headers/ECS/Component.h
+ Headers/ECS/Entity.h
+ Headers/ECS/EntityManager.h
+ Headers/ECS/Hash.h
+ Headers/ECS/System/AnimatorSystem.h
+ Headers/ECS/System/BaseSystem.h
+ Headers/ECS/System/System.h
+ Headers/ECS/System/System.inl
+ Headers/GameManager.h
+ Headers/InputManager/InputManager.hpp
+ Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
+ includes/Irrlicht/CDynamicMeshBuffer.h
+ includes/Irrlicht/CIndexBuffer.h
+ includes/Irrlicht/CMeshBuffer.h
+ includes/Irrlicht/CVertexBuffer.h
+ includes/Irrlicht/EAttributes.h
+ includes/Irrlicht/ECullingTypes.h
+ includes/Irrlicht/EDebugSceneTypes.h
+ includes/Irrlicht/EDeviceTypes.h
+ includes/Irrlicht/EDriverFeatures.h
+ includes/Irrlicht/EDriverTypes.h
+ includes/Irrlicht/EGUIAlignment.h
+ includes/Irrlicht/EGUIElementTypes.h
+ includes/Irrlicht/EHardwareBufferFlags.h
+ includes/Irrlicht/EMaterialFlags.h
+ includes/Irrlicht/EMaterialTypes.h
+ includes/Irrlicht/EMeshWriterEnums.h
+ includes/Irrlicht/EMessageBoxFlags.h
+ includes/Irrlicht/EPrimitiveTypes.h
+ includes/Irrlicht/ESceneNodeAnimatorTypes.h
+ includes/Irrlicht/ESceneNodeTypes.h
+ includes/Irrlicht/EShaderTypes.h
+ includes/Irrlicht/ETerrainElements.h
+ includes/Irrlicht/IAnimatedMesh.h
+ includes/Irrlicht/IAnimatedMeshMD2.h
+ includes/Irrlicht/IAnimatedMeshMD3.h
+ includes/Irrlicht/IAnimatedMeshSceneNode.h
+ includes/Irrlicht/IAttributeExchangingObject.h
+ includes/Irrlicht/IAttributes.h
+ includes/Irrlicht/IBillboardSceneNode.h
+ includes/Irrlicht/IBillboardTextSceneNode.h
+ includes/Irrlicht/IBoneSceneNode.h
+ includes/Irrlicht/ICameraSceneNode.h
+ includes/Irrlicht/IColladaMeshWriter.h
+ includes/Irrlicht/ICursorControl.h
+ includes/Irrlicht/IDummyTransformationSceneNode.h
+ includes/Irrlicht/IDynamicMeshBuffer.h
+ includes/Irrlicht/IEventReceiver.h
+ includes/Irrlicht/IFileArchive.h
+ includes/Irrlicht/IFileList.h
+ includes/Irrlicht/IFileSystem.h
+ includes/Irrlicht/IGPUProgrammingServices.h
+ includes/Irrlicht/IGUIButton.h
+ includes/Irrlicht/IGUICheckBox.h
+ includes/Irrlicht/IGUIColorSelectDialog.h
+ includes/Irrlicht/IGUIComboBox.h
+ includes/Irrlicht/IGUIContextMenu.h
+ includes/Irrlicht/IGUIEditBox.h
+ includes/Irrlicht/IGUIElement.h
+ includes/Irrlicht/IGUIElementFactory.h
+ includes/Irrlicht/IGUIEnvironment.h
+ includes/Irrlicht/IGUIFileOpenDialog.h
+ includes/Irrlicht/IGUIFont.h
+ includes/Irrlicht/IGUIFontBitmap.h
+ includes/Irrlicht/IGUIImage.h
+ includes/Irrlicht/IGUIImageList.h
+ includes/Irrlicht/IGUIInOutFader.h
+ includes/Irrlicht/IGUIListBox.h
+ includes/Irrlicht/IGUIMeshViewer.h
+ includes/Irrlicht/IGUIScrollBar.h
+ includes/Irrlicht/IGUISkin.h
+ includes/Irrlicht/IGUISpinBox.h
+ includes/Irrlicht/IGUISpriteBank.h
+ includes/Irrlicht/IGUIStaticText.h
+ includes/Irrlicht/IGUITabControl.h
+ includes/Irrlicht/IGUITable.h
+ includes/Irrlicht/IGUIToolbar.h
+ includes/Irrlicht/IGUITreeView.h
+ includes/Irrlicht/IGUIWindow.h
+ includes/Irrlicht/IGeometryCreator.h
+ includes/Irrlicht/IImage.h
+ includes/Irrlicht/IImageLoader.h
+ includes/Irrlicht/IImageWriter.h
+ includes/Irrlicht/IIndexBuffer.h
+ includes/Irrlicht/ILightManager.h
+ includes/Irrlicht/ILightSceneNode.h
+ includes/Irrlicht/ILogger.h
+ includes/Irrlicht/IMaterialRenderer.h
+ includes/Irrlicht/IMaterialRendererServices.h
+ includes/Irrlicht/IMesh.h
+ includes/Irrlicht/IMeshBuffer.h
+ includes/Irrlicht/IMeshCache.h
+ includes/Irrlicht/IMeshLoader.h
+ includes/Irrlicht/IMeshManipulator.h
+ includes/Irrlicht/IMeshSceneNode.h
+ includes/Irrlicht/IMeshWriter.h
+ includes/Irrlicht/IMetaTriangleSelector.h
+ includes/Irrlicht/IOSOperator.h
+ includes/Irrlicht/IParticleAffector.h
+ includes/Irrlicht/IParticleAnimatedMeshSceneNodeEmitter.h
+ includes/Irrlicht/IParticleAttractionAffector.h
+ includes/Irrlicht/IParticleBoxEmitter.h
+ includes/Irrlicht/IParticleCylinderEmitter.h
+ includes/Irrlicht/IParticleEmitter.h
+ includes/Irrlicht/IParticleFadeOutAffector.h
+ includes/Irrlicht/IParticleGravityAffector.h
+ includes/Irrlicht/IParticleMeshEmitter.h
+ includes/Irrlicht/IParticleRingEmitter.h
+ includes/Irrlicht/IParticleRotationAffector.h
+ includes/Irrlicht/IParticleSphereEmitter.h
+ includes/Irrlicht/IParticleSystemSceneNode.h
+ includes/Irrlicht/IQ3LevelMesh.h
+ includes/Irrlicht/IQ3Shader.h
+ includes/Irrlicht/IRandomizer.h
+ includes/Irrlicht/IReadFile.h
+ includes/Irrlicht/IReferenceCounted.h
+ includes/Irrlicht/ISceneCollisionManager.h
+ includes/Irrlicht/ISceneLoader.h
+ includes/Irrlicht/ISceneManager.h
+ includes/Irrlicht/ISceneNode.h
+ includes/Irrlicht/ISceneNodeAnimator.h
+ includes/Irrlicht/ISceneNodeAnimatorCameraFPS.h
+ includes/Irrlicht/ISceneNodeAnimatorCameraMaya.h
+ includes/Irrlicht/ISceneNodeAnimatorCollisionResponse.h
+ includes/Irrlicht/ISceneNodeAnimatorFactory.h
+ includes/Irrlicht/ISceneNodeFactory.h
+ includes/Irrlicht/ISceneUserDataSerializer.h
+ includes/Irrlicht/IShaderConstantSetCallBack.h
+ includes/Irrlicht/IShadowVolumeSceneNode.h
+ includes/Irrlicht/ISkinnedMesh.h
+ includes/Irrlicht/ITerrainSceneNode.h
+ includes/Irrlicht/ITextSceneNode.h
+ includes/Irrlicht/ITexture.h
+ includes/Irrlicht/ITimer.h
+ includes/Irrlicht/ITriangleSelector.h
+ includes/Irrlicht/IVertexBuffer.h
+ includes/Irrlicht/IVideoDriver.h
+ includes/Irrlicht/IVideoModeList.h
+ includes/Irrlicht/IVolumeLightSceneNode.h
+ includes/Irrlicht/IWriteFile.h
+ includes/Irrlicht/IXMLReader.h
+ includes/Irrlicht/IXMLWriter.h
+ includes/Irrlicht/IrrCompileConfig.h
+ includes/Irrlicht/IrrlichtDevice.h
+ includes/Irrlicht/Keycodes.h
+ includes/Irrlicht/S3DVertex.h
+ includes/Irrlicht/SAnimatedMesh.h
+ includes/Irrlicht/SColor.h
+ includes/Irrlicht/SExposedVideoData.h
+ includes/Irrlicht/SIrrCreationParameters.h
+ includes/Irrlicht/SKeyMap.h
+ includes/Irrlicht/SLight.h
+ includes/Irrlicht/SMaterial.h
+ includes/Irrlicht/SMaterialLayer.h
+ includes/Irrlicht/SMesh.h
+ includes/Irrlicht/SMeshBuffer.h
+ includes/Irrlicht/SMeshBufferLightMap.h
+ includes/Irrlicht/SMeshBufferTangents.h
+ includes/Irrlicht/SParticle.h
+ includes/Irrlicht/SSharedMeshBuffer.h
+ includes/Irrlicht/SSkinMeshBuffer.h
+ includes/Irrlicht/SVertexIndex.h
+ includes/Irrlicht/SVertexManipulator.h
+ includes/Irrlicht/SViewFrustum.h
+ includes/Irrlicht/SceneParameters.h
+ includes/Irrlicht/aabbox3d.h
+ includes/Irrlicht/coreutil.h
+ includes/Irrlicht/dimension2d.h
+ includes/Irrlicht/fast_atof.h
+ includes/Irrlicht/heapsort.h
+ includes/Irrlicht/irrAllocator.h
+ includes/Irrlicht/irrArray.h
+ includes/Irrlicht/irrList.h
+ includes/Irrlicht/irrMap.h
+ includes/Irrlicht/irrMath.h
+ includes/Irrlicht/irrString.h
+ includes/Irrlicht/irrTypes.h
+ includes/Irrlicht/irrXML.h
+ includes/Irrlicht/irrlicht.h
+ includes/Irrlicht/irrpack.h
+ includes/Irrlicht/irrunpack.h
+ includes/Irrlicht/line2d.h
+ includes/Irrlicht/line3d.h
+ includes/Irrlicht/matrix4.h
+ includes/Irrlicht/path.h
+ includes/Irrlicht/plane3d.h
+ includes/Irrlicht/position2d.h
+ includes/Irrlicht/quaternion.h
+ includes/Irrlicht/rect.h
+ includes/Irrlicht/triangle3d.h
+ includes/Irrlicht/vector2d.h
+ includes/Irrlicht/vector3d.h
+ includes/fmodCoreLinux/fmod.hpp
+ includes/fmodCoreWindows/fmod.h
+ includes/fmodCoreWindows/fmod.hpp
+ includes/fmodCoreWindows/fmod_codec.h
+ includes/fmodCoreWindows/fmod_common.h
+ includes/fmodCoreWindows/fmod_dsp.h
+ includes/fmodCoreWindows/fmod_dsp_effects.h
+ includes/fmodCoreWindows/fmod_output.h
 CMakeFiles/bomberman.dir/Sources/ECS/System/ButtonSystem.cpp.o
  /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/ButtonSystem.cpp
  Headers/Components/Button.h
@@ -2832,6 +3047,215 @@ CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
+ includes/Irrlicht/CDynamicMeshBuffer.h
+ includes/Irrlicht/CIndexBuffer.h
+ includes/Irrlicht/CMeshBuffer.h
+ includes/Irrlicht/CVertexBuffer.h
+ includes/Irrlicht/EAttributes.h
+ includes/Irrlicht/ECullingTypes.h
+ includes/Irrlicht/EDebugSceneTypes.h
+ includes/Irrlicht/EDeviceTypes.h
+ includes/Irrlicht/EDriverFeatures.h
+ includes/Irrlicht/EDriverTypes.h
+ includes/Irrlicht/EGUIAlignment.h
+ includes/Irrlicht/EGUIElementTypes.h
+ includes/Irrlicht/EHardwareBufferFlags.h
+ includes/Irrlicht/EMaterialFlags.h
+ includes/Irrlicht/EMaterialTypes.h
+ includes/Irrlicht/EMeshWriterEnums.h
+ includes/Irrlicht/EMessageBoxFlags.h
+ includes/Irrlicht/EPrimitiveTypes.h
+ includes/Irrlicht/ESceneNodeAnimatorTypes.h
+ includes/Irrlicht/ESceneNodeTypes.h
+ includes/Irrlicht/EShaderTypes.h
+ includes/Irrlicht/ETerrainElements.h
+ includes/Irrlicht/IAnimatedMesh.h
+ includes/Irrlicht/IAnimatedMeshMD2.h
+ includes/Irrlicht/IAnimatedMeshMD3.h
+ includes/Irrlicht/IAnimatedMeshSceneNode.h
+ includes/Irrlicht/IAttributeExchangingObject.h
+ includes/Irrlicht/IAttributes.h
+ includes/Irrlicht/IBillboardSceneNode.h
+ includes/Irrlicht/IBillboardTextSceneNode.h
+ includes/Irrlicht/IBoneSceneNode.h
+ includes/Irrlicht/ICameraSceneNode.h
+ includes/Irrlicht/IColladaMeshWriter.h
+ includes/Irrlicht/ICursorControl.h
+ includes/Irrlicht/IDummyTransformationSceneNode.h
+ includes/Irrlicht/IDynamicMeshBuffer.h
+ includes/Irrlicht/IEventReceiver.h
+ includes/Irrlicht/IFileArchive.h
+ includes/Irrlicht/IFileList.h
+ includes/Irrlicht/IFileSystem.h
+ includes/Irrlicht/IGPUProgrammingServices.h
+ includes/Irrlicht/IGUIButton.h
+ includes/Irrlicht/IGUICheckBox.h
+ includes/Irrlicht/IGUIColorSelectDialog.h
+ includes/Irrlicht/IGUIComboBox.h
+ includes/Irrlicht/IGUIContextMenu.h
+ includes/Irrlicht/IGUIEditBox.h
+ includes/Irrlicht/IGUIElement.h
+ includes/Irrlicht/IGUIElementFactory.h
+ includes/Irrlicht/IGUIEnvironment.h
+ includes/Irrlicht/IGUIFileOpenDialog.h
+ includes/Irrlicht/IGUIFont.h
+ includes/Irrlicht/IGUIFontBitmap.h
+ includes/Irrlicht/IGUIImage.h
+ includes/Irrlicht/IGUIImageList.h
+ includes/Irrlicht/IGUIInOutFader.h
+ includes/Irrlicht/IGUIListBox.h
+ includes/Irrlicht/IGUIMeshViewer.h
+ includes/Irrlicht/IGUIScrollBar.h
+ includes/Irrlicht/IGUISkin.h
+ includes/Irrlicht/IGUISpinBox.h
+ includes/Irrlicht/IGUISpriteBank.h
+ includes/Irrlicht/IGUIStaticText.h
+ includes/Irrlicht/IGUITabControl.h
+ includes/Irrlicht/IGUITable.h
+ includes/Irrlicht/IGUIToolbar.h
+ includes/Irrlicht/IGUITreeView.h
+ includes/Irrlicht/IGUIWindow.h
+ includes/Irrlicht/IGeometryCreator.h
+ includes/Irrlicht/IImage.h
+ includes/Irrlicht/IImageLoader.h
+ includes/Irrlicht/IImageWriter.h
+ includes/Irrlicht/IIndexBuffer.h
+ includes/Irrlicht/ILightManager.h
+ includes/Irrlicht/ILightSceneNode.h
+ includes/Irrlicht/ILogger.h
+ includes/Irrlicht/IMaterialRenderer.h
+ includes/Irrlicht/IMaterialRendererServices.h
+ includes/Irrlicht/IMesh.h
+ includes/Irrlicht/IMeshBuffer.h
+ includes/Irrlicht/IMeshCache.h
+ includes/Irrlicht/IMeshLoader.h
+ includes/Irrlicht/IMeshManipulator.h
+ includes/Irrlicht/IMeshSceneNode.h
+ includes/Irrlicht/IMeshWriter.h
+ includes/Irrlicht/IMetaTriangleSelector.h
+ includes/Irrlicht/IOSOperator.h
+ includes/Irrlicht/IParticleAffector.h
+ includes/Irrlicht/IParticleAnimatedMeshSceneNodeEmitter.h
+ includes/Irrlicht/IParticleAttractionAffector.h
+ includes/Irrlicht/IParticleBoxEmitter.h
+ includes/Irrlicht/IParticleCylinderEmitter.h
+ includes/Irrlicht/IParticleEmitter.h
+ includes/Irrlicht/IParticleFadeOutAffector.h
+ includes/Irrlicht/IParticleGravityAffector.h
+ includes/Irrlicht/IParticleMeshEmitter.h
+ includes/Irrlicht/IParticleRingEmitter.h
+ includes/Irrlicht/IParticleRotationAffector.h
+ includes/Irrlicht/IParticleSphereEmitter.h
+ includes/Irrlicht/IParticleSystemSceneNode.h
+ includes/Irrlicht/IQ3LevelMesh.h
+ includes/Irrlicht/IQ3Shader.h
+ includes/Irrlicht/IRandomizer.h
+ includes/Irrlicht/IReadFile.h
+ includes/Irrlicht/IReferenceCounted.h
+ includes/Irrlicht/ISceneCollisionManager.h
+ includes/Irrlicht/ISceneLoader.h
+ includes/Irrlicht/ISceneManager.h
+ includes/Irrlicht/ISceneNode.h
+ includes/Irrlicht/ISceneNodeAnimator.h
+ includes/Irrlicht/ISceneNodeAnimatorCameraFPS.h
+ includes/Irrlicht/ISceneNodeAnimatorCameraMaya.h
+ includes/Irrlicht/ISceneNodeAnimatorCollisionResponse.h
+ includes/Irrlicht/ISceneNodeAnimatorFactory.h
+ includes/Irrlicht/ISceneNodeFactory.h
+ includes/Irrlicht/ISceneUserDataSerializer.h
+ includes/Irrlicht/IShaderConstantSetCallBack.h
+ includes/Irrlicht/IShadowVolumeSceneNode.h
+ includes/Irrlicht/ISkinnedMesh.h
+ includes/Irrlicht/ITerrainSceneNode.h
+ includes/Irrlicht/ITextSceneNode.h
+ includes/Irrlicht/ITexture.h
+ includes/Irrlicht/ITimer.h
+ includes/Irrlicht/ITriangleSelector.h
+ includes/Irrlicht/IVertexBuffer.h
+ includes/Irrlicht/IVideoDriver.h
+ includes/Irrlicht/IVideoModeList.h
+ includes/Irrlicht/IVolumeLightSceneNode.h
+ includes/Irrlicht/IWriteFile.h
+ includes/Irrlicht/IXMLReader.h
+ includes/Irrlicht/IXMLWriter.h
+ includes/Irrlicht/IrrCompileConfig.h
+ includes/Irrlicht/IrrlichtDevice.h
+ includes/Irrlicht/Keycodes.h
+ includes/Irrlicht/S3DVertex.h
+ includes/Irrlicht/SAnimatedMesh.h
+ includes/Irrlicht/SColor.h
+ includes/Irrlicht/SExposedVideoData.h
+ includes/Irrlicht/SIrrCreationParameters.h
+ includes/Irrlicht/SKeyMap.h
+ includes/Irrlicht/SLight.h
+ includes/Irrlicht/SMaterial.h
+ includes/Irrlicht/SMaterialLayer.h
+ includes/Irrlicht/SMesh.h
+ includes/Irrlicht/SMeshBuffer.h
+ includes/Irrlicht/SMeshBufferLightMap.h
+ includes/Irrlicht/SMeshBufferTangents.h
+ includes/Irrlicht/SParticle.h
+ includes/Irrlicht/SSharedMeshBuffer.h
+ includes/Irrlicht/SSkinMeshBuffer.h
+ includes/Irrlicht/SVertexIndex.h
+ includes/Irrlicht/SVertexManipulator.h
+ includes/Irrlicht/SViewFrustum.h
+ includes/Irrlicht/SceneParameters.h
+ includes/Irrlicht/aabbox3d.h
+ includes/Irrlicht/coreutil.h
+ includes/Irrlicht/dimension2d.h
+ includes/Irrlicht/fast_atof.h
+ includes/Irrlicht/heapsort.h
+ includes/Irrlicht/irrAllocator.h
+ includes/Irrlicht/irrArray.h
+ includes/Irrlicht/irrList.h
+ includes/Irrlicht/irrMap.h
+ includes/Irrlicht/irrMath.h
+ includes/Irrlicht/irrString.h
+ includes/Irrlicht/irrTypes.h
+ includes/Irrlicht/irrXML.h
+ includes/Irrlicht/irrlicht.h
+ includes/Irrlicht/irrpack.h
+ includes/Irrlicht/irrunpack.h
+ includes/Irrlicht/line2d.h
+ includes/Irrlicht/line3d.h
+ includes/Irrlicht/matrix4.h
+ includes/Irrlicht/path.h
+ includes/Irrlicht/plane3d.h
+ includes/Irrlicht/position2d.h
+ includes/Irrlicht/quaternion.h
+ includes/Irrlicht/rect.h
+ includes/Irrlicht/triangle3d.h
+ includes/Irrlicht/vector2d.h
+ includes/Irrlicht/vector3d.h
+ includes/fmodCoreLinux/fmod.hpp
+ includes/fmodCoreWindows/fmod.h
+ includes/fmodCoreWindows/fmod.hpp
+ includes/fmodCoreWindows/fmod_codec.h
+ includes/fmodCoreWindows/fmod_common.h
+ includes/fmodCoreWindows/fmod_dsp.h
+ includes/fmodCoreWindows/fmod_dsp_effects.h
+ includes/fmodCoreWindows/fmod_output.h
+CMakeFiles/bomberman.dir/Sources/ECS/System/MoveSystem.cpp.o
+ /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/MoveSystem.cpp
+ Headers/Components/Button.h
+ Headers/Components/Collider.h
+ Headers/Components/Drawable.h
+ Headers/Components/Transform.h
+ Headers/Core.hpp
+ Headers/ECS/Component.h
+ Headers/ECS/Entity.h
+ Headers/ECS/EntityManager.h
+ Headers/ECS/Hash.h
+ Headers/ECS/System/BaseSystem.h
+ Headers/ECS/System/MoveSystem.h
+ Headers/ECS/System/System.h
+ Headers/ECS/System/System.inl
+ Headers/GameManager.h
+ Headers/InputManager/InputManager.hpp
+ Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -3038,6 +3462,7 @@ CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -3227,8 +3652,6 @@ CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o
  includes/fmodCoreWindows/fmod_dsp.h
  includes/fmodCoreWindows/fmod_dsp_effects.h
  includes/fmodCoreWindows/fmod_output.h
-CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o
- /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/SoundSystem.cpp
 CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o
  /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/ECS/System/TextSystem.cpp
  Headers/Components/Button.h
@@ -3246,6 +3669,7 @@ CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -3643,6 +4067,7 @@ CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -3834,9 +4259,6 @@ CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o
  includes/fmodCoreWindows/fmod_output.h
 CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.o
  /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/GameMenu/GameMenu.cpp
-CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o
- /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Generation/Generation.cpp
- /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Generation/Generation.hpp
 CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o
  /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/InputManager.cpp
  Headers/Components/Button.h
@@ -4034,14 +4456,30 @@ CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o
  includes/fmodCoreWindows/fmod_dsp.h
  includes/fmodCoreWindows/fmod_dsp_effects.h
  includes/fmodCoreWindows/fmod_output.h
-CMakeFiles/bomberman.dir/Sources/Map.cpp.o
- /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/./Generation/Generation.hpp
- /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Map.cpp
- /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Map.hpp
+CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.o
+ /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Map/Generation.cpp
+ Headers/Map/Generation.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o
+ /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Map/Map.cpp
+ Headers/Components/Button.h
+ Headers/Components/Collider.h
+ Headers/Components/Cube.h
+ Headers/Components/Drawable.h
+ Headers/Components/Transform.h
  Headers/Core.hpp
+ Headers/ECS/Component.h
+ Headers/ECS/Entity.h
+ Headers/ECS/EntityManager.h
  Headers/ECS/Hash.h
- Headers/Thread/Thread.hpp
- Headers/Thread/Thread.inl
+ Headers/ECS/System/BaseSystem.h
+ Headers/ECS/System/System.h
+ Headers/ECS/System/System.inl
+ Headers/GameManager.h
+ Headers/InputManager/InputManager.hpp
+ Headers/Map/Generation.h
+ Headers/Map/Map.h
+ Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -4199,7 +4637,6 @@ CMakeFiles/bomberman.dir/Sources/Map.cpp.o
  includes/Irrlicht/aabbox3d.h
  includes/Irrlicht/coreutil.h
  includes/Irrlicht/dimension2d.h
- includes/Irrlicht/driverChoice.h
  includes/Irrlicht/fast_atof.h
  includes/Irrlicht/heapsort.h
  includes/Irrlicht/irrAllocator.h
@@ -4237,10 +4674,10 @@ CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o
  Headers/Components/Animator.h
  Headers/Components/Button.h
  Headers/Components/Collider.h
+ Headers/Components/Cube.h
  Headers/Components/Drawable.h
  Headers/Components/Image.h
  Headers/Components/Moveable.h
- Headers/Components/SoundManager.h
  Headers/Components/Text.h
  Headers/Components/Transform.h
  Headers/Core.hpp
@@ -4252,15 +4689,18 @@ CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o
  Headers/ECS/System/BaseSystem.h
  Headers/ECS/System/ButtonSystem.h
  Headers/ECS/System/ImageSystem.h
+ Headers/ECS/System/MoveSystem.h
  Headers/ECS/System/RenderSystem.h
- Headers/ECS/System/SoundSystem.h
  Headers/ECS/System/System.h
  Headers/ECS/System/System.inl
  Headers/ECS/System/TextSystem.h
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
+ Headers/Map/Generation.h
+ Headers/Map/Map.h
  Headers/Scenes/GameScene.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -4458,7 +4898,6 @@ CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o
  Headers/Components/Drawable.h
  Headers/Components/Image.h
  Headers/Components/Moveable.h
- Headers/Components/SoundManager.h
  Headers/Components/Text.h
  Headers/Components/Transform.h
  Headers/Core.hpp
@@ -4471,7 +4910,6 @@ CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o
  Headers/ECS/System/ButtonSystem.h
  Headers/ECS/System/ImageSystem.h
  Headers/ECS/System/RenderSystem.h
- Headers/ECS/System/SoundSystem.h
  Headers/ECS/System/System.h
  Headers/ECS/System/System.inl
  Headers/ECS/System/TextSystem.h
@@ -4479,6 +4917,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/LunchGame.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -4671,6 +5110,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o
  /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/MenuScene.cpp
  Headers/Components/Button.h
+ Headers/Components/Image.h
  Headers/Components/Transform.h
  Headers/Core.hpp
  Headers/ECS/Component.h
@@ -4679,12 +5119,14 @@ CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o
  Headers/ECS/Hash.h
  Headers/ECS/System/BaseSystem.h
  Headers/ECS/System/ButtonSystem.h
+ Headers/ECS/System/ImageSystem.h
  Headers/ECS/System/System.h
  Headers/ECS/System/System.inl
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Scenes/MenuScene.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -4879,6 +5321,200 @@ CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o
  Headers/Core.hpp
  Headers/ECS/Hash.h
  Headers/Scenes/Scene.hpp
+ includes/Irrlicht/CDynamicMeshBuffer.h
+ includes/Irrlicht/CIndexBuffer.h
+ includes/Irrlicht/CMeshBuffer.h
+ includes/Irrlicht/CVertexBuffer.h
+ includes/Irrlicht/EAttributes.h
+ includes/Irrlicht/ECullingTypes.h
+ includes/Irrlicht/EDebugSceneTypes.h
+ includes/Irrlicht/EDeviceTypes.h
+ includes/Irrlicht/EDriverFeatures.h
+ includes/Irrlicht/EDriverTypes.h
+ includes/Irrlicht/EGUIAlignment.h
+ includes/Irrlicht/EGUIElementTypes.h
+ includes/Irrlicht/EHardwareBufferFlags.h
+ includes/Irrlicht/EMaterialFlags.h
+ includes/Irrlicht/EMaterialTypes.h
+ includes/Irrlicht/EMeshWriterEnums.h
+ includes/Irrlicht/EMessageBoxFlags.h
+ includes/Irrlicht/EPrimitiveTypes.h
+ includes/Irrlicht/ESceneNodeAnimatorTypes.h
+ includes/Irrlicht/ESceneNodeTypes.h
+ includes/Irrlicht/EShaderTypes.h
+ includes/Irrlicht/ETerrainElements.h
+ includes/Irrlicht/IAnimatedMesh.h
+ includes/Irrlicht/IAnimatedMeshMD2.h
+ includes/Irrlicht/IAnimatedMeshMD3.h
+ includes/Irrlicht/IAnimatedMeshSceneNode.h
+ includes/Irrlicht/IAttributeExchangingObject.h
+ includes/Irrlicht/IAttributes.h
+ includes/Irrlicht/IBillboardSceneNode.h
+ includes/Irrlicht/IBillboardTextSceneNode.h
+ includes/Irrlicht/IBoneSceneNode.h
+ includes/Irrlicht/ICameraSceneNode.h
+ includes/Irrlicht/IColladaMeshWriter.h
+ includes/Irrlicht/ICursorControl.h
+ includes/Irrlicht/IDummyTransformationSceneNode.h
+ includes/Irrlicht/IDynamicMeshBuffer.h
+ includes/Irrlicht/IEventReceiver.h
+ includes/Irrlicht/IFileArchive.h
+ includes/Irrlicht/IFileList.h
+ includes/Irrlicht/IFileSystem.h
+ includes/Irrlicht/IGPUProgrammingServices.h
+ includes/Irrlicht/IGUIButton.h
+ includes/Irrlicht/IGUICheckBox.h
+ includes/Irrlicht/IGUIColorSelectDialog.h
+ includes/Irrlicht/IGUIComboBox.h
+ includes/Irrlicht/IGUIContextMenu.h
+ includes/Irrlicht/IGUIEditBox.h
+ includes/Irrlicht/IGUIElement.h
+ includes/Irrlicht/IGUIElementFactory.h
+ includes/Irrlicht/IGUIEnvironment.h
+ includes/Irrlicht/IGUIFileOpenDialog.h
+ includes/Irrlicht/IGUIFont.h
+ includes/Irrlicht/IGUIFontBitmap.h
+ includes/Irrlicht/IGUIImage.h
+ includes/Irrlicht/IGUIImageList.h
+ includes/Irrlicht/IGUIInOutFader.h
+ includes/Irrlicht/IGUIListBox.h
+ includes/Irrlicht/IGUIMeshViewer.h
+ includes/Irrlicht/IGUIScrollBar.h
+ includes/Irrlicht/IGUISkin.h
+ includes/Irrlicht/IGUISpinBox.h
+ includes/Irrlicht/IGUISpriteBank.h
+ includes/Irrlicht/IGUIStaticText.h
+ includes/Irrlicht/IGUITabControl.h
+ includes/Irrlicht/IGUITable.h
+ includes/Irrlicht/IGUIToolbar.h
+ includes/Irrlicht/IGUITreeView.h
+ includes/Irrlicht/IGUIWindow.h
+ includes/Irrlicht/IGeometryCreator.h
+ includes/Irrlicht/IImage.h
+ includes/Irrlicht/IImageLoader.h
+ includes/Irrlicht/IImageWriter.h
+ includes/Irrlicht/IIndexBuffer.h
+ includes/Irrlicht/ILightManager.h
+ includes/Irrlicht/ILightSceneNode.h
+ includes/Irrlicht/ILogger.h
+ includes/Irrlicht/IMaterialRenderer.h
+ includes/Irrlicht/IMaterialRendererServices.h
+ includes/Irrlicht/IMesh.h
+ includes/Irrlicht/IMeshBuffer.h
+ includes/Irrlicht/IMeshCache.h
+ includes/Irrlicht/IMeshLoader.h
+ includes/Irrlicht/IMeshManipulator.h
+ includes/Irrlicht/IMeshSceneNode.h
+ includes/Irrlicht/IMeshWriter.h
+ includes/Irrlicht/IMetaTriangleSelector.h
+ includes/Irrlicht/IOSOperator.h
+ includes/Irrlicht/IParticleAffector.h
+ includes/Irrlicht/IParticleAnimatedMeshSceneNodeEmitter.h
+ includes/Irrlicht/IParticleAttractionAffector.h
+ includes/Irrlicht/IParticleBoxEmitter.h
+ includes/Irrlicht/IParticleCylinderEmitter.h
+ includes/Irrlicht/IParticleEmitter.h
+ includes/Irrlicht/IParticleFadeOutAffector.h
+ includes/Irrlicht/IParticleGravityAffector.h
+ includes/Irrlicht/IParticleMeshEmitter.h
+ includes/Irrlicht/IParticleRingEmitter.h
+ includes/Irrlicht/IParticleRotationAffector.h
+ includes/Irrlicht/IParticleSphereEmitter.h
+ includes/Irrlicht/IParticleSystemSceneNode.h
+ includes/Irrlicht/IQ3LevelMesh.h
+ includes/Irrlicht/IQ3Shader.h
+ includes/Irrlicht/IRandomizer.h
+ includes/Irrlicht/IReadFile.h
+ includes/Irrlicht/IReferenceCounted.h
+ includes/Irrlicht/ISceneCollisionManager.h
+ includes/Irrlicht/ISceneLoader.h
+ includes/Irrlicht/ISceneManager.h
+ includes/Irrlicht/ISceneNode.h
+ includes/Irrlicht/ISceneNodeAnimator.h
+ includes/Irrlicht/ISceneNodeAnimatorCameraFPS.h
+ includes/Irrlicht/ISceneNodeAnimatorCameraMaya.h
+ includes/Irrlicht/ISceneNodeAnimatorCollisionResponse.h
+ includes/Irrlicht/ISceneNodeAnimatorFactory.h
+ includes/Irrlicht/ISceneNodeFactory.h
+ includes/Irrlicht/ISceneUserDataSerializer.h
+ includes/Irrlicht/IShaderConstantSetCallBack.h
+ includes/Irrlicht/IShadowVolumeSceneNode.h
+ includes/Irrlicht/ISkinnedMesh.h
+ includes/Irrlicht/ITerrainSceneNode.h
+ includes/Irrlicht/ITextSceneNode.h
+ includes/Irrlicht/ITexture.h
+ includes/Irrlicht/ITimer.h
+ includes/Irrlicht/ITriangleSelector.h
+ includes/Irrlicht/IVertexBuffer.h
+ includes/Irrlicht/IVideoDriver.h
+ includes/Irrlicht/IVideoModeList.h
+ includes/Irrlicht/IVolumeLightSceneNode.h
+ includes/Irrlicht/IWriteFile.h
+ includes/Irrlicht/IXMLReader.h
+ includes/Irrlicht/IXMLWriter.h
+ includes/Irrlicht/IrrCompileConfig.h
+ includes/Irrlicht/IrrlichtDevice.h
+ includes/Irrlicht/Keycodes.h
+ includes/Irrlicht/S3DVertex.h
+ includes/Irrlicht/SAnimatedMesh.h
+ includes/Irrlicht/SColor.h
+ includes/Irrlicht/SExposedVideoData.h
+ includes/Irrlicht/SIrrCreationParameters.h
+ includes/Irrlicht/SKeyMap.h
+ includes/Irrlicht/SLight.h
+ includes/Irrlicht/SMaterial.h
+ includes/Irrlicht/SMaterialLayer.h
+ includes/Irrlicht/SMesh.h
+ includes/Irrlicht/SMeshBuffer.h
+ includes/Irrlicht/SMeshBufferLightMap.h
+ includes/Irrlicht/SMeshBufferTangents.h
+ includes/Irrlicht/SParticle.h
+ includes/Irrlicht/SSharedMeshBuffer.h
+ includes/Irrlicht/SSkinMeshBuffer.h
+ includes/Irrlicht/SVertexIndex.h
+ includes/Irrlicht/SVertexManipulator.h
+ includes/Irrlicht/SViewFrustum.h
+ includes/Irrlicht/SceneParameters.h
+ includes/Irrlicht/aabbox3d.h
+ includes/Irrlicht/coreutil.h
+ includes/Irrlicht/dimension2d.h
+ includes/Irrlicht/fast_atof.h
+ includes/Irrlicht/heapsort.h
+ includes/Irrlicht/irrAllocator.h
+ includes/Irrlicht/irrArray.h
+ includes/Irrlicht/irrList.h
+ includes/Irrlicht/irrMap.h
+ includes/Irrlicht/irrMath.h
+ includes/Irrlicht/irrString.h
+ includes/Irrlicht/irrTypes.h
+ includes/Irrlicht/irrXML.h
+ includes/Irrlicht/irrlicht.h
+ includes/Irrlicht/irrpack.h
+ includes/Irrlicht/irrunpack.h
+ includes/Irrlicht/line2d.h
+ includes/Irrlicht/line3d.h
+ includes/Irrlicht/matrix4.h
+ includes/Irrlicht/path.h
+ includes/Irrlicht/plane3d.h
+ includes/Irrlicht/position2d.h
+ includes/Irrlicht/quaternion.h
+ includes/Irrlicht/rect.h
+ includes/Irrlicht/triangle3d.h
+ includes/Irrlicht/vector2d.h
+ includes/Irrlicht/vector3d.h
+ includes/fmodCoreLinux/fmod.hpp
+ includes/fmodCoreWindows/fmod.h
+ includes/fmodCoreWindows/fmod.hpp
+ includes/fmodCoreWindows/fmod_codec.h
+ includes/fmodCoreWindows/fmod_common.h
+ includes/fmodCoreWindows/fmod_dsp.h
+ includes/fmodCoreWindows/fmod_dsp_effects.h
+ includes/fmodCoreWindows/fmod_output.h
+CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o
+ /home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/SoundManager.cpp
+ Headers/Core.hpp
+ Headers/ECS/Hash.h
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h
@@ -5289,6 +5925,7 @@ CMakeFiles/bomberman.dir/Sources/main.cpp.o
  Headers/Scenes/LunchGame.hpp
  Headers/Scenes/MenuScene.hpp
  Headers/Scenes/Scene.hpp
+ Headers/SoundManager.h
  includes/Irrlicht/CDynamicMeshBuffer.h
  includes/Irrlicht/CIndexBuffer.h
  includes/Irrlicht/CMeshBuffer.h

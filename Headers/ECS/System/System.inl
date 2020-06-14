@@ -24,7 +24,6 @@ template <size_t INDEX>
 const bool System<Comps...>::ProcessEntityComponent
 (const ComponentId& compId, Component* pComponent, CompTuple& tupleToFill)
 {
-    std::cout << "No match" << std::endl;
     return (false);
 }
 
@@ -44,7 +43,7 @@ void System<Comps...>::OnEntityCreated(const Entity& entity)
                     entity.GetId(),
                     this->_components.size() - 1
                 );
-                std::cout << "Added Entity" << std::endl;
+                std::cout << "Added Entity: " << entity.GetName() << std::endl;
                 break;
             }
         }

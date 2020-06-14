@@ -9,7 +9,7 @@
 #include <string>
 
 TextSystem::TextSystem(EntityManager* pEntityManager) :
-System<Text, Transform>(pEntityManager) {}
+BaseType(pEntityManager) {}
 
 void TextSystem::Update(const double& deltaTime)
 {

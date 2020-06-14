@@ -3,6 +3,7 @@
 
 // Systems
 #include <ECS/System/ButtonSystem.h>
+#include <ECS/System/ImageSystem.h>
 
 // Components
 #include <Components/Transform.h>
@@ -13,6 +14,11 @@ static void changeSceneToGame(GameManager* gameManager)
 	gameManager->SetNextScene(Scene::LUNCH_GAME);
 }
 
+static void quitGame(GameManager* gameManager)
+{
+    gameManager->m_globalVars.gameActive = false;
+}
+
 MenuScene::MenuScene() : Scene(Scene::MENU)
 {
 }
@@ -21,44 +27,139 @@ MenuScene::~MenuScene()
 {
 }
 
+void MenuScene::LoadSystems(GameManager* gm)
+{
+    ButtonSystem* buttonSys = new ButtonSystem(gm->GetEntityManager());
+    ImageSystem* imageSys = new ImageSystem(gm->GetEntityManager());
+
+    gm->GetEntityManager()->AddSystem(std::move(buttonSys));
+    gm->GetEntityManager()->AddSystem(std::move(imageSys));
+}
+
+void MenuScene::LoadAssets(GameManager* gm)
+{
+
+}
+
+// Load Entities & Components
+void MenuScene::LoadElements(GameManager* gm)
+{
+        Entity backgroundEntity("background");
+        Entity playBtnEntity("playBtn");
+        Entity quitBtnEntity("quitBtn");
+
+        Texture* texBg = gm->LoadTexture("Assets/background_mario.png");
+        Image* background = new Image(gm->GetGuiEnvironment());
+        if (background->Initialize(texBg) && background)
+        {
+            background->SetSize(1280, 815);
+            backgroundEntity.AddComponent(std::move(background), Image::Id);
+        }
+
+        Button* btnPlay = new Button(gm->GetGuiEnvironment());
+        if (btnPlay->Initialize(nullptr))
+        {
+            btnPlay->SetButtonID(Button::ButtonID::PLAY);
+            btnPlay->SetTexture(gm->LoadTexture("Assets/btnPlay.png"));
+            btnPlay->SetSize(398, 131);
+            btnPlay->SetPosition({ 100, 720 / 2 });
+            btnPlay->SetOnPress(changeSceneToGame);
+            playBtnEntity.AddComponent(std::move(btnPlay), Button::Id);
+        }
+
+        Button* btnQuit = new Button(gm->GetGuiEnvironment());
+        if (btnQuit->Initialize(nullptr))
+        {
+            btnQuit->SetButtonID(Button::ButtonID::QUIT);
+            btnQuit->SetTexture(gm->LoadTexture("Assets/btnQuit.png"));
+            btnQuit->SetSize(250, 82);
+            btnQuit->SetPosition({ 250, 720 / 2 + 200 });
+            btnQuit->SetOnPress(quitGame);
+            quitBtnEntity.AddComponent(std::move(btnQuit), Button::Id);
+        }
+
+        gm->GetEntityManager()->AddEntity(backgroundEntity);
+        gm->GetEntityManager()->AddEntity(playBtnEntity);
+        gm->GetEntityManager()->AddEntity(quitBtnEntity);
+}
+
 void MenuScene::Load(GameManager* gameManager)
 {
     gameManager->GetGuiEnvironment()->clear();
     gameManager->GetSceneManager()->clear();
 
-    { // Sound testing
-        SoundManager *sm = gameManager->GetSoundManager();
-        sm->Clear();
-        sm->AddSound(sm->LoadSound("Assets/sound/testBear.mp3"), "bear", SoundManager::SFX);
-        sm->PlaySound("bear");
-    }
+    this->LoadSystems(gameManager);
+    this->LoadAssets(gameManager);
+    this->LoadElements(gameManager);
+    // Add Camera to Scene.
+    gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
+}
+
+
+/*
+
+gameManager->GetGuiEnvironment()->clear();
+    gameManager->GetSceneManager()->clear();
 
     { // Create and Add Systems (Always first)
-        // Create
         ButtonSystem* buttonSys = new ButtonSystem(gameManager->GetEntityManager());
+        ImageSystem* imageSys = new ImageSystem(gameManager->GetEntityManager());
 
-        // Add
         gameManager->GetEntityManager()->AddSystem(std::move(buttonSys));
+        gameManager->GetEntityManager()->AddSystem(std::move(imageSys));
     }
 
     // Load Entities & Components
-	{ // Test button
-        // Create components and entity
-        Button* b1 = new Button(gameManager->GetGuiEnvironment());
-        Entity e1;
+	{
+        Entity backgroundEntity;
+        Entity playBtnEntity;
+        Entity quitBtnEntity;
 
-        // Initialize component and set attributes then add it to entity
-        if (b1->Initialize(nullptr)) {
-            b1->SetButtonID(Button::ButtonID::PLAY);
-            b1->SetTexture(gameManager->LoadTexture("Assets/block.png"));
-            b1->SetText("Totorina");
-            b1->SetPosition({ 500, 200 });
-            b1->SetOnPress(changeSceneToGame);
-            e1.AddComponent(std::move(b1), Button::Id);
+        Texture* texBg = gameManager->LoadTexture("Assets/menubg.png");
+        Image* background = new Image(gameManager->GetGuiEnvironment());
+        if (background->Initialize(texBg) && background)
+        {
+            background->SetSize(1280, 815);
+            backgroundEntity.AddComponent(std::move(background), Image::Id);
         }
-        // When done, add entity to the entity manager.
-        gameManager->GetEntityManager()->AddEntity(e1);
+
+        Button* btnPlay = new Button(gameManager->GetGuiEnvironment());
+        if (btnPlay->Initialize(nullptr))
+        {
+            btnPlay->SetButtonID(Button::ButtonID::PLAY);
+            btnPlay->SetTexture(gameManager->LoadTexture("Assets/btnPlay.png"));
+            btnPlay->SetSize(398, 131);
+            btnPlay->SetPosition({ 100, 720 / 2 });
+            btnPlay->SetOnPress(cbChangeSceneToGame);
+            playBtnEntity.AddComponent(std::move(btnPlay), Button::Id);
+        }
+
+        Button* btnQuit = new Button(gameManager->GetGuiEnvironment());
+        if (btnQuit->Initialize(nullptr))
+        {
+            btnQuit->SetButtonID(Button::ButtonID::QUIT);
+            btnQuit->SetTexture(gameManager->LoadTexture("Assets/btnQuit.png"));
+            btnQuit->SetSize(250, 82);
+            btnQuit->SetPosition({ 250, 720 / 2 + 200 });
+            btnQuit->SetOnPress(cbQuitGame);
+            quitBtnEntity.AddComponent(std::move(btnQuit), Button::Id);
+        }
+
+        gameManager->GetEntityManager()->AddEntity(backgroundEntity);
+        gameManager->GetEntityManager()->AddEntity(playBtnEntity);
+        gameManager->GetEntityManager()->AddEntity(quitBtnEntity);
     }
-    // Add Camera to Scene.
+
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
+
+*/
+
+void MenuScene::Update(GameManager* gameManager)
+{
+
+}
+
+void MenuScene::Unload(void)
+{
+
 }

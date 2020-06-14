@@ -199,6 +199,33 @@ Sources/Components/Collider.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.s
 .PHONY : Sources/Components/Collider.cpp.s
 
+Sources/Components/Cube.o: Sources/Components/Cube.cpp.o
+
+.PHONY : Sources/Components/Cube.o
+
+# target to build an object file
+Sources/Components/Cube.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Cube.cpp.o
+.PHONY : Sources/Components/Cube.cpp.o
+
+Sources/Components/Cube.i: Sources/Components/Cube.cpp.i
+
+.PHONY : Sources/Components/Cube.i
+
+# target to preprocess a source file
+Sources/Components/Cube.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Cube.cpp.i
+.PHONY : Sources/Components/Cube.cpp.i
+
+Sources/Components/Cube.s: Sources/Components/Cube.cpp.s
+
+.PHONY : Sources/Components/Cube.s
+
+# target to generate assembly for a file
+Sources/Components/Cube.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Cube.cpp.s
+.PHONY : Sources/Components/Cube.cpp.s
+
 Sources/Components/Drawable.o: Sources/Components/Drawable.cpp.o
 
 .PHONY : Sources/Components/Drawable.o
@@ -279,33 +306,6 @@ Sources/Components/Moveable.s: Sources/Components/Moveable.cpp.s
 Sources/Components/Moveable.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.s
 .PHONY : Sources/Components/Moveable.cpp.s
-
-Sources/Components/SoundManager.o: Sources/Components/SoundManager.cpp.o
-
-.PHONY : Sources/Components/SoundManager.o
-
-# target to build an object file
-Sources/Components/SoundManager.cpp.o:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.o
-.PHONY : Sources/Components/SoundManager.cpp.o
-
-Sources/Components/SoundManager.i: Sources/Components/SoundManager.cpp.i
-
-.PHONY : Sources/Components/SoundManager.i
-
-# target to preprocess a source file
-Sources/Components/SoundManager.cpp.i:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.i
-.PHONY : Sources/Components/SoundManager.cpp.i
-
-Sources/Components/SoundManager.s: Sources/Components/SoundManager.cpp.s
-
-.PHONY : Sources/Components/SoundManager.s
-
-# target to generate assembly for a file
-Sources/Components/SoundManager.cpp.s:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/SoundManager.cpp.s
-.PHONY : Sources/Components/SoundManager.cpp.s
 
 Sources/Components/Text.o: Sources/Components/Text.cpp.o
 
@@ -469,6 +469,33 @@ Sources/ECS/EntityManager.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/EntityManager.cpp.s
 .PHONY : Sources/ECS/EntityManager.cpp.s
 
+Sources/ECS/System/AnimatorSystem.o: Sources/ECS/System/AnimatorSystem.cpp.o
+
+.PHONY : Sources/ECS/System/AnimatorSystem.o
+
+# target to build an object file
+Sources/ECS/System/AnimatorSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/AnimatorSystem.cpp.o
+.PHONY : Sources/ECS/System/AnimatorSystem.cpp.o
+
+Sources/ECS/System/AnimatorSystem.i: Sources/ECS/System/AnimatorSystem.cpp.i
+
+.PHONY : Sources/ECS/System/AnimatorSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/AnimatorSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/AnimatorSystem.cpp.i
+.PHONY : Sources/ECS/System/AnimatorSystem.cpp.i
+
+Sources/ECS/System/AnimatorSystem.s: Sources/ECS/System/AnimatorSystem.cpp.s
+
+.PHONY : Sources/ECS/System/AnimatorSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/AnimatorSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/AnimatorSystem.cpp.s
+.PHONY : Sources/ECS/System/AnimatorSystem.cpp.s
+
 Sources/ECS/System/ButtonSystem.o: Sources/ECS/System/ButtonSystem.cpp.o
 
 .PHONY : Sources/ECS/System/ButtonSystem.o
@@ -523,6 +550,33 @@ Sources/ECS/System/ImageSystem.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/ImageSystem.cpp.s
 .PHONY : Sources/ECS/System/ImageSystem.cpp.s
 
+Sources/ECS/System/MoveSystem.o: Sources/ECS/System/MoveSystem.cpp.o
+
+.PHONY : Sources/ECS/System/MoveSystem.o
+
+# target to build an object file
+Sources/ECS/System/MoveSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/MoveSystem.cpp.o
+.PHONY : Sources/ECS/System/MoveSystem.cpp.o
+
+Sources/ECS/System/MoveSystem.i: Sources/ECS/System/MoveSystem.cpp.i
+
+.PHONY : Sources/ECS/System/MoveSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/MoveSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/MoveSystem.cpp.i
+.PHONY : Sources/ECS/System/MoveSystem.cpp.i
+
+Sources/ECS/System/MoveSystem.s: Sources/ECS/System/MoveSystem.cpp.s
+
+.PHONY : Sources/ECS/System/MoveSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/MoveSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/MoveSystem.cpp.s
+.PHONY : Sources/ECS/System/MoveSystem.cpp.s
+
 Sources/ECS/System/RenderSystem.o: Sources/ECS/System/RenderSystem.cpp.o
 
 .PHONY : Sources/ECS/System/RenderSystem.o
@@ -549,33 +603,6 @@ Sources/ECS/System/RenderSystem.s: Sources/ECS/System/RenderSystem.cpp.s
 Sources/ECS/System/RenderSystem.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.s
 .PHONY : Sources/ECS/System/RenderSystem.cpp.s
-
-Sources/ECS/System/SoundSystem.o: Sources/ECS/System/SoundSystem.cpp.o
-
-.PHONY : Sources/ECS/System/SoundSystem.o
-
-# target to build an object file
-Sources/ECS/System/SoundSystem.cpp.o:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.o
-.PHONY : Sources/ECS/System/SoundSystem.cpp.o
-
-Sources/ECS/System/SoundSystem.i: Sources/ECS/System/SoundSystem.cpp.i
-
-.PHONY : Sources/ECS/System/SoundSystem.i
-
-# target to preprocess a source file
-Sources/ECS/System/SoundSystem.cpp.i:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.i
-.PHONY : Sources/ECS/System/SoundSystem.cpp.i
-
-Sources/ECS/System/SoundSystem.s: Sources/ECS/System/SoundSystem.cpp.s
-
-.PHONY : Sources/ECS/System/SoundSystem.s
-
-# target to generate assembly for a file
-Sources/ECS/System/SoundSystem.cpp.s:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/SoundSystem.cpp.s
-.PHONY : Sources/ECS/System/SoundSystem.cpp.s
 
 Sources/ECS/System/TextSystem.o: Sources/ECS/System/TextSystem.cpp.o
 
@@ -685,33 +712,6 @@ Sources/GameMenu/GameMenu.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/GameMenu/GameMenu.cpp.s
 .PHONY : Sources/GameMenu/GameMenu.cpp.s
 
-Sources/Generation/Generation.o: Sources/Generation/Generation.cpp.o
-
-.PHONY : Sources/Generation/Generation.o
-
-# target to build an object file
-Sources/Generation/Generation.cpp.o:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.o
-.PHONY : Sources/Generation/Generation.cpp.o
-
-Sources/Generation/Generation.i: Sources/Generation/Generation.cpp.i
-
-.PHONY : Sources/Generation/Generation.i
-
-# target to preprocess a source file
-Sources/Generation/Generation.cpp.i:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.i
-.PHONY : Sources/Generation/Generation.cpp.i
-
-Sources/Generation/Generation.s: Sources/Generation/Generation.cpp.s
-
-.PHONY : Sources/Generation/Generation.s
-
-# target to generate assembly for a file
-Sources/Generation/Generation.cpp.s:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Generation/Generation.cpp.s
-.PHONY : Sources/Generation/Generation.cpp.s
-
 Sources/InputManager.o: Sources/InputManager.cpp.o
 
 .PHONY : Sources/InputManager.o
@@ -739,32 +739,59 @@ Sources/InputManager.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/InputManager.cpp.s
 .PHONY : Sources/InputManager.cpp.s
 
-Sources/Map.o: Sources/Map.cpp.o
+Sources/Map/Generation.o: Sources/Map/Generation.cpp.o
 
-.PHONY : Sources/Map.o
+.PHONY : Sources/Map/Generation.o
 
 # target to build an object file
-Sources/Map.cpp.o:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map.cpp.o
-.PHONY : Sources/Map.cpp.o
+Sources/Map/Generation.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.o
+.PHONY : Sources/Map/Generation.cpp.o
 
-Sources/Map.i: Sources/Map.cpp.i
+Sources/Map/Generation.i: Sources/Map/Generation.cpp.i
 
-.PHONY : Sources/Map.i
+.PHONY : Sources/Map/Generation.i
 
 # target to preprocess a source file
-Sources/Map.cpp.i:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map.cpp.i
-.PHONY : Sources/Map.cpp.i
+Sources/Map/Generation.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.i
+.PHONY : Sources/Map/Generation.cpp.i
 
-Sources/Map.s: Sources/Map.cpp.s
+Sources/Map/Generation.s: Sources/Map/Generation.cpp.s
 
-.PHONY : Sources/Map.s
+.PHONY : Sources/Map/Generation.s
 
 # target to generate assembly for a file
-Sources/Map.cpp.s:
-	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map.cpp.s
-.PHONY : Sources/Map.cpp.s
+Sources/Map/Generation.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.s
+.PHONY : Sources/Map/Generation.cpp.s
+
+Sources/Map/Map.o: Sources/Map/Map.cpp.o
+
+.PHONY : Sources/Map/Map.o
+
+# target to build an object file
+Sources/Map/Map.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o
+.PHONY : Sources/Map/Map.cpp.o
+
+Sources/Map/Map.i: Sources/Map/Map.cpp.i
+
+.PHONY : Sources/Map/Map.i
+
+# target to preprocess a source file
+Sources/Map/Map.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.i
+.PHONY : Sources/Map/Map.cpp.i
+
+Sources/Map/Map.s: Sources/Map/Map.cpp.s
+
+.PHONY : Sources/Map/Map.s
+
+# target to generate assembly for a file
+Sources/Map/Map.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.s
+.PHONY : Sources/Map/Map.cpp.s
 
 Sources/Scenes/GameScene.o: Sources/Scenes/GameScene.cpp.o
 
@@ -874,6 +901,33 @@ Sources/Scenes/Scene.cpp.s:
 	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.s
 .PHONY : Sources/Scenes/Scene.cpp.s
 
+Sources/SoundManager.o: Sources/SoundManager.cpp.o
+
+.PHONY : Sources/SoundManager.o
+
+# target to build an object file
+Sources/SoundManager.cpp.o:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o
+.PHONY : Sources/SoundManager.cpp.o
+
+Sources/SoundManager.i: Sources/SoundManager.cpp.i
+
+.PHONY : Sources/SoundManager.i
+
+# target to preprocess a source file
+Sources/SoundManager.cpp.i:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.i
+.PHONY : Sources/SoundManager.cpp.i
+
+Sources/SoundManager.s: Sources/SoundManager.cpp.s
+
+.PHONY : Sources/SoundManager.s
+
+# target to generate assembly for a file
+Sources/SoundManager.cpp.s:
+	$(MAKE) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.s
+.PHONY : Sources/SoundManager.cpp.s
+
 Sources/Thread/Thread.o: Sources/Thread/Thread.cpp.o
 
 .PHONY : Sources/Thread/Thread.o
@@ -972,6 +1026,9 @@ help:
 	@echo "... Sources/Components/Collider.o"
 	@echo "... Sources/Components/Collider.i"
 	@echo "... Sources/Components/Collider.s"
+	@echo "... Sources/Components/Cube.o"
+	@echo "... Sources/Components/Cube.i"
+	@echo "... Sources/Components/Cube.s"
 	@echo "... Sources/Components/Drawable.o"
 	@echo "... Sources/Components/Drawable.i"
 	@echo "... Sources/Components/Drawable.s"
@@ -981,9 +1038,6 @@ help:
 	@echo "... Sources/Components/Moveable.o"
 	@echo "... Sources/Components/Moveable.i"
 	@echo "... Sources/Components/Moveable.s"
-	@echo "... Sources/Components/SoundManager.o"
-	@echo "... Sources/Components/SoundManager.i"
-	@echo "... Sources/Components/SoundManager.s"
 	@echo "... Sources/Components/Text.o"
 	@echo "... Sources/Components/Text.i"
 	@echo "... Sources/Components/Text.s"
@@ -1002,18 +1056,21 @@ help:
 	@echo "... Sources/ECS/EntityManager.o"
 	@echo "... Sources/ECS/EntityManager.i"
 	@echo "... Sources/ECS/EntityManager.s"
+	@echo "... Sources/ECS/System/AnimatorSystem.o"
+	@echo "... Sources/ECS/System/AnimatorSystem.i"
+	@echo "... Sources/ECS/System/AnimatorSystem.s"
 	@echo "... Sources/ECS/System/ButtonSystem.o"
 	@echo "... Sources/ECS/System/ButtonSystem.i"
 	@echo "... Sources/ECS/System/ButtonSystem.s"
 	@echo "... Sources/ECS/System/ImageSystem.o"
 	@echo "... Sources/ECS/System/ImageSystem.i"
 	@echo "... Sources/ECS/System/ImageSystem.s"
+	@echo "... Sources/ECS/System/MoveSystem.o"
+	@echo "... Sources/ECS/System/MoveSystem.i"
+	@echo "... Sources/ECS/System/MoveSystem.s"
 	@echo "... Sources/ECS/System/RenderSystem.o"
 	@echo "... Sources/ECS/System/RenderSystem.i"
 	@echo "... Sources/ECS/System/RenderSystem.s"
-	@echo "... Sources/ECS/System/SoundSystem.o"
-	@echo "... Sources/ECS/System/SoundSystem.i"
-	@echo "... Sources/ECS/System/SoundSystem.s"
 	@echo "... Sources/ECS/System/TextSystem.o"
 	@echo "... Sources/ECS/System/TextSystem.i"
 	@echo "... Sources/ECS/System/TextSystem.s"
@@ -1026,15 +1083,15 @@ help:
 	@echo "... Sources/GameMenu/GameMenu.o"
 	@echo "... Sources/GameMenu/GameMenu.i"
 	@echo "... Sources/GameMenu/GameMenu.s"
-	@echo "... Sources/Generation/Generation.o"
-	@echo "... Sources/Generation/Generation.i"
-	@echo "... Sources/Generation/Generation.s"
 	@echo "... Sources/InputManager.o"
 	@echo "... Sources/InputManager.i"
 	@echo "... Sources/InputManager.s"
-	@echo "... Sources/Map.o"
-	@echo "... Sources/Map.i"
-	@echo "... Sources/Map.s"
+	@echo "... Sources/Map/Generation.o"
+	@echo "... Sources/Map/Generation.i"
+	@echo "... Sources/Map/Generation.s"
+	@echo "... Sources/Map/Map.o"
+	@echo "... Sources/Map/Map.i"
+	@echo "... Sources/Map/Map.s"
 	@echo "... Sources/Scenes/GameScene.o"
 	@echo "... Sources/Scenes/GameScene.i"
 	@echo "... Sources/Scenes/GameScene.s"
@@ -1047,6 +1104,9 @@ help:
 	@echo "... Sources/Scenes/Scene.o"
 	@echo "... Sources/Scenes/Scene.i"
 	@echo "... Sources/Scenes/Scene.s"
+	@echo "... Sources/SoundManager.o"
+	@echo "... Sources/SoundManager.i"
+	@echo "... Sources/SoundManager.s"
 	@echo "... Sources/Thread/Thread.o"
 	@echo "... Sources/Thread/Thread.i"
 	@echo "... Sources/Thread/Thread.s"

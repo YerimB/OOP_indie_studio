@@ -39,8 +39,11 @@ void GameManager::Initialize()
 // Second step: Loads the scene matching the ID passed as parameter.
 void GameManager::LoadScene(const Scene::SceneID &sceneID)
 {
+    if (sceneID != Scene::SceneID::UNDEFINED)
+        m_Scenes[sceneID]->Unload();
     m_EntityManager->ClearAll();
     m_Scenes[sceneID]->Load(this);
+    m_CurrentSceneID = sceneID;
 }
 
 // Adds the scene passed as parameters if its type doesn't already exists.
@@ -59,9 +62,9 @@ void GameManager::RemoveScene(const Scene::SceneID& sceneId)
 void GameManager::ProgramLoop(void)
 {
     this->LoadScene(Scene::SceneID::MENU);
-    while (this->m_Device->run())
+    while (this->m_globalVars.gameActive == true && m_Device->run())
     {
-        this->m_VideoDriver->beginScene(true, true, Color(255, 255, 255, 0));
+        this->m_VideoDriver->beginScene(true, true, Color(255, 135, 206, 250));
         this->m_EntityManager->Update();
         this->m_VideoDriver->endScene();
         if (m_globalVars.sceneChanged == true)
@@ -70,6 +73,8 @@ void GameManager::ProgramLoop(void)
             m_globalVars.sceneChanged = false;
         }
     }
+    if (m_Device->run())
+        m_Device->closeDevice();
 }
 
 // Loads the texture linked to the path passed as parameter and return a pointer to it.
@@ -115,6 +120,11 @@ SoundManager* GameManager::GetSoundManager() const
     return m_SoundManager.get();
 }
 
+Scene *GameManager::GetCurrentScene() const
+{
+    return m_Scenes.at(m_CurrentSceneID);
+}
+
 // Setters
 
 void GameManager::SetSceneChange(const bool &state)
@@ -125,9 +135,4 @@ void GameManager::SetSceneChange(const bool &state)
 void GameManager::SetNextScene(const Scene::SceneID &sID)
 {
     this->m_globalVars.newScene = sID;
-}
-
-void GameManager::SetSocketMode(const SocketMode &sMod)
-{
-    this->m_globalVars.currentSocketMode = sMod;
 }

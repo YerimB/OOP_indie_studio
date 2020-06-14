@@ -18,7 +18,7 @@ class Collider : public Component
 		static constexpr ComponentId Id = "Collider"_hash;
     
     public:
-        Collider(SceneManager *p_SceneManager);
+        Collider() = default;
     
     public:
         bool Initialize(void* args = nullptr) override final;

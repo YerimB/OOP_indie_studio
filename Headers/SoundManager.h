@@ -32,7 +32,9 @@ class SoundManager
         void Clear(void);
     
     public:
-    
+        void setVolume(const SoundType &, float);
+        float getVolume(const SoundType &);
+
     private:
         FMOD::System *m_System = nullptr;
         FMOD_RESULT m_fmodDebug;

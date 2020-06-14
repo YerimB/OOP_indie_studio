@@ -20,6 +20,8 @@ bool Button::Initialize(void *args)
         return (false);
     } else if (args)
         this->SetButtonID(*static_cast<ButtonID *>(args));
+    m_Button->setUseAlphaChannel(true);
+    m_Button->setDrawBorder(false);
     return (true);
 }
 

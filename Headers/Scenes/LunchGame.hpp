@@ -14,7 +14,14 @@ class LunchGame : public Scene {
     public:
         LunchGame();
         ~LunchGame();
-        void Load(GameManager* gameManager) override final;
+        void LoadSystems(GameManager*) override final;
+		void LoadAssets(GameManager*) override final;
+		void LoadElements(GameManager*) override final;
+
+	public:
+		void Load(GameManager* gameManager) override final;
+		void Update(GameManager* gameManager) override final;
+		void Unload(void) override final;
     private:
 };
 

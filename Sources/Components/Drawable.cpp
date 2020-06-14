@@ -7,7 +7,7 @@
 
 #include <Components/Drawable.h>
 
-Drawable::Drawable(irr::scene::ISceneManager* manager)
+Drawable::Drawable(SceneManager* manager)
 {
 	m_SceneManager = manager;
 	m_AnimatedMesh = nullptr;
@@ -15,9 +15,9 @@ Drawable::Drawable(irr::scene::ISceneManager* manager)
 
 bool Drawable::Initialize(void* args)
 {
-	std::string mesh = *static_cast<std::string*>(args);
+	AMesh* mesh = static_cast<AMesh*>(args);
 
-	m_AnimatedMesh = m_SceneManager->addAnimatedMeshSceneNode(m_SceneManager->getMesh(mesh.c_str()));
+	m_AnimatedMesh = m_SceneManager->addAnimatedMeshSceneNode(mesh);
 
 	if (!m_AnimatedMesh)
 		return false;
@@ -27,7 +27,49 @@ bool Drawable::Initialize(void* args)
 
 void Drawable::Update(const float& deltaTime, GameManager* gameManager) {}
 
+void Drawable::SetPosition(const Vector3f& position)
+{
+	m_AnimatedMesh->setPosition(position);
+}
+
+void Drawable::SetRotation(const Vector3f& rotation)
+{
+	m_AnimatedMesh->setRotation(rotation);
+}
+
+void Drawable::SetScale(const Vector3f& scale)
+{
+	m_AnimatedMesh->setScale(scale);
+}
+
+void Drawable::SetTexture(Texture *texture)
+{
+	if (!texture)
+		return;
+	m_AnimatedMesh->setMaterialTexture(0, texture);
+}
+
 irr::scene::IAnimatedMeshSceneNode* Drawable::GetDrawable()
 {
 	return m_AnimatedMesh;
+}
+
+Vector3f Drawable::GetPosition()
+{
+	return m_AnimatedMesh->getPosition();
+}
+
+Vector3f Drawable::GetRotation()
+{
+	return m_AnimatedMesh->getRotation();
+}
+
+Vector3f Drawable::GetScale()
+{
+	return m_AnimatedMesh->getScale();
+}
+
+Box3f Drawable::GetBounds()
+{
+	return m_AnimatedMesh->getTransformedBoundingBox();
 }
