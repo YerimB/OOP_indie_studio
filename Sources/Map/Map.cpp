@@ -85,13 +85,14 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 		for (size_t idx = 0; idx < 4; ++idx)
 		{
 			Entity player(pstr.append(std::to_string(idx + 1)));
-			Player* p0 = new Player(m_GameManager->GetSceneManager());
+			Player* p0 = nullptr;
 			Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
 			Transform* t0 = new Transform(corners[idx]);
 			Collider* cl0 = new Collider();
 			Animator* a0 = new Animator(m_GameManager->GetSceneManager());
 			size_t meshID = m_GameManager->m_globalVars.playersData[idx].characterID;
 
+			p0 = new Player(m_GameManager->GetSceneManager());
 			if (d0->Initialize(sc->GetMesh(m_GameManager->m_globalVars.meshIDMap.at(meshID))) && \
 			a0->Initialize(d0->GetDrawable()) && \
 			p0->Initialize(&m_GameManager->m_globalVars.playersData[idx])) {

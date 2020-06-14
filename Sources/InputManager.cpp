@@ -11,10 +11,14 @@ InputManager::InputManager(IrrlichtDevice* device)
 
     m_Buttons.emplace(Button::PLAY, false);
     m_Buttons.emplace(Button::QUIT, false);
-    m_Buttons.emplace(Button::CHANGEPLAYER1, false);
-    m_Buttons.emplace(Button::CHANGEPLAYER2, false);
-    m_Buttons.emplace(Button::CHANGEPLAYER3, false);
-    m_Buttons.emplace(Button::CHANGEPLAYER4, false);
+    m_Buttons.emplace(Button::CHANGE_P_AI_1, false);
+    m_Buttons.emplace(Button::CHANGE_P_AI_2, false);
+    m_Buttons.emplace(Button::CHANGE_P_AI_3, false);
+    m_Buttons.emplace(Button::CHANGE_P_AI_4, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_1, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_2, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_3, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_4, false);
     m_Buttons.emplace(Button::LOWERMUSIC, false);
     m_Buttons.emplace(Button::UPPERMUSIC, false);
     m_Buttons.emplace(Button::LOWERFX, false);
@@ -40,16 +44,22 @@ bool InputManager::OnEvent(const SEvent& event)
                     m_Buttons[Button::PLAY] = true; break;
                 case Button::QUIT:
                     m_Buttons[Button::QUIT] = true; break;
-                case Button::CHANGEPLAYER1:
-                    m_Buttons[Button::CHANGEPLAYER1] = true; break;
-                case Button::CHANGEPLAYER2:
-                    m_Buttons[Button::CHANGEPLAYER2] = true; break;
-                case Button::CHANGEPLAYER3:
-                    m_Buttons[Button::CHANGEPLAYER3] = true; break;
-                case Button::CHANGEPLAYER4:
-                    m_Buttons[Button::CHANGEPLAYER4] = true; break;
+                case Button::CHANGE_P_AI_1:
+                    m_Buttons[Button::CHANGE_P_AI_1] = true; break;
+                case Button::CHANGE_P_AI_2:
+                    m_Buttons[Button::CHANGE_P_AI_2] = true; break;
+                case Button::CHANGE_P_AI_3:
+                    m_Buttons[Button::CHANGE_P_AI_3] = true; break;
+                case Button::CHANGE_P_AI_4:
+                    m_Buttons[Button::CHANGE_P_AI_4] = true; break;
                 case Button::BUTTON_CHANGE_1:
                     m_Buttons[Button::BUTTON_CHANGE_1] = true; break;
+                case Button::BUTTON_CHANGE_2:
+                    m_Buttons[Button::BUTTON_CHANGE_2] = true; break;
+                case Button::BUTTON_CHANGE_3:
+                    m_Buttons[Button::BUTTON_CHANGE_3] = true; break;
+                case Button::BUTTON_CHANGE_4:
+                    m_Buttons[Button::BUTTON_CHANGE_4] = true; break;
                 case Button::LOWERMUSIC:
                     m_Buttons[Button::LOWERMUSIC] = true;
                     break;
