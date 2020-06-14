@@ -33,6 +33,8 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 	if (size % 4 != 0 || size < 12)
 		return;
 	auto strMap = map.GetMap();
+	m_GameManager->m_globalVars.mapSize = size;
+	m_GameManager->m_globalVars.map = strMap;
 	for (int idx = 0; idx < strMap.size(); ++idx)
 	{
 		for (auto& ch : strMap[idx])

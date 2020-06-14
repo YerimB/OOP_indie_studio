@@ -9,6 +9,7 @@
 #define PLAYER_H_
 
 #include <ECS/Component.h>
+#include <Components/Transform.h>
 #include <Core.hpp>
 #include <GameManager.h>
 
@@ -26,6 +27,9 @@ class Player : public Component
 
     public:
         void bindKey(const std::string &action, const irr::EKEY_CODE &);
+
+    private:
+        void UpdateMap(Transform *pPos, GameVars_t *gVars);
 
     private:
         SceneManager* m_SceneManager;

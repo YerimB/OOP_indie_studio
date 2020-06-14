@@ -27,6 +27,7 @@ void Player::Update(const float &dT, GameManager* gm)
     InputManager *im = gm->GetInputManager();
     auto transform = e.GetComponent<Transform>();
 
+    this->UpdateMap(transform, &gm->m_globalVars);
     if (im->IsKeyDown(m_Data->bindingsMap["UP"]))
     {
         auto position = transform->GetPosition();
@@ -64,4 +65,9 @@ void Player::Update(const float &dT, GameManager* gm)
 void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
 {
     this->m_Data->bindingsMap[a] = code;
+}
+
+void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
+{
+    // YUNO
 }

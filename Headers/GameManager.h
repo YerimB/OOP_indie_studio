@@ -35,6 +35,10 @@ typedef struct GameGlobalVariables_s
 	int currentPlayerNumber = 0;
 	std::array<PlayerData_t, 4> playersData;
 
+	// Map
+	size_t mapSize = 0;
+	std::vector<std::string> map;
+
 	// Add vars if needed.
 } GameVars_t;
 
