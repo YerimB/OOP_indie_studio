@@ -34,6 +34,7 @@ class SoundManager
     public:
         void setVolume(const SoundType &, float);
         float getVolume(const SoundType &);
+        void setLoop(const std::string &, int) const;
 
     private:
         FMOD::System *m_System = nullptr;

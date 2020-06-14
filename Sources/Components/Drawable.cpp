@@ -10,18 +10,18 @@
 Drawable::Drawable(SceneManager* manager)
 {
 	m_SceneManager = manager;
-	m_AnimatedMesh = nullptr;
+	m_Mesh = nullptr;
 }
 
 bool Drawable::Initialize(void* args)
 {
 	AMesh* mesh = static_cast<AMesh*>(args);
 
-	m_AnimatedMesh = m_SceneManager->addAnimatedMeshSceneNode(mesh);
+	m_Mesh = m_SceneManager->addAnimatedMeshSceneNode(mesh);
 
-	if (!m_AnimatedMesh)
+	if (!m_Mesh)
 		return false;
-	m_AnimatedMesh->setMaterialFlag(irr::video::EMF_LIGHTING, false);
+	m_Mesh->setMaterialFlag(irr::video::EMF_LIGHTING, false);
 	return true;
 }
 
@@ -29,47 +29,48 @@ void Drawable::Update(const float& deltaTime, GameManager* gameManager) {}
 
 void Drawable::SetPosition(const Vector3f& position)
 {
-	m_AnimatedMesh->setPosition(position);
+	m_Mesh->setPosition(position);
 }
 
 void Drawable::SetRotation(const Vector3f& rotation)
 {
-	m_AnimatedMesh->setRotation(rotation);
+	m_Mesh->setRotation(rotation);
 }
 
 void Drawable::SetScale(const Vector3f& scale)
 {
-	m_AnimatedMesh->setScale(scale);
+	m_Mesh->setScale(scale);
 }
 
 void Drawable::SetTexture(Texture *texture)
 {
 	if (!texture)
 		return;
-	m_AnimatedMesh->setMaterialTexture(0, texture);
+	m_Mesh->setMaterialTexture(0, texture);
 }
 
-irr::scene::IAnimatedMeshSceneNode* Drawable::GetDrawable()
+SceneNode* Drawable::GetDrawable()
 {
-	return m_AnimatedMesh;
+	return m_Mesh;
 }
 
 Vector3f Drawable::GetPosition()
 {
-	return m_AnimatedMesh->getPosition();
+	return m_Mesh->getPosition();
 }
 
 Vector3f Drawable::GetRotation()
 {
-	return m_AnimatedMesh->getRotation();
+	return m_Mesh->getRotation();
 }
 
 Vector3f Drawable::GetScale()
 {
-	return m_AnimatedMesh->getScale();
+	return m_Mesh->getScale();
 }
 
 Box3f Drawable::GetBounds()
 {
-	return m_AnimatedMesh->getTransformedBoundingBox();
+	m_Mesh->updateAbsolutePosition();
+	return m_Mesh->getTransformedBoundingBox();
 }

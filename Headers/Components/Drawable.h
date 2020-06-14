@@ -20,8 +20,8 @@ class Drawable : public Component
 		Drawable(SceneManager* manager);
 
 	public:
-		bool Initialize(void* args) override final;
-		void Update(const float& deltaTime, GameManager* gameManager) override final;
+		bool Initialize(void* args) override;
+		void Update(const float& deltaTime, GameManager* gameManager) override;
 
 	public:
 		void SetPosition(const Vector3f& position);
@@ -34,9 +34,9 @@ class Drawable : public Component
 		Vector3f GetRotation();
 		Vector3f GetScale();
 		Box3f GetBounds();
-		AMeshNode* GetDrawable();
+		virtual SceneNode* GetDrawable();
 
-	private:
+	protected:
 		SceneManager* m_SceneManager;
-		AMeshNode* m_AnimatedMesh;
+		SceneNode* m_Mesh;
 };

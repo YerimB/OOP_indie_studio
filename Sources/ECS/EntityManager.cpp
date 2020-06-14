@@ -92,3 +92,14 @@ Entity& EntityManager::GetEntity(const std::string& name)
 
 	throw std::runtime_error("Entity not found.");
 }
+
+Entity& EntityManager::GetEntity(const size_t& id)
+{
+	for (auto& entity : m_Entities)
+	{
+		if (entity.second.GetId() == id)
+			return entity.second;
+	}
+
+	throw std::runtime_error("Entity not found.");
+}

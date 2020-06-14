@@ -34,9 +34,15 @@ void MenuScene::LoadSystems(GameManager* gm)
 
 void MenuScene::LoadAssets(GameManager* gm)
 {
-    gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/menu.ogg"), "sndMenu", SoundManager::SoundType::MUSIC);
-    this->AddMesh(gm->GetSceneManager()->getMesh("bomberman_m.obj"), "Bomber");
-    this->AddTexture(gm->LoadTexture("Assets/background_mario.png"), "texBg");
+    gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/sound/menu.ogg"), "sndMenu", SoundManager::SoundType::MUSIC);
+    this->AddTexture(gm->LoadTexture("Assets/textures/background_mario.png"), "texBg");
+    gm->GetSoundManager()->AddSound(
+        gm->GetSoundManager()->LoadSound("Assets/sound/menu.ogg"),
+        "sndMenu",
+        SoundManager::SoundType::MUSIC
+    );
+
+    this->AddTexture(this->GetTexture("Assets/textures/background_mario.png"), "texBg");
 }
 
 // Load Entities & Components
@@ -57,7 +63,7 @@ void MenuScene::LoadElements(GameManager* gm)
     if (btnPlay->Initialize(nullptr))
     {
         btnPlay->SetButtonID(Button::ButtonID::PLAY);
-        btnPlay->SetTexture(gm->LoadTexture("Assets/btnPlay.png"));
+        btnPlay->SetTexture(gm->LoadTexture("Assets/textures/btnPlay.png"));
         btnPlay->SetSize(398, 131);
         btnPlay->SetPosition({ 410, 720 / 2 + 100 });
         btnPlay->SetOnPress(changeSceneToGame);
@@ -68,15 +74,11 @@ void MenuScene::LoadElements(GameManager* gm)
     if (btnQuit->Initialize(nullptr))
     {
         btnQuit->SetButtonID(Button::ButtonID::QUIT);
-        btnQuit->SetTexture(gm->LoadTexture("Assets/btnQuit.png"));
+        btnQuit->SetTexture(gm->LoadTexture("Assets/textures/btnQuit.png"));
         btnQuit->SetSize(250, 82);
         btnQuit->SetPosition({ 500, 720 / 2 + 300 });
         btnQuit->SetOnPress(quitGame);
         quitBtnEntity.AddComponent(std::move(btnQuit), Button::Id);
-    }
-
-    {
-        Entity mesh("lemesh");
     }
 
     gm->GetEntityManager()->AddEntity(backgroundEntity);
@@ -93,6 +95,7 @@ void MenuScene::Load(GameManager* gameManager)
     this->LoadAssets(gameManager);
     this->LoadElements(gameManager);
 
+    gameManager->GetSoundManager()->setLoop("sndMenu", (-1));
     gameManager->GetSoundManager()->PlaySound("sndMenu");
     // Add Camera to Scene.
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 5, -10), { 0, 0, 0 });
