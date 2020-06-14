@@ -1428,6 +1428,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o: includes/fmodCoreWin
 CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o: includes/fmodCoreWindows/fmod_output.h
 
 CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.o: Sources/Components/Player.cpp
+CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.o: Headers/Components/Animator.h
 CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.o: Headers/Components/Button.h
 CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.o: Headers/Components/Player.h
 CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.o: Headers/Components/Transform.h
@@ -3654,6 +3655,7 @@ CMakeFiles/bomberman.dir/Sources/ECS/System/MoveSystem.cpp.o: includes/fmodCoreW
 CMakeFiles/bomberman.dir/Sources/ECS/System/MoveSystem.cpp.o: includes/fmodCoreWindows/fmod_output.h
 
 CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.o: Sources/ECS/System/PlayerSystem.cpp
+CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.o: Headers/Components/Animator.h
 CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.o: Headers/Components/Button.h
 CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.o: Headers/Components/Player.h
 CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.o: Headers/Components/Transform.h
@@ -4875,20 +4877,31 @@ CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.o: Sources/Map/Generation.cp
 CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.o: Headers/Map/Generation.h
 
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Sources/Map/Map.cpp
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Animator.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Button.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Collider.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Cube.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Drawable.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Image.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Moveable.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Player.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Text.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Components/Transform.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Core.hpp
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/Component.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/ECS.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/Entity.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/EntityManager.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/Hash.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/AnimatorSystem.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/BaseSystem.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/ButtonSystem.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/ImageSystem.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/PlayerSystem.h
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/RenderSystem.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/System.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/System.inl
+CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/ECS/System/TextSystem.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/GameManager.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/InputManager/InputManager.hpp
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o: Headers/Map/Generation.h
@@ -5102,6 +5115,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Headers/ECS/ECS.h
 CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Headers/ECS/Entity.h
 CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Headers/ECS/EntityManager.h
 CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Headers/ECS/Hash.h
+CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Headers/ECS/System/AnimatorSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Headers/ECS/System/BaseSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Headers/ECS/System/ButtonSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o: Headers/ECS/System/ImageSystem.h
@@ -5312,6 +5326,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Sources/Scenes/LunchGam
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/Components/Animator.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/Components/Button.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/Components/Collider.h
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/Components/Cube.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/Components/Drawable.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/Components/Image.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/Components/Moveable.h
@@ -5324,6 +5339,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/ECS/ECS.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/ECS/Entity.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/ECS/EntityManager.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/ECS/Hash.h
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/ECS/System/AnimatorSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/ECS/System/BaseSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/ECS/System/ButtonSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Headers/ECS/System/ImageSystem.h
@@ -5531,6 +5547,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Sources/Scenes/MenuScen
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/Components/Animator.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/Components/Button.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/Components/Collider.h
+CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/Components/Cube.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/Components/Drawable.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/Components/Image.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/Components/Moveable.h
@@ -5543,6 +5560,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/ECS/ECS.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/ECS/Entity.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/ECS/EntityManager.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/ECS/Hash.h
+CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/ECS/System/AnimatorSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/ECS/System/BaseSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/ECS/System/ButtonSystem.h
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Headers/ECS/System/ImageSystem.h

@@ -40,6 +40,16 @@ Core.hpp
 GameManager.h
 -
 
+Headers/Components/Cube.h
+ECS/Component.h
+-
+Components/Drawable.h
+-
+Core.hpp
+-
+GameManager.h
+-
+
 Headers/Components/Drawable.h
 ECS/Component.h
 -
@@ -66,6 +76,10 @@ GameManager.h
 
 Headers/Components/Player.h
 ECS/Component.h
+-
+Components/Transform.h
+-
+Components/Animator.h
 -
 Core.hpp
 -
@@ -127,11 +141,15 @@ ECS/System/PlayerSystem.h
 -
 ECS/System/RenderSystem.h
 -
+ECS/System/AnimatorSystem.h
+-
 Components/Animator.h
 -
 Components/Button.h
 -
 Components/Collider.h
+-
+Components/Cube.h
 -
 Components/Drawable.h
 -
@@ -176,6 +194,16 @@ Headers/ECS/Hash.h
 cstddef
 -
 cstdint
+-
+
+Headers/ECS/System/AnimatorSystem.h
+ECS/System/System.h
+-
+ECS/EntityManager.h
+-
+Components/Drawable.h
+-
+Components/Animator.h
 -
 
 Headers/ECS/System/BaseSystem.h

@@ -53,6 +53,9 @@ void LunchGame::LoadAssets(GameManager* gm)
 
     auto sm = gm->GetSceneManager();
     this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
+    this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
+    this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
+    // this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
 }
 
 void LunchGame::LoadElements(GameManager* gameManager)
@@ -68,7 +71,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
             // b1->SetTexture(gameManager->LoadTexture("Assets/sand.jpg"));
             b1->SetTexture(this->GetTexture("Block"));
             b1->SetText("Go!");
-            b1->SetPosition({ 500, 600 });
+            b1->SetPosition({ 800, 800 });
             b1->SetSize(300, 100);
             b1->SetTextureToFit(true);
             b1->SetOnPress(changeSceneToGame);
@@ -88,112 +91,63 @@ void LunchGame::LoadElements(GameManager* gameManager)
             e2.AddComponent(d1, Drawable::Id);
             e2.AddComponent(newCollider, Drawable::Id);
             e2.AddComponent(t1, Transform::Id);
-            t1->SetRotation(Vector3f(10, 30, 0));
-            // t1->SetScale(Vector3f(10, 10, 10));
-            // d1->SetScale()
+            d1->SetScale(Vector3f(0.3, 0.3, 0.3));
             d1->SetPosition({-10, -2, 0});
-            d1->SetRotation(Vector3f(0, 30, 0));
+            d1->SetRotation(Vector3f(0, 200, 0));
         }
         gameManager->GetEntityManager()->AddEntity(e2);
     }
 
-    // {
-    //     Entity e3("e3");
-    //     Drawable* d2 = new Drawable(gameManager->GetSceneManager());
-    //     Transform* t2 = new Transform();
-    //     Collider *newCollider = new Collider();
+    {
+        Entity e3("e3");
+        Drawable* d2 = new Drawable(gameManager->GetSceneManager());
+        Transform* t2 = new Transform();
+        Collider *newCollider = new Collider();
 
-    //     if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Mario"))) {
-    //         e3.AddComponent(d2, Drawable::Id);
-    //         e3.AddComponent(t2, Transform::Id);
-    //         e3.AddComponent(newCollider, Drawable::Id);
-    //         d2->SetPosition({-3, -2, 0});
-    //         t2->SetRotation(Vector3f(0, 10, 0));
-    //         d2->SetRotation(Vector3f(0, 30, 0));
-    //         t2->SetScale(Vector3f(2, 2, 2));
-    //         // t2->SetPosition(Vector3f(-50,-2, 0));
-    //     }
-    //     gameManager->GetEntityManager()->AddEntity(e3);
-    // }
+        if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Luigi"))) {
+            e3.AddComponent(d2, Drawable::Id);
+            e3.AddComponent(t2, Transform::Id);
+            e3.AddComponent(newCollider, Drawable::Id);
+            d2->SetRotation(Vector3f(0, 200, 0));
+            d2->SetScale(Vector3f(0.3, 0.3, 0.3));
+            d2->SetPosition(Vector3f(-3,-2, 0));
+        }
+        gameManager->GetEntityManager()->AddEntity(e3);
+    }
 
-    // {
-    //     Entity e4("e4");
-    //     Drawable* d2 = new Drawable(gameManager->GetSceneManager());
-    //     Transform* t2 = new Transform();
-    //     Collider *newCollider = new Collider();
+    {
+        Entity e4("e4");
+        Drawable* d3 = new Drawable(gameManager->GetSceneManager());
+        Transform* t3 = new Transform();
+        Collider *newCollider = new Collider();
 
-    //     if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Mario"))) {
-    //         e4.AddComponent(d2, Drawable::Id);
-    //         e4.AddComponent(t2, Transform::Id);
-    //         e4.AddComponent(newCollider, Drawable::Id);
-    //         d2->SetPosition({-3, -2, 0});
-    //         t2->SetRotation(Vector3f(0, 10, 0));
-    //         d2->SetRotation(Vector3f(0, 30, 0));
-    //         t2->SetScale(Vector3f(2, 2, 2));
-    //         // t2->SetPosition(Vector3f(-50,-2, 0));
-    //     }
-    //     gameManager->GetEntityManager()->AddEntity(e4);
-    // }
+        if (t3->Initialize(0) && d3->Initialize(this->GetMesh("Star"))) {
+            e4.AddComponent(d3, Drawable::Id);
+            e4.AddComponent(t3, Transform::Id);
+            e4.AddComponent(newCollider, Drawable::Id);
+            d3->SetRotation(Vector3f(0, 140, 0));
+            d3->SetScale(Vector3f(0.3, 0.3, 0.3));
+            d3->SetPosition(Vector3f(3,-2, 0));
+        }
+        gameManager->GetEntityManager()->AddEntity(e4);
+    }
 
-    // {
-    //     Entity e5("e5");
-    //     Drawable* d4 = new Drawable(gameManager->GetSceneManager());
-    //     Transform* t4 = new Transform();
-    //     std::string pathToMesh = "Assets/bomberman_m2.obj";
+    {
+        Entity e5("e5");
+        Drawable* d4 = new Drawable(gameManager->GetSceneManager());
+        Transform* t4 = new Transform();
+        Collider *newCollider = new Collider();
 
-    //     if (t4->Initialize(0) && d4->Initialize(&pathToMesh)) {
-    //         e5.AddComponent(d4, Drawable::Id);
-    //         e5.AddComponent(t4, Transform::Id);
-    //         t4->SetScale(Vector3f(2, 2, 2));
-    //         t4->SetRotation(Vector3f(0, -30, 0));
-    //         t4->SetPosition(Vector3f(10,-2, 0));
-    //     }
-    //     gameManager->GetEntityManager()->AddEntity(e5);
-    // }
-
-
-    // {
-    //     Entity e6("e6");
-    //     Drawable* d5 = new Drawable(gameManager->GetSceneManager());
-    //     Transform* t5 = new Transform();
-    //     std::string pathToMesh = "Assets/Crate1.obj";
-
-    //     Button* b3 = new Button(gameManager->GetGuiEnvironment());
-
-    //     // Initialize component and set attributes then add it to entity
-    //     if (b3->Initialize(nullptr)) {
-    //         b3->SetButtonID(Button::ButtonID::UNDEFINED);
-    //         b3->SetTexture(gameManager->LoadTexture("Assets/right_arrow.png"));
-    //         // b3->SetText("Change Character");
-    //         b3->SetPosition({ 800, 100 });
-    //         b3->SetSize(100, 100);
-    //         b3->SetTextureToFit(true);
-    //         b3->SetOnPress(changeCharacter);
-    //         e6.AddComponent(std::move(b3), Button::Id);
-    //     }
-    //     Button* b4 = new Button(gameManager->GetGuiEnvironment());
-
-    //     // Initialize component and set attributes then add it to entity
-    //     if (b4->Initialize(nullptr)) {
-    //         b4->SetButtonID(Button::ButtonID::UNDEFINED);
-    //         b4->SetTexture(gameManager->LoadTexture("Assets/left_arrow.png"));
-    //         // b4->SetText("Chang");
-    //         b4->SetPosition({ 400, 100 });
-    //         b4->SetSize(100, 100);
-    //         b4->SetTextureToFit(true);
-    //         b4->SetOnPress(changeCharacter);
-    //         e6.AddComponent(std::move(b4), Button::Id);
-    //     }
-
-    //     if (t5->Initialize(0) && d5->Initialize(&pathToMesh)) {
-    //         e6.AddComponent(d5, Drawable::Id);
-    //         e6.AddComponent(t5, Transform::Id);
-    //         // t5->SetScale(Vector3f(2, 2, 2));
-    //         t5->SetRotation(Vector3f(0, -30, 0));
-    //         t5->SetPosition(Vector3f(0, 4, 0));
-    //     }
-    //     gameManager->GetEntityManager()->AddEntity(e6);
-    // }
+        if (t4->Initialize(0) && d4->Initialize(this->GetMesh("Star"))) {
+            e5.AddComponent(d4, Drawable::Id);
+            e5.AddComponent(t4, Transform::Id);
+            e5.AddComponent(newCollider, Drawable::Id);
+            d4->SetRotation(Vector3f(0, 140, 0));
+            d4->SetScale(Vector3f(0.3, 0.3, 0.3));
+            d4->SetPosition(Vector3f(10,-2, 0));
+        }
+        gameManager->GetEntityManager()->AddEntity(e5);
+    }
 
     // { // Back to menu button
     //     // Create components and entity
