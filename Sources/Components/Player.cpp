@@ -36,11 +36,6 @@ void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
     this->m_Data->bindingsMap[a] = code;
 }
 
-void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
-{
-    // YUNO
-}
-
 void Player::GetMovements(InputManager *im, Entity &self)
 {
     bool isMoving = false;
@@ -83,11 +78,9 @@ void Player::GetMovements(InputManager *im, Entity &self)
     {
         std::cout << "Dropping the bomb." << std::endl;
     }
-}
-
-void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
-{
-    this->m_Data->bindingsMap[a] = code;
+    if (this->m_oldMoveState != isMoving)
+        animator->PlayAnimation((isMoving) ? "Run" : "Idle");
+    this->m_oldMoveState = isMoving;
 }
 
 void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
@@ -95,20 +88,15 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     int x = pPos->GetPosition().X;
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2;
-    std::array<int, 2> tmp = {round(gVars->mapSize - (y - s_pos)/10) - 1, round(gVars->mapSize - (x - s_pos)/10) - 1 };
+    std::array<int, 2> tmp = {
+        static_cast<int>(round(gVars->mapSize - (y - s_pos) / 10) - 1.0f),
+        static_cast<int>(round(gVars->mapSize - (x - s_pos) / 10) - 1.0f)
+    };
 	if (tmp != this->_previousPos)
 	{
         if (this->_previousPos[0] != -1)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
         gVars->map[tmp[1]][tmp[0]] = 'E';
         _previousPos = tmp;
-		for(int i = 0; i < gVars->map.size(); i++)
-		{
-            std::cout << gVars->map[i] << std::endl;
-		}
-        std::cout << std::endl;
 	}
-    if (this->m_oldMoveState != isMoving)
-        animator->PlayAnimation((isMoving) ? "Run" : "Idle");
-    this->m_oldMoveState = isMoving;
 }
