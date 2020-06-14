@@ -11,6 +11,7 @@
 #include <array>
 #include <ECS/Component.h>
 #include <Components/Transform.h>
+#include <Components/Animator.h>
 #include <Core.hpp>
 #include <GameManager.h>
 #include <cmath>
@@ -32,11 +33,13 @@ class Player : public Component
 
     private:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
+        void GetMovements(InputManager *im, Entity &self);
 
     private:
         std::array<int, 2> _previousPos;
         SceneManager* m_SceneManager;
         PlayerData_t* m_Data;
+        bool m_oldMoveState = false;
 };
 
 #endif /* !PLAYER_H_ */
