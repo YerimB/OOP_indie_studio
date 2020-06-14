@@ -21,12 +21,7 @@ static void changeSceneToGame(GameManager* gameManager)
 	gameManager->SetNextScene(Scene::GAME);
 }
 
-static void test(GameManager* gameManager)
-{
-	std::cout << "TEST\n";
-}
-
-static void changeCharacter(GameManager* gameManager)
+static void changeCharacterP1(GameManager* gameManager)
 {
 	// gameManager->GetEntityManager()->get
 }
@@ -104,7 +99,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
             b1->SetPosition({ 1575, 700 });
             b1->SetSize(100, 100);
             b1->SetTextureToFit(true);
-            b1->SetOnPress(test);
+            b1->SetOnPress(changeCharacterP1);
             e1.AddComponent(std::move(b1), Button::Id);
         }
         if (t1->Initialize(0) && d1->Initialize(this->GetMesh("Mario"))) {
@@ -118,88 +113,88 @@ void LunchGame::LoadElements(GameManager* gameManager)
         gameManager->GetEntityManager()->AddEntity(e1);
     }
 
-    {
-        Entity e2("Player02");
-        Drawable* d2 = new Drawable(gameManager->GetSceneManager());
-        Transform* t2 = new Transform();
-        Collider *newCollider = new Collider();
-        Button* b2 = new Button(gameManager->GetGuiEnvironment());
+    // {
+    //     Entity e2("Player02");
+    //     Drawable* d2 = new Drawable(gameManager->GetSceneManager());
+    //     Transform* t2 = new Transform();
+    //     Collider *newCollider = new Collider();
+    //     Button* b2 = new Button(gameManager->GetGuiEnvironment());
 
-        if (b2->Initialize(nullptr)) {
-            b2->SetButtonID(Button::ButtonID::CHANGEPLAY2);
-            b2->SetTexture(this->GetTexture("Pow"));
-            b2->SetPosition({ 1075, 700 });
-            b2->SetSize(100, 100);
-            b2->SetTextureToFit(true);
-            b2->SetOnPress(test);
-            e2.AddComponent(std::move(b2), Button::Id);
-        }
-        if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Luigi"))) {
-            e2.AddComponent(d2, Drawable::Id);
-            e2.AddComponent(t2, Transform::Id);
-            e2.AddComponent(newCollider, Drawable::Id);
-            d2->SetRotation(Vector3f(0, 200, 0));
-            d2->SetScale(Vector3f(0.3, 0.3, 0.3));
-            d2->SetPosition(Vector3f(-3,-2, 0));
-        }
-        gameManager->GetEntityManager()->AddEntity(e2);
-    }
+    //     if (b2->Initialize(nullptr)) {
+    //         b2->SetButtonID(Button::ButtonID::CHANGEPLAY2);
+    //         b2->SetTexture(this->GetTexture("Pow"));
+    //         b2->SetPosition({ 1075, 700 });
+    //         b2->SetSize(100, 100);
+    //         b2->SetTextureToFit(true);
+    //         b2->SetOnPress(test);
+    //         e2.AddComponent(std::move(b2), Button::Id);
+    //     }
+    //     if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Luigi"))) {
+    //         e2.AddComponent(d2, Drawable::Id);
+    //         e2.AddComponent(t2, Transform::Id);
+    //         e2.AddComponent(newCollider, Drawable::Id);
+    //         d2->SetRotation(Vector3f(0, 200, 0));
+    //         d2->SetScale(Vector3f(0.3, 0.3, 0.3));
+    //         d2->SetPosition(Vector3f(-3,-2, 0));
+    //     }
+    //     gameManager->GetEntityManager()->AddEntity(e2);
+    // }
 
-    {
-        Entity e3("Player03");
-        Drawable* d3 = new Drawable(gameManager->GetSceneManager());
-        Transform* t3 = new Transform();
-        Collider *newCollider = new Collider();
-        Button* b3 = new Button(gameManager->GetGuiEnvironment());
+    // {
+    //     Entity e3("Player03");
+    //     Drawable* d3 = new Drawable(gameManager->GetSceneManager());
+    //     Transform* t3 = new Transform();
+    //     Collider *newCollider = new Collider();
+    //     Button* b3 = new Button(gameManager->GetGuiEnvironment());
 
-        if (b3->Initialize(nullptr)) {
-            b3->SetButtonID(Button::ButtonID::CHANGEPLAY3);
-            b3->SetTexture(this->GetTexture("Pow"));
-            b3->SetPosition({ 675, 700 });
-            b3->SetSize(100, 100);
-            b3->SetTextureToFit(true);
-            b3->SetOnPress(test);
-            e3.AddComponent(std::move(b3), Button::Id);
-        }
+    //     if (b3->Initialize(nullptr)) {
+    //         b3->SetButtonID(Button::ButtonID::CHANGEPLAY3);
+    //         b3->SetTexture(this->GetTexture("Pow"));
+    //         b3->SetPosition({ 675, 700 });
+    //         b3->SetSize(100, 100);
+    //         b3->SetTextureToFit(true);
+    //         b3->SetOnPress(test);
+    //         e3.AddComponent(std::move(b3), Button::Id);
+    //     }
 
-        if (t3->Initialize(0) && d3->Initialize(this->GetMesh("Koopa"))) {
-            e3.AddComponent(d3, Drawable::Id);
-            e3.AddComponent(t3, Transform::Id);
-            e3.AddComponent(newCollider, Drawable::Id);
-            d3->SetRotation(Vector3f(0, 140, 0));
-            d3->SetScale(Vector3f(0.3, 0.3, 0.3));
-            d3->SetPosition(Vector3f(3,-2, 0));
-        }
-        gameManager->GetEntityManager()->AddEntity(e3);
-    }
+    //     if (t3->Initialize(0) && d3->Initialize(this->GetMesh("Koopa"))) {
+    //         e3.AddComponent(d3, Drawable::Id);
+    //         e3.AddComponent(t3, Transform::Id);
+    //         e3.AddComponent(newCollider, Drawable::Id);
+    //         d3->SetRotation(Vector3f(0, 140, 0));
+    //         d3->SetScale(Vector3f(0.3, 0.3, 0.3));
+    //         d3->SetPosition(Vector3f(3,-2, 0));
+    //     }
+    //     gameManager->GetEntityManager()->AddEntity(e3);
+    // }
 
-    {
-        Entity e4("e4");
-        Drawable* d4 = new Drawable(gameManager->GetSceneManager());
-        Transform* t4 = new Transform();
-        Collider *newCollider = new Collider();
-        Button* b4 = new Button(gameManager->GetGuiEnvironment());
+    // {
+    //     Entity e4("e4");
+    //     Drawable* d4 = new Drawable(gameManager->GetSceneManager());
+    //     Transform* t4 = new Transform();
+    //     Collider *newCollider = new Collider();
+    //     Button* b4 = new Button(gameManager->GetGuiEnvironment());
 
-        if (b4->Initialize(nullptr)) {
-            b4->SetButtonID(Button::ButtonID::CHANGEPLAY4);
-            b4->SetTexture(this->GetTexture("Pow"));
-            b4->SetPosition({ 175, 700 });
-            b4->SetSize(100, 100);
-            b4->SetTextureToFit(true);
-            b4->SetOnPress(test);
-            e4.AddComponent(std::move(b4), Button::Id);
-        }
+    //     if (b4->Initialize(nullptr)) {
+    //         b4->SetButtonID(Button::ButtonID::CHANGEPLAY4);
+    //         b4->SetTexture(this->GetTexture("Pow"));
+    //         b4->SetPosition({ 175, 700 });
+    //         b4->SetSize(100, 100);
+    //         b4->SetTextureToFit(true);
+    //         b4->SetOnPress(test);
+    //         e4.AddComponent(std::move(b4), Button::Id);
+    //     }
 
-        if (t4->Initialize(0) && d4->Initialize(this->GetMesh("Star"))) {
-            e4.AddComponent(d4, Drawable::Id);
-            e4.AddComponent(t4, Transform::Id);
-            e4.AddComponent(newCollider, Drawable::Id);
-            d4->SetRotation(Vector3f(0, 140, 0));
-            d4->SetScale(Vector3f(0.3, 0.3, 0.3));
-            d4->SetPosition(Vector3f(10,-2, 0));
-        }
-        gameManager->GetEntityManager()->AddEntity(e4);
-    }
+    //     if (t4->Initialize(0) && d4->Initialize(this->GetMesh("Star"))) {
+    //         e4.AddComponent(d4, Drawable::Id);
+    //         e4.AddComponent(t4, Transform::Id);
+    //         e4.AddComponent(newCollider, Drawable::Id);
+    //         d4->SetRotation(Vector3f(0, 140, 0));
+    //         d4->SetScale(Vector3f(0.3, 0.3, 0.3));
+    //         d4->SetPosition(Vector3f(10,-2, 0));
+    //     }
+    //     gameManager->GetEntityManager()->AddEntity(e4);
+    // }
 
     // { // Back to menu button
     //     // Create components and entity
