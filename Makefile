@@ -867,6 +867,33 @@ Sources/Scenes/GameScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.s
 .PHONY : Sources/Scenes/GameScene.cpp.s
 
+Sources/Scenes/LunchGame.o: Sources/Scenes/LunchGame.cpp.o
+
+.PHONY : Sources/Scenes/LunchGame.o
+
+# target to build an object file
+Sources/Scenes/LunchGame.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o
+.PHONY : Sources/Scenes/LunchGame.cpp.o
+
+Sources/Scenes/LunchGame.i: Sources/Scenes/LunchGame.cpp.i
+
+.PHONY : Sources/Scenes/LunchGame.i
+
+# target to preprocess a source file
+Sources/Scenes/LunchGame.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.i
+.PHONY : Sources/Scenes/LunchGame.cpp.i
+
+Sources/Scenes/LunchGame.s: Sources/Scenes/LunchGame.cpp.s
+
+.PHONY : Sources/Scenes/LunchGame.s
+
+# target to generate assembly for a file
+Sources/Scenes/LunchGame.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.s
+.PHONY : Sources/Scenes/LunchGame.cpp.s
+
 Sources/Scenes/MenuScene.o: Sources/Scenes/MenuScene.cpp.o
 
 .PHONY : Sources/Scenes/MenuScene.o
@@ -1118,6 +1145,9 @@ help:
 	@echo "... Sources/Scenes/GameScene.o"
 	@echo "... Sources/Scenes/GameScene.i"
 	@echo "... Sources/Scenes/GameScene.s"
+	@echo "... Sources/Scenes/LunchGame.o"
+	@echo "... Sources/Scenes/LunchGame.i"
+	@echo "... Sources/Scenes/LunchGame.s"
 	@echo "... Sources/Scenes/MenuScene.o"
 	@echo "... Sources/Scenes/MenuScene.i"
 	@echo "... Sources/Scenes/MenuScene.s"

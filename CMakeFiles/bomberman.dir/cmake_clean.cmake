@@ -26,6 +26,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o"
+  "CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o"

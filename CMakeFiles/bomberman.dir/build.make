@@ -428,9 +428,22 @@ CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/GameScene.cpp -o CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.s
 
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: CMakeFiles/bomberman.dir/flags.make
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o: Sources/Scenes/LunchGame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/LunchGame.cpp
+
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/LunchGame.cpp > CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.i
+
+CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/LunchGame.cpp -o CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.s
+
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o: Sources/Scenes/MenuScene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/MenuScene.cpp
 
 CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.i: cmake_force
@@ -443,7 +456,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o: Sources/Scenes/Scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/Scene.cpp
 
 CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.i: cmake_force
@@ -456,7 +469,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o: Sources/SoundManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/SoundManager.cpp
 
 CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.i: cmake_force
@@ -469,7 +482,7 @@ CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o: Sources/Thread/Thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Thread/Thread.cpp
 
 CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.i: cmake_force
@@ -482,7 +495,7 @@ CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o: Sources/Thread/ThreadPool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Thread/ThreadPool.cpp
 
 CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.i: cmake_force
@@ -495,7 +508,7 @@ CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.s: cmake_force
 
 CMakeFiles/bomberman.dir/Sources/main.cpp.o: CMakeFiles/bomberman.dir/flags.make
 CMakeFiles/bomberman.dir/Sources/main.cpp.o: Sources/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/bomberman.dir/Sources/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/bomberman.dir/Sources/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bomberman.dir/Sources/main.cpp.o -c /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/main.cpp
 
 CMakeFiles/bomberman.dir/Sources/main.cpp.i: cmake_force
@@ -535,6 +548,7 @@ bomberman_OBJECTS = \
 "CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o" \
+"CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o" \
 "CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o" \
@@ -572,6 +586,7 @@ bomberman: CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o
+bomberman: CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o
@@ -580,7 +595,7 @@ bomberman: CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o
 bomberman: CMakeFiles/bomberman.dir/Sources/main.cpp.o
 bomberman: CMakeFiles/bomberman.dir/build.make
 bomberman: CMakeFiles/bomberman.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX executable bomberman"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking CXX executable bomberman"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bomberman.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

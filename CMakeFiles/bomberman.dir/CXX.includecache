@@ -98,12 +98,28 @@ ECS/ECS.h
 Components/Transform.h
 -
 
+/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/LunchGame.cpp
+Scenes/LunchGame.hpp
+-
+GameManager.h
+-
+ECS/System/ButtonSystem.h
+-
+ECS/ECS.h
+-
+Components/Transform.h
+-
+
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/MenuScene.cpp
 Scenes/MenuScene.hpp
 -
 GameManager.h
 -
 ECS/ECS.h
+-
+
+/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/Scene.cpp
+Scenes/Scene.hpp
 -
 
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/main.cpp
@@ -114,6 +130,8 @@ GameManager.h
 Scenes/MenuScene.hpp
 -
 Scenes/GameScene.hpp
+-
+Scenes/LunchGame.hpp
 -
 
 Headers/Components/Animator.h
@@ -449,6 +467,10 @@ ECS/ECS.h
 -
 
 Headers/Scenes/GameScene.hpp
+Scenes/Scene.hpp
+-
+
+Headers/Scenes/LunchGame.hpp
 Scenes/Scene.hpp
 -
 
