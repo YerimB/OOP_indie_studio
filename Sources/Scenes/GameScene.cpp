@@ -1,6 +1,7 @@
 #include <Scenes/GameScene.hpp>
 #include <GameManager.h>
 #include <ECS/System/MoveSystem.h>
+#include <ECS/System/TimeSystem.h>
 #include <Map/Map.h>
 // Systems
 #include <ECS/ECS.h>
@@ -32,7 +33,8 @@ void GameScene::LoadSystems(GameManager* gm)
     RenderSystem* renderSys = new RenderSystem(gm->GetEntityManager());
     MoveSystem* moveSys = new MoveSystem(gm->GetEntityManager());
     PlayerSystem* playerSys = new PlayerSystem(gm->GetEntityManager());
-
+    TimeSystem* timeSys = new TimeSystem(gm->GetEntityManager());
+    
     // Add
     gm->GetEntityManager()->AddSystem(std::move(animSys));
     gm->GetEntityManager()->AddSystem(std::move(buttonSys));
@@ -41,6 +43,7 @@ void GameScene::LoadSystems(GameManager* gm)
     gm->GetEntityManager()->AddSystem(std::move(renderSys));
     gm->GetEntityManager()->AddSystem(std::move(moveSys));
     gm->GetEntityManager()->AddSystem(std::move(playerSys));
+    gm->GetEntityManager()->AddSystem(std::move(timeSys));
 }
 
 void GameScene::LoadAssets(GameManager* gm)

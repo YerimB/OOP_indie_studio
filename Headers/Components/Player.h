@@ -12,6 +12,7 @@
 #include <ECS/Component.h>
 #include <Components/Transform.h>
 #include <Components/Animator.h>
+#include <Components/Timer.h>
 #include <Core.hpp>
 #include <GameManager.h>
 #include <cmath>
@@ -30,15 +31,17 @@ class Player : public Component
 
     public:
         void bindKey(const std::string &action, const irr::EKEY_CODE &);
+        void DropBomb(Entity& self, GameManager* gm);
 
     private:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
-        void GetMovements(InputManager *im, Entity &self);
+        void GetMovements(InputManager *im, Entity &self, GameManager* gm);
 
     private:
         std::array<int, 2> _previousPos;
         SceneManager* m_SceneManager;
         PlayerData_t* m_Data;
+        Entity* m_Bomb = nullptr;
         bool m_oldMoveState = false;
 };
 

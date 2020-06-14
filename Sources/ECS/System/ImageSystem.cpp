@@ -1,6 +1,6 @@
 #include <ECS/System/ImageSystem.h>
 
-ImageSystem::ImageSystem(EntityManager* pEntityManager) : System<Image, Transform>(pEntityManager)
+ImageSystem::ImageSystem(EntityManager* pEntityManager) : BaseType(pEntityManager)
 {
 }
 

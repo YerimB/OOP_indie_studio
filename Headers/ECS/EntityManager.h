@@ -8,6 +8,7 @@
 #include <ECS/Component.h>
 #include <ECS/System/System.h>
 #include <InputManager/InputManager.hpp>
+#include <ECS/Time.h>
 
 class EntityManager
 {
@@ -47,4 +48,5 @@ class EntityManager
 		irr::gui::IGUIEnvironment* m_GuiEnvironment;
 		InputManager* m_InputManager;
 		GameManager* m_GameManager;
+		Time m_Time;
 };

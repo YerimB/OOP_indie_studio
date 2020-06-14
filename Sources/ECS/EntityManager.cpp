@@ -13,6 +13,7 @@ EntityManager::EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIE
 	m_GuiEnvironment = env;
 	m_InputManager = im;
 	m_GameManager = gameManager;
+	m_Time;
 }
 
 EntityManager::~EntityManager()
@@ -30,7 +31,7 @@ void EntityManager::Update()
 	// Get data from server and modify entities before systems update
 	for (auto& system : m_Systems)
 	{
-		system->Update(0);
+		system->Update(m_Time.GetDeltaTime().count());
 	}
 	m_GuiEnvironment->drawAll();
 }
