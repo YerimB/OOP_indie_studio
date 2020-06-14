@@ -11,7 +11,7 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 	Vector3f position = {
         -(size * 10.0f) / 2,
         0,
-        -(size * 10.0f) / 2
+		-(size * 10.0f) / 2
     };
 
 	{ // Create plane
@@ -48,7 +48,7 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			else if (ch == '3')
 				eType = "Pow";
 			else {
-				position.X += 10;
+				position.Z += 10.0f;
 				continue;
 			}
 
@@ -65,17 +65,17 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			cubeEntity.AddComponent(c0, Cube::Id);
 			cubeEntity.AddComponent(cl0, Collider::Id);
 			m_GameManager->GetEntityManager()->AddEntity(cubeEntity);
-			position.X += 10;
+			position.Z += 10.0f;
 		}
-		position.X = -((size * 10) / 2.0f);
-		position.Z += 10;
+		position.Z = -(size * 10.0f) / 2.0f;
+		position.X += 10.0f;
 	}
 	float corner = -(size * 10.0f) / 2;
 	{ // Create player
 		Entity player("Player01");
 		Player* p0 = new Player(m_GameManager->GetSceneManager());
 		Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
-		Transform* t0 = new Transform({corner + 10.0f, 0, corner + 10.0f});
+		Transform* t0 = new Transform({corner + 20.0f, 0, corner + 20.0f});
 		Collider* cl0 = new Collider();
 		Animator* a0 = new Animator(m_GameManager->GetSceneManager());
 		if (d0->Initialize(sc->GetMesh("Luigi")) && a0->Initialize(d0->GetDrawable()) && \
