@@ -92,7 +92,10 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 			Animator* a0 = new Animator(m_GameManager->GetSceneManager());
 			size_t meshID = m_GameManager->m_globalVars.playersData[idx].characterID;
 
-			p0 = new Player(m_GameManager->GetSceneManager());
+			if (m_GameManager->m_globalVars.playersData[idx].isActive)
+				p0 = new Player(m_GameManager->GetSceneManager());
+			else
+				p0 = new PlayerAI(m_GameManager->GetSceneManager());
 			if (d0->Initialize(sc->GetMesh(m_GameManager->m_globalVars.meshIDMap.at(meshID))) && \
 			a0->Initialize(d0->GetDrawable()) && \
 			p0->Initialize(&m_GameManager->m_globalVars.playersData[idx])) {

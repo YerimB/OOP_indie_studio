@@ -6,15 +6,12 @@ AI::AI(std::vector<std::string> map): _map(map), _cleanMap(map)
         for (int j = 0; j < _cleanMap[i].length(); j++)
             if (_cleanMap[i][j] == 'E') _cleanMap[i][j] = '0';
     }
-    std::cout << "Checking bombs" << std::endl;
     if (isInBombRange()) {
         getSafePath();
     }
     else
     {
-        std::cout << "A* begin" << std::endl;
         Astar toto(_map);
-        std::cout << "A* end" << std::endl;
         _path = toto.getPath();
     }
 

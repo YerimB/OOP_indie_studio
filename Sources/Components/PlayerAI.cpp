@@ -33,11 +33,9 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
 	{
         _backupMap = map;
         std::vector<std::string> tmp_map = map;
+        for (auto &elem : map)
+            std::cout << elem << std::endl;
         tmp_map[8][8] = 'E';
-        for (int i = 0; i < map.size(); i++)
-        {
-            std::cout << map[i] << std::endl;
-        }
         AI a(tmp_map);
         _dir = a.getDir();
         isMoving = false;
