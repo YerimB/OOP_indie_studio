@@ -14,6 +14,7 @@ int main()
 {
     Unique<GameManager> gameManager = CreateUnique<GameManager>();
     MenuScene menu;
+    std::cout << "lauch" << std::endl;
     GameScene game;
 
     gameManager->Initialize();

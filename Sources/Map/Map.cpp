@@ -33,6 +33,8 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 	if (size % 4 != 0 || size < 12)
 		return;
 	auto strMap = map.GetMap();
+	m_GameManager->m_globalVars.mapSize = size;
+	m_GameManager->m_globalVars.map = strMap;
 	for (int idx = 0; idx < strMap.size(); ++idx)
 	{
 		for (auto& ch : strMap[idx])
@@ -69,27 +71,28 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 		position.Z += 10;
 	}
 	float corner = -(size * 10.0f) / 2;
-	// std::array<Vector3f, 4> corners = {
-	// 	Vector3f(corner + 10.0f, 0, corner + 10.0f),
-	// 	Vector3f(corner + 10.0f, 0, -(corner + 25.0f)),
-	// 	Vector3f(-(corner + 25.0f), 0, corner + 10.0f),
-	// 	Vector3f(-(corner + 25.0f), 0, -(corner + 25.0f)),
-	// };
-	// for (auto &pos : corners) {
-	Entity player("Player01");
-	Player* p0 = new Player(m_GameManager->GetSceneManager());
-	Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
-	Transform* t0 = new Transform({corner + 10.0f, 0, corner + 10.0f}, {0, 0, 0}, {5, 5, 5});
-	Collider* cl0 = new Collider();
-	if (d0->Initialize(sc->GetMesh("Bomber")) && p0->Initialize(&m_GameManager->m_globalVars.playersData[0])) {
-		d0->SetPosition({corner + 10.0f, 0, corner + 10.0f});
-		player.AddComponent(p0, Player::Id);
-		player.AddComponent(d0, Drawable::Id);
-		player.AddComponent(t0, Transform::Id);
-		player.AddComponent(cl0, Collider::Id);
-		m_GameManager->GetEntityManager()->AddEntity(player);
+	{ // Create player
+		Entity player("Player01");
+		Player* p0 = new Player(m_GameManager->GetSceneManager());
+		Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
+		Transform* t0 = new Transform({corner + 10.0f, 0, corner + 10.0f});
+		Collider* cl0 = new Collider();
+		Animator* a0 = new Animator(m_GameManager->GetSceneManager());
+		if (d0->Initialize(sc->GetMesh("Luigi")) && a0->Initialize(d0->GetDrawable()) && \
+		p0->Initialize(&m_GameManager->m_globalVars.playersData[1])) {
+			d0->SetPosition({corner + 10.0f, 0, corner + 10.0f});
+			a0->AddAnimation("Idle", {0, 300, 30});
+			a0->AddAnimation("Run", {301, 320, 30});
+			a0->AddAnimation("Death", {321, 410, 30});
+			a0->PlayAnimation("Idle");
+			player.AddComponent(p0, Player::Id);
+			player.AddComponent(d0, Drawable::Id);
+			player.AddComponent(t0, Transform::Id);
+			player.AddComponent(cl0, Collider::Id);
+			player.AddComponent(a0, Animator::Id);
+			m_GameManager->GetEntityManager()->AddEntity(player);
+		}
 	}
-	// }
     auto camera = m_GameManager->GetSceneManager()->addCameraSceneNode(
 		0,
 		{ -70, size * 7.5f, 0 },
