@@ -12,6 +12,10 @@ class Map
 
 	public:
 		void Initialize(const std::size_t& size, Scene *sc);
+	
+	private:
+		void InitMap(const std::size_t& size, Scene *sc);
+		void InitPlayers(const std::size_t& size, Scene *sc);
 
 	private:
 		GameManager* m_GameManager;
