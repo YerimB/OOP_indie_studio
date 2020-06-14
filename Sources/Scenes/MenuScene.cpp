@@ -36,6 +36,7 @@ void MenuScene::LoadAssets(GameManager* gm)
 {
     gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/menu.ogg"), "sndMenu", SoundManager::SoundType::MUSIC);
     this->AddMesh(gm->GetSceneManager()->getMesh("bomberman_m.obj"), "Bomber");
+    this->AddTexture(gm->LoadTexture("Assets/background_mario.png"), "texBg");
 }
 
 // Load Entities & Components
@@ -45,9 +46,8 @@ void MenuScene::LoadElements(GameManager* gm)
     Entity playBtnEntity("playBtn");
     Entity quitBtnEntity("quitBtn");
 
-    Texture* texBg = gm->LoadTexture("Assets/background_mario.png");
     Image* background = new Image(gm->GetGuiEnvironment());
-    if (background && background->Initialize(texBg))
+    if (background && background->Initialize(this->GetTexture("texBg")));
     {
         background->SetSize(1920, 1080);
         backgroundEntity.AddComponent(std::move(background), Image::Id);

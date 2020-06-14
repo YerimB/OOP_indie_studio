@@ -53,6 +53,9 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddMesh(sm->getMesh("Assets/wall.md3"), "Wall");
     this->AddMesh(sm->getMesh("Assets/bomberman_m.obj"), "Bomber");
 
+    // Player
+    this->AddMesh(sm->getMesh("Assets/mario.b3d"), "player");
+
     gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/game.ogg"), "sndGame", SoundManager::SoundType::MUSIC);
 }
 
@@ -76,6 +79,14 @@ void GameScene::LoadElements(GameManager* gm)
             // When done, add entity to the entity manager.
             gm->GetEntityManager()->AddEntity(e1);
         }
+
+        Entity player("ePlayer");
+        Drawable* dPlayer = new Drawable(gm->GetSceneManager());
+        if (dPlayer->Initialize(this->GetMesh("player")))
+        {
+            dPlayer->SetPosition({0, 20, 0});
+        }
+
     }
 
     auto map = Map(gm);
