@@ -10,12 +10,6 @@
 Components/Animator.h
 -
 
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Button.cpp
-Components/Button.h
--
-iostream
--
-
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Collider.cpp
 Components/Collider.h
 -
@@ -50,34 +44,12 @@ Components/Text.h
 iostream
 -
 
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Timer.cpp
-Components/Timer.h
--
-
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Transform.cpp
 Components/Transform.h
 -
 
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/Component.cpp
-ECS/Component.h
--
-
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/Entity.cpp
-ECS/Entity.h
--
-ECS/Hash.h
--
-
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/EntityManager.cpp
-ECS/EntityManager.h
--
-
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/AnimatorSystem.cpp
 ECS/System/AnimatorSystem.h
--
-
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/ButtonSystem.cpp
-ECS/System/ButtonSystem.h
 -
 
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/ImageSystem.cpp
@@ -104,16 +76,8 @@ ECS/System/TextSystem.h
 string
 -
 
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/Time.cpp
-ECS/Time.h
--
-
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/GameManager.cpp
 GameManager.h
--
-
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/InputManager.cpp
-InputManager/InputManager.hpp
 -
 
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Map/Map.cpp
@@ -140,18 +104,6 @@ Scenes/MenuScene.hpp
 GameManager.h
 -
 ECS/ECS.h
--
-
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/Scene.cpp
-Scenes/Scene.hpp
--
-
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/SoundManager.cpp
-SoundManager.h
--
-
-/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Thread/ThreadPool.cpp
-Thread/ThreadPool.hpp
 -
 
 /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/main.cpp
@@ -221,11 +173,19 @@ GameManager.h
 -
 
 Headers/Components/Player.h
+array
+-
 ECS/Component.h
+-
+Components/Transform.h
+-
+Components/Animator.h
 -
 Core.hpp
 -
 GameManager.h
+-
+cmath
 -
 
 Headers/Components/Text.h
@@ -234,12 +194,6 @@ ECS/Component.h
 Core.hpp
 -
 GameManager.h
--
-
-Headers/Components/Timer.h
-chrono
--
-ECS/Component.h
 -
 
 Headers/Components/Transform.h
@@ -289,11 +243,15 @@ ECS/System/PlayerSystem.h
 -
 ECS/System/RenderSystem.h
 -
+ECS/System/AnimatorSystem.h
+-
 Components/Animator.h
 -
 Components/Button.h
 -
 Components/Collider.h
+-
+Components/Cube.h
 -
 Components/Drawable.h
 -
@@ -436,12 +394,6 @@ Components/Text.h
 Components/Transform.h
 -
 
-Headers/ECS/Time.h
-chrono
--
-Core.hpp
--
-
 Headers/GameManager.h
 Core.hpp
 -
@@ -493,27 +445,7 @@ Map/Generation.h
 -
 ECS/EntityManager.h
 -
-Components/Cube.h
--
-Components/Drawable.h
--
-Components/Transform.h
--
-Components/Collider.h
--
-Components/Player.h
--
-
-Headers/SafeContainer/SafeQueue.hpp
-mutex
--
-queue
--
-SafeContainer/SafeQueue.inl
--
-
-Headers/SafeContainer/SafeQueue.inl
-SafeContainer/SafeQueue.hpp
+ECS/ECS.h
 -
 
 Headers/Scenes/GameScene.hpp
@@ -536,54 +468,6 @@ Core.hpp
 iostream
 -
 unordered_map
--
-
-Headers/Thread/ITask.hpp
-
-Headers/Thread/Thread.hpp
-thread
--
-string
--
-atomic
--
-iostream
--
-unordered_map
--
-sstream
--
-Thread.inl
-Headers/Thread/Thread.inl
-
-Headers/Thread/Thread.inl
-Thread.hpp
-Headers/Thread/Thread.hpp
-
-Headers/Thread/ThreadPool.hpp
-condition_variable
--
-cstddef
--
-functional
--
-mutex
--
-vector
--
-Core.hpp
--
-SafeContainer/SafeQueue.hpp
--
-Thread/ITask.hpp
--
-Thread/Thread.hpp
--
-Thread/ThreadPoolExpcetion.hpp
--
-
-Headers/Thread/ThreadPoolExpcetion.hpp
-stdexcept
 -
 
 includes/Irrlicht/CDynamicMeshBuffer.h

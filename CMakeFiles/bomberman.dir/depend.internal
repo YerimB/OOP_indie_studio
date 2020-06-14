@@ -1429,6 +1429,7 @@ CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o
  includes/fmodCoreWindows/fmod_output.h
 CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.o
  /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Components/Player.cpp
+ Headers/Components/Animator.h
  Headers/Components/Button.h
  Headers/Components/Player.h
  Headers/Components/Transform.h
@@ -3655,6 +3656,7 @@ CMakeFiles/bomberman.dir/Sources/ECS/System/MoveSystem.cpp.o
  includes/fmodCoreWindows/fmod_output.h
 CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.o
  /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/ECS/System/PlayerSystem.cpp
+ Headers/Components/Animator.h
  Headers/Components/Button.h
  Headers/Components/Player.h
  Headers/Components/Transform.h
@@ -4874,20 +4876,31 @@ CMakeFiles/bomberman.dir/Sources/Map/Generation.cpp.o
  Headers/Map/Generation.h
 CMakeFiles/bomberman.dir/Sources/Map/Map.cpp.o
  /home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Map/Map.cpp
+ Headers/Components/Animator.h
  Headers/Components/Button.h
  Headers/Components/Collider.h
  Headers/Components/Cube.h
  Headers/Components/Drawable.h
+ Headers/Components/Image.h
+ Headers/Components/Moveable.h
  Headers/Components/Player.h
+ Headers/Components/Text.h
  Headers/Components/Transform.h
  Headers/Core.hpp
  Headers/ECS/Component.h
+ Headers/ECS/ECS.h
  Headers/ECS/Entity.h
  Headers/ECS/EntityManager.h
  Headers/ECS/Hash.h
+ Headers/ECS/System/AnimatorSystem.h
  Headers/ECS/System/BaseSystem.h
+ Headers/ECS/System/ButtonSystem.h
+ Headers/ECS/System/ImageSystem.h
+ Headers/ECS/System/PlayerSystem.h
+ Headers/ECS/System/RenderSystem.h
  Headers/ECS/System/System.h
  Headers/ECS/System/System.inl
+ Headers/ECS/System/TextSystem.h
  Headers/GameManager.h
  Headers/InputManager/InputManager.hpp
  Headers/Map/Generation.h
@@ -5101,6 +5114,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/GameScene.cpp.o
  Headers/ECS/Entity.h
  Headers/ECS/EntityManager.h
  Headers/ECS/Hash.h
+ Headers/ECS/System/AnimatorSystem.h
  Headers/ECS/System/BaseSystem.h
  Headers/ECS/System/ButtonSystem.h
  Headers/ECS/System/ImageSystem.h
@@ -5311,6 +5325,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o
  Headers/Components/Animator.h
  Headers/Components/Button.h
  Headers/Components/Collider.h
+ Headers/Components/Cube.h
  Headers/Components/Drawable.h
  Headers/Components/Image.h
  Headers/Components/Moveable.h
@@ -5323,6 +5338,7 @@ CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o
  Headers/ECS/Entity.h
  Headers/ECS/EntityManager.h
  Headers/ECS/Hash.h
+ Headers/ECS/System/AnimatorSystem.h
  Headers/ECS/System/BaseSystem.h
  Headers/ECS/System/ButtonSystem.h
  Headers/ECS/System/ImageSystem.h
