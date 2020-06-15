@@ -58,6 +58,7 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
     Animator* animator = self.GetComponent<Animator>();
     Vector3f r = t->GetRotation();
 
+
 	if (abs(abs_pos[0] - t->GetPosition().X) >=10 || abs(abs_pos[1] - t->GetPosition().Z) >= 10 ||
         (abs_pos[0] == t->GetPosition().X && abs_pos[1] == t->GetPosition().Z))
 	{
@@ -73,6 +74,17 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
         _backupMap = map;
         std::vector<std::string> tmp_map = map;
 		tmp_map[tmp[1]][tmp[0]] = 'O';
+		for (int i = 0; i < gm->m_globalVars.playersData.size(); i++)
+		{
+            if (gm->m_globalVars.playersData[i].isActive)
+            {
+                std::array<int, 2> tmp_pos = {
+                    round(gm->m_globalVars.mapSize - (gm->m_globalVars.playersData[i].position.Y - s_pos) / 10.0f),
+                    round(gm->m_globalVars.mapSize - (gm->m_globalVars.playersData[i].position.X - s_pos) / 10.0f)
+                };
+                tmp_map[tmp_pos[1]][tmp_pos[0]] = 'E';
+            }
+		}
         AI a(tmp_map);
         if (map[_target[0]][_target[1]] == 'B')
         {
