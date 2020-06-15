@@ -120,7 +120,7 @@ void GameScene::Update(GameManager* gm)
         }
         if (nbAlive == 1)
         {
-            std::cout << "Player " << winnerID << " won the game !" << std::endl;
+            // std::cout << "Player " << winnerID << " won the game !" << std::endl;
         }
     }
 }
