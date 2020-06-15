@@ -57,6 +57,7 @@ void Player::DropBomb(Entity& self, GameManager* gm)
         round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
         round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
     };
+    gm->m_globalVars.map[tmp.X][tmp.Y] = 'B';
     std::cout << "Drop bomb at : " << tmp.X << ", " << tmp.Y << std::endl;
     tmp.X = -(s_pos + tmp.X * 10.0f);
     tmp.Y = -(s_pos + tmp.Y * 10.0f);
@@ -77,11 +78,19 @@ void Player::DestroyBlocks(GameManager* gm)
     int x = t->GetPosition().X;
     int y = t->GetPosition().Z;
     auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2.0f;
-
     Vector2i tmp = {
         static_cast<int>(round(gm->m_globalVars.mapSize - (x - s_pos) / 10.0f)),
         static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 10.0f))
     };
+    gm->m_globalVars.map[tmp.X][tmp.Y] = '0';
+    if (gm->m_globalVars.map[tmp.X + 1][tmp.Y] == '2')
+        gm->m_globalVars.map[tmp.X + 1][tmp.Y] = '0';
+    if (gm->m_globalVars.map[tmp.X - 1][tmp.Y] == '2')
+        gm->m_globalVars.map[tmp.X - 1][tmp.Y] = '0';
+    if (gm->m_globalVars.map[tmp.X][tmp.Y + 1] == '2')
+        gm->m_globalVars.map[tmp.X][tmp.Y + 1] = '0';
+    if (gm->m_globalVars.map[tmp.X][tmp.Y - 1] == '2')
+        gm->m_globalVars.map[tmp.X][tmp.Y - 1] = '0';
 
     Explosion(gm, tmp);
 }
@@ -90,7 +99,7 @@ void Player::Explosion(GameManager* gm, Vector2i& pos)
 {
     std::array<bool, 4> checked = { false,false,false,false };
 
-    for (int i = 1; i < 3; i += 1)
+    for (int i = 1; i < 2; i += 1)
     {
         auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - i));
         if (e != nullptr && !checked[0]) {
