@@ -94,7 +94,6 @@ void Player::DestroyBlocks(GameManager* gm)
         gm->m_globalVars.map[tmp.X][tmp.Y + 1] = '0';
     if (gm->m_globalVars.map[tmp.X][tmp.Y - 1] == '2')
         gm->m_globalVars.map[tmp.X][tmp.Y - 1] = '0';
-    std::cout << "Totorina" << std::endl;
 }
 
 void Player::Explosion(GameManager* gm, Vector2i& pos) const
@@ -106,6 +105,7 @@ void Player::Explosion(GameManager* gm, Vector2i& pos) const
         gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - 1) + "_" + std::to_string(pos.Y))
     };
 
+    gm->GetSoundManager()->PlaySound("sndExplode");
     for (Entity *e : eArray)
         if (e != nullptr) {
             e->GetComponent<Drawable>()->GetDrawable()->remove();
@@ -182,7 +182,6 @@ void Player::GetMovements(GameManager *gm, Entity &self)
         DestroyBlocks(gm);
         m_Bomb->GetComponent<Drawable>()->GetDrawable()->remove();
         m_Bomb = nullptr;
-        std::cout << "Bomb removed" << std::endl;
     }
     if (this->m_oldMoveState != isMoving)
         animator->PlayAnimation((isMoving) ? "Run" : "Idle");

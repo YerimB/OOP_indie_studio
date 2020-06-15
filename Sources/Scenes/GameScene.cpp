@@ -66,6 +66,11 @@ void GameScene::LoadAssets(GameManager* gm)
         "sndGame",
         SoundManager::SoundType::MUSIC
     );
+    gm->GetSoundManager()->AddSound(
+        gm->GetSoundManager()->LoadSound("Assets/sound/Boum1.ogg"),
+        "sndExplode",
+        SoundManager::SoundType::SFX
+    );
 }
 
 // Load Entities & Components
