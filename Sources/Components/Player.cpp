@@ -60,6 +60,7 @@ void Player::DropBomb(Entity& self, GameManager* gm)
         round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
     };
     this->m_BombPos.set({static_cast<int>(tmp.X), static_cast<int>(tmp.Y)});
+    gVars.map[tmp.X][tmp.Y] = 'B';
     tmp.X = -(s_pos + tmp.X * 10.0f);
     tmp.Y = -(s_pos + tmp.Y * 10.0f);
 

@@ -10,7 +10,7 @@ void TimeSystem::Update(const double& deltaTime)
 	{
 		Timer* timer = std::get<Timer*>(compTupl);
 
-		if (timer)
+		if (timer != nullptr)
 		{
 			if (timer->GetDuration() > 0)
 			{
