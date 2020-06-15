@@ -28,7 +28,7 @@ class Collider : public Component
 		};
 	
     public:
-        explicit Collider(const Tag& tag);
+        explicit Collider(const Tag& tag = Tag::None);
 
     public:
         bool Initialize(void* args = nullptr) override final;

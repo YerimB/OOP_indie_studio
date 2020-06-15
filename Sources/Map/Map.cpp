@@ -30,10 +30,7 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 			m_GameManager->GetEntityManager()->AddEntity(plane);
 		}
 	}
-	if (size % 4 != 0 || size < 12)
-		return;
 	auto strMap = map.GetMap();
-	m_GameManager->m_globalVars.mapSize = size;
 	m_GameManager->m_globalVars.map = strMap;
 	int idx2 = (-1);
 	for (int idx = 0; idx < strMap.size(); ++idx)
@@ -112,6 +109,7 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 				player.AddComponent(t0, Transform::Id);
 				player.AddComponent(cl0, Collider::Id);
 				player.AddComponent(a0, Animator::Id);
+				m_GameManager->m_globalVars.playersData[idx].alive = true;
 				m_GameManager->GetEntityManager()->AddEntity(player);
 			}
 		}

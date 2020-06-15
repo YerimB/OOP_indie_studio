@@ -58,6 +58,7 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
     this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
+    this->AddMesh(sm->getMesh("Assets/blooper.b3d"), "Blooper");
     this->AddMesh(sm->getMesh("Assets/bob-omb.b3d"), "Bomb");
 
     gm->GetSoundManager()->AddSound(
@@ -87,7 +88,7 @@ void GameScene::LoadElements(GameManager* gm)
     }
 
     auto map = Map(gm);
-    map.Initialize(12, this);
+    map.Initialize(gm->m_globalVars.mapSize, this);
 }
 
 void GameScene::Load(GameManager* gameManager)
@@ -103,9 +104,26 @@ void GameScene::Load(GameManager* gameManager)
     gameManager->GetSoundManager()->PlaySound("sndGame");
 }
 
-void GameScene::Update(GameManager* gameManager)
+void GameScene::Update(GameManager* gm)
 {
+    { // Check win condition
+        int nbAlive = 0;
+        int winnerID = 0;
+        GameVars_t &gv = gm->m_globalVars;
 
+        for (int idx = 0; idx < gv.currentPlayerNumber; ++idx)
+        {
+            if (gv.playersData[idx].alive)
+            {
+                winnerID = gv.playersData[idx].playerID;
+                nbAlive++;
+            }
+        }
+        if (nbAlive == 1)
+        {
+            std::cout << "Player " << winnerID << " won the game !" << std::endl;
+        }
+    }
 }
 
 void GameScene::Unload(void)

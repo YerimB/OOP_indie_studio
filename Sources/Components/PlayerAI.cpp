@@ -34,8 +34,8 @@ void PlayerAI::UpdateMap(Transform* pPos, GameVars_t* gVars)
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2.0f;
     std::array<int, 2> tmp = {
-        round(gVars->mapSize - (y - s_pos) / 10.0f),
-        round(gVars->mapSize - (x - s_pos) / 10.0f)
+        static_cast<int>(round(gVars->mapSize - (y - s_pos) / 10.0f)),
+        static_cast<int>(round(gVars->mapSize - (x - s_pos) / 10.0f))
     };
     if (tmp != this->_previousPos)
     {
@@ -67,8 +67,8 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
         };
         auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2.0f;
         std::array<int, 2> tmp = {
-            round(gm->m_globalVars.mapSize - (t->GetPosition().Z - s_pos) / 10.0f),
-            round(gm->m_globalVars.mapSize - (t->GetPosition().X - s_pos) / 10.0f)
+            static_cast<int>(round(gm->m_globalVars.mapSize - (t->GetPosition().Z - s_pos) / 10.0f)),
+            static_cast<int>(round(gm->m_globalVars.mapSize - (t->GetPosition().X - s_pos) / 10.0f))
         };
         _backupMap = map;
         std::vector<std::string> tmp_map = map;
