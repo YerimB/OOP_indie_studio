@@ -138,6 +138,87 @@ bomberman/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/build
 .PHONY : bomberman/fast
 
+Sources/AI/AI.o: Sources/AI/AI.cpp.o
+
+.PHONY : Sources/AI/AI.o
+
+# target to build an object file
+Sources/AI/AI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/AI.cpp.o
+.PHONY : Sources/AI/AI.cpp.o
+
+Sources/AI/AI.i: Sources/AI/AI.cpp.i
+
+.PHONY : Sources/AI/AI.i
+
+# target to preprocess a source file
+Sources/AI/AI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/AI.cpp.i
+.PHONY : Sources/AI/AI.cpp.i
+
+Sources/AI/AI.s: Sources/AI/AI.cpp.s
+
+.PHONY : Sources/AI/AI.s
+
+# target to generate assembly for a file
+Sources/AI/AI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/AI.cpp.s
+.PHONY : Sources/AI/AI.cpp.s
+
+Sources/AI/Astar.o: Sources/AI/Astar.cpp.o
+
+.PHONY : Sources/AI/Astar.o
+
+# target to build an object file
+Sources/AI/Astar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/Astar.cpp.o
+.PHONY : Sources/AI/Astar.cpp.o
+
+Sources/AI/Astar.i: Sources/AI/Astar.cpp.i
+
+.PHONY : Sources/AI/Astar.i
+
+# target to preprocess a source file
+Sources/AI/Astar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/Astar.cpp.i
+.PHONY : Sources/AI/Astar.cpp.i
+
+Sources/AI/Astar.s: Sources/AI/Astar.cpp.s
+
+.PHONY : Sources/AI/Astar.s
+
+# target to generate assembly for a file
+Sources/AI/Astar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/Astar.cpp.s
+.PHONY : Sources/AI/Astar.cpp.s
+
+Sources/AI/Node.o: Sources/AI/Node.cpp.o
+
+.PHONY : Sources/AI/Node.o
+
+# target to build an object file
+Sources/AI/Node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/Node.cpp.o
+.PHONY : Sources/AI/Node.cpp.o
+
+Sources/AI/Node.i: Sources/AI/Node.cpp.i
+
+.PHONY : Sources/AI/Node.i
+
+# target to preprocess a source file
+Sources/AI/Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/Node.cpp.i
+.PHONY : Sources/AI/Node.cpp.i
+
+Sources/AI/Node.s: Sources/AI/Node.cpp.s
+
+.PHONY : Sources/AI/Node.s
+
+# target to generate assembly for a file
+Sources/AI/Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/AI/Node.cpp.s
+.PHONY : Sources/AI/Node.cpp.s
+
 Sources/Components/Animator.o: Sources/Components/Animator.cpp.o
 
 .PHONY : Sources/Components/Animator.o
@@ -353,6 +434,33 @@ Sources/Components/Player.s: Sources/Components/Player.cpp.s
 Sources/Components/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.s
 .PHONY : Sources/Components/Player.cpp.s
+
+Sources/Components/PlayerAI.o: Sources/Components/PlayerAI.cpp.o
+
+.PHONY : Sources/Components/PlayerAI.o
+
+# target to build an object file
+Sources/Components/PlayerAI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/PlayerAI.cpp.o
+.PHONY : Sources/Components/PlayerAI.cpp.o
+
+Sources/Components/PlayerAI.i: Sources/Components/PlayerAI.cpp.i
+
+.PHONY : Sources/Components/PlayerAI.i
+
+# target to preprocess a source file
+Sources/Components/PlayerAI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/PlayerAI.cpp.i
+.PHONY : Sources/Components/PlayerAI.cpp.i
+
+Sources/Components/PlayerAI.s: Sources/Components/PlayerAI.cpp.s
+
+.PHONY : Sources/Components/PlayerAI.s
+
+# target to generate assembly for a file
+Sources/Components/PlayerAI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/Components/PlayerAI.cpp.s
+.PHONY : Sources/Components/PlayerAI.cpp.s
 
 Sources/Components/Text.o: Sources/Components/Text.cpp.o
 
@@ -704,6 +812,33 @@ Sources/ECS/System/TextSystem.s: Sources/ECS/System/TextSystem.cpp.s
 Sources/ECS/System/TextSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.s
 .PHONY : Sources/ECS/System/TextSystem.cpp.s
+
+Sources/ECS/System/TimeSystem.o: Sources/ECS/System/TimeSystem.cpp.o
+
+.PHONY : Sources/ECS/System/TimeSystem.o
+
+# target to build an object file
+Sources/ECS/System/TimeSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/TimeSystem.cpp.o
+.PHONY : Sources/ECS/System/TimeSystem.cpp.o
+
+Sources/ECS/System/TimeSystem.i: Sources/ECS/System/TimeSystem.cpp.i
+
+.PHONY : Sources/ECS/System/TimeSystem.i
+
+# target to preprocess a source file
+Sources/ECS/System/TimeSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/TimeSystem.cpp.i
+.PHONY : Sources/ECS/System/TimeSystem.cpp.i
+
+Sources/ECS/System/TimeSystem.s: Sources/ECS/System/TimeSystem.cpp.s
+
+.PHONY : Sources/ECS/System/TimeSystem.s
+
+# target to generate assembly for a file
+Sources/ECS/System/TimeSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bomberman.dir/build.make CMakeFiles/bomberman.dir/Sources/ECS/System/TimeSystem.cpp.s
+.PHONY : Sources/ECS/System/TimeSystem.cpp.s
 
 Sources/ECS/Time.o: Sources/ECS/Time.cpp.o
 
@@ -1064,6 +1199,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... bomberman"
+	@echo "... Sources/AI/AI.o"
+	@echo "... Sources/AI/AI.i"
+	@echo "... Sources/AI/AI.s"
+	@echo "... Sources/AI/Astar.o"
+	@echo "... Sources/AI/Astar.i"
+	@echo "... Sources/AI/Astar.s"
+	@echo "... Sources/AI/Node.o"
+	@echo "... Sources/AI/Node.i"
+	@echo "... Sources/AI/Node.s"
 	@echo "... Sources/Components/Animator.o"
 	@echo "... Sources/Components/Animator.i"
 	@echo "... Sources/Components/Animator.s"
@@ -1088,6 +1232,9 @@ help:
 	@echo "... Sources/Components/Player.o"
 	@echo "... Sources/Components/Player.i"
 	@echo "... Sources/Components/Player.s"
+	@echo "... Sources/Components/PlayerAI.o"
+	@echo "... Sources/Components/PlayerAI.i"
+	@echo "... Sources/Components/PlayerAI.s"
 	@echo "... Sources/Components/Text.o"
 	@echo "... Sources/Components/Text.i"
 	@echo "... Sources/Components/Text.s"
@@ -1127,6 +1274,9 @@ help:
 	@echo "... Sources/ECS/System/TextSystem.o"
 	@echo "... Sources/ECS/System/TextSystem.i"
 	@echo "... Sources/ECS/System/TextSystem.s"
+	@echo "... Sources/ECS/System/TimeSystem.o"
+	@echo "... Sources/ECS/System/TimeSystem.i"
+	@echo "... Sources/ECS/System/TimeSystem.s"
 	@echo "... Sources/ECS/Time.o"
 	@echo "... Sources/ECS/Time.i"
 	@echo "... Sources/ECS/Time.s"

@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/bomberman.dir/Sources/AI/AI.cpp.o"
+  "CMakeFiles/bomberman.dir/Sources/AI/Astar.cpp.o"
+  "CMakeFiles/bomberman.dir/Sources/AI/Node.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Components/Animator.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Components/Button.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Components/Collider.cpp.o"
@@ -7,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/bomberman.dir/Sources/Components/Image.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Components/Moveable.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Components/Player.cpp.o"
+  "CMakeFiles/bomberman.dir/Sources/Components/PlayerAI.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Components/Text.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Components/Timer.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Components/Transform.cpp.o"
@@ -20,6 +24,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/bomberman.dir/Sources/ECS/System/PlayerSystem.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/ECS/System/RenderSystem.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/ECS/System/TextSystem.cpp.o"
+  "CMakeFiles/bomberman.dir/Sources/ECS/System/TimeSystem.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/ECS/Time.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/GameManager.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/InputManager.cpp.o"
