@@ -88,7 +88,7 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 		Vector3f((-(size * 10.0f) / 2) + 20.0f, 0, (-(size * 10.0f) / 2) + 20.0f),
 	};
 	{ // Create player
-		for (size_t idx = 0; idx < 4; ++idx)
+		for (size_t idx = 0; idx < 1; ++idx)
 		{
 			Entity player(pstr.append(std::to_string(idx + 1)));
 			Player* p0 = nullptr;
@@ -115,6 +115,7 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 				player.AddComponent(t0, Transform::Id);
 				player.AddComponent(cl0, Collider::Id);
 				player.AddComponent(a0, Animator::Id);
+				m_GameManager->m_globalVars.playersData[idx].alive = true;
 				m_GameManager->GetEntityManager()->AddEntity(player);
 			}
 		}
