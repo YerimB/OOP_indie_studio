@@ -54,8 +54,8 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     auto s_pos = -(gVars.mapSize * 10.0f) / 2.0f;
     Vector3f dpPos = self.GetComponent<Transform>()->GetPosition();
     Vector2f tmp = {
-        round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
-        round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
+        round((gVars.mapSize) - (dpPos.X - s_pos) / 10.0f),
+        round((gVars.mapSize) - (dpPos.Z - s_pos) / 10.0f)
     };
     gm->m_globalVars.map[tmp.X][tmp.Y] = 'B';
     tmp.X = -(s_pos + tmp.X * 10.0f);
@@ -193,8 +193,8 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2;
     std::array<int, 2> tmp = {
-        round(gVars->mapSize - (y - s_pos) / 10.0f),
-        round(gVars->mapSize - (x - s_pos) / 10.0f)
+        static_cast<int>(round((gVars->mapSize - (y - s_pos) / 10.0f))),
+        static_cast<int>(round((gVars->mapSize - (x - s_pos) / 10.0f)))
     };
     if (tmp != this->_previousPos)
     {
