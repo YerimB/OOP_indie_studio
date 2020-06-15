@@ -32,7 +32,7 @@ void MoveSystem::Update(const double& deltaTime)
 			Drawable* drawable2 = std::get<Drawable*>(_components[j]);
 			Collider* collider2 = std::get<Collider*>(_components[j]);
 
-			if (!drawable2->GetDrawable())
+			if (!drawable2->GetDrawable() || collider->GetTag() == collider2->GetTag())
 				continue;
 			if (MoveSystem::Collide(drawable, drawable2))
 			{

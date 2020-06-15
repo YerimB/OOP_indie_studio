@@ -153,7 +153,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         Entity e1("Player01");
         Drawable* d1 = new Drawable(gameManager->GetSceneManager());
         Transform* t1 = new Transform();
-        Collider *newCollider = new Collider();
+        Collider *newCollider = new Collider(Collider::Tag::None);
         Button* b1 = new Button(gameManager->GetGuiEnvironment());
         Animator* a = new Animator(gameManager->GetSceneManager());
 
@@ -201,7 +201,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         Entity e2("Player02");
         Drawable* d2 = new Drawable(gameManager->GetSceneManager());
         Transform* t2 = new Transform();
-        Collider *newCollider = new Collider();
+        Collider *newCollider = new Collider(Collider::Tag::None);
         Button* b2 = new Button(gameManager->GetGuiEnvironment());
         Animator* a = new Animator(gameManager->GetSceneManager());
 
@@ -249,7 +249,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         Entity e3("Player03");
         Drawable* d3 = new Drawable(gameManager->GetSceneManager());
         Transform* t3 = new Transform();
-        Collider *newCollider = new Collider();
+        Collider *newCollider = new Collider(Collider::Tag::None);
         Button* b3 = new Button(gameManager->GetGuiEnvironment());
         Animator* a = new Animator(gameManager->GetSceneManager());
 
@@ -298,7 +298,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         Entity e4("Player04");
         Drawable* d4 = new Drawable(gameManager->GetSceneManager());
         Transform* t4 = new Transform();
-        Collider *newCollider = new Collider();
+        Collider *newCollider = new Collider(Collider::Tag::None);
         Button* b4 = new Button(gameManager->GetGuiEnvironment());
         Animator* a = new Animator(gameManager->GetSceneManager());
 
