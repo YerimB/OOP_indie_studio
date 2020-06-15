@@ -54,9 +54,6 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 				continue;
 			}
 
-			if (eType == "Star")
-				std::cout << eType + "_" + std::to_string(idx) + "_" + std::to_string(idx2) << std::endl;
-
 			Entity cubeEntity(eType + "_" + std::to_string(idx) + "_" + std::to_string(idx2));
 			Transform* t0 = new Transform(position);
 			Collider* cl0 = new Collider(Collider::Tag::None);
