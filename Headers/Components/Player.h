@@ -33,7 +33,7 @@ class Player : public Component
         void bindKey(const std::string &action, const irr::EKEY_CODE &);
         void DropBomb(Entity& self, GameManager* gm);
         void DestroyBlocks(GameManager* gm);
-
+        void Explosion(GameManager* gm, Vector2i& pos);
     private:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
         void GetMovements(InputManager *im, Entity &self, GameManager* gm);

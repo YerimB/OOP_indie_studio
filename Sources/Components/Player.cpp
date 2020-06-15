@@ -83,12 +83,46 @@ void Player::DestroyBlocks(GameManager* gm)
         static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 10.0f))
     };
 
-    std::cout << "Star_" + std::to_string(tmp.X) + "_" + std::to_string(tmp.Y - 1) << std::endl;
+    Explosion(gm, tmp);
+}
 
-    auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(tmp.X) + "_" + std::to_string(tmp.Y - 1));
-    if (e != nullptr) {
-        e->GetComponent<Drawable>()->GetDrawable()->remove();
-        gm->GetEntityManager()->RemoveEntity(*e);
+void Player::Explosion(GameManager* gm, Vector2i& pos)
+{
+    std::array<bool, 4> checked = { false,false,false,false };
+
+    for (int i = 1; i < 3; i += 1)
+    {
+        auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - i));
+        if (e != nullptr && !checked[0]) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
+        else
+            checked[0] = true;
+
+        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y + i));
+        if (e != nullptr && !checked[1]) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
+        else
+            checked[1] = true;
+
+        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X + i) + "_" + std::to_string(pos.Y));
+        if (e != nullptr && !checked[2]) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
+        else
+            checked[2] = true;
+
+        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - i) + "_" + std::to_string(pos.Y));
+        if (e != nullptr && !checked[3]) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
+        else
+            checked[3] = true;
     }
 }
 
