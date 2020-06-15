@@ -58,7 +58,6 @@ void Player::DropBomb(Entity& self, GameManager* gm)
         round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
     };
     gm->m_globalVars.map[tmp.X][tmp.Y] = 'B';
-    std::cout << "Drop bomb at : " << tmp.X << ", " << tmp.Y << std::endl;
     tmp.X = -(s_pos + tmp.X * 10.0f);
     tmp.Y = -(s_pos + tmp.Y * 10.0f);
 
@@ -201,7 +200,8 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     {
         if (this->_previousPos[0] != -1)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
-        gVars->map[tmp[1]][tmp[0]] = 'E';
+        if (gVars->map[tmp[1]][tmp[0]] != 'B')
+            gVars->map[tmp[1]][tmp[0]] = 'E';
         _previousPos = tmp;
     }
 }

@@ -111,7 +111,8 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
                     _dir[0] = _dir[1];
                     _dir[1] = tmp;
                 }
-                DropBomb(self, gm);
+                if (!this->m_Bomb)
+                    DropBomb(self, gm);
             }
         }
         if (_dir[0] == 1 && _dir[1] == 0) t->SetRotation({ 0, 270, 0 });
