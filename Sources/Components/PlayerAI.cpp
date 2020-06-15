@@ -44,6 +44,8 @@ void PlayerAI::UpdateMap(Transform* pPos, GameVars_t* gVars)
 				gVars->map[_previousPos[1]][_previousPos[0]] = '0';
     	if (gVars->map[tmp[1]][tmp[0]] != 'B')
 			gVars->map[tmp[1]][tmp[0]] = '1';
+        gVars->playersData[m_Data->playerID - 1].position.Y = tmp[0];
+        gVars->playersData[m_Data->playerID - 1].position.X = tmp[1];
         _previousPos = tmp;
     }
 }

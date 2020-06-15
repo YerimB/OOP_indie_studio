@@ -90,7 +90,7 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 	{ // Create player
 		for (size_t idx = 0; idx < 4; ++idx)
 		{
-			Entity player(pstr.append(std::to_string(idx + 1)));
+			Entity player(pstr + std::to_string(idx + 1));
 			Player* p0 = nullptr;
 			Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
 			Transform* t0 = new Transform(corners[idx]);

@@ -9,6 +9,7 @@
 #include <Components/Transform.h>
 #include <Components/Drawable.h>
 #include <Components/Collider.h>
+#include <algorithm>
 
 Player::Player(SceneManager* manager)
 {
@@ -26,14 +27,14 @@ bool Player::Initialize(void *args)
 
 void Player::Update(const float &dT, GameManager* gm)
 {
-    Entity *e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
-    Transform *transform = e->GetComponent<Transform>();
+    auto* e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
+    auto* transform = e->GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
     this->GetMovements(gm, *e);
 }
 
-void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
+void Player::BindKey(const std::string &a, const irr::EKEY_CODE &code) const
 {
     this->m_Data->bindingsMap[a] = code;
 }
@@ -64,23 +65,26 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     transform->SetPosition({tmp.X, 0, tmp.Y});
     drawable->SetPosition(transform->GetPosition());
 
-    m_Bomb->AddComponent(std::move(timer), Timer::Id);
-    m_Bomb->AddComponent(std::move(transform), Transform::Id);
-    m_Bomb->AddComponent(std::move(drawable), Drawable::Id);
+    m_Bomb->AddComponent(timer, Timer::Id);
+    m_Bomb->AddComponent(transform, Transform::Id);
+    m_Bomb->AddComponent(drawable, Drawable::Id);
     gm->GetEntityManager()->AddEntity(*m_Bomb);
 
 }
 
 void Player::DestroyBlocks(GameManager* gm)
 {
-    auto t = m_Bomb->GetComponent<Transform>();
-    int x = t->GetPosition().X;
-    int y = t->GetPosition().Z;
-    auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2.0f;
+    const auto* t = m_Bomb->GetComponent<Transform>();
+    const int x = t->GetPosition().X;
+    const int y = t->GetPosition().Z;
+    const auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2.0f;
     Vector2i tmp = {
         static_cast<int>(round(gm->m_globalVars.mapSize - (x - s_pos) / 10.0f)),
         static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 10.0f))
     };
+
+	Explosion(gm, tmp);
+
     gm->m_globalVars.map[tmp.X][tmp.Y] = '0';
     if (gm->m_globalVars.map[tmp.X + 1][tmp.Y] == '2')
         gm->m_globalVars.map[tmp.X + 1][tmp.Y] = '0';
@@ -90,67 +94,93 @@ void Player::DestroyBlocks(GameManager* gm)
         gm->m_globalVars.map[tmp.X][tmp.Y + 1] = '0';
     if (gm->m_globalVars.map[tmp.X][tmp.Y - 1] == '2')
         gm->m_globalVars.map[tmp.X][tmp.Y - 1] = '0';
-
-    Explosion(gm, tmp);
 }
 
-void Player::Explosion(GameManager* gm, Vector2i& pos)
+void Player::Explosion(GameManager* gm, Vector2i& pos) const
 {
-    std::array<bool, 4> checked = { false,false,false,false };
+    auto* e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - 1));
+	
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
+    }
+    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y + 1));
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
+    }
 
-    for (int i = 1; i < 2; i += 1)
+    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X + 1) + "_" + std::to_string(pos.Y));
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
+    }
+
+    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - 1) + "_" + std::to_string(pos.Y));
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
+    }
+
+    for (auto data : gm->m_globalVars.playersData)
     {
-        auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - i));
-        if (e != nullptr && !checked[0]) {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
+    	if (pos.X == data.position.X && pos.Y - 1 == data.position.Y)
+    	{
+            e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
+    		if (e != nullptr)
+    		{
+                e->GetComponent<Drawable>()->GetDrawable()->remove();
+                gm->GetEntityManager()->RemoveEntity(*e);
+    		}
+    	}
+        if (pos.X == data.position.X && pos.Y + 1 == data.position.Y)
+        {
+            e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
+            if (e != nullptr)
+            {
+                e->GetComponent<Drawable>()->GetDrawable()->remove();
+                gm->GetEntityManager()->RemoveEntity(*e);
+            }
         }
-        else
-            checked[0] = true;
-
-        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y + i));
-        if (e != nullptr && !checked[1]) {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
+        if (pos.X == data.position.X + 1 && pos.Y == data.position.Y)
+        {
+            e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
+            if (e != nullptr)
+            {
+                e->GetComponent<Drawable>()->GetDrawable()->remove();
+                gm->GetEntityManager()->RemoveEntity(*e);
+            }
         }
-        else
-            checked[1] = true;
-
-        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X + i) + "_" + std::to_string(pos.Y));
-        if (e != nullptr && !checked[2]) {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
+        if (pos.X == data.position.X - 1 && pos.Y == data.position.Y)
+        {
+            e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
+            if (e != nullptr)
+            {
+                e->GetComponent<Drawable>()->GetDrawable()->remove();
+                gm->GetEntityManager()->RemoveEntity(*e);
+            }
         }
-        else
-            checked[2] = true;
-
-        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - i) + "_" + std::to_string(pos.Y));
-        if (e != nullptr && !checked[3]) {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
-        }
-        else
-            checked[3] = true;
     }
 }
 void Player::GetMovements(GameManager *gm, Entity &self)
 {
-    bool isMoving = false;
-    InputManager *im = gm->GetInputManager();
-    Transform *transform = self.GetComponent<Transform>();
-    Animator *animator = self.GetComponent<Animator>();
+    auto isMoving = false;
+    auto *im = gm->GetInputManager();
+    auto *transform = self.GetComponent<Transform>();
+    auto *animator = self.GetComponent<Animator>();
 
     if (im->IsKeyDown(m_Data->bindingsMap["UP"]))
     {
-        auto position = transform->GetPosition();
+        const auto position = transform->GetPosition();
 
         transform->SetPosition({ position.X + 0.5f, position.Y, position.Z });
         transform->SetRotation({ 0, 270, 0});
         isMoving = true;
+
     }
     if (im->IsKeyDown(m_Data->bindingsMap["LEFT"]))
     {
-        auto position = transform->GetPosition();
+        const auto position = transform->GetPosition();
 
         transform->SetPosition({ position.X, position.Y, position.Z + 0.5f });
         transform->SetRotation({ 0, 180, 0});
@@ -158,7 +188,7 @@ void Player::GetMovements(GameManager *gm, Entity &self)
     }
     if (im->IsKeyDown(m_Data->bindingsMap["DOWN"]))
     {
-        auto position = transform->GetPosition();
+        const auto position = transform->GetPosition();
 
         transform->SetPosition({ position.X - 0.5f, position.Y, position.Z });
         transform->SetRotation({ 0, 90, 0});
@@ -166,7 +196,7 @@ void Player::GetMovements(GameManager *gm, Entity &self)
     }
     if (im->IsKeyDown(m_Data->bindingsMap["RIGHT"]))
     {
-        auto position = transform->GetPosition();
+        const auto position = transform->GetPosition();
 
         transform->SetPosition({ position.X, position.Y, position.Z - 0.5f });
         transform->SetRotation({ 0, 0, 0});
@@ -202,6 +232,8 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
         if (gVars->map[tmp[1]][tmp[0]] != 'B')
             gVars->map[tmp[1]][tmp[0]] = 'E';
+        gVars->playersData[m_Data->playerID - 1].position.Y = tmp[0];
+        gVars->playersData[m_Data->playerID - 1].position.X = tmp[1];
         _previousPos = tmp;
     }
 }
