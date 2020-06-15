@@ -39,6 +39,7 @@ class Collider : public Component
 
     public: // Getters
 		[[nodiscard]] const Tag& GetTag() const;
+
     private:
 		Tag m_Tag;
 };

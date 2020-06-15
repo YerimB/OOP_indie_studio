@@ -41,6 +41,7 @@ class Player : public Component
 
     protected:
         std::array<int, 2> _previousPos;
+        Vector2i m_BombPos;
         SceneManager* m_SceneManager;
         PlayerData_t* m_Data;
         Entity* m_Bomb = nullptr;

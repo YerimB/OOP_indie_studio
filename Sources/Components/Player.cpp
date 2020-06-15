@@ -53,13 +53,15 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     transform->Initialize(nullptr);
     drawable->Initialize(gm->GetCurrentScene()->GetMesh("Bomb"));
 
-    const auto gVars = gm->m_globalVars;
+    auto gVars = gm->m_globalVars;
     const auto s_pos = -(gVars.mapSize * 10.0f) / 2.0f;
     const auto dpPos = self.GetComponent<Transform>()->GetPosition();
     Vector2f tmp = {
         round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
         round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
     };
+    this->m_BombPos.set({tmp.X, tmp.Y});
+    gVars.map[tmp.X][tmp.Y] = '1';
     tmp.X = -(s_pos + tmp.X * 10.0f);
     tmp.Y = -(s_pos + tmp.Y * 10.0f);
 
@@ -69,8 +71,8 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     m_Bomb->AddComponent(timer, Timer::Id);
     m_Bomb->AddComponent(transform, Transform::Id);
     m_Bomb->AddComponent(drawable, Drawable::Id);
+    m_Bomb->AddComponent(collider, Collider::Id);
     gm->GetEntityManager()->AddEntity(*m_Bomb);
-
 }
 
 void Player::DestroyBlocks(GameManager* gm) const
@@ -174,6 +176,8 @@ void Player::GetMovements(GameManager *gm, Entity &self)
     if (m_Bomb != nullptr && m_Bomb->GetComponent<Timer>()->GetDuration() <= 0) {
         DestroyBlocks(gm);
         m_Bomb->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*m_Bomb);
+        gm->m_globalVars.map[m_BombPos.X][m_BombPos.Y] = '0';
         m_Bomb = nullptr;
     }
     if (this->m_oldMoveState != isMoving)

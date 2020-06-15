@@ -97,15 +97,6 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 			Collider* cl0 = new Collider(static_cast<Collider::Tag>((idx+1)));
 			Animator* a0 = new Animator(m_GameManager->GetSceneManager());
 			size_t meshID = m_GameManager->m_globalVars.playersData[idx].characterID;
-
-			if (cl0->GetTag() == Collider::Tag::Player1)
-				std::cout << "Player 1" << std::endl;
-			else if (cl0->GetTag() == Collider::Tag::Player2)
-				std::cout << "Player 2" << std::endl;
-			else if (cl0->GetTag() == Collider::Tag::Player3)
-				std::cout << "Player 3" << std::endl;
-			else if (cl0->GetTag() == Collider::Tag::Player3)
-				std::cout << "Player 4" << std::endl;
 			
 			if (m_GameManager->m_globalVars.playersData[idx].isActive)
 				p0 = new Player(m_GameManager->GetSceneManager());
