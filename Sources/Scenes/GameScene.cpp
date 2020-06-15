@@ -58,6 +58,7 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
     this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
+    this->AddMesh(sm->getMesh("Assets/blooper.b3d"), "Blooper");
     this->AddMesh(sm->getMesh("Assets/bob-omb.b3d"), "Bomb");
 
     gm->GetSoundManager()->AddSound(

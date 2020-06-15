@@ -10,6 +10,9 @@
 
 #include <Scenes/Scene.hpp>
 
+#include <iostream>
+#include <string>
+
 class LunchGame : public Scene {
     public:
         LunchGame();
