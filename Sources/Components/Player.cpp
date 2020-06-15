@@ -44,7 +44,7 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     Timer *timer = new Timer();
     Transform* transform = new Transform();
     Drawable* drawable = new Drawable(gm->GetSceneManager());
-    float duration = 1.0f;
+    float duration = 2.0f;
 
     timer->Initialize(&duration);
     transform->Initialize(nullptr);
