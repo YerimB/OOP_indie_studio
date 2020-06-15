@@ -3,6 +3,7 @@
 #include <Scenes/MenuScene.hpp>
 #include <Scenes/GameScene.hpp>
 #include <Scenes/LunchGame.hpp>
+#include <Scenes/VictoryScene.hpp>
 
 int main()
 {
@@ -10,11 +11,13 @@ int main()
     MenuScene menu;
     LunchGame luncher;
     GameScene game;
+    VictoryScene victory;
 
     gameManager->Initialize();
     gameManager->AddScene(&menu);
     gameManager->AddScene(&luncher);
     gameManager->AddScene(&game);
+    gameManager->AddScene(&victory);
 
     gameManager->ProgramLoop();
 	return 0;

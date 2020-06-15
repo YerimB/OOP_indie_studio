@@ -34,12 +34,13 @@ file(REMOVE_RECURSE
   "CMakeFiles/bomberman.dir/Sources/Scenes/LunchGame.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Scenes/MenuScene.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Scenes/Scene.cpp.o"
+  "CMakeFiles/bomberman.dir/Sources/Scenes/VictoryScene.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/SoundManager.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/main.cpp.o"
-  "bomberman"
   "bomberman.pdb"
+  "bomberman"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -25,6 +25,7 @@ InputManager::InputManager(IrrlichtDevice* device)
     m_Buttons.emplace(Button::UPPERFX, false);
     m_Buttons.emplace(Button::LOWERSIZEMAP, false);
     m_Buttons.emplace(Button::UPPERSIZEMAP, false);
+    m_Buttons.emplace(Button::CHANGE_MUSIC, false);
 }
 
 bool InputManager::OnEvent(const SEvent& event)
@@ -74,6 +75,8 @@ bool InputManager::OnEvent(const SEvent& event)
                     m_Buttons[Button::LOWERSIZEMAP] = true; break;
                 case Button::UPPERSIZEMAP:
                     m_Buttons[Button::UPPERSIZEMAP] = true; break;
+                case Button::CHANGE_MUSIC:
+                    m_Buttons[Button::CHANGE_MUSIC] = true; break;
                 default:
                     break;
             }
