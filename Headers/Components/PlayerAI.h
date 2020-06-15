@@ -27,7 +27,9 @@ class PlayerAI : public Player
         std::array<float, 2> abs_pos;
         std::array<int, 2> _dir;
         bool isMoving;
+        std::array<int, 2> _target;
         std::vector<std::string> _backupMap;
+        bool freeze;
 };
 
 #endif /* !PLAYERAI_H_ */

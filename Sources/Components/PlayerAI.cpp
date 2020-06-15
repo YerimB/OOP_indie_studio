@@ -7,11 +7,15 @@
 
 #include <Components/PlayerAI.h>
 
+#include "Components/Drawable.h"
+
 PlayerAI::PlayerAI(SceneManager *manager) : Player::Player(manager)
 {
     _backupMap.push_back("    ");
+    _target.fill(0);
     this->_previousPos.fill(-1);
     abs_pos.fill(-10);
+    freeze = false;
 }
 
 void PlayerAI::Update(const float& dT, GameManager* gm)
@@ -36,8 +40,10 @@ void PlayerAI::UpdateMap(Transform* pPos, GameVars_t* gVars)
     if (tmp != this->_previousPos)
     {
         if (this->_previousPos[0] != -1)
-            gVars->map[_previousPos[1]][_previousPos[0]] = '0';
-        gVars->map[tmp[1]][tmp[0]] = '1';
+            if (gVars->map[_previousPos[1]][_previousPos[0]] != 'B')
+				gVars->map[_previousPos[1]][_previousPos[0]] = '0';
+    	if (gVars->map[tmp[1]][tmp[0]] != 'B')
+			gVars->map[tmp[1]][tmp[0]] = '1';
         _previousPos = tmp;
     }
 }
@@ -64,16 +70,61 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
         };
         _backupMap = map;
         std::vector<std::string> tmp_map = map;
-        tmp_map[tmp[1]][tmp[0]] = 'O';
+		tmp_map[tmp[1]][tmp[0]] = 'O';
         AI a(tmp_map);
-        _dir = a.getDir();
-        isMoving = false;
-        isMoving = true;
+        if (map[_target[0]][_target[1]] == 'B')
+        {
+            if (a.isInBombRange())
+            {
+                _dir = a.getDir();
+                isMoving = true;
+            } else {
+                _dir = std::array<int, 2>({ 0, 0 });
+                isMoving = false;
+            }
+        }
+        else
+        {
+            isMoving = true;
+            _dir = a.getDir();
+            if (tmp_map[tmp[1] - _dir[0]][tmp[0] - _dir[1]] == '2' || tmp_map[tmp[1] - _dir[0]][tmp[0] - _dir[1]] == 'E')
+            {
+                _target = std::array<int, 2>({
+					tmp[1],
+                	tmp[0]
+                });
+            	if (tmp_map[tmp[1] + _dir[0]][tmp[0] + _dir[1]] == '0')
+            	{
+                    _dir[0] = -_dir[0];
+                    _dir[1] = -_dir[1];
+            	}
+                else if (tmp_map[tmp[1] - _dir[1]][tmp[0] - _dir[0]] == '0')
+                {
+                    int tmp = _dir[0];
+                    _dir[0] = _dir[1];
+                    _dir[1] = tmp;
+                } else
+                {
+                    _dir[0] = -_dir[0];
+                    _dir[1] = -_dir[1];
+                    int tmp = _dir[0];
+                    _dir[0] = _dir[1];
+                    _dir[1] = tmp;
+                }
+                if (!this->m_Bomb)
+                    DropBomb(self, gm);
+            }
+        }
         if (_dir[0] == 1 && _dir[1] == 0) t->SetRotation({ 0, 270, 0 });
         if (_dir[0] == -1 && _dir[1] == 0) t->SetRotation({ 0, 90, 0 });
         if (_dir[0] == 0 && _dir[1] == 1) t->SetRotation({ 0, 180, 0 });
         if (_dir[0] == 0 && _dir[1] == -1) t->SetRotation({ 0, 0, 0 });
 	}
+    if (m_Bomb != nullptr && m_Bomb->GetComponent<Timer>()->GetDuration() <= 0) {
+        DestroyBlocks(gm);
+        m_Bomb->GetComponent<Drawable>()->GetDrawable()->remove();
+        m_Bomb = nullptr;
+    }
     t->SetPosition({ p.X + static_cast<float>(_dir[0] / 2.0), p.Y, p.Z + static_cast<float>(_dir[1] / 2.0) });
     if (this->m_oldMoveState != isMoving)
         animator->PlayAnimation((isMoving) ? "Run" : "Idle");
