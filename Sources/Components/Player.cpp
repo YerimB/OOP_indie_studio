@@ -14,6 +14,8 @@ Player::Player(SceneManager* manager)
 {
     this->_previousPos.fill(-1);
     this->m_SceneManager = manager;
+    this->m_Data = nullptr;
+    this->_previousPos = { 0, 0 };
 }
 
 bool Player::Initialize(void *args)
@@ -24,16 +26,16 @@ bool Player::Initialize(void *args)
     return true;
 }
 
-void Player::Update(const float &dT, GameManager* gm)
+void Player::Update(const float &, GameManager* gm)
 {
-    Entity *e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
-    Transform *transform = e->GetComponent<Transform>();
+    auto *e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
+    auto *transform = e->GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
     this->GetMovements(gm, *e);
 }
 
-void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
+void Player::BindKey(const std::string &a, const irr::EKEY_CODE &code) const
 {
     this->m_Data->bindingsMap[a] = code;
 }
@@ -41,58 +43,58 @@ void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
 void Player::DropBomb(Entity& self, GameManager* gm)
 {
     m_Bomb = new Entity("Bomb" + std::to_string(Id));
-    Timer *timer = new Timer();
-    Transform* transform = new Transform();
-    Drawable* drawable = new Drawable(gm->GetSceneManager());
-    float duration = 2.0f;
+    auto* timer = new Timer();
+    auto* transform = new Transform();
+    auto* drawable = new Drawable(gm->GetSceneManager());
+    auto* collider = new Collider(self.GetComponent<Collider>()->GetTag());
+    auto duration = 1.0f;
 
     timer->Initialize(&duration);
     transform->Initialize(nullptr);
     drawable->Initialize(gm->GetCurrentScene()->GetMesh("Bomb"));
 
-    auto gVars = gm->m_globalVars;
-    auto s_pos = -(gVars.mapSize * 10.0f) / 2.0f;
-    Vector3f dpPos = self.GetComponent<Transform>()->GetPosition();
+    const auto gVars = gm->m_globalVars;
+    const auto s_pos = -(gVars.mapSize * 10.0f) / 2.0f;
+    const auto dpPos = self.GetComponent<Transform>()->GetPosition();
     Vector2f tmp = {
         round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
         round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
     };
-    std::cout << "Drop bomb at : " << tmp.X << ", " << tmp.Y << std::endl;
     tmp.X = -(s_pos + tmp.X * 10.0f);
     tmp.Y = -(s_pos + tmp.Y * 10.0f);
 
     transform->SetPosition({tmp.X, 0, tmp.Y});
     drawable->SetPosition(transform->GetPosition());
 
-    m_Bomb->AddComponent(std::move(timer), Timer::Id);
-    m_Bomb->AddComponent(std::move(transform), Transform::Id);
-    m_Bomb->AddComponent(std::move(drawable), Drawable::Id);
+    m_Bomb->AddComponent(timer, Timer::Id);
+    m_Bomb->AddComponent(transform, Transform::Id);
+    m_Bomb->AddComponent(drawable, Drawable::Id);
     gm->GetEntityManager()->AddEntity(*m_Bomb);
 
 }
 
-void Player::DestroyBlocks(GameManager* gm)
+void Player::DestroyBlocks(GameManager* gm) const
 {
-    auto t = m_Bomb->GetComponent<Transform>();
-    int x = t->GetPosition().X;
-    int y = t->GetPosition().Z;
-    auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2.0f;
+    auto* t = m_Bomb->GetComponent<Transform>();
+    const int x = t->GetPosition().X;
+    const int y = t->GetPosition().Z;
+    const auto sPos = -(gm->m_globalVars.mapSize * 10.0f) / 2.0f;
 
     Vector2i tmp = {
-        static_cast<int>(round(gm->m_globalVars.mapSize - (x - s_pos) / 10.0f)),
-        static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 10.0f))
+        static_cast<int>(round(gm->m_globalVars.mapSize - (x - sPos) / 10.0f)),
+        static_cast<int>(round(gm->m_globalVars.mapSize - (y - sPos) / 10.0f))
     };
 
     Explosion(gm, tmp);
 }
 
-void Player::Explosion(GameManager* gm, Vector2i& pos)
+void Player::Explosion(GameManager* gm, Vector2i& pos) const
 {
     std::array<bool, 4> checked = { false,false,false,false };
 
-    for (int i = 1; i < 3; i += 1)
+    for (auto i = 1; i < 2; i += 1)
     {
-        auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - i));
+        auto* e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - i));
         if (e != nullptr && !checked[0]) {
             e->GetComponent<Drawable>()->GetDrawable()->remove();
             gm->GetEntityManager()->RemoveEntity(*e);
@@ -127,14 +129,14 @@ void Player::Explosion(GameManager* gm, Vector2i& pos)
 }
 void Player::GetMovements(GameManager *gm, Entity &self)
 {
-    bool isMoving = false;
-    InputManager *im = gm->GetInputManager();
-    Transform *transform = self.GetComponent<Transform>();
-    Animator *animator = self.GetComponent<Animator>();
+    auto isMoving = false;
+    auto* im = gm->GetInputManager();
+    auto* transform = self.GetComponent<Transform>();
+    auto* animator = self.GetComponent<Animator>();
 
     if (im->IsKeyDown(m_Data->bindingsMap["UP"]))
     {
-        auto position = transform->GetPosition();
+        const auto position = transform->GetPosition();
 
         transform->SetPosition({ position.X + 0.5f, position.Y, position.Z });
         transform->SetRotation({ 0, 270, 0});
@@ -142,7 +144,7 @@ void Player::GetMovements(GameManager *gm, Entity &self)
     }
     if (im->IsKeyDown(m_Data->bindingsMap["LEFT"]))
     {
-        auto position = transform->GetPosition();
+        const auto position = transform->GetPosition();
 
         transform->SetPosition({ position.X, position.Y, position.Z + 0.5f });
         transform->SetRotation({ 0, 180, 0});
@@ -150,7 +152,7 @@ void Player::GetMovements(GameManager *gm, Entity &self)
     }
     if (im->IsKeyDown(m_Data->bindingsMap["DOWN"]))
     {
-        auto position = transform->GetPosition();
+        const auto position = transform->GetPosition();
 
         transform->SetPosition({ position.X - 0.5f, position.Y, position.Z });
         transform->SetRotation({ 0, 90, 0});
@@ -158,7 +160,7 @@ void Player::GetMovements(GameManager *gm, Entity &self)
     }
     if (im->IsKeyDown(m_Data->bindingsMap["RIGHT"]))
     {
-        auto position = transform->GetPosition();
+       const auto position = transform->GetPosition();
 
         transform->SetPosition({ position.X, position.Y, position.Z - 0.5f });
         transform->SetRotation({ 0, 0, 0});
@@ -181,13 +183,14 @@ void Player::GetMovements(GameManager *gm, Entity &self)
 
 void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
 {
-    int x = pPos->GetPosition().X;
-    int y = pPos->GetPosition().Z;
-    auto s_pos = -(gVars->mapSize * 10.0f) / 2;
+    const int x = pPos->GetPosition().X;
+    const int y = pPos->GetPosition().Z;
+    const auto sPos = -(gVars->mapSize * 10.0f) / 2;
     std::array<int, 2> tmp = {
-        round(gVars->mapSize - (y - s_pos) / 10.0f),
-        round(gVars->mapSize - (x - s_pos) / 10.0f)
+        static_cast<int>(round(gVars->mapSize - (y - sPos) / 10.0f)),
+        static_cast<int>(round(gVars->mapSize - (x - sPos) / 10.0f))
     };
+	
     if (tmp != this->_previousPos)
     {
         if (this->_previousPos[0] != -1)

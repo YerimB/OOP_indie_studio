@@ -40,10 +40,10 @@
     <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClCompile Include="Sources\Scenes\LunchGame.cpp" />
     <ClCompile Include="Sources\Components\PlayerAI.cpp" />
+    <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
     <ClCompile Include="Sources\AI\AI.cpp" />
     <ClCompile Include="Sources\AI\Astar.cpp" />
     <ClCompile Include="Sources\AI\Node.cpp" />
-    <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Components\Animator.h" />
