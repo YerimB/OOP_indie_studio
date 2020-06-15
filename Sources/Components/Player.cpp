@@ -84,15 +84,6 @@ void Player::DestroyBlocks(GameManager* gm) const
         static_cast<int>(round(gm->m_globalVars.mapSize - (x - sPos) / 10.0f)),
         static_cast<int>(round(gm->m_globalVars.mapSize - (y - sPos) / 10.0f))
     };
-    gm->m_globalVars.map[tmp.X][tmp.Y] = '0';
-    if (gm->m_globalVars.map[tmp.X + 1][tmp.Y] == '2')
-        gm->m_globalVars.map[tmp.X + 1][tmp.Y] = '0';
-    if (gm->m_globalVars.map[tmp.X - 1][tmp.Y] == '2')
-        gm->m_globalVars.map[tmp.X - 1][tmp.Y] = '0';
-    if (gm->m_globalVars.map[tmp.X][tmp.Y + 1] == '2')
-        gm->m_globalVars.map[tmp.X][tmp.Y + 1] = '0';
-    if (gm->m_globalVars.map[tmp.X][tmp.Y - 1] == '2')
-        gm->m_globalVars.map[tmp.X][tmp.Y - 1] = '0';
 
     Explosion(gm, m_BombPos);
 }
@@ -193,8 +184,7 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     {
         if (this->_previousPos[0] != -1)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
-        if (gVars->map[tmp[1]][tmp[0]] != 'B')
-            gVars->map[tmp[1]][tmp[0]] = 'E';
+        gVars->map[tmp[1]][tmp[0]] = 'E';
         _previousPos = tmp;
     }
 }
