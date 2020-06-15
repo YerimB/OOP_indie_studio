@@ -57,7 +57,7 @@ void System<Comps...>::OnEntityDestroyed(const EntityId &e_id)
         this->_components[findIt->second] = std::move(this->_components.back());
         this->_components.pop_back();
 
-        if (this->_components.empty())
+        if (this->_components.empty() || this->_components.size() <= findIt->second)
             return;
 
         const auto *pMovedComp = std::get<0>(this->_components[findIt->second]);
