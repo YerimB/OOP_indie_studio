@@ -45,7 +45,7 @@ typedef struct GameGlobalVariables_s
 	};
 
 	// Map
-	size_t mapSize = 0;
+	size_t mapSize = 16;
 	std::vector<std::string> map;
 
 	// Add vars if needed.

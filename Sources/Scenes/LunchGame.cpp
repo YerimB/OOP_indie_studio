@@ -97,27 +97,24 @@ static void changeCharactertoAI4(GameManager* gm)
     e->GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
 }
 
-static void ChangeText(GameManager* gameManager)
+static void ChangeText(GameManager* gm)
 {
-    Entity *e = gameManager->GetEntityManager()->GetEntity("SizeMap");
+    Entity *e = gm->GetEntityManager()->GetEntity("SizeMap");
     Text *newText = e->GetComponent<Text>();
-    const std::string tmp = newText->GetContent();
-    int sizeMap = std::stoi(tmp);
-    sizeMap += 4;
-    newText->SetText(std::to_string(sizeMap));
-    gameManager->GetEntityManager()->AddEntity(*e);
+
+    if (gm->m_globalVars.mapSize < 20)
+        gm->m_globalVars.mapSize += 4;
+    newText->SetText(std::to_string(gm->m_globalVars.mapSize));
 }
 
-static void ChangeTextLower(GameManager* gameManager)
+static void ChangeTextLower(GameManager* gm)
 {
-    Entity *e = gameManager->GetEntityManager()->GetEntity("SizeMap");
+    Entity *e = gm->GetEntityManager()->GetEntity("SizeMap");
     Text *newText = e->GetComponent<Text>();
-    const std::string tmp = newText->GetContent();
-    int sizeMap = std::stoi(tmp);
-    sizeMap -= 4;
-    if (sizeMap < 12) sizeMap = 12;
-    newText->SetText(std::to_string(sizeMap));
-    gameManager->GetEntityManager()->AddEntity(*e);
+
+    if (gm->m_globalVars.mapSize > 12)
+        gm->m_globalVars.mapSize -= 4;
+    newText->SetText(std::to_string(gm->m_globalVars.mapSize));
 }
 
 LunchGame::LunchGame() : Scene(Scene::LUNCH_GAME)
@@ -422,8 +419,8 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (text1->Initialize(nullptr))
         {
             text1->SetFont(font);
-            text1->SetText("12");
-            text1->SetColor(Color(255, 0, 0, 255));
+            text1->SetText(std::to_string(gameManager->m_globalVars.mapSize));
+            text1->SetColor(Color(255, 255, 255, 255));
             text1->SetPosition(Vector2i(895, 135));
             e8.AddComponent(std::move(text1), Text::Id);
         }

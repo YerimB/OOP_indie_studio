@@ -88,7 +88,7 @@ void GameScene::LoadElements(GameManager* gm)
     }
 
     auto map = Map(gm);
-    map.Initialize(12, this);
+    map.Initialize(gm->m_globalVars.mapSize, this);
 }
 
 void GameScene::Load(GameManager* gameManager)
