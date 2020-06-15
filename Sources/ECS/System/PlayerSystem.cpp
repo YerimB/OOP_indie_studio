@@ -16,6 +16,8 @@ void PlayerSystem::Update(const double &deltaTime)
     {
         Player* player = std::get<Player*>(compTuple);
 
+        if (!player)
+            continue;
         player->Update(deltaTime, this->_EntityManager->GetGameManager());
     }
 }

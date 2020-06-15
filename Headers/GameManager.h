@@ -21,7 +21,7 @@ typedef struct PlayersData_s
 	int characterID = 0;
 	bool changedCharacterID = false;
 	std::unordered_map<std::string, Binding> bindingsMap;
-	Vector2i position;
+	Vector2i position = {(-1), (-1)};
 } PlayerData_t;
 
 typedef struct GameGlobalVariables_s
