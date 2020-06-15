@@ -21,6 +21,12 @@ static void changeSceneToGame(GameManager* gameManager)
 	gameManager->SetNextScene(Scene::GAME);
 }
 
+static void changeSceneToMenu(GameManager* gameManager)
+{
+	gameManager->SetSceneChange(true);
+	gameManager->SetNextScene(Scene::MENU);
+}
+
 static void changeCharacterP1(GameManager* gameManager)
 {
 	gameManager->m_globalVars.playersData[0].characterID += 1;
@@ -158,6 +164,9 @@ void LunchGame::LoadAssets(GameManager* gm)
     this->AddTexture(gm->LoadTexture("Assets/textures/btnPlus.png"), "btnPlus");
     this->AddTexture(gm->LoadTexture("Assets/textures/btnMinus.png"), "btnMinus");
     this->AddTexture(gm->LoadTexture("Assets/textures/SwitchContainer.png"), "SwitchContainer");
+    this->AddTexture(gm->LoadTexture("Assets/textures/random.png"), "ChangeMusic");
+    this->AddTexture(gm->LoadTexture("Assets/textures/music-notes.png"), "ChangeMusic2");
+    this->AddTexture(gm->LoadTexture("Assets/textures/btnHome.png"), "iconHome");
 
     auto sm = gm->GetSceneManager();
     this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
@@ -226,7 +235,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b->Initialize(nullptr)) {
             b->SetButtonID(Button::ButtonID::CHANGE_P_AI_1);
             b->SetTexture(this->GetTexture("btnAI"));
-            b->SetPosition({ 1575, 250 });
+            b->SetPosition({ 1500, 250 });
             b->SetSize(240, 80);
             b->SetTextureToFit(true);
             b->SetOnPress(changeCharactertoAI1);
@@ -275,7 +284,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b->Initialize(nullptr)) {
             b->SetButtonID(Button::ButtonID::CHANGE_P_AI_2);
             b->SetTexture(this->GetTexture("btnAI"));
-            b->SetPosition({ 1075, 250 });
+            b->SetPosition({ 1010, 250 });
             b->SetSize(240, 80);
             b->SetTextureToFit(true);
             b->SetOnPress(changeCharactertoAI2);
@@ -324,7 +333,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b->Initialize(nullptr)) {
             b->SetButtonID(Button::ButtonID::CHANGE_P_AI_3);
             b->SetTexture(this->GetTexture("btnAI"));
-            b->SetPosition({ 675, 250 });
+            b->SetPosition({ 600, 250 });
             b->SetSize(240, 80);
             b->SetTextureToFit(true);
             b->SetOnPress(changeCharactertoAI3);
@@ -373,7 +382,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b->Initialize(nullptr)) {
             b->SetButtonID(Button::ButtonID::CHANGE_P_AI_4);
             b->SetTexture(this->GetTexture("btnAI"));
-            b->SetPosition({ 175, 250 });
+            b->SetPosition({ 100, 250 });
             b->SetSize(240, 80);
             b->SetTextureToFit(true);
             b->SetOnPress(changeCharactertoAI4);
@@ -382,7 +391,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         gameManager->GetEntityManager()->AddEntity(e);
     }
 
-    { // Player04
+    {
         Entity e11("Bob-omb");
         Drawable* d10 = new Drawable(gameManager->GetSceneManager());
         Transform* t10 = new Transform();
@@ -393,11 +402,29 @@ void LunchGame::LoadElements(GameManager* gameManager)
             e11.AddComponent(d10, Drawable::Id);
             e11.AddComponent(t10, Transform::Id);
             e11.AddComponent(newCollider, Drawable::Id);
-            d10->SetRotation(Vector3f(10, 0, 20));
+            d10->SetRotation(Vector3f(10, 0, 90));
             d10->SetScale(Vector3f(0.3, 0.3, 0.3));
-            d10->SetPosition(Vector3f(-10,5, 0));
+            d10->SetPosition(Vector3f(-10,5, -1));
         }
         gameManager->GetEntityManager()->AddEntity(e11);
+    }
+
+    {
+        Entity e12("Bob-omb2");
+        Drawable* d11 = new Drawable(gameManager->GetSceneManager());
+        Transform* t11 = new Transform();
+        Collider *newCollider = new Collider();
+
+        if (t11->Initialize(0) && d11->Initialize(this->GetMesh("Bob-omb")))
+        {
+            e12.AddComponent(d11, Drawable::Id);
+            e12.AddComponent(t11, Transform::Id);
+            e12.AddComponent(newCollider, Drawable::Id);
+            d11->SetRotation(Vector3f(10, 0, 90));
+            d11->SetScale(Vector3f(0.3, 0.3, 0.3));
+            d11->SetPosition(Vector3f(15,-4, -3));
+        }
+        gameManager->GetEntityManager()->AddEntity(e12);
     }
 
     {
@@ -460,10 +487,27 @@ void LunchGame::LoadElements(GameManager* gameManager)
         gameManager->GetEntityManager()->AddEntity(e10);
     }
 
+    { // Back to menu button
+        Entity e14("BackButton");
+        Button* b1 = new Button(gameManager->GetGuiEnvironment());
+
+        if (b1->Initialize(nullptr)) {
+            b1->SetButtonID(Button::ButtonID::QUIT);
+            b1->SetTexture(this->GetTexture("iconHome"));
+            b1->SetPosition({ 20, 20 });
+            b1->SetSize(80, 80);
+            b1->SetTextureToFit(true);
+            b1->SetOnPress(changeSceneToMenu);
+            e14.AddComponent(std::move(b1), Button::Id);
+        }
+        gameManager->GetEntityManager()->AddEntity(e14);
+    }
+
 }
 
 void LunchGame::Load(GameManager* gameManager)
 {
+    srand(time(NULL));
     gameManager->GetGuiEnvironment()->clear();
     gameManager->GetSceneManager()->clear();
 
@@ -475,6 +519,8 @@ void LunchGame::Load(GameManager* gameManager)
     // Music
 	gameManager->GetSoundManager()->setLoop("sndMenu", (-1));
     gameManager->GetSoundManager()->PlaySound("sndMenu");
+
+    // gameManager->GetSoundManager()->GetSound("sndMenu");
 
     // Add Camera to Scene.
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 0, 10), { 0, 0, 0 });
@@ -500,6 +546,28 @@ void LunchGame::Update(GameManager* gm)
             gm->m_globalVars.playersData[idx - 1].changedCharacterID = false;
         }
     }
+    Entity* e1 = gm->GetEntityManager()->GetEntity("Bob-omb");
+    Drawable *d1 = e1->GetComponent<Drawable>();
+    Entity* e2 = gm->GetEntityManager()->GetEntity("Bob-omb2");
+    Drawable *d2 = e2->GetComponent<Drawable>();
+    d1->SetPosition(Vector3f(d1->GetPosition().X + 0.05, d1->GetPosition().Y, d1->GetPosition().Z));
+    int r  = (rand() % 2 + 1);
+    int r1 = (rand() % 2 + 1);
+    d1->SetRotation(Vector3f(d1->GetRotation().X + r, d1->GetRotation().Y + r1, d1->GetRotation().Z));
+
+    if (d1->GetPosition().X > 16)
+    {
+        d1->SetPosition(Vector3f(-15, rand() % 5 - 5, d1->GetPosition().Z));
+    }
+
+    d2->SetPosition(Vector3f(d2->GetPosition().X - 0.03, d2->GetPosition().Y, d2->GetPosition().Z));
+    d2->SetRotation(Vector3f(d2->GetRotation().X + r1, d2->GetRotation().Y + r1, d2->GetRotation().Z));
+
+    if (d2->GetPosition().X < -18)
+    {
+        d2->SetPosition(Vector3f(18, rand() % 5 - 5, d2->GetPosition().Z));
+    }
+
 }
 
 void LunchGame::Unload(void)

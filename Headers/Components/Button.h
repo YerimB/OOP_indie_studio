@@ -37,6 +37,7 @@ class Button : public Component
             CONTROLLER,
             UPPERSIZEMAP,
             LOWERSIZEMAP,
+            CHANGE_MUSIC,
         };
     
     public:

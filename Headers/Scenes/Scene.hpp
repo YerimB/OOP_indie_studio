@@ -22,6 +22,7 @@ class Scene
             LUNCH_GAME, // Lunch Game ID
             GAME, // Game Id
             CONTROLLER,
+            VICTORY,
         };
 
         public:
