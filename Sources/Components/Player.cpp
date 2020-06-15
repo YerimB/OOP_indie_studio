@@ -114,25 +114,31 @@ void Player::Explosion(GameManager* gm, Vector2i& pos) const
 
     for (auto data : gm->m_globalVars.playersData)
     {
+        if (data.alive == false)
+            continue;
     	if (pos.X == data.position.X && pos.Y - 1 == data.position.Y)
     	{
             gm->m_globalVars.playersData[data.playerID - 1].alive = false;
     	}
-        if (pos.X == data.position.X && pos.Y + 1 == data.position.Y)
+        else if (pos.X == data.position.X && pos.Y + 1 == data.position.Y)
         {
             gm->m_globalVars.playersData[data.playerID - 1].alive = false;
         }
-        if (pos.X + 1 == data.position.X && pos.Y == data.position.Y)
+        else if (pos.X + 1 == data.position.X && pos.Y == data.position.Y)
         {
             gm->m_globalVars.playersData[data.playerID - 1].alive = false;
         }
-        if (pos.X - 1 == data.position.X && pos.Y == data.position.Y)
+        else if (pos.X - 1 == data.position.X && pos.Y == data.position.Y)
         {
             gm->m_globalVars.playersData[data.playerID - 1].alive = false;
         }
-        if (pos.X == data.position.X && pos.Y == data.position.Y)
+        else if (pos.X == data.position.X && pos.Y == data.position.Y)
         {
             gm->m_globalVars.playersData[data.playerID - 1].alive = false;
+        }
+        if (!gm->m_globalVars.playersData[data.playerID - 1].alive)
+        {
+            gm->m_globalVars.playersRanking.push_back(data.characterID);
         }
     }
 }

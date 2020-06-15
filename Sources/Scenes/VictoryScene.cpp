@@ -70,7 +70,7 @@ void VictoryScene::LoadAssets(GameManager* gameManager)
     this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
     this->AddMesh(sm->getMesh("Assets/bob-omb.b3d"), "Bob-omb");
-    this->AddMesh(sm->getMesh("Assets/blooper.b3d"), "blooper");
+    this->AddMesh(sm->getMesh("Assets/blooper.b3d"), "Blooper");
 }
 
 // Load Entities & Components
@@ -94,14 +94,17 @@ void VictoryScene::LoadElements(GameManager* gameManager)
         }  
     }
 
+    auto &gv = gameManager->m_globalVars;
+    const auto &pRank = gv.playersRanking;
     { // Player WINNER 1st
         Entity e2("Player1");
         Drawable* d2 = new Drawable(gameManager->GetSceneManager());
         Transform* t2 = new Transform();
         Collider *newCollider = new Collider(Collider::Tag::Player1);
         Animator* a = new Animator(gameManager->GetSceneManager());
+        const std::string meshID(gv.meshIDMap.at((pRank[pRank.size() - 1])));
 
-        if (t2->Initialize(0) && d2->Initialize(this->GetMesh("Star")) && \
+        if (t2->Initialize(0) && d2->Initialize(this->GetMesh(meshID)) && \
         a->Initialize(d2->GetDrawable())) {
             a->AddAnimation("Idle", {0, 300, 30});
 			a->PlayAnimation("Idle");
@@ -141,8 +144,9 @@ void VictoryScene::LoadElements(GameManager* gameManager)
         Transform* t3 = new Transform();
         Collider *newCollider = new Collider(Collider::Tag::Player1);
         Animator* a = new Animator(gameManager->GetSceneManager());
+        const std::string meshID(gv.meshIDMap.at((pRank[pRank.size() - 2])));
 
-        if (t3->Initialize(0) && d3->Initialize(this->GetMesh("Luigi")) && \
+        if (t3->Initialize(0) && d3->Initialize(this->GetMesh(meshID)) && \
         a->Initialize(d3->GetDrawable())) {
             a->AddAnimation("Idle", {0, 300, 30});
 			a->PlayAnimation("Idle");
@@ -182,8 +186,9 @@ void VictoryScene::LoadElements(GameManager* gameManager)
         Transform* t4 = new Transform();
         Collider *newCollider = new Collider(Collider::Tag::Player1);
         Animator* a = new Animator(gameManager->GetSceneManager());
+        const std::string meshID(gv.meshIDMap.at((pRank[pRank.size() - 3])));
 
-        if (t4->Initialize(0) && d4->Initialize(this->GetMesh("Mario")) && \
+        if (t4->Initialize(0) && d4->Initialize(this->GetMesh(meshID)) && \
         a->Initialize(d4->GetDrawable())) {
             a->AddAnimation("Idle", {0, 300, 30});
 			a->PlayAnimation("Idle");
@@ -204,8 +209,9 @@ void VictoryScene::LoadElements(GameManager* gameManager)
         Transform* t5 = new Transform();
         Collider *newCollider = new Collider(Collider::Tag::Player1);
         Animator* a = new Animator(gameManager->GetSceneManager());
+        const std::string meshID(gv.meshIDMap.at((pRank[0])));
 
-        if (t5->Initialize(0) && d5->Initialize(this->GetMesh("Koopa")) && \
+        if (t5->Initialize(0) && d5->Initialize(this->GetMesh(meshID)) && \
         a->Initialize(d5->GetDrawable())) {
             a->AddAnimation("Run", {301, 320, 30});
 			a->PlayAnimation("Run");

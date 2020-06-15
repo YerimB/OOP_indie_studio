@@ -101,6 +101,7 @@ void GameScene::Load(GameManager* gameManager)
     gameManager->GetGuiEnvironment()->clear();
     gameManager->GetSceneManager()->clear();
 
+    gameManager->m_globalVars.playersRanking.clear();
     this->LoadSystems(gameManager);
     this->LoadAssets(gameManager);
     this->LoadElements(gameManager);
@@ -113,14 +114,14 @@ void GameScene::Update(GameManager* gm)
 {
     { // Check win condition
         int nbAlive = 0;
-        int winnerID = 0;
+        int winnerMeshID = 0;
         GameVars_t &gv = gm->m_globalVars;
 
         for (int idx = 0; idx < gv.currentPlayerNumber; ++idx)
         {
             if (gv.playersData[idx].alive)
             {
-                winnerID = gv.playersData[idx].playerID;
+                winnerMeshID = gv.playersData[idx].characterID;
                 nbAlive++;
             }
             if (!gv.playersData[idx].alive)
@@ -131,12 +132,13 @@ void GameScene::Update(GameManager* gm)
 	                e->GetComponent<Drawable>()->GetDrawable()->remove();
 	                gm->GetEntityManager()->RemoveEntity(*e);
 	            }
-
             }
         }
-        if (nbAlive == 1)
+        if (nbAlive <= 1)
         {
-            std::cout << "Player " << winnerID << " won the game !" << std::endl;
+            gv.playersRanking.push_back(winnerMeshID);
+            gv.sceneChanged = true;
+            gv.newScene = SceneID::VICTORY;
         }
     }
 }
