@@ -17,7 +17,7 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 	{ // Create plane
 		Entity plane("Ground");
 		Transform* tp = new Transform({0, -10, 0});
-		Collider* clp = new Collider();
+		Collider* clp = new Collider(Collider::Tag::None);
 		Cube* cp = new Cube(m_GameManager->GetSceneManager());
 
 		if (cp->Initialize(sc->GetTexture("Star"))) {
@@ -59,7 +59,7 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 
 			Entity cubeEntity(eType + "_" + std::to_string(idx) + "_" + std::to_string(idx2));
 			Transform* t0 = new Transform(position);
-			Collider* cl0 = new Collider();
+			Collider* cl0 = new Collider(Collider::Tag::None);
 			Cube* c0 = new Cube(m_GameManager->GetSceneManager());
 			Texture *texture = sc->GetTexture(eType);
 
@@ -94,7 +94,7 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 			Player* p0 = nullptr;
 			Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
 			Transform* t0 = new Transform(corners[idx]);
-			Collider* cl0 = new Collider();
+			Collider* cl0 = new Collider(static_cast<Collider::Tag>(idx+1));
 			Animator* a0 = new Animator(m_GameManager->GetSceneManager());
 			size_t meshID = m_GameManager->m_globalVars.playersData[idx].characterID;
 

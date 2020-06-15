@@ -13,7 +13,7 @@ void MoveSystem::Update(const double& deltaTime)
 		Collider* collider = std::get<Collider*>(_components[i]);
 		Transform* transform = std::get<Transform*>(_components[i]);
 
-		if (!drawable->GetDrawable())
+		if (!drawable->GetDrawable() || collider->GetTag() == Collider::Tag::None)
 			continue;
 
 		std::array<Vector3f, 3> ts = {
@@ -32,8 +32,9 @@ void MoveSystem::Update(const double& deltaTime)
 			Drawable* drawable2 = std::get<Drawable*>(_components[j]);
 			Collider* collider2 = std::get<Collider*>(_components[j]);
 
-			if (!drawable2->GetDrawable())
+			if (!drawable2->GetDrawable() || collider->GetTag() == collider2->GetTag())
 				continue;
+
 			if (MoveSystem::Collide(drawable, drawable2))
 			{
 				transform->SetPosition(ts[0]);
