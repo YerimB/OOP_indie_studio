@@ -120,6 +120,7 @@
     <ClInclude Include="Headers\AI\AI.h" />
     <ClInclude Include="Headers\AI\Astar.h" />
     <ClInclude Include="Headers\AI\Node.h" />
+    <ClInclude Include="Headers\ECS\System\TimeSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLs\fmod.dll" />

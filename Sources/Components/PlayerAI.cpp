@@ -16,11 +16,11 @@ PlayerAI::PlayerAI(SceneManager *manager) : Player::Player(manager)
 
 void PlayerAI::Update(const float& dT, GameManager* gm)
 {
-    Entity &e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
-    Transform *transform = e.GetComponent<Transform>();
+    Entity *e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
+    Transform *transform = e->GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
-    this->GetMovements(gm, e);
+    this->GetMovements(gm, *e);
 }
 
 

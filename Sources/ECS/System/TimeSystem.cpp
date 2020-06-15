@@ -1,4 +1,5 @@
 #include <ECS/System/TimeSystem.h>
+#include <ECS/EntityManager.h>
 
 TimeSystem::TimeSystem(EntityManager* pEntityManager) : BaseType(pEntityManager)
 {}

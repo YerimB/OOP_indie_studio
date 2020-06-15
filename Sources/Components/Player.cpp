@@ -26,11 +26,11 @@ bool Player::Initialize(void *args)
 
 void Player::Update(const float &dT, GameManager* gm)
 {
-    Entity &e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
-    Transform *transform = e.GetComponent<Transform>();
+    Entity *e = gm->GetEntityManager()->GetEntity(this->m_EntityId);
+    Transform *transform = e->GetComponent<Transform>();
 
     this->UpdateMap(transform, &gm->m_globalVars);
-    this->GetMovements(gm, e);
+    this->GetMovements(gm, *e);
 }
 
 void Player::bindKey(const std::string &a, const irr::EKEY_CODE &code)
@@ -44,19 +44,86 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     Timer *timer = new Timer();
     Transform* transform = new Transform();
     Drawable* drawable = new Drawable(gm->GetSceneManager());
-    float duration = 0.01f;
+    float duration = 1.0f;
 
     timer->Initialize(&duration);
     transform->Initialize(nullptr);
-    drawable->Initialize(gm->GetSceneManager()->getMesh("Assets/bob-omb.b3d"));
+    drawable->Initialize(gm->GetCurrentScene()->GetMesh("Bomb"));
 
-    transform->SetPosition(self.GetComponent<Transform>()->GetPosition());
+    auto gVars = gm->m_globalVars;
+    auto s_pos = -(gVars.mapSize * 10.0f) / 2.0f;
+    Vector3f dpPos = self.GetComponent<Transform>()->GetPosition();
+    Vector2f tmp = {
+        round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
+        round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
+    };
+    std::cout << "Drop bomb at : " << tmp.X << ", " << tmp.Y << std::endl;
+    tmp.X = -(s_pos + tmp.X * 10.0f);
+    tmp.Y = -(s_pos + tmp.Y * 10.0f);
+
+    transform->SetPosition({tmp.X, 0, tmp.Y});
     drawable->SetPosition(transform->GetPosition());
 
     m_Bomb->AddComponent(std::move(timer), Timer::Id);
     m_Bomb->AddComponent(std::move(transform), Transform::Id);
     m_Bomb->AddComponent(std::move(drawable), Drawable::Id);
     gm->GetEntityManager()->AddEntity(*m_Bomb);
+
+}
+
+void Player::DestroyBlocks(GameManager* gm)
+{
+    auto t = m_Bomb->GetComponent<Transform>();
+    int x = t->GetPosition().X;
+    int y = t->GetPosition().Z;
+    auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2.0f;
+
+    Vector2i tmp = {
+        static_cast<int>(round(gm->m_globalVars.mapSize - (x - s_pos) / 10.0f)),
+        static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 10.0f))
+    };
+
+    Explosion(gm, tmp);
+}
+
+void Player::Explosion(GameManager* gm, Vector2i& pos)
+{
+    std::array<bool, 4> checked = { false,false,false,false };
+
+    for (int i = 1; i < 3; i += 1)
+    {
+        auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - i));
+        if (e != nullptr && !checked[0]) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
+        else
+            checked[0] = true;
+
+        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y + i));
+        if (e != nullptr && !checked[1]) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
+        else
+            checked[1] = true;
+
+        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X + i) + "_" + std::to_string(pos.Y));
+        if (e != nullptr && !checked[2]) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
+        else
+            checked[2] = true;
+
+        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - i) + "_" + std::to_string(pos.Y));
+        if (e != nullptr && !checked[3]) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
+        else
+            checked[3] = true;
+    }
 }
 void Player::GetMovements(GameManager *gm, Entity &self)
 {
@@ -103,6 +170,7 @@ void Player::GetMovements(GameManager *gm, Entity &self)
             DropBomb(self, gm);
     }
     if (m_Bomb != nullptr && m_Bomb->GetComponent<Timer>()->GetDuration() <= 0) {
+        DestroyBlocks(gm);
         m_Bomb->GetComponent<Drawable>()->GetDrawable()->remove();
         m_Bomb = nullptr;
     }
@@ -128,14 +196,14 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2;
     std::array<int, 2> tmp = {
-        get_round(gVars->mapSize - (y - s_pos) / 10 ),
-        get_round(gVars->mapSize - (x - s_pos) / 10 )
+        round(gVars->mapSize - (y - s_pos) / 10.0f),
+        round(gVars->mapSize - (x - s_pos) / 10.0f)
     };
-	if (tmp != this->_previousPos)
-	{
+    if (tmp != this->_previousPos)
+    {
         if (this->_previousPos[0] != -1)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
-        gVars->map[tmp[1]][tmp[0]] = 'E';
+        gVars->map[tmp[1]][tmp[0]] = 'O';
         _previousPos = tmp;
-	}
+    }
 }

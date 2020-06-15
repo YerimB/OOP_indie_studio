@@ -32,10 +32,14 @@ class Player : public Component
     public:
         void bindKey(const std::string &action, const irr::EKEY_CODE &);
         void DropBomb(Entity& self, GameManager* gm);
+        void DestroyBlocks(GameManager* gm);
+        void Explosion(GameManager* gm, Vector2i& pos);
 
     protected:
-        void UpdateMap(Transform *pPos, GameVars_t *gVars);
         int get_round(float nb);
+
+    private:
+        void UpdateMap(Transform *pPos, GameVars_t *gVars);
         virtual void GetMovements(GameManager *gm, Entity &self);
 
     protected:

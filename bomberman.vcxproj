@@ -264,9 +264,6 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\AI\AI.cpp" />
-    <ClCompile Include="Sources\AI\Astar.cpp" />
-    <ClCompile Include="Sources\AI\Node.cpp" />
     <ClCompile Include="Sources\Components\Animator.cpp" />
     <ClCompile Include="Sources\Components\Button.cpp" />
     <ClCompile Include="Sources\Components\Collider.cpp" />

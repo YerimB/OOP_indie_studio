@@ -1,7 +1,5 @@
 #include <Scenes/GameScene.hpp>
 #include <GameManager.h>
-#include <ECS/System/MoveSystem.h>
-#include <ECS/System/TimeSystem.h>
 #include <Map/Map.h>
 // Systems
 #include <ECS/ECS.h>
@@ -34,7 +32,7 @@ void GameScene::LoadSystems(GameManager* gm)
     MoveSystem* moveSys = new MoveSystem(gm->GetEntityManager());
     PlayerSystem* playerSys = new PlayerSystem(gm->GetEntityManager());
     TimeSystem* timeSys = new TimeSystem(gm->GetEntityManager());
-    
+
     // Add
     gm->GetEntityManager()->AddSystem(std::move(animSys));
     gm->GetEntityManager()->AddSystem(std::move(buttonSys));
@@ -60,6 +58,7 @@ void GameScene::LoadAssets(GameManager* gm)
     this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
     this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
+    this->AddMesh(sm->getMesh("Assets/bob-omb.b3d"), "Bomb");
 
     gm->GetSoundManager()->AddSound(
         gm->GetSoundManager()->LoadSound("Assets/sound/game2.ogg"),

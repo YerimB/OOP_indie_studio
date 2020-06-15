@@ -55,46 +55,46 @@ static void changeCharacterP4(GameManager* gameManager)
 
 static void changeCharactertoAI1(GameManager* gm)
 {
-    Entity &e = gm->GetEntityManager()->GetEntity("B_P/IA1");
+    Entity* e = gm->GetEntityManager()->GetEntity("B_P/IA1");
     std::string textureID;
 
     gm->m_globalVars.playersData[0].isActive = !(gm->m_globalVars.playersData[0].isActive);
     gm->m_globalVars.playersData[0].hasStatusChanged = true;
     textureID.assign(gm->m_globalVars.playersData[0].isActive ? "btnPlayer" : "btnAI");
-    e.GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
+    e->GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
 }
 
 static void changeCharactertoAI2(GameManager* gm)
 {
-    Entity &e = gm->GetEntityManager()->GetEntity("B_P/IA2");
+    Entity* e = gm->GetEntityManager()->GetEntity("B_P/IA2");
     std::string textureID;
 
     gm->m_globalVars.playersData[1].isActive = !(gm->m_globalVars.playersData[1].isActive);
     gm->m_globalVars.playersData[1].hasStatusChanged = true;
     textureID.assign(gm->m_globalVars.playersData[1].isActive ? "btnPlayer" : "btnAI");
-    e.GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
+    e->GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
 }
 
 static void changeCharactertoAI3(GameManager* gm)
 {
-    Entity &e = gm->GetEntityManager()->GetEntity("B_P/IA3");
+    Entity* e = gm->GetEntityManager()->GetEntity("B_P/IA3");
     std::string textureID;
 
     gm->m_globalVars.playersData[2].isActive = !(gm->m_globalVars.playersData[2].isActive);
     gm->m_globalVars.playersData[2].hasStatusChanged = true;
     textureID.assign(gm->m_globalVars.playersData[2].isActive ? "btnPlayer" : "btnAI");
-    e.GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
+    e->GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
 }
 
 static void changeCharactertoAI4(GameManager* gm)
 {
-    Entity &e = gm->GetEntityManager()->GetEntity("B_P/IA4");
+    Entity* e = gm->GetEntityManager()->GetEntity("B_P/IA4");
     std::string textureID;
 
     gm->m_globalVars.playersData[3].isActive = !(gm->m_globalVars.playersData[3].isActive);
     gm->m_globalVars.playersData[3].hasStatusChanged = true;
     textureID.assign(gm->m_globalVars.playersData[3].isActive ? "btnPlayer" : "btnAI");
-    e.GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
+    e->GetComponent<Button>()->SetTexture(gm->GetCurrentScene()->GetTexture(textureID));
 }
 
 LunchGame::LunchGame() : Scene(Scene::LUNCH_GAME)
@@ -366,9 +366,9 @@ void LunchGame::Update(GameManager* gm)
     {
         if (gm->m_globalVars.playersData[idx - 1].changedCharacterID)
         {
-            Entity &e = gm->GetEntityManager()->GetEntity(pstr.append(std::to_string(idx)));
-            Drawable *d = e.GetComponent<Drawable>();
-            Animator *a = e.GetComponent<Animator>();
+            Entity* e = gm->GetEntityManager()->GetEntity(pstr.append(std::to_string(idx)));
+            Drawable *d = e->GetComponent<Drawable>();
+            Animator *a = e->GetComponent<Animator>();
             size_t meshID = gm->m_globalVars.playersData[idx - 1].characterID;
             AMesh *mesh = this->GetMesh(gm->m_globalVars.meshIDMap.at(meshID));
 
