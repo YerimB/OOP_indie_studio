@@ -19,7 +19,7 @@ AI::AI(std::vector<std::string> map): _map(map), _cleanMap(map)
 
 std::array<int, 2> AI::getDir()
 {
-    if (_path.size() == 0)
+    if (_path.size() < 2)
         return std::array<int, 2>({ 0, 0 });
     return std::array<int, 2>({
 		_path[0][0] - _path[1][0],
