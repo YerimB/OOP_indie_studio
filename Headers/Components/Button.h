@@ -35,6 +35,8 @@ class Button : public Component
             LOWERFX,
             UPPERFX,
             CONTROLLER,
+            UPPERSIZEMAP,
+            LOWERSIZEMAP,
         };
     
     public:

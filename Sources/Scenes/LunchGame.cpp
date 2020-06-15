@@ -77,6 +77,29 @@ static void changeCharactertoAI4(GameManager* gameManager)
     gameManager->m_globalVars.playersData[0].hasStatusChanged = true;
 }
 
+static void ChangeText(GameManager* gameManager)
+{
+    Entity &e = gameManager->GetEntityManager()->GetEntity("SizeMap");
+    Text *newText = e.GetComponent<Text>();
+    const std::string tmp = newText->GetContent();
+    int sizeMap = std::stoi(tmp);
+    sizeMap += 4;
+    newText->SetText(std::to_string(sizeMap));
+    gameManager->GetEntityManager()->AddEntity(e);
+}
+
+static void ChangeTextLower(GameManager* gameManager)
+{
+    Entity &e = gameManager->GetEntityManager()->GetEntity("SizeMap");
+    Text *newText = e.GetComponent<Text>();
+    const std::string tmp = newText->GetContent();
+    int sizeMap = std::stoi(tmp);
+    sizeMap -= 4;
+    if (sizeMap < 12) sizeMap = 12;
+    newText->SetText(std::to_string(sizeMap));
+    gameManager->GetEntityManager()->AddEntity(e);
+}
+
 LunchGame::LunchGame() : Scene(Scene::LUNCH_GAME)
 {
 }
@@ -100,16 +123,32 @@ void LunchGame::LoadSystems(GameManager* gm)
 
 void LunchGame::LoadAssets(GameManager* gm)
 {
+    gm->GetSoundManager()->AddSound(
+        gm->GetSoundManager()->LoadSound("Assets/sound/menu_game.ogg"),
+        "sndMenu",
+        SoundManager::SoundType::MUSIC
+    );
+    gm->GetSoundManager()->AddSound(
+        gm->GetSoundManager()->LoadSound("Assets/sound/menu_game_2.ogg"),
+        "sndMenu2",
+        SoundManager::SoundType::MUSIC
+    );
+
     this->AddTexture(gm->LoadTexture("Assets/textures/buttonChange.png"), "btnChange");
     this->AddTexture(gm->LoadTexture("Assets/textures/mario_bg.jpeg"), "Bg");
     this->AddTexture(gm->LoadTexture("Assets/textures/buttonAI.jpeg"), "btnAI");
     this->AddTexture(gm->LoadTexture("Assets/textures/buttonPlayer.png"), "btnPlayer");
+    this->AddTexture(gm->LoadTexture("Assets/textures/btnPlus.png"), "btnPlus");
+    this->AddTexture(gm->LoadTexture("Assets/textures/btnMinus.png"), "btnMinus");
+    this->AddTexture(gm->LoadTexture("Assets/textures/SwitchContainer.png"), "SwitchContainer");
 
     auto sm = gm->GetSceneManager();
     this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
     this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
     this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
+    this->AddMesh(sm->getMesh("Assets/bob-omb.b3d"), "Bob-omb");
+    this->AddMesh(sm->getMesh("Assets/blooper.b3d"), "blooper");
 
     this->AddTexture(gm->LoadTexture("Assets/textures/game-controller.png"), "texGameController");
 }
@@ -279,6 +318,84 @@ void LunchGame::LoadElements(GameManager* gameManager)
         gameManager->GetEntityManager()->AddEntity(e7);
     }
 
+    { // Player04
+        Entity e11("Bob-omb");
+        Drawable* d10 = new Drawable(gameManager->GetSceneManager());
+        Transform* t10 = new Transform();
+        Collider *newCollider = new Collider();
+
+        if (t10->Initialize(0) && d10->Initialize(this->GetMesh("Bob-omb")))
+        {
+            e11.AddComponent(d10, Drawable::Id);
+            e11.AddComponent(t10, Transform::Id);
+            e11.AddComponent(newCollider, Drawable::Id);
+            d10->SetRotation(Vector3f(10, 0, 20));
+            d10->SetScale(Vector3f(0.3, 0.3, 0.3));
+            d10->SetPosition(Vector3f(-10,5, 0));
+        }
+        gameManager->GetEntityManager()->AddEntity(e11);
+    }
+
+    {
+        Entity e8("SizeMap");
+        Text *text1 = new Text(gameManager->GetGuiEnvironment());
+        GuiFont *font = gameManager->GetGuiEnvironment()->getFont("Assets/Font/SuperMario256.ttf");
+        Button* b3 = new Button(gameManager->GetGuiEnvironment());
+
+        if (b3->Initialize(nullptr)) {
+            b3->SetButtonID(Button::ButtonID::UPPERSIZEMAP);
+            b3->SetTexture(this->GetTexture("btnPlus"));
+            b3->SetPosition({ 1000, 100 });
+            b3->SetSize(120, 60);
+            b3->SetTextureToFit(true);
+            b3->SetOnPress(ChangeText);
+            e8.AddComponent(std::move(b3), Button::Id);
+        }
+
+        if (text1->Initialize(nullptr))
+        {
+            text1->SetFont(font);
+            text1->SetText("12");
+            text1->SetColor(Color(255, 0, 0, 255));
+            text1->SetPosition(Vector2i(895, 135));
+            e8.AddComponent(std::move(text1), Text::Id);
+        }
+        gameManager->GetEntityManager()->AddEntity(e8);
+    }
+
+    {
+        Entity e9("SizeMap2");
+
+        Button* b4 = new Button(gameManager->GetGuiEnvironment());
+        if (b4->Initialize(nullptr)) {
+            b4->SetButtonID(Button::ButtonID::LOWERSIZEMAP);
+            b4->SetTexture(this->GetTexture("btnMinus"));
+            b4->SetPosition({ 700, 100 });
+            b4->SetSize(120, 60);
+            b4->SetTextureToFit(true);
+            b4->SetOnPress(ChangeTextLower);
+            e9.AddComponent(std::move(b4), Button::Id);
+        }
+
+        gameManager->GetEntityManager()->AddEntity(e9);
+    }
+
+    {
+        Entity e10("SwitchContainer");
+
+        Button* b4 = new Button(gameManager->GetGuiEnvironment());
+        if (b4->Initialize(nullptr)) {
+            b4->SetButtonID(Button::ButtonID::UNDEFINED);
+            b4->SetTexture(this->GetTexture("SwitchContainer"));
+            b4->SetPosition({ 850, 80 });
+            b4->SetSize(100, 40);
+            b4->SetTextureToFit(true);
+            e10.AddComponent(std::move(b4), Button::Id);
+        }
+
+        gameManager->GetEntityManager()->AddEntity(e10);
+    }
+
 }
 
 void LunchGame::Load(GameManager* gameManager)
@@ -290,7 +407,11 @@ void LunchGame::Load(GameManager* gameManager)
     this->LoadSystems(gameManager);
     this->LoadAssets(gameManager);
     this->LoadElements(gameManager);
-	
+
+    // Music
+	gameManager->GetSoundManager()->setLoop("sndMenu", (-1));
+    gameManager->GetSoundManager()->PlaySound("sndMenu");
+
     // Add Camera to Scene.
     gameManager->GetSceneManager()->addCameraSceneNode(0, Vector3f(0, 0, 10), { 0, 0, 0 });
 }
