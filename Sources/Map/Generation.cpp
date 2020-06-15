@@ -12,7 +12,7 @@ Generation::Generation(const int &size) : _size(size)
 
 std::vector<std::string> Generation::GetMap() const
 {
-	return this->_map;
+    return this->_map;
 }
 
 void Generation::refresh()

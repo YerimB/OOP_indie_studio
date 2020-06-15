@@ -44,8 +44,8 @@ GameManager::GameManager()
             };
         }
         { // Player 4
-            m_globalVars.playersData[3].playerID = 3;
-            m_globalVars.playersData[3].characterID = 3;
+            m_globalVars.playersData[3].playerID = 4;
+            m_globalVars.playersData[3].characterID = 4;
             m_globalVars.playersData[3].bindingsMap = {
                 std::pair<std::string, Binding>("UP", irr::KEY_RETURN),
                 std::pair<std::string, Binding>("DOWN", irr::KEY_RETURN),

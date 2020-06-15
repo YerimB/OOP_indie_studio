@@ -5,24 +5,24 @@ Map::Map(GameManager* pGameManager)
 	m_GameManager = pGameManager;
 }
 
-void Map::Initialize(const std::size_t& size, Scene *sc)
+void Map::InitMap(const std::size_t& size, Scene *sc)
 {
 	Generation map(size);
 	Vector3f position = {
-        -(size * 10.0f) / 2,
+        (size * 10.0f) / 2.0f,
         0,
-        -(size * 10.0f) / 2
+		(size * 10.0f) / 2.0f
     };
 
 	{ // Create plane
 		Entity plane("Ground");
 		Transform* tp = new Transform({0, -10, 0});
-		Collider* clp = new Collider();
+		Collider* clp = new Collider(Collider::Tag::None);
 		Cube* cp = new Cube(m_GameManager->GetSceneManager());
 
 		if (cp->Initialize(sc->GetTexture("Star"))) {
-			cp->SetScale({size * 0.90f, 0, size * 0.98f});
-			tp->SetScale({size * 0.90f, 0, size * 0.98f});
+			cp->SetScale({size * 1.0f, 1, size * 1.0f});
+			tp->SetScale({size * 1.0f, 1, size * 1.0f});
 			cp->SetPosition({0, -10, 0});
 			plane.AddComponent(tp, Transform::Id);
 			plane.AddComponent(cp, Cube::Id);
@@ -35,12 +35,14 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 	auto strMap = map.GetMap();
 	m_GameManager->m_globalVars.mapSize = size;
 	m_GameManager->m_globalVars.map = strMap;
+	int idx2 = (-1);
 	for (int idx = 0; idx < strMap.size(); ++idx)
 	{
 		for (auto& ch : strMap[idx])
 		{
 			std::string eType;
 
+			idx2 += 1;
 			if (ch == '1')
 				eType = "Block";
 			else if (ch == '2')
@@ -48,13 +50,13 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			else if (ch == '3')
 				eType = "Pow";
 			else {
-				position.X += 10;
+				position.Z -= 10.0f;
 				continue;
 			}
 
-			Entity cubeEntity(eType);
+			Entity cubeEntity(eType + "_" + std::to_string(idx) + "_" + std::to_string(idx2));
 			Transform* t0 = new Transform(position);
-			Collider* cl0 = new Collider();
+			Collider* cl0 = new Collider(Collider::Tag::None);
 			Cube* c0 = new Cube(m_GameManager->GetSceneManager());
 			Texture *texture = sc->GetTexture(eType);
 
@@ -65,34 +67,62 @@ void Map::Initialize(const std::size_t& size, Scene *sc)
 			cubeEntity.AddComponent(c0, Cube::Id);
 			cubeEntity.AddComponent(cl0, Collider::Id);
 			m_GameManager->GetEntityManager()->AddEntity(cubeEntity);
-			position.X += 10;
+			position.Z -= 10.0f;
 		}
-		position.X = -((size * 10) / 2.0f);
-		position.Z += 10;
+		idx2 = (-1);
+		position.Z = (size * 10.0f) / 2.0f;
+		position.X -= 10.0f;
 	}
-	float corner = -(size * 10.0f) / 2;
+}
+
+void Map::InitPlayers(const std::size_t& size, Scene *sc)
+{
+	std::string pstr("Player0");
+	std::array<Vector3f, 4> corners = {
+		Vector3f(((size * 10.0f) / 2) - 10.0f, 0, ((size * 10.0f) / 2) - 10.0f),
+		Vector3f(((size * 10.0f) / 2) - 10.0f, 0, (-(size * 10.0f) / 2) + 20.0f),
+		Vector3f((-(size * 10.0f) / 2) + 20.0f, 0, ((size * 10.0f) / 2) - 10.0f),
+		Vector3f((-(size * 10.0f) / 2) + 20.0f, 0, (-(size * 10.0f) / 2) + 20.0f),
+	};
 	{ // Create player
-		Entity player("Player01");
-		Player* p0 = new Player(m_GameManager->GetSceneManager());
-		Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
-		Transform* t0 = new Transform({corner + 10.0f, 0, corner + 10.0f});
-		Collider* cl0 = new Collider();
-		Animator* a0 = new Animator(m_GameManager->GetSceneManager());
-		if (d0->Initialize(sc->GetMesh("Luigi")) && a0->Initialize(d0->GetDrawable()) && \
-		p0->Initialize(&m_GameManager->m_globalVars.playersData[1])) {
-			d0->SetPosition({corner + 10.0f, 0, corner + 10.0f});
-			a0->AddAnimation("Idle", {0, 300, 30});
-			a0->AddAnimation("Run", {301, 320, 30});
-			a0->AddAnimation("Death", {321, 410, 30});
-			a0->PlayAnimation("Idle");
-			player.AddComponent(p0, Player::Id);
-			player.AddComponent(d0, Drawable::Id);
-			player.AddComponent(t0, Transform::Id);
-			player.AddComponent(cl0, Collider::Id);
-			player.AddComponent(a0, Animator::Id);
-			m_GameManager->GetEntityManager()->AddEntity(player);
+		for (size_t idx = 0; idx < 4; ++idx)
+		{
+			Entity player(pstr.append(std::to_string(idx + 1)));
+			Player* p0 = nullptr;
+			Drawable* d0 = new Drawable(m_GameManager->GetSceneManager());
+			Transform* t0 = new Transform(corners[idx]);
+			Collider* cl0 = new Collider(static_cast<Collider::Tag>(idx+1));
+			Animator* a0 = new Animator(m_GameManager->GetSceneManager());
+			size_t meshID = m_GameManager->m_globalVars.playersData[idx].characterID;
+
+			if (m_GameManager->m_globalVars.playersData[idx].isActive)
+				p0 = new Player(m_GameManager->GetSceneManager());
+			else
+				p0 = new PlayerAI(m_GameManager->GetSceneManager());
+			if (d0->Initialize(sc->GetMesh(m_GameManager->m_globalVars.meshIDMap.at(meshID))) && \
+			a0->Initialize(d0->GetDrawable()) && \
+			p0->Initialize(&m_GameManager->m_globalVars.playersData[idx])) {
+				d0->SetPosition(corners[idx]);
+				a0->AddAnimation("Idle", {0, 300, 30});
+				a0->AddAnimation("Run", {301, 320, 30});
+				a0->AddAnimation("Death", {321, 410, 30});
+				a0->PlayAnimation("Idle");
+				player.AddComponent(p0, Player::Id);
+				player.AddComponent(d0, Drawable::Id);
+				player.AddComponent(t0, Transform::Id);
+				player.AddComponent(cl0, Collider::Id);
+				player.AddComponent(a0, Animator::Id);
+				m_GameManager->m_globalVars.playersData[idx].alive = true;
+				m_GameManager->GetEntityManager()->AddEntity(player);
+			}
 		}
 	}
+}
+
+void Map::Initialize(const std::size_t& size, Scene *sc)
+{
+	this->InitMap(size, sc);
+	this->InitPlayers(size, sc);
     auto camera = m_GameManager->GetSceneManager()->addCameraSceneNode(
 		0,
 		{ -70, size * 7.5f, 0 },

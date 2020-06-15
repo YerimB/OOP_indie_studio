@@ -13,10 +13,11 @@
 #include <ECS/System/ButtonSystem.h>
 #include <ECS/System/ImageSystem.h>
 #include <ECS/System/TextSystem.h>
-
 #include <ECS/System/PlayerSystem.h>
 #include <ECS/System/RenderSystem.h>
 #include <ECS/System/AnimatorSystem.h>
+#include <ECS/System/MoveSystem.h>
+#include <ECS/System/TimeSystem.h>
 
 // Components
 
@@ -30,5 +31,6 @@
 #include <Components/Text.h>
 #include <Components/Transform.h>
 #include <Components/Player.h>
+#include <Components/PlayerAI.h>
 
 #endif /* !ECS_H_ */

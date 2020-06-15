@@ -1,6 +1,5 @@
 #include <Scenes/GameScene.hpp>
 #include <GameManager.h>
-#include <ECS/System/MoveSystem.h>
 #include <Map/Map.h>
 // Systems
 #include <ECS/ECS.h>
@@ -32,6 +31,7 @@ void GameScene::LoadSystems(GameManager* gm)
     RenderSystem* renderSys = new RenderSystem(gm->GetEntityManager());
     MoveSystem* moveSys = new MoveSystem(gm->GetEntityManager());
     PlayerSystem* playerSys = new PlayerSystem(gm->GetEntityManager());
+    TimeSystem* timeSys = new TimeSystem(gm->GetEntityManager());
 
     // Add
     gm->GetEntityManager()->AddSystem(std::move(animSys));
@@ -41,6 +41,7 @@ void GameScene::LoadSystems(GameManager* gm)
     gm->GetEntityManager()->AddSystem(std::move(renderSys));
     gm->GetEntityManager()->AddSystem(std::move(moveSys));
     gm->GetEntityManager()->AddSystem(std::move(playerSys));
+    gm->GetEntityManager()->AddSystem(std::move(timeSys));
 }
 
 void GameScene::LoadAssets(GameManager* gm)
@@ -55,10 +56,12 @@ void GameScene::LoadAssets(GameManager* gm)
     auto sm = gm->GetSceneManager();
     this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
     this->AddMesh(sm->getMesh("Assets/luigi.b3d"), "Luigi");
+    this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
+    this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
+    this->AddMesh(sm->getMesh("Assets/bob-omb.b3d"), "Bomb");
 
-    gm->GetSoundManager()->AddSound(gm->GetSoundManager()->LoadSound("Assets/sound/game.ogg"), "sndGame", SoundManager::SoundType::MUSIC);
     gm->GetSoundManager()->AddSound(
-        gm->GetSoundManager()->LoadSound("Assets/sound/game.ogg"),
+        gm->GetSoundManager()->LoadSound("Assets/sound/game2.ogg"),
         "sndGame",
         SoundManager::SoundType::MUSIC
     );
@@ -68,11 +71,9 @@ void GameScene::LoadAssets(GameManager* gm)
 void GameScene::LoadElements(GameManager* gm)
 {
     { // Back to menu button
-        // Create components and entity
         Entity e1("BackButton");
         Button* b1 = new Button(gm->GetGuiEnvironment());
 
-        // Initialize component and set attributes then add it to entity
         if (b1->Initialize(nullptr)) {
             b1->SetButtonID(Button::ButtonID::QUIT);
             b1->SetTexture(this->GetTexture("iconHome"));
@@ -81,14 +82,12 @@ void GameScene::LoadElements(GameManager* gm)
             b1->SetTextureToFit(true);
             b1->SetOnPress(changeSceneToMenu);
             e1.AddComponent(std::move(b1), Button::Id);
-            // When done, add entity to the entity manager.
             gm->GetEntityManager()->AddEntity(e1);
         }
-
     }
 
     auto map = Map(gm);
-    map.Initialize(20, this);
+    map.Initialize(12, this);
 }
 
 void GameScene::Load(GameManager* gameManager)
@@ -104,9 +103,26 @@ void GameScene::Load(GameManager* gameManager)
     gameManager->GetSoundManager()->PlaySound("sndGame");
 }
 
-void GameScene::Update(GameManager* gameManager)
+void GameScene::Update(GameManager* gm)
 {
+    { // Check win condition
+        int nbAlive = 0;
+        int winnerID = 0;
+        GameVars_t &gv = gm->m_globalVars;
 
+        for (int idx = 0; idx < gv.currentPlayerNumber; ++idx)
+        {
+            if (gv.playersData[idx].alive)
+            {
+                winnerID = gv.playersData[idx].playerID;
+                nbAlive++;
+            }
+        }
+        if (nbAlive == 1)
+        {
+            std::cout << "Player " << winnerID << " won the game !" << std::endl;
+        }
+    }
 }
 
 void GameScene::Unload(void)

@@ -22,7 +22,18 @@ class Button : public Component
             UNDEFINED = (-1),
             QUIT,
             PLAY,
-            CHANGECLR
+            CHANGE_P_AI_1,
+            CHANGE_P_AI_2,
+            CHANGE_P_AI_3,
+            CHANGE_P_AI_4,
+            BUTTON_CHANGE_1,
+            BUTTON_CHANGE_2,
+            BUTTON_CHANGE_3,
+            BUTTON_CHANGE_4,
+            LOWERMUSIC,
+            UPPERMUSIC,
+            LOWERFX,
+            UPPERFX,
         };
     
     public:

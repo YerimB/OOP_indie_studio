@@ -8,6 +8,7 @@
 #include <ECS/Component.h>
 #include <ECS/System/System.h>
 #include <InputManager/InputManager.hpp>
+#include <ECS/Time.h>
 
 class EntityManager
 {
@@ -32,8 +33,8 @@ class EntityManager
 		void ClearComponents();
 		void ClearSystems();
 		void ClearAll();
-		Entity& GetEntity(const std::string& name);
-		Entity& GetEntity(const size_t& eid);
+		Entity* GetEntity(const std::string& name);
+		Entity* GetEntity(const size_t& eid);
 		irr::scene::ISceneManager* GetSceneManager() const { return m_SceneManager; }
 		irr::gui::IGUIEnvironment* GetGuiEnvironment() const { return m_GuiEnvironment; }
 		InputManager* GetInputManager() const { return m_InputManager; }
@@ -47,4 +48,5 @@ class EntityManager
 		irr::gui::IGUIEnvironment* m_GuiEnvironment;
 		InputManager* m_InputManager;
 		GameManager* m_GameManager;
+		Time m_Time;
 };

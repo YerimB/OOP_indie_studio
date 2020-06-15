@@ -13,6 +13,7 @@ EntityManager::EntityManager(irr::scene::ISceneManager* manager, irr::gui::IGUIE
 	m_GuiEnvironment = env;
 	m_InputManager = im;
 	m_GameManager = gameManager;
+	m_Time;
 }
 
 EntityManager::~EntityManager()
@@ -27,10 +28,11 @@ bool EntityManager::Initialize()
 
 void EntityManager::Update()
 {
-	// Get data from server and modify entities before systems update
+	double deltaTime = m_Time.GetDeltaTime();
+
 	for (auto& system : m_Systems)
 	{
-		system->Update(0);
+		system->Update(deltaTime);
 	}
 	m_GuiEnvironment->drawAll();
 }
@@ -44,6 +46,8 @@ void EntityManager::AddEntity(const Entity& entity)
 
 void EntityManager::RemoveEntity(const Entity& entity)
 {
+	for (auto& elem : this->m_Systems)
+		elem->OnEntityDestroyed(entity.GetId());
 	m_Entities.erase(entity.GetId());
 }
 
@@ -82,24 +86,24 @@ void EntityManager::ClearAll()
 	m_Systems.clear();
 }
 
-Entity& EntityManager::GetEntity(const std::string& name)
+Entity* EntityManager::GetEntity(const std::string& name)
 {
 	for (auto& entity : m_Entities)
 	{
 		if (entity.second.GetName() == name)
-			return entity.second;
+			return &entity.second;
 	}
 
-	throw std::runtime_error("Entity not found.");
+	return nullptr;
 }
 
-Entity& EntityManager::GetEntity(const size_t& id)
+Entity* EntityManager::GetEntity(const size_t& id)
 {
 	for (auto& entity : m_Entities)
 	{
 		if (entity.second.GetId() == id)
-			return entity.second;
+			return &entity.second;
 	}
 
-	throw std::runtime_error("Entity not found.");
+	return nullptr;
 }

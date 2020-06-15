@@ -11,7 +11,18 @@ InputManager::InputManager(IrrlichtDevice* device)
 
     m_Buttons.emplace(Button::PLAY, false);
     m_Buttons.emplace(Button::QUIT, false);
-    m_Buttons.emplace(Button::CHANGECLR, false);
+    m_Buttons.emplace(Button::CHANGE_P_AI_1, false);
+    m_Buttons.emplace(Button::CHANGE_P_AI_2, false);
+    m_Buttons.emplace(Button::CHANGE_P_AI_3, false);
+    m_Buttons.emplace(Button::CHANGE_P_AI_4, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_1, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_2, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_3, false);
+    m_Buttons.emplace(Button::BUTTON_CHANGE_4, false);
+    m_Buttons.emplace(Button::LOWERMUSIC, false);
+    m_Buttons.emplace(Button::UPPERMUSIC, false);
+    m_Buttons.emplace(Button::LOWERFX, false);
+    m_Buttons.emplace(Button::UPPERFX, false);
 }
 
 bool InputManager::OnEvent(const SEvent& event)
@@ -30,13 +41,36 @@ bool InputManager::OnEvent(const SEvent& event)
             switch (id)
             {
                 case Button::PLAY:
-                    m_Buttons[Button::PLAY] = true;
-                    break;
+                    m_Buttons[Button::PLAY] = true; break;
                 case Button::QUIT:
-                    m_Buttons[Button::QUIT] = true;
+                    m_Buttons[Button::QUIT] = true; break;
+                case Button::CHANGE_P_AI_1:
+                    m_Buttons[Button::CHANGE_P_AI_1] = true; break;
+                case Button::CHANGE_P_AI_2:
+                    m_Buttons[Button::CHANGE_P_AI_2] = true; break;
+                case Button::CHANGE_P_AI_3:
+                    m_Buttons[Button::CHANGE_P_AI_3] = true; break;
+                case Button::CHANGE_P_AI_4:
+                    m_Buttons[Button::CHANGE_P_AI_4] = true; break;
+                case Button::BUTTON_CHANGE_1:
+                    m_Buttons[Button::BUTTON_CHANGE_1] = true; break;
+                case Button::BUTTON_CHANGE_2:
+                    m_Buttons[Button::BUTTON_CHANGE_2] = true; break;
+                case Button::BUTTON_CHANGE_3:
+                    m_Buttons[Button::BUTTON_CHANGE_3] = true; break;
+                case Button::BUTTON_CHANGE_4:
+                    m_Buttons[Button::BUTTON_CHANGE_4] = true; break;
+                case Button::LOWERMUSIC:
+                    m_Buttons[Button::LOWERMUSIC] = true;
                     break;
-                case Button::CHANGECLR:
-                    m_Buttons[Button::CHANGECLR] = true;
+                case Button::UPPERMUSIC:
+                    m_Buttons[Button::UPPERMUSIC] = true;
+                    break;
+                case Button::LOWERFX:
+                    m_Buttons[Button::LOWERFX] = true;
+                    break;
+                case Button::UPPERFX:
+                    m_Buttons[Button::UPPERFX] = true;
                     break;
                 default:
                     break;
@@ -64,4 +98,18 @@ void InputManager::ResetButton(const Button::ButtonID& id)
 JoystickEvent& InputManager::GetJoystickEvent()
 {
     return m_JoystickState;
+}
+
+bool InputManager::IsControllerButtonDown(const ControllerButton& button)
+{
+    return m_JoystickState.IsButtonPressed(static_cast<irr::u32>(button));
+}
+
+int InputManager::GetAxisValue(const JoystickAxis& axis)
+{
+    if (m_JoystickState.Axis[static_cast<irr::s16>(axis)] < -m_DeadZone)
+        return -1;
+    else if (m_JoystickState.Axis[static_cast<irr::s16>(axis)] > m_DeadZone)
+        return 1;
+    return 0;
 }

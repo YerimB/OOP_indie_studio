@@ -14,9 +14,8 @@ class Time
 		~Time() = default;
 
 	public:
-		const std::chrono::duration<double>& GetDeltaTime();
+		const double GetDeltaTime();
 
 	private:
-		std::chrono::duration<double> m_DeltaTime;
-		std::chrono::high_resolution_clock::time_point m_LastTime;
+		std::chrono::milliseconds m_lastFrameTime;
 };

@@ -12,6 +12,7 @@
 #include <ECS/Component.h>
 #include <Components/Transform.h>
 #include <Components/Animator.h>
+#include <Components/Timer.h>
 #include <Core.hpp>
 #include <GameManager.h>
 #include <cmath>
@@ -26,19 +27,23 @@ class Player : public Component
 
     public:
         bool Initialize(void* args) override final;
-        void Update(const float& deltaTime, GameManager* gameManager) override final;
+        void Update(const float& deltaTime, GameManager* gameManager) override;
 
     public:
         void bindKey(const std::string &action, const irr::EKEY_CODE &);
+        void DropBomb(Entity& self, GameManager* gm);
+        void DestroyBlocks(GameManager* gm);
+        void Explosion(GameManager* gm, Vector2i& pos);
 
     private:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
-        void GetMovements(InputManager *im, Entity &self);
+        virtual void GetMovements(GameManager *gm, Entity &self);
 
-    private:
+    protected:
         std::array<int, 2> _previousPos;
         SceneManager* m_SceneManager;
         PlayerData_t* m_Data;
+        Entity* m_Bomb = nullptr;
         bool m_oldMoveState = false;
 };
 

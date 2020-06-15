@@ -2,16 +2,17 @@
 
 Time::Time()
 {
-	m_LastTime = std::chrono::high_resolution_clock::now();
-
-	GetDeltaTime();
+	this->m_lastFrameTime = std::chrono::duration_cast<std::chrono::milliseconds>\
+    (std::chrono::system_clock::now().time_since_epoch());
 }
 
-const std::chrono::duration<double>& Time::GetDeltaTime()
+#include <iostream>
+const double Time::GetDeltaTime()
 {
-	auto now = std::chrono::high_resolution_clock::now();
-	m_DeltaTime = now - m_LastTime;
-	m_LastTime = now;
+    auto nowTime = std::chrono::duration_cast<std::chrono::milliseconds>\
+	(std::chrono::system_clock::now().time_since_epoch());
+	double deltaTime = float(nowTime.count() - m_lastFrameTime.count()) / 1000.0f;
 
-	return m_DeltaTime;
+	this->m_lastFrameTime = nowTime;
+	return (deltaTime);
 }
