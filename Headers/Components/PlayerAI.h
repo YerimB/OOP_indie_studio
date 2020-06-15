@@ -24,6 +24,7 @@ class PlayerAI : public Player
         void GetMovements(GameManager *gm, Entity &self) override final;
 	private:
 		std::array<int, 2> _previousPos;
+        std::array<float, 2> abs_pos;
         std::array<int, 2> _dir;
         bool isMoving;
         std::vector<std::string> _backupMap;

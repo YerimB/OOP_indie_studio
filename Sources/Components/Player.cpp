@@ -113,10 +113,11 @@ void Player::GetMovements(GameManager *gm, Entity &self)
 
 int Player::get_round(float nb)
 {
+    return (static_cast<int>(round(nb)));
     float whole, fractional;
 
     fractional = std::modf(nb, &whole);
-    if (fractional > 0.3)
+    if (fractional > 0.5)
         return static_cast<int>(whole + 1);
     return static_cast<int>(whole);
 }
