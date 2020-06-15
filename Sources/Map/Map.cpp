@@ -85,7 +85,7 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 		Vector3f((-(size * 10.0f) / 2) + 20.0f, 0, (-(size * 10.0f) / 2) + 20.0f),
 	};
 	{ // Create player
-		for (size_t idx = 0; idx < 2; ++idx)
+		for (size_t idx = 0; idx < 4; ++idx)
 		{
 			Entity player(pstr.append(std::to_string(idx + 1)));
 			Player* p0 = nullptr;
