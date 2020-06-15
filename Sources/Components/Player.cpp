@@ -122,45 +122,45 @@ void Player::Explosion(GameManager* gm, Vector2i& pos) const
         gm->GetEntityManager()->RemoveEntity(*e);
     }
 
-    for (auto data : gm->m_globalVars.playersData)
-    {
-    	if (pos.X == data.position.X && pos.Y - 1 == data.position.Y)
-    	{
-            e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-    		if (e != nullptr)
-    		{
-                e->GetComponent<Drawable>()->GetDrawable()->remove();
-                gm->GetEntityManager()->RemoveEntity(*e);
-    		}
-    	}
-        if (pos.X == data.position.X && pos.Y + 1 == data.position.Y)
-        {
-            e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-            if (e != nullptr)
-            {
-                e->GetComponent<Drawable>()->GetDrawable()->remove();
-                gm->GetEntityManager()->RemoveEntity(*e);
-            }
-        }
-        if (pos.X == data.position.X + 1 && pos.Y == data.position.Y)
-        {
-            e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-            if (e != nullptr)
-            {
-                e->GetComponent<Drawable>()->GetDrawable()->remove();
-                gm->GetEntityManager()->RemoveEntity(*e);
-            }
-        }
-        if (pos.X == data.position.X - 1 && pos.Y == data.position.Y)
-        {
-            e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-            if (e != nullptr)
-            {
-                e->GetComponent<Drawable>()->GetDrawable()->remove();
-                gm->GetEntityManager()->RemoveEntity(*e);
-            }
-        }
-    }
+    // for (auto data : gm->m_globalVars.playersData)
+    // {
+    // 	if (pos.X == data.position.X && pos.Y - 1 == data.position.Y)
+    // 	{
+    //         e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
+    // 		if (e != nullptr)
+    // 		{
+    //             e->GetComponent<Drawable>()->GetDrawable()->remove();
+    //             gm->GetEntityManager()->RemoveEntity(*e);
+    // 		}
+    // 	}
+    //     if (pos.X == data.position.X && pos.Y + 1 == data.position.Y)
+    //     {
+    //         e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
+    //         if (e != nullptr)
+    //         {
+    //             e->GetComponent<Drawable>()->GetDrawable()->remove();
+    //             gm->GetEntityManager()->RemoveEntity(*e);
+    //         }
+    //     }
+    //     if (pos.X == data.position.X + 1 && pos.Y == data.position.Y)
+    //     {
+    //         e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
+    //         if (e != nullptr)
+    //         {
+    //             e->GetComponent<Drawable>()->GetDrawable()->remove();
+    //             gm->GetEntityManager()->RemoveEntity(*e);
+    //         }
+    //     }
+    //     if (pos.X == data.position.X - 1 && pos.Y == data.position.Y)
+    //     {
+    //         e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
+    //         if (e != nullptr)
+    //         {
+    //             e->GetComponent<Drawable>()->GetDrawable()->remove();
+    //             gm->GetEntityManager()->RemoveEntity(*e);
+    //         }
+    //     }
+    // }
 }
 void Player::GetMovements(GameManager *gm, Entity &self)
 {
