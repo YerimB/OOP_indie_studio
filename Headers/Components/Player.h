@@ -35,9 +35,6 @@ class Player : public Component
         void DestroyBlocks(GameManager* gm);
         void Explosion(GameManager* gm, Vector2i& pos);
 
-    protected:
-        int get_round(float nb);
-
     private:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);
         virtual void GetMovements(GameManager *gm, Entity &self);

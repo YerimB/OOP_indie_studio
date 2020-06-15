@@ -28,10 +28,11 @@ bool EntityManager::Initialize()
 
 void EntityManager::Update()
 {
-	// Get data from server and modify entities before systems update
+	// double deltaTime = m_Time.GetDeltaTime();
+
 	for (auto& system : m_Systems)
 	{
-		system->Update(m_Time.GetDeltaTime().count());
+		system->Update(m_Time.GetDeltaTime());
 	}
 	m_GuiEnvironment->drawAll();
 }

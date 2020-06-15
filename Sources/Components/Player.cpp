@@ -179,17 +179,6 @@ void Player::GetMovements(GameManager *gm, Entity &self)
     this->m_oldMoveState = isMoving;
 }
 
-int Player::get_round(float nb)
-{
-    return (static_cast<int>(round(nb)));
-    float whole, fractional;
-
-    fractional = std::modf(nb, &whole);
-    if (fractional > 0.5)
-        return static_cast<int>(whole + 1);
-    return static_cast<int>(whole);
-}
-
 void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
 {
     int x = pPos->GetPosition().X;
@@ -203,7 +192,7 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     {
         if (this->_previousPos[0] != -1)
             gVars->map[_previousPos[1]][_previousPos[0]] = '0';
-        gVars->map[tmp[1]][tmp[0]] = 'O';
+        gVars->map[tmp[1]][tmp[0]] = 'E';
         _previousPos = tmp;
     }
 }
