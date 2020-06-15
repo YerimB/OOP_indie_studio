@@ -57,6 +57,9 @@ void System<Comps...>::OnEntityDestroyed(const EntityId &e_id)
         this->_components[findIt->second] = std::move(this->_components.back());
         this->_components.pop_back();
 
+        if (this->_components.empty())
+            return;
+
         const auto *pMovedComp = std::get<0>(this->_components[findIt->second]);
         auto movedTupleIt = this->_entityIdToIndexMap.find(pMovedComp->GetEntityId());
         if (movedTupleIt == this->_entityIdToIndexMap.end())

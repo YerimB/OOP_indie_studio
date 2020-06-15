@@ -7,14 +7,13 @@ MoveSystem::MoveSystem(EntityManager* pEntityManager) : BaseType(pEntityManager)
 
 void MoveSystem::Update(const double& deltaTime)
 {
-	std::cout << "start" << std::endl;
 	for (size_t i = 0; i < _components.size(); i += 1)
 	{
 		Drawable* drawable = std::get<Drawable*>(_components[i]);
 		Collider* collider = std::get<Collider*>(_components[i]);
 		Transform* transform = std::get<Transform*>(_components[i]);
 
-		if (!drawable->GetDrawable() || collider->GetTag() == Collider::Tag::None)
+		if (!drawable->GetDrawable() /*|| collider->GetTag() == Collider::Tag::None*/)
 			continue;
 
 		std::array<Vector3f, 3> ts = {
@@ -32,10 +31,10 @@ void MoveSystem::Update(const double& deltaTime)
 
 			Drawable* drawable2 = std::get<Drawable*>(_components[j]);
 			Collider* collider2 = std::get<Collider*>(_components[j]);
-
+			
 			if (!drawable2->GetDrawable())
 				continue;
-			if (collider->GetTag() != collider2->GetTag() && MoveSystem::Collide(drawable, drawable2))
+			if (/*collider->GetTag() != collider2->GetTag() &&*/ MoveSystem::Collide(drawable, drawable2))
 			{
 				transform->SetPosition(ts[0]);
 				transform->SetRotation(ts[1]);
@@ -47,7 +46,6 @@ void MoveSystem::Update(const double& deltaTime)
 		drawable->SetRotation(transform->GetRotation());
 		drawable->SetScale(transform->GetScale());
 	}
-	std::cout << "end" << std::endl;
 }
 
 bool MoveSystem::Collide(Drawable* drawable1, Drawable* drawable2)

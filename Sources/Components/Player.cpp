@@ -60,7 +60,7 @@ void Player::DropBomb(Entity& self, GameManager* gm)
         round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
         round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
     };
-    this->m_BombPos.set({tmp.X, tmp.Y});
+    this->m_BombPos.set({static_cast<int>(tmp.X), static_cast<int>(tmp.Y)});
     gVars.map[tmp.X][tmp.Y] = '1';
     tmp.X = -(s_pos + tmp.X * 10.0f);
     tmp.Y = -(s_pos + tmp.Y * 10.0f);
@@ -71,7 +71,7 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     m_Bomb->AddComponent(timer, Timer::Id);
     m_Bomb->AddComponent(transform, Transform::Id);
     m_Bomb->AddComponent(drawable, Drawable::Id);
-    m_Bomb->AddComponent(collider, Collider::Id);
+    //m_Bomb->AddComponent(collider, Collider::Id);
     gm->GetEntityManager()->AddEntity(*m_Bomb);
 }
 
@@ -92,41 +92,28 @@ void Player::DestroyBlocks(GameManager* gm) const
 
 void Player::Explosion(GameManager* gm, Vector2i& pos) const
 {
-    std::array<bool, 4> checked = { false,false,false,false };
+    auto* e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - 1));
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
+    }
 
-    for (auto i = 1; i < 2; i += 1)
-    {
-        auto* e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - i));
-        if (e != nullptr && !checked[0]) {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
-        }
-        else
-            checked[0] = true;
+    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y + 1));
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
+    }
 
-        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y + i));
-        if (e != nullptr && !checked[1]) {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
-        }
-        else
-            checked[1] = true;
+    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X + 1) + "_" + std::to_string(pos.Y));
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
+    }
 
-        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X + i) + "_" + std::to_string(pos.Y));
-        if (e != nullptr && !checked[2]) {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
-        }
-        else
-            checked[2] = true;
-
-        e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - i) + "_" + std::to_string(pos.Y));
-        if (e != nullptr && !checked[3]) {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
-        }
-        else
-            checked[3] = true;
+    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - 1) + "_" + std::to_string(pos.Y));
+    if (e != nullptr) {
+        e->GetComponent<Drawable>()->GetDrawable()->remove();
+        gm->GetEntityManager()->RemoveEntity(*e);
     }
 }
 void Player::GetMovements(GameManager *gm, Entity &self)
