@@ -114,29 +114,21 @@ void Player::Explosion(GameManager* gm, Vector2i& pos) const
 
     for (auto data : gm->m_globalVars.playersData)
     {
-        Entity *e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-        if (!e)
-            continue;
     	if (pos.X == data.position.X && pos.Y - 1 == data.position.Y)
     	{
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
     	}
         else if (pos.X == data.position.X && pos.Y + 1 == data.position.Y)
         {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
-            std::cout << "Removed no crash 2" << std::endl;
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
         }
         else if (pos.X + 1 == data.position.X && pos.Y == data.position.Y)
         {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
         }
         else if (pos.X - 1 == data.position.X && pos.Y == data.position.Y)
         {
-            e->GetComponent<Drawable>()->GetDrawable()->remove();
-            gm->GetEntityManager()->RemoveEntity(*e);
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
         }
     }
 }

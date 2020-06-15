@@ -118,6 +118,16 @@ void GameScene::Update(GameManager* gm)
                 winnerID = gv.playersData[idx].playerID;
                 nbAlive++;
             }
+            if (!gv.playersData[idx].alive)
+            {
+				auto* e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(gv.playersData[idx].playerID));
+	            if (e)
+	            {
+	                e->GetComponent<Drawable>()->GetDrawable()->remove();
+	                gm->GetEntityManager()->RemoveEntity(*e);
+	            }
+
+            }
         }
         if (nbAlive == 1)
         {
