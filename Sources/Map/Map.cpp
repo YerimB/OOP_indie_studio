@@ -35,13 +35,14 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 	auto strMap = map.GetMap();
 	m_GameManager->m_globalVars.mapSize = size;
 	m_GameManager->m_globalVars.map = strMap;
-	int idx2 = 0;
+	int idx2 = (-1);
 	for (int idx = 0; idx < strMap.size(); ++idx)
 	{
 		for (auto& ch : strMap[idx])
 		{
 			std::string eType;
 
+			idx2 += 1;
 			if (ch == '1')
 				eType = "Block";
 			else if (ch == '2')
@@ -70,9 +71,8 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 			cubeEntity.AddComponent(cl0, Collider::Id);
 			m_GameManager->GetEntityManager()->AddEntity(cubeEntity);
 			position.Z -= 10.0f;
-			idx2 += 1;
 		}
-		idx2 = 0;
+		idx2 = (-1);
 		position.Z = (size * 10.0f) / 2.0f;
 		position.X -= 10.0f;
 	}
@@ -82,10 +82,10 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 {
 	std::string pstr("Player0");
 	std::array<Vector3f, 4> corners = {
-		Vector3f((-(size * 10.0f) / 2) + 20.0f, 0, (-(size * 10.0f) / 2) + 20.0f),
 		Vector3f(((size * 10.0f) / 2) - 10.0f, 0, ((size * 10.0f) / 2) - 10.0f),
 		Vector3f(((size * 10.0f) / 2) - 10.0f, 0, (-(size * 10.0f) / 2) + 20.0f),
 		Vector3f((-(size * 10.0f) / 2) + 20.0f, 0, ((size * 10.0f) / 2) - 10.0f),
+		Vector3f((-(size * 10.0f) / 2) + 20.0f, 0, (-(size * 10.0f) / 2) + 20.0f),
 	};
 	{ // Create player
 		for (size_t idx = 0; idx < 4; ++idx)

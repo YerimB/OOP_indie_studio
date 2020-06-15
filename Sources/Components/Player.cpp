@@ -57,6 +57,7 @@ void Player::DropBomb(Entity& self, GameManager* gm)
         round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
         round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
     };
+    std::cout << "Drop bomb at : " << tmp.X << ", " << tmp.Y << std::endl;
     tmp.X = -(s_pos + tmp.X * 10.0f);
     tmp.Y = -(s_pos + tmp.Y * 10.0f);
 
@@ -82,9 +83,9 @@ void Player::DestroyBlocks(GameManager* gm)
         static_cast<int>(round(gm->m_globalVars.mapSize - (y - s_pos) / 10.0f))
     };
 
-    std::cout << "Star_" + std::to_string(tmp.Y) + "_" + std::to_string(tmp.X - 1) << std::endl;
+    std::cout << "Star_" + std::to_string(tmp.X) + "_" + std::to_string(tmp.Y - 1) << std::endl;
 
-    auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(tmp.Y) + "_" + std::to_string(tmp.X - 1));
+    auto e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(tmp.X) + "_" + std::to_string(tmp.Y - 1));
     if (e != nullptr) {
         e->GetComponent<Drawable>()->GetDrawable()->remove();
         gm->GetEntityManager()->RemoveEntity(*e);
