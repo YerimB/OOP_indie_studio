@@ -115,6 +115,7 @@ void Map::InitPlayers(const std::size_t& size, Scene *sc)
 				player.AddComponent(t0, Transform::Id);
 				player.AddComponent(cl0, Collider::Id);
 				player.AddComponent(a0, Animator::Id);
+				m_GameManager->m_globalVars.playersData[idx].alive = true;
 				m_GameManager->GetEntityManager()->AddEntity(player);
 			}
 		}
