@@ -43,7 +43,7 @@ void PlayerAI::UpdateMap(Transform* pPos, GameVars_t* gVars)
             if (gVars->map[_previousPos[1]][_previousPos[0]] != 'B')
 				gVars->map[_previousPos[1]][_previousPos[0]] = '0';
     	if (gVars->map[tmp[1]][tmp[0]] != 'B')
-			gVars->map[tmp[1]][tmp[0]] = '1';
+			gVars->map[tmp[1]][tmp[0]] = 'X';
         _previousPos = tmp;
     }
 }
@@ -87,7 +87,7 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
         {
             isMoving = true;
             _dir = a.getDir();
-            if (tmp_map[tmp[1] - _dir[0]][tmp[0] - _dir[1]] == '2' || tmp_map[tmp[1] - _dir[0]][tmp[0] - _dir[1]] == 'E')
+            if (tmp_map[tmp[1] - _dir[0]][tmp[0] - _dir[1]] == '2' || tmp_map[tmp[1] - _dir[0]][tmp[0] - _dir[1]] == 'E' || tmp_map[tmp[1] - _dir[0]][tmp[0] - _dir[1]] == 'X')
             {
                 _target = std::array<int, 2>({
 					tmp[1],
