@@ -126,7 +126,7 @@ void GameManager::ProgramLoop(void)
             this->LoadScene(static_cast<Scene::SceneID>(m_globalVars.newScene));
             m_globalVars.sceneChanged = false;
         }
-        this->waitBeforeNextFrame(60);
+        this->waitBeforeNextFrame(60); // Maintain fps at 60
     }
     if (m_Device->run())
         m_Device->closeDevice();

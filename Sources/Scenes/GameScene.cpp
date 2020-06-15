@@ -103,9 +103,26 @@ void GameScene::Load(GameManager* gameManager)
     gameManager->GetSoundManager()->PlaySound("sndGame");
 }
 
-void GameScene::Update(GameManager* gameManager)
+void GameScene::Update(GameManager* gm)
 {
+    { // Check win condition
+        int nbAlive = 0;
+        int winnerID = 0;
+        GameVars_t &gv = gm->m_globalVars;
 
+        for (int idx = 0; idx < gv.currentPlayerNumber; ++idx)
+        {
+            if (gv.playersData[idx].alive)
+            {
+                winnerID = gv.playersData[idx].playerID;
+                nbAlive++;
+            }
+        }
+        if (nbAlive == 1)
+        {
+            std::cout << "Player " << winnerID << " won the game !" << std::endl;
+        }
+    }
 }
 
 void GameScene::Unload(void)
