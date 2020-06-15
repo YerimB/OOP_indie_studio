@@ -21,6 +21,7 @@ class Scene
 			MENU, // Menu Id
             LUNCH_GAME, // Lunch Game ID
             GAME, // Game Id
+            CONTROLLER,
         };
 
         public:

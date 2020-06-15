@@ -55,8 +55,8 @@ void Player::DropBomb(Entity& self, GameManager* gm)
     auto s_pos = -(gVars.mapSize * 10.0f) / 2.0f;
     Vector3f dpPos = self.GetComponent<Transform>()->GetPosition();
     Vector2f tmp = {
-        round(gVars.mapSize - (dpPos.X - s_pos) / 10.0f),
-        round(gVars.mapSize - (dpPos.Z - s_pos) / 10.0f)
+        round((gVars.mapSize) - (dpPos.X - s_pos) / 10.0f),
+        round((gVars.mapSize) - (dpPos.Z - s_pos) / 10.0f)
     };
     gm->m_globalVars.map[tmp.X][tmp.Y] = 'B';
     tmp.X = -(s_pos + tmp.X * 10.0f);
@@ -98,70 +98,45 @@ void Player::DestroyBlocks(GameManager* gm)
 
 void Player::Explosion(GameManager* gm, Vector2i& pos) const
 {
-    auto* e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - 1));
-	
-    if (e != nullptr) {
-        e->GetComponent<Drawable>()->GetDrawable()->remove();
-        gm->GetEntityManager()->RemoveEntity(*e);
-    }
-    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y + 1));
-    if (e != nullptr) {
-        e->GetComponent<Drawable>()->GetDrawable()->remove();
-        gm->GetEntityManager()->RemoveEntity(*e);
-    }
+    std::array<Entity*, 4> eArray = {
+        gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y - 1)),
+        gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X) + "_" + std::to_string(pos.Y + 1)),
+        gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X + 1) + "_" + std::to_string(pos.Y)),
+        gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - 1) + "_" + std::to_string(pos.Y))
+    };
 
-    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X + 1) + "_" + std::to_string(pos.Y));
-    if (e != nullptr) {
-        e->GetComponent<Drawable>()->GetDrawable()->remove();
-        gm->GetEntityManager()->RemoveEntity(*e);
-    }
+    gm->GetSoundManager()->PlaySound("sndExplode");
+    for (Entity *e : eArray)
+        if (e != nullptr) {
+            e->GetComponent<Drawable>()->GetDrawable()->remove();
+            gm->GetEntityManager()->RemoveEntity(*e);
+        }
 
-    e = gm->GetEntityManager()->GetEntity("Star_" + std::to_string(pos.X - 1) + "_" + std::to_string(pos.Y));
-    if (e != nullptr) {
-        e->GetComponent<Drawable>()->GetDrawable()->remove();
-        gm->GetEntityManager()->RemoveEntity(*e);
+    for (auto data : gm->m_globalVars.playersData)
+    {
+    	if (pos.X == data.position.X && pos.Y - 1 == data.position.Y)
+    	{
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
+    	}
+        if (pos.X == data.position.X && pos.Y + 1 == data.position.Y)
+        {
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
+        }
+        if (pos.X + 1 == data.position.X && pos.Y == data.position.Y)
+        {
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
+        }
+        if (pos.X - 1 == data.position.X && pos.Y == data.position.Y)
+        {
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
+        }
+        if (pos.X == data.position.X && pos.Y == data.position.Y)
+        {
+            gm->m_globalVars.playersData[data.playerID - 1].alive = false;
+        }
     }
-
-    // for (auto data : gm->m_globalVars.playersData)
-    // {
-    // 	if (pos.X == data.position.X && pos.Y - 1 == data.position.Y)
-    // 	{
-    //         e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-    // 		if (e != nullptr)
-    // 		{
-    //             e->GetComponent<Drawable>()->GetDrawable()->remove();
-    //             gm->GetEntityManager()->RemoveEntity(*e);
-    // 		}
-    // 	}
-    //     if (pos.X == data.position.X && pos.Y + 1 == data.position.Y)
-    //     {
-    //         e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-    //         if (e != nullptr)
-    //         {
-    //             e->GetComponent<Drawable>()->GetDrawable()->remove();
-    //             gm->GetEntityManager()->RemoveEntity(*e);
-    //         }
-    //     }
-    //     if (pos.X == data.position.X + 1 && pos.Y == data.position.Y)
-    //     {
-    //         e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-    //         if (e != nullptr)
-    //         {
-    //             e->GetComponent<Drawable>()->GetDrawable()->remove();
-    //             gm->GetEntityManager()->RemoveEntity(*e);
-    //         }
-    //     }
-    //     if (pos.X == data.position.X - 1 && pos.Y == data.position.Y)
-    //     {
-    //         e = gm->GetEntityManager()->GetEntity("Player0" + std::to_string(data.playerID));
-    //         if (e != nullptr)
-    //         {
-    //             e->GetComponent<Drawable>()->GetDrawable()->remove();
-    //             gm->GetEntityManager()->RemoveEntity(*e);
-    //         }
-    //     }
-    // }
 }
+
 void Player::GetMovements(GameManager *gm, Entity &self)
 {
     auto isMoving = false;
@@ -223,8 +198,8 @@ void Player::UpdateMap(Transform *pPos, GameVars_t *gVars)
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2;
     std::array<int, 2> tmp = {
-        round(gVars->mapSize - (y - s_pos) / 10.0f),
-        round(gVars->mapSize - (x - s_pos) / 10.0f)
+        static_cast<int>(round((gVars->mapSize - (y - s_pos) / 10.0f))),
+        static_cast<int>(round((gVars->mapSize - (x - s_pos) / 10.0f)))
     };
     if (tmp != this->_previousPos)
     {
