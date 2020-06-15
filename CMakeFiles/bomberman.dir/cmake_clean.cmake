@@ -39,8 +39,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bomberman.dir/Sources/Thread/Thread.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/Thread/ThreadPool.cpp.o"
   "CMakeFiles/bomberman.dir/Sources/main.cpp.o"
-  "bomberman.pdb"
   "bomberman"
+  "bomberman.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

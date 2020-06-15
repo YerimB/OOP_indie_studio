@@ -283,12 +283,6 @@ void VictoryScene::Update(GameManager* gameManager)
 
     Entity* e2 = gameManager->GetEntityManager()->GetEntity("Bob-omb");
     Drawable *d2 = e2->GetComponent<Drawable>();
-    // std::cout << d1->GetPosition().X << "  " << d1->GetPosition().Y << std::endl;
-    // if (d1->GetPosition().X > 16)
-    // {
-    //     d1->SetRotation(Vector3f(d1->GetRotation().X, d1->GetRotation().Y * (-1), d1->GetRotation().Z));
-    //     d1->SetPosition(Vector3f(-15, rand() % 5 - 5, d1->GetPosition().Z));
-    // }
 
     d1->SetPosition(Vector3f(d1->GetPosition().X - dir, d1->GetPosition().Y, d1->GetPosition().Z));
     d2->SetPosition(Vector3f(d2->GetPosition().X - dir2, d2->GetPosition().Y, d2->GetPosition().Z));

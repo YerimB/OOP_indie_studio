@@ -610,7 +610,6 @@ void LunchGame::Update(GameManager* gm)
     d1->SetPosition(Vector3f(d1->GetPosition().X + 0.05, d1->GetPosition().Y, d1->GetPosition().Z));
     int r  = (rand() % 2 + 1);
     int r1 = (rand() % 2 + 1);
-    std::cout << d1->GetPosition().X << "  " << d1->GetPosition().Y << std::endl;
     d1->SetRotation(Vector3f(d1->GetRotation().X + r, d1->GetRotation().Y + r1, d1->GetRotation().Z));
 
     if (d1->GetPosition().X > 16)

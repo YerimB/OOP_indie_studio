@@ -6,16 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/home/alexis/Tek2/INDIE/OOP_indie_studio_2019/Sources/Scenes/VictoryScene.cpp
-Scenes/VictoryScene.hpp
+/home/yarim/delivery/ES4/OOP/GitHub/OOP_indie_studio_2019/Sources/Scenes/MenuScene.cpp
+Scenes/MenuScene.hpp
 -
 GameManager.h
 -
-ECS/System/ButtonSystem.h
--
 ECS/ECS.h
--
-Components/Transform.h
 -
 
 Headers/AI/AI.h
@@ -386,14 +382,14 @@ ECS/Entity.h
 Components/Button.h
 -
 
+Headers/Scenes/MenuScene.hpp
+Scenes/Scene.hpp
+-
+
 Headers/Scenes/Scene.hpp
 Core.hpp
 -
 unordered_map
--
-
-Headers/Scenes/VictoryScene.hpp
-Scenes/Scene.hpp
 -
 
 Headers/SoundManager.h

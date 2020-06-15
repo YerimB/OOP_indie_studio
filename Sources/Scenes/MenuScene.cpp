@@ -8,7 +8,7 @@ static void changeSceneToGame(GameManager* gameManager)
 {
     gameManager->GetSoundManager()->PlaySound("sndPlay");
 	gameManager->SetSceneChange(true);
-	gameManager->SetNextScene(Scene::VICTORY);
+	gameManager->SetNextScene(Scene::SceneID::LUNCH_GAME);
 }
 
 static void quitGame(GameManager* gameManager)
