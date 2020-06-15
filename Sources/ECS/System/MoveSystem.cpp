@@ -32,9 +32,9 @@ void MoveSystem::Update(const double& deltaTime)
 			Drawable* drawable2 = std::get<Drawable*>(_components[j]);
 			Collider* collider2 = std::get<Collider*>(_components[j]);
 
-			if (!drawable2->GetDrawable() || collider->GetTag() == collider2->GetTag())
+			if (!drawable2->GetDrawable())
 				continue;
-			if (MoveSystem::Collide(drawable, drawable2))
+			if (MoveSystem::Collide(drawable, drawable2) && collider->GetTag() != collider2->GetTag())
 			{
 				transform->SetPosition(ts[0]);
 				transform->SetRotation(ts[1]);
