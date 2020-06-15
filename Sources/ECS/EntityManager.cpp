@@ -28,11 +28,11 @@ bool EntityManager::Initialize()
 
 void EntityManager::Update()
 {
-	// double deltaTime = m_Time.GetDeltaTime();
+	double deltaTime = m_Time.GetDeltaTime();
 
 	for (auto& system : m_Systems)
 	{
-		system->Update(m_Time.GetDeltaTime());
+		system->Update(deltaTime);
 	}
 	m_GuiEnvironment->drawAll();
 }
