@@ -293,22 +293,22 @@ void VictoryScene::Update(GameManager* gameManager)
     d1->SetPosition(Vector3f(d1->GetPosition().X - dir, d1->GetPosition().Y, d1->GetPosition().Z));
     d2->SetPosition(Vector3f(d2->GetPosition().X - dir2, d2->GetPosition().Y, d2->GetPosition().Z));
 
-    if (d1->GetPosition().X < -20)
+    if (d1->GetPosition().X < -22.0f)
     {
         dir = -0.05;
         d1->SetRotation(Vector3f(d1->GetPosition().X, 270, d1->GetPosition().Z));
     }
-    if (d2->GetPosition().X < -20)
+    if (d2->GetPosition().X < -22.0f)
     {
         dir2 = -0.05;
         d2->SetRotation(Vector3f(d2->GetPosition().X, 0, d2->GetPosition().Z));
     }
-    if (d1->GetPosition().X > 20)
+    if (d1->GetPosition().X > 22.0f)
     {
         dir = 0.05;
         d1->SetRotation(Vector3f(d1->GetPosition().X, 90, d1->GetPosition().Z));
     }
-    if (d2->GetPosition().X > 20)
+    if (d2->GetPosition().X > 22.0f)
     {
         dir2 = 0.05;
         d2->SetRotation(Vector3f(d2->GetPosition().X, 180, d2->GetPosition().Z));
