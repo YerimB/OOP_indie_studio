@@ -92,6 +92,8 @@ bool AI::isInBombRange()
             if (_map[i][j] == 'O')
                 p_pos = std::array<int, 2>({i, j});
     }
+    if (p_pos[0] < 0 && p_pos[1] < 0)
+        return false;
     for (int i = 0; i < BOMBRANGE ; i++) {
         if (down && _map[p_pos[0] + i][p_pos[1]] == 'B') return true;
         if (down && _map[p_pos[0] + i][p_pos[1]] == '1') down = false;
