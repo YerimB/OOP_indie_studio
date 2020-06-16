@@ -34,8 +34,8 @@ void PlayerAI::UpdateMap(Transform* pPos, GameVars_t* gVars)
     int y = pPos->GetPosition().Z;
     auto s_pos = -(gVars->mapSize * 10.0f) / 2.0f;
     std::array<int, 2> tmp = {
-        round(gVars->mapSize - (y - s_pos) / 10.0f),
-        round(gVars->mapSize - (x - s_pos) / 10.0f)
+        static_cast<int>(round(gVars->mapSize - (y - s_pos) / 10.0f)),
+        static_cast<int>(round(gVars->mapSize - (x - s_pos) / 10.0f))
     };
     if (tmp != this->_previousPos)
     {
@@ -44,6 +44,8 @@ void PlayerAI::UpdateMap(Transform* pPos, GameVars_t* gVars)
 				gVars->map[_previousPos[1]][_previousPos[0]] = '0';
     	if (gVars->map[tmp[1]][tmp[0]] != 'B')
 			gVars->map[tmp[1]][tmp[0]] = '1';
+        gVars->playersData[m_Data->playerID - 1].position.Y = tmp[0];
+        gVars->playersData[m_Data->playerID - 1].position.X = tmp[1];
         _previousPos = tmp;
     }
 }
@@ -56,6 +58,7 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
     Animator* animator = self.GetComponent<Animator>();
     Vector3f r = t->GetRotation();
 
+
 	if (abs(abs_pos[0] - t->GetPosition().X) >=10 || abs(abs_pos[1] - t->GetPosition().Z) >= 10 ||
         (abs_pos[0] == t->GetPosition().X && abs_pos[1] == t->GetPosition().Z))
 	{
@@ -65,12 +68,23 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
         };
         auto s_pos = -(gm->m_globalVars.mapSize * 10.0f) / 2.0f;
         std::array<int, 2> tmp = {
-            round(gm->m_globalVars.mapSize - (t->GetPosition().Z - s_pos) / 10.0f),
-            round(gm->m_globalVars.mapSize - (t->GetPosition().X - s_pos) / 10.0f)
+            static_cast<int>(round(gm->m_globalVars.mapSize - (t->GetPosition().Z - s_pos) / 10.0f)),
+            static_cast<int>(round(gm->m_globalVars.mapSize - (t->GetPosition().X - s_pos) / 10.0f))
         };
         _backupMap = map;
         std::vector<std::string> tmp_map = map;
 		tmp_map[tmp[1]][tmp[0]] = 'O';
+		for (int i = 0; i < gm->m_globalVars.playersData.size(); i++)
+		{
+            if (gm->m_globalVars.playersData[i].isActive)
+            {
+                std::array<int, 2> tmp_pos = {
+                    static_cast<int>(round(gm->m_globalVars.mapSize - (gm->m_globalVars.playersData[i].position.Y - s_pos) / 10.0f)),
+                    static_cast<int>(round(gm->m_globalVars.mapSize - (gm->m_globalVars.playersData[i].position.X - s_pos) / 10.0f))
+                };
+                tmp_map[tmp_pos[1]][tmp_pos[0]] = 'E';
+            }
+		}
         AI a(tmp_map);
         if (map[_target[0]][_target[1]] == 'B')
         {

@@ -23,6 +23,9 @@ InputManager::InputManager(IrrlichtDevice* device)
     m_Buttons.emplace(Button::UPPERMUSIC, false);
     m_Buttons.emplace(Button::LOWERFX, false);
     m_Buttons.emplace(Button::UPPERFX, false);
+    m_Buttons.emplace(Button::LOWERSIZEMAP, false);
+    m_Buttons.emplace(Button::UPPERSIZEMAP, false);
+    m_Buttons.emplace(Button::CHANGE_MUSIC, false);
 }
 
 bool InputManager::OnEvent(const SEvent& event)
@@ -61,17 +64,19 @@ bool InputManager::OnEvent(const SEvent& event)
                 case Button::BUTTON_CHANGE_4:
                     m_Buttons[Button::BUTTON_CHANGE_4] = true; break;
                 case Button::LOWERMUSIC:
-                    m_Buttons[Button::LOWERMUSIC] = true;
-                    break;
+                    m_Buttons[Button::LOWERMUSIC] = true; break;
                 case Button::UPPERMUSIC:
-                    m_Buttons[Button::UPPERMUSIC] = true;
-                    break;
+                    m_Buttons[Button::UPPERMUSIC] = true; break;
                 case Button::LOWERFX:
-                    m_Buttons[Button::LOWERFX] = true;
-                    break;
+                    m_Buttons[Button::LOWERFX] = true; break;
                 case Button::UPPERFX:
-                    m_Buttons[Button::UPPERFX] = true;
-                    break;
+                    m_Buttons[Button::UPPERFX] = true; break;
+                case Button::LOWERSIZEMAP:
+                    m_Buttons[Button::LOWERSIZEMAP] = true; break;
+                case Button::UPPERSIZEMAP:
+                    m_Buttons[Button::UPPERSIZEMAP] = true; break;
+                case Button::CHANGE_MUSIC:
+                    m_Buttons[Button::CHANGE_MUSIC] = true; break;
                 default:
                     break;
             }

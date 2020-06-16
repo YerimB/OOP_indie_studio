@@ -23,17 +23,17 @@ class Player : public Component
         static constexpr ComponentId Id = "Player"_hash;
 
     public:
-        Player(SceneManager* manager);
+        explicit Player(SceneManager* manager);
 
     public:
         bool Initialize(void* args) override final;
         void Update(const float& deltaTime, GameManager* gameManager) override;
 
     public:
-        void bindKey(const std::string &action, const irr::EKEY_CODE &);
+        void BindKey(const std::string &action, const irr::EKEY_CODE &) const;
         void DropBomb(Entity& self, GameManager* gm);
         void DestroyBlocks(GameManager* gm);
-        void Explosion(GameManager* gm, Vector2i& pos);
+        void Explosion(GameManager* gm, Vector2i& pos) const;
 
     private:
         void UpdateMap(Transform *pPos, GameVars_t *gVars);

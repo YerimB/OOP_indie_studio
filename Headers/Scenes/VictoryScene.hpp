@@ -2,30 +2,27 @@
 ** EPITECH PROJECT, 2020
 ** OOP_indie_studio_2019
 ** File description:
-** LunchGame
+** VictoryScene
 */
 
-#ifndef LUNCHGAME_HPP_
-#define LUNCHGAME_HPP_
+#ifndef VICTORYSCENE_HPP_
+#define VICTORYSCENE_HPP_
 
 #include <Scenes/Scene.hpp>
 
-#include <iostream>
-#include <string>
-
-class LunchGame : public Scene {
+class VictoryScene : public Scene {
     public:
-        LunchGame();
-        ~LunchGame();
+        VictoryScene();
+        ~VictoryScene();
         void LoadSystems(GameManager*) override final;
 		void LoadAssets(GameManager*) override final;
 		void LoadElements(GameManager*) override final;
 
 	public:
-		void Load(GameManager* gameManager) override final;
-		void Update(GameManager* gameManager) override final;
+		void Load(GameManager*) override final;
+		void Update(GameManager*) override final;
 		void Unload(void) override final;
     private:
 };
 
-#endif /* !LUNCHGAME_HPP_ */
+#endif /* !VICTORYSCENE_HPP_ */
