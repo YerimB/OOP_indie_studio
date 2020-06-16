@@ -79,8 +79,8 @@ void PlayerAI::GetMovements(GameManager *gm, Entity &self)
             if (gm->m_globalVars.playersData[i].isActive)
             {
                 std::array<int, 2> tmp_pos = {
-                    round(gm->m_globalVars.mapSize - (gm->m_globalVars.playersData[i].position.Y - s_pos) / 10.0f),
-                    round(gm->m_globalVars.mapSize - (gm->m_globalVars.playersData[i].position.X - s_pos) / 10.0f)
+                    static_cast<int>(round(gm->m_globalVars.mapSize - (gm->m_globalVars.playersData[i].position.Y - s_pos) / 10.0f)),
+                    static_cast<int>(round(gm->m_globalVars.mapSize - (gm->m_globalVars.playersData[i].position.X - s_pos) / 10.0f))
                 };
                 tmp_map[tmp_pos[1]][tmp_pos[0]] = 'E';
             }
