@@ -49,6 +49,7 @@ void GameScene::LoadAssets(GameManager* gm)
     // Load textures
     this->AddTexture(gm->LoadTexture("Assets/textures/block.png"), "Block");
     this->AddTexture(gm->LoadTexture("Assets/textures/star.jpeg"), "Star");
+    this->AddTexture(gm->LoadTexture("Assets/textures/groundMetal.jpg"), "Ground");
     this->AddTexture(gm->LoadTexture("Assets/textures/btnHome.png"), "iconHome");
 
     // Load Meshes

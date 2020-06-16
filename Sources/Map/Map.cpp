@@ -20,10 +20,10 @@ void Map::InitMap(const std::size_t& size, Scene *sc)
 		Collider* clp = new Collider(Collider::Tag::None);
 		Cube* cp = new Cube(m_GameManager->GetSceneManager());
 
-		if (cp->Initialize(sc->GetTexture("Star"))) {
+		if (cp->Initialize(sc->GetTexture("Ground"))) {
 			cp->SetScale({size * 1.0f, 1, size * 1.0f});
 			tp->SetScale({size * 1.0f, 1, size * 1.0f});
-			cp->SetPosition({0, -10, 0});
+			cp->SetPosition({10, -10, 0});
 			plane.AddComponent(tp, Transform::Id);
 			plane.AddComponent(cp, Cube::Id);
 			plane.AddComponent(clp, Collider::Id);
