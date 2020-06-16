@@ -34,8 +34,6 @@
     <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
     <ClCompile Include="Sources\Scenes\Scene.cpp" />
     <ClCompile Include="Sources\SoundManager.cpp" />
-    <ClCompile Include="Sources\Thread\Thread.cpp" />
-    <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
     <ClCompile Include="Sources\Scenes\LunchGame.cpp" />
     <ClCompile Include="Sources\Components\PlayerAI.cpp" />
     <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
@@ -95,12 +93,7 @@
     <ClInclude Include="Headers\GameManager.h" />
     <ClInclude Include="Headers\InputManager\InputManager.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
-    <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
     <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
-    <ClInclude Include="Headers\Thread\ITask.hpp" />
-    <ClInclude Include="Headers\Thread\Thread.hpp" />
-    <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
-    <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
     <ClInclude Include="Sources\Generation\Generation.hpp" />
     <ClInclude Include="Headers\SoundManager.h" />
     <ClInclude Include="Headers\Scenes\GameScene.hpp" />
@@ -121,8 +114,6 @@
     <None Include="DLLs\Irrlicht.dll" />
     <None Include="Headers\ECS\System\System.inl" />
     <None Include="Headers\SafeContainer\SafeDeque.inl" />
-    <None Include="Headers\SafeContainer\SafeQueue.inl" />
     <None Include="Headers\SafeContainer\SafeVector.inl" />
-    <None Include="Headers\Thread\Thread.inl" />
   </ItemGroup>
 </Project>

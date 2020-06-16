@@ -189,7 +189,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
             btnPlay->SetButtonID(Button::ButtonID::PLAY);
             btnPlay->SetTexture(gameManager->LoadTexture("Assets/textures/btnPlay.png"));
             btnPlay->SetSize(398, 131);
-            btnPlay->SetPosition({ 800, 850 });
+            btnPlay->SetPosition({ 780, 850 });
             btnPlay->SetOnPress(changeSceneToGame);
             playBtnEntity.AddComponent(std::move(btnPlay), Button::Id);
             gameManager->GetEntityManager()->AddEntity(playBtnEntity);
@@ -222,7 +222,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
             e1.AddComponent(newCollider, Drawable::Id);
             e1.AddComponent(t1, Transform::Id);
             d1->SetScale(Vector3f(0.3, 0.3, 0.3));
-            d1->SetPosition({-10, -2, 0});
+            d1->SetPosition({-9, -2, 0});
             d1->SetRotation(Vector3f(0, 200, 0));
         }
         gameManager->GetEntityManager()->AddEntity(e1);
