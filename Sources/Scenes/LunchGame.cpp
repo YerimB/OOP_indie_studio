@@ -153,11 +153,6 @@ void LunchGame::LoadAssets(GameManager* gm)
         "sndMenu",
         SoundManager::SoundType::MUSIC
     );
-    gm->GetSoundManager()->AddSound(
-        gm->GetSoundManager()->LoadSound("Assets/sound/menu_game_2.ogg"),
-        "sndMenu2",
-        SoundManager::SoundType::MUSIC
-    );
 
     this->AddTexture(gm->LoadTexture("Assets/textures/buttonChange.png"), "btnChange");
     this->AddTexture(gm->LoadTexture("Assets/textures/mario_bg.jpeg"), "Bg");
