@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Sources\InputManager.cpp" />
+    <ClCompile Include="Sources\main.cpp" />
+    <ClCompile Include="Sources\Components\Animator.cpp" />
+    <ClCompile Include="Sources\Components\Button.cpp" />
+    <ClCompile Include="Sources\Components\Collider.cpp" />
+    <ClCompile Include="Sources\Components\Cube.cpp" />
+    <ClCompile Include="Sources\Components\Image.cpp" />
+    <ClCompile Include="Sources\Components\Moveable.cpp" />
+    <ClCompile Include="Sources\Components\Player.cpp" />
+    <ClCompile Include="Sources\ECS\System\AnimatorSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\MoveSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\PlayerSystem.cpp" />
+    <ClCompile Include="Sources\ECS\Time.cpp" />
+    <ClCompile Include="Sources\Components\Timer.cpp" />
+    <ClCompile Include="Sources\ECS\System\ButtonSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\ImageSystem.cpp" />
+    <ClCompile Include="Sources\ECS\System\TextSystem.cpp" />
+    <ClCompile Include="Sources\GameManager.cpp" />
+    <ClCompile Include="Sources\Components\Drawable.cpp" />
+    <ClCompile Include="Sources\Components\Text.cpp" />
+    <ClCompile Include="Sources\Components\Transform.cpp" />
+    <ClCompile Include="Sources\ECS\Component.cpp" />
+    <ClCompile Include="Sources\ECS\Entity.cpp" />
+    <ClCompile Include="Sources\ECS\EntityManager.cpp" />
+    <ClCompile Include="Sources\ECS\System\RenderSystem.cpp" />
+    <ClCompile Include="Sources\InputManager.cpp" />
+    <ClCompile Include="Sources\main.cpp" />
+    <ClCompile Include="Sources\Map\Generation.cpp" />
+    <ClCompile Include="Sources\Map\Map.cpp" />
+    <ClCompile Include="Sources\Scenes\GameScene.cpp" />
+    <ClCompile Include="Sources\Scenes\MenuScene.cpp" />
+    <ClCompile Include="Sources\Scenes\Scene.cpp" />
+    <ClCompile Include="Sources\SoundManager.cpp" />
+    <ClCompile Include="Sources\Thread\Thread.cpp" />
+    <ClCompile Include="Sources\Thread\ThreadPool.cpp" />
+    <ClCompile Include="Sources\Scenes\LunchGame.cpp" />
+    <ClCompile Include="Sources\Components\PlayerAI.cpp" />
+    <ClCompile Include="Sources\ECS\System\TimeSystem.cpp" />
+    <ClCompile Include="Sources\AI\AI.cpp" />
+    <ClCompile Include="Sources\AI\Astar.cpp" />
+    <ClCompile Include="Sources\AI\Node.cpp" />
+    <ClCompile Include="Sources\Scenes\VictoryScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\Components\Animator.h" />
+    <ClInclude Include="Headers\Components\Button.h" />
+    <ClInclude Include="Headers\Components\Collider.h" />
+    <ClInclude Include="Headers\Components\Collision.h" />
+    <ClInclude Include="Headers\Components\Cube.h" />
+    <ClInclude Include="Headers\Components\Drawable.h" />
+    <ClInclude Include="Headers\Components\Image.h" />
+    <ClInclude Include="Headers\Components\Moveable.h" />
+    <ClInclude Include="Headers\Components\Player.h" />
+    <ClInclude Include="Headers\Components\Text.h" />
+    <ClInclude Include="Headers\Components\Timer.h" />
+    <ClInclude Include="Headers\Components\Transform.h" />
+    <ClInclude Include="Headers\Core.hpp" />
+    <ClInclude Include="Headers\InputManager\InputManager.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
+    <ClInclude Include="Sources\Generation\Generation.hpp" />
+    <ClInclude Include="Headers\ECS\System\TimeSystem.h" />
+    <ClInclude Include="Headers\Scenes\VictoryScene.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9211C170-AE6E-3168-A042-BADF0CEC845C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1DC7E7A2-E4DE-3B9E-9348-FBA5A19266AD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Headers\SafeContainer\SafeVector.inl" />
+    <None Include="Headers\SafeContainer\SafeDeque.inl" />
+    <ClInclude Include="Headers\ECS\Component.h" />
+    <ClInclude Include="Headers\ECS\ECS.h" />
+    <ClInclude Include="Headers\ECS\Entity.h" />
+    <ClInclude Include="Headers\ECS\EntityManager.h" />
+    <ClInclude Include="Headers\ECS\Hash.h" />
+    <ClInclude Include="Headers\ECS\System.h" />
+    <ClInclude Include="Headers\ECS\System\AnimatorSystem.h" />
+    <ClInclude Include="Headers\ECS\System\BaseSystem.h" />
+    <ClInclude Include="Headers\ECS\System\ButtonSystem.h" />
+    <ClInclude Include="Headers\ECS\System\ImageSystem.h" />
+    <ClInclude Include="Headers\ECS\System\MoveSystem.h" />
+    <ClInclude Include="Headers\ECS\System\PlayerSystem.h" />
+    <ClInclude Include="Headers\ECS\System\RenderSystem.h" />
+    <ClInclude Include="Headers\ECS\System\System.h" />
+    <ClInclude Include="Headers\ECS\System\TextSystem.h" />
+    <ClInclude Include="Headers\ECS\Time.h" />
+    <ClInclude Include="Headers\GameManager.h" />
+    <ClInclude Include="Headers\InputManager\InputManager.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeDeque.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeQueue.hpp" />
+    <ClInclude Include="Headers\SafeContainer\SafeVector.hpp" />
+    <ClInclude Include="Headers\Thread\ITask.hpp" />
+    <ClInclude Include="Headers\Thread\Thread.hpp" />
+    <ClInclude Include="Headers\Thread\ThreadPool.hpp" />
+    <ClInclude Include="Headers\Thread\ThreadPoolExpcetion.hpp" />
+    <ClInclude Include="Sources\Generation\Generation.hpp" />
+    <ClInclude Include="Headers\SoundManager.h" />
+    <ClInclude Include="Headers\Scenes\GameScene.hpp" />
+    <ClInclude Include="Headers\Scenes\LunchGame.hpp" />
+    <ClInclude Include="Headers\Scenes\MenuScene.hpp" />
+    <ClInclude Include="Headers\Scenes\Scene.hpp" />
+    <ClInclude Include="Headers\Map\Generation.h" />
+    <ClInclude Include="Headers\Map\Map.h" />
+    <ClInclude Include="Headers\Components\PlayerAI.h" />
+    <ClInclude Include="Headers\AI\AI.h" />
+    <ClInclude Include="Headers\AI\Astar.h" />
+    <ClInclude Include="Headers\AI\Node.h" />
+    <ClInclude Include="Headers\ECS\System\TimeSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DLLs\fmod.dll" />
+    <None Include="DLLs\fmodL.dll" />
+    <None Include="DLLs\Irrlicht.dll" />
+    <None Include="Headers\ECS\System\System.inl" />
+    <None Include="Headers\SafeContainer\SafeDeque.inl" />
+    <None Include="Headers\SafeContainer\SafeQueue.inl" />
+    <None Include="Headers\SafeContainer\SafeVector.inl" />
+    <None Include="Headers\Thread\Thread.inl" />
+  </ItemGroup>
+</Project>
