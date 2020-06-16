@@ -30,7 +30,7 @@ static void changeSceneToMenu(GameManager* gameManager)
 static void changeCharacterP1(GameManager* gameManager)
 {
 	gameManager->m_globalVars.playersData[0].characterID += 1;
-    if (gameManager->m_globalVars.playersData[0].characterID > 4)
+    if (gameManager->m_globalVars.playersData[0].characterID > 5)
         gameManager->m_globalVars.playersData[0].characterID = 1;
     gameManager->m_globalVars.playersData[0].changedCharacterID = true;
 }
@@ -38,7 +38,7 @@ static void changeCharacterP1(GameManager* gameManager)
 static void changeCharacterP2(GameManager* gameManager)
 {
 	gameManager->m_globalVars.playersData[1].characterID += 1;
-    if (gameManager->m_globalVars.playersData[1].characterID > 4)
+    if (gameManager->m_globalVars.playersData[1].characterID > 5)
         gameManager->m_globalVars.playersData[1].characterID = 1;
     gameManager->m_globalVars.playersData[1].changedCharacterID = true;
 }
@@ -46,7 +46,7 @@ static void changeCharacterP2(GameManager* gameManager)
 static void changeCharacterP3(GameManager* gameManager)
 {
 	gameManager->m_globalVars.playersData[2].characterID += 1;
-    if (gameManager->m_globalVars.playersData[2].characterID > 4)
+    if (gameManager->m_globalVars.playersData[2].characterID > 5)
         gameManager->m_globalVars.playersData[2].characterID = 1;
     gameManager->m_globalVars.playersData[2].changedCharacterID = true;
 }
@@ -54,7 +54,7 @@ static void changeCharacterP3(GameManager* gameManager)
 static void changeCharacterP4(GameManager* gameManager)
 {
 	gameManager->m_globalVars.playersData[3].characterID += 1;
-    if (gameManager->m_globalVars.playersData[3].characterID > 4)
+    if (gameManager->m_globalVars.playersData[3].characterID > 5)
         gameManager->m_globalVars.playersData[3].characterID = 1;
     gameManager->m_globalVars.playersData[3].changedCharacterID = true;
 }
@@ -179,7 +179,7 @@ void LunchGame::LoadAssets(GameManager* gm)
     this->AddMesh(sm->getMesh("Assets/koopa.b3d"), "Koopa");
     this->AddMesh(sm->getMesh("Assets/star.b3d"), "Star");
     this->AddMesh(sm->getMesh("Assets/bob-omb.b3d"), "Bob-omb");
-    this->AddMesh(sm->getMesh("Assets/blooper.b3d"), "blooper");
+    this->AddMesh(sm->getMesh("Assets/blooper.b3d"), "Blooper");
 
     this->AddTexture(gm->LoadTexture("Assets/textures/game-controller.png"), "texGameController");
 }

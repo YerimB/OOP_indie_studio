@@ -44,7 +44,7 @@ typedef struct GameGlobalVariables_s
 		std::pair<size_t, std::string>(2, "Luigi"),
 		std::pair<size_t, std::string>(3, "Koopa"),
 		std::pair<size_t, std::string>(4, "Star"),
-		std::pair<size_t, std::string>(4, "Blooper")
+		std::pair<size_t, std::string>(5, "Blooper")
 	};
 
 	// Map
