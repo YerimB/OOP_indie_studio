@@ -105,22 +105,24 @@ static void changeCharactertoAI4(GameManager* gm)
 
 static void ChangeText(GameManager* gm)
 {
-    Entity *e = gm->GetEntityManager()->GetEntity("SizeMap");
-    Text *newText = e->GetComponent<Text>();
+    Entity *e = gm->GetEntityManager()->GetEntity("SizeMapBtn");
+    Button *newBtn = e->GetComponent<Button>();
 
     if (gm->m_globalVars.mapSize < 20)
         gm->m_globalVars.mapSize += 4;
-    newText->SetText(std::to_string(gm->m_globalVars.mapSize));
+    if (gm->m_globalVars.mapSize == 16) newBtn->SetTexture(gm->GetCurrentScene()->GetTexture("size16"));
+    else newBtn->SetTexture(gm->GetCurrentScene()->GetTexture("size20"));
 }
 
 static void ChangeTextLower(GameManager* gm)
 {
-    Entity *e = gm->GetEntityManager()->GetEntity("SizeMap");
-    Text *newText = e->GetComponent<Text>();
+    Entity *e = gm->GetEntityManager()->GetEntity("SizeMapBtn");
+    Button *newBtn = e->GetComponent<Button>();
 
     if (gm->m_globalVars.mapSize > 12)
         gm->m_globalVars.mapSize -= 4;
-    newText->SetText(std::to_string(gm->m_globalVars.mapSize));
+    if (gm->m_globalVars.mapSize == 16) newBtn->SetTexture(gm->GetCurrentScene()->GetTexture("size16"));
+    else newBtn->SetTexture(gm->GetCurrentScene()->GetTexture("size12"));
 }
 
 LunchGame::LunchGame() : Scene(Scene::LUNCH_GAME)
@@ -167,6 +169,9 @@ void LunchGame::LoadAssets(GameManager* gm)
     this->AddTexture(gm->LoadTexture("Assets/textures/random.png"), "ChangeMusic");
     this->AddTexture(gm->LoadTexture("Assets/textures/music-notes.png"), "ChangeMusic2");
     this->AddTexture(gm->LoadTexture("Assets/textures/btnHome.png"), "iconHome");
+    this->AddTexture(gm->LoadTexture("Assets/textures/size12.png"), "size12");
+    this->AddTexture(gm->LoadTexture("Assets/textures/size16.png"), "size16");
+    this->AddTexture(gm->LoadTexture("Assets/textures/size20.png"), "size20");
 
     auto sm = gm->GetSceneManager();
     this->AddMesh(sm->getMesh("Assets/mario.b3d"), "Mario");
@@ -429,8 +434,6 @@ void LunchGame::LoadElements(GameManager* gameManager)
 
     {
         Entity e8("SizeMap");
-        Text *text1 = new Text(gameManager->GetGuiEnvironment());
-        GuiFont *font = gameManager->GetGuiEnvironment()->getFont("Assets/Font/SuperMario256.ttf");
         Button* b3 = new Button(gameManager->GetGuiEnvironment());
 
         if (b3->Initialize(nullptr)) {
@@ -442,16 +445,22 @@ void LunchGame::LoadElements(GameManager* gameManager)
             b3->SetOnPress(ChangeText);
             e8.AddComponent(std::move(b3), Button::Id);
         }
-
-        if (text1->Initialize(nullptr))
-        {
-            text1->SetFont(font);
-            text1->SetText(std::to_string(gameManager->m_globalVars.mapSize));
-            text1->SetColor(Color(255, 255, 255, 255));
-            text1->SetPosition(Vector2i(895, 135));
-            e8.AddComponent(std::move(text1), Text::Id);
-        }
         gameManager->GetEntityManager()->AddEntity(e8);
+    }
+    {
+        Entity SizeMapBtn("SizeMapBtn");
+        Button* btnMap = new Button(gameManager->GetGuiEnvironment());
+
+        if (btnMap->Initialize(nullptr)) {
+            btnMap->SetButtonID(Button::ButtonID::UPPERSIZEMAP);
+            btnMap->SetTexture(this->GetTexture("size16"));
+            btnMap->SetPosition({ 850, 110 });
+            btnMap->SetSize(120, 60);
+            btnMap->SetTextureToFit(true);
+            btnMap->SetOnPress(ChangeText);
+            SizeMapBtn.AddComponent(std::move(btnMap), Button::Id);
+        }
+        gameManager->GetEntityManager()->AddEntity(SizeMapBtn);
     }
 
     {
@@ -478,7 +487,7 @@ void LunchGame::LoadElements(GameManager* gameManager)
         if (b4->Initialize(nullptr)) {
             b4->SetButtonID(Button::ButtonID::UNDEFINED);
             b4->SetTexture(this->GetTexture("SwitchContainer"));
-            b4->SetPosition({ 850, 80 });
+            b4->SetPosition({ 860, 60 });
             b4->SetSize(100, 40);
             b4->SetTextureToFit(true);
             e10.AddComponent(std::move(b4), Button::Id);
